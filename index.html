@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Empresarial México — Poder y Concentración</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --canvas:  #f5f4ed;
+  --white:   #ffffff;
+  --ink:     #1B365D;
+  --ink2:    #3a5278;
+  --muted:   #7a8898;
+  --red:     #B85C38;
+  --border:  #dddbd2;
+  --shadow:  0 1px 6px rgba(27,54,93,.08);
+  --font-s:  'Newsreader', Georgia, serif;
+  --font-b:  'Inter', system-ui, sans-serif;
+  --max:     1080px;
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  background: var(--canvas);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ── Nav ───────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(245,244,237,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px; height: 52px;
+}
+.nav-brand {
+  font-family: var(--font-s);
+  font-size: 1rem; font-weight: 600;
+  color: var(--ink); text-decoration: none;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 0.8rem; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  text-transform: uppercase; letter-spacing: .06em;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+/* ── Hero ──────────────────────────────────────────────────── */
+#hero {
+  padding: 140px 32px 80px;
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-text .kicker {
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--red); margin-bottom: 16px;
+}
+.hero-text h1 {
+  font-family: var(--font-s);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600; line-height: 1.15;
+  color: var(--ink); margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 1.05rem; color: var(--ink2);
+  max-width: 440px; line-height: 1.7;
+}
+.hero-kpis {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.kpi {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+.kpi-n {
+  font-family: var(--font-s);
+  font-size: 2.4rem; font-weight: 600;
+  color: var(--ink); line-height: 1;
+  margin-bottom: 6px;
+}
+.kpi-n span { font-size: 1.4rem; }
+.kpi-l {
+  font-size: 0.75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted);
+}
+.kpi-sub {
+  font-size: 0.82rem; color: var(--red);
+  margin-top: 4px; font-style: italic;
+}
+
+/* ── Sections ──────────────────────────────────────────────── */
+.section {
+  max-width: var(--max); margin: 0 auto;
+  padding: 64px 32px;
+  border-top: 1px solid var(--border);
+}
+.section-label {
+  font-size: 0.7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--red); margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-s);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600; color: var(--ink);
+  margin-bottom: 12px; line-height: 1.2;
+}
+.section-lead {
+  font-size: 1rem; color: var(--ink2);
+  max-width: 640px; line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px 28px 20px;
+  box-shadow: var(--shadow); margin-bottom: 24px;
+}
+.card-title {
+  font-size: 0.8rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin-bottom: 16px;
+}
+.chart-wrap { width: 100%; min-height: 340px; }
+
+/* ── Two columns ───────────────────────────────────────────── */
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin-bottom: 24px;
+}
+.two-col-60 {
+  display: grid; grid-template-columns: 3fr 2fr; gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ── Groups table ──────────────────────────────────────────── */
+.groups-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.groups-table th {
+  text-align: left; font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border); padding: 8px 12px 10px;
+}
+.groups-table th:not(:first-child) { text-align: right; }
+.groups-table td {
+  padding: 12px 12px; border-bottom: 1px solid #f0eeea;
+  vertical-align: middle;
+}
+.groups-table td:not(:first-child) { text-align: right; }
+.groups-table tr:last-child td { border-bottom: none; }
+.groups-table tr:hover td { background: #f9f8f4; }
+.g-dot {
+  display: inline-block; width: 10px; height: 10px;
+  border-radius: 50%; margin-right: 8px; flex-shrink: 0;
+}
+.g-name { font-weight: 500; }
+.g-corps { font-size: 0.78rem; color: var(--muted); }
+.bar-cell { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.bar-track {
+  width: 80px; height: 7px; background: #edecea;
+  border-radius: 4px; overflow: hidden; flex-shrink: 0;
+}
+.bar-fill { height: 100%; border-radius: 4px; }
+
+/* ── Insight box ───────────────────────────────────────────── */
+.insight {
+  background: #fdf8f2;
+  border-left: 4px solid var(--red);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 22px;
+  font-size: 0.92rem; line-height: 1.65;
+  color: var(--ink2); margin-top: 8px;
+}
+.insight strong { color: var(--ink); }
+
+/* ── Career bars ───────────────────────────────────────────── */
+.flow-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 0; border-bottom: 1px solid #f0eeea;
+  font-size: 0.85rem;
+}
+.flow-row:last-child { border-bottom: none; }
+.flow-labels { flex: 1; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.flow-src { font-weight: 500; color: var(--ink); }
+.flow-arrow { color: var(--muted); font-size: 0.75rem; }
+.flow-tgt { color: var(--ink2); }
+.flow-ext { font-size: 0.72rem; color: var(--red); font-style: italic; }
+.flow-bar { flex-shrink: 0; }
+.flow-n { font-size: 0.78rem; color: var(--muted); min-width: 28px; text-align: right; }
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 32px;
+  max-width: var(--max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 24px; flex-wrap: wrap;
+}
+footer p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+footer a { color: var(--ink2); }
+
+/* ── Fade-in animation ─────────────────────────────────────── */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  #hero { grid-template-columns: 1fr; padding-top: 100px; }
+  .two-col, .two-col-60 { grid-template-columns: 1fr; }
+  nav { padding: 0 16px; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 0.72rem; }
+  .section { padding: 48px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Elite Empresarial México</a>
+  <ul class="nav-links">
+    <li><a href="#grupos">Los grupos</a></li>
+    <li><a href="#concentracion">Concentración</a></li>
+    <li><a href="#perfil">Perfil</a></li>
+    <li><a href="#trayectorias">Trayectorias</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text fade-in">
+    <div class="kicker">Análisis · Empresas BMV · 2023</div>
+    <h1>¿Quién controla la economía mexicana?</h1>
+    <p>Un mapa de los grupos empresariales que dominan la Bolsa Mexicana de Valores: sus dimensiones, sus vínculos y el perfil de quienes toman las decisiones.</p>
+  </div>
+  <div class="hero-kpis fade-in" id="hero-kpis">
+    <!-- filled by JS -->
+  </div>
+</section>
+
+<!-- SECTION 01: LOS GRUPOS -->
+<section class="section fade-in" id="grupos">
+  <div class="section-label">01 — Los grupos</div>
+  <h2 class="section-title">Once familias, la mitad de la bolsa</h2>
+  <p class="section-lead">
+    Identificamos 11 conglomerados con directorios interconectados que operan 51 empresas listadas en la BMV. Juntos concentran el <strong id="pct-lbl"></strong>% del market cap bursátil total de la muestra.
+  </p>
+
+  <div class="two-col-60">
+    <div class="card fade-in">
+      <div class="card-title">Market cap por grupo — USD miles de millones</div>
+      <div class="chart-wrap" id="chart-groups-bar"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title">Participación bursátil</div>
+      <div class="chart-wrap" id="chart-groups-pie"></div>
+    </div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">Detalle por grupo — métricas financieras 2023</div>
+    <table class="groups-table" id="groups-table"></table>
+  </div>
+
+  <div class="insight fade-in" id="insight-slim"></div>
+</section>
+
+<!-- SECTION 02: CONCENTRACIÓN -->
+<section class="section fade-in" id="concentracion">
+  <div class="section-label">02 — Concentración bursátil</div>
+  <h2 class="section-title">$372 mil millones de dólares bajo redes interconectadas</h2>
+  <p class="section-lead">
+    Cada rectángulo es una empresa. Su tamaño refleja su market cap. El color indica a qué grupo pertenece. Al hacer hover, aparece su grupo, ingresos y empleados.
+  </p>
+
+  <div class="card fade-in">
+    <div class="card-title">Mapa empresarial — market cap relativo</div>
+    <div class="chart-wrap" style="min-height:480px;" id="chart-treemap"></div>
+  </div>
+
+  <div class="two-col">
+    <div class="card fade-in">
+      <div class="card-title">Empleados por grupo</div>
+      <div class="chart-wrap" id="chart-empleados"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title">Margen EBITDA promedio por grupo</div>
+      <div class="chart-wrap" id="chart-ebitda"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03: PERFIL -->
+<section class="section fade-in" id="perfil">
+  <div class="section-label">03 — Perfil de la élite</div>
+  <h2 class="section-title">¿Dónde se forman los directivos mexicanos?</h2>
+  <p class="section-lead">
+    Analizamos <strong>1,106 directores</strong> extraídos de los reportes anuales de 51 empresas. Sus trayectorias académicas revelan la concentración del capital educativo.
+  </p>
+
+  <div class="two-col">
+    <div class="card fade-in">
+      <div class="card-title">Top 15 instituciones de origen</div>
+      <div class="chart-wrap" style="min-height:400px;" id="chart-inst"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title">Top 12 campos de estudio</div>
+      <div class="chart-wrap" style="min-height:400px;" id="chart-fields"></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card fade-in">
+      <div class="card-title">Tipo de institución</div>
+      <div class="chart-wrap" id="chart-inst-type"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title">Nivel académico</div>
+      <div class="chart-wrap" id="chart-levels"></div>
+    </div>
+  </div>
+
+  <div class="insight fade-in" id="insight-edu"></div>
+</section>
+
+<!-- SECTION 04: TRAYECTORIAS -->
+<section class="section fade-in" id="trayectorias">
+  <div class="section-label">04 — Trayectorias</div>
+  <h2 class="section-title">Movilidad de talento entre grupos</h2>
+  <p class="section-lead">
+    Los flujos de carrera muestran cuántos directivos pasaron de una empresa o sector a otro. Las conexiones más fuertes revelan las autopistas del poder corporativo.
+  </p>
+
+  <div class="two-col-60">
+    <div class="card fade-in">
+      <div class="card-title">Principales flujos de carrera — directivos en común</div>
+      <div id="career-flows"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title">Interlocks más fuertes — directores compartidos</div>
+      <div id="interlock-flows"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="fade-in">
+  <div>
+    <p><strong>Metodología</strong><br>
+    Directores extraídos de reportes anuales BMV 2022–2023. Financieros de Bloomberg Terminal LFY 2023. FX: 17.15 MXN/USD. Market cap: cierre 2023. Grupos definidos por control familiar declarado en prospectos.</p>
+  </div>
+  <div>
+    <p><strong>Fuentes</strong><br>
+    Bolsa Mexicana de Valores · Bloomberg Terminal · CNBV<br>
+    Datos: <a href="https://github.com/sagmol/elite-empresarial-mexico">github.com/sagmol/elite-empresarial-mexico</a></p>
+  </div>
+</footer>
+
+<!-- DATA + SCRIPTS -->
+<script src="data_web.js"></script>
+<script>
+// ── Helpers ─────────────────────────────────────────────────────────────────
+const fmt  = n => n == null ? '—' : Number(n).toLocaleString('es-MX');
+const fmtB = n => n == null ? '—' : '$' + Number(n).toFixed(1) + 'B';
+const pct  = n => n == null ? '—' : Number(n).toFixed(1) + '%';
+
+const PLOTLY_CONFIG = { displayModeBar: false, responsive: true };
+const PLOTLY_FONT   = { family: 'Inter, system-ui, sans-serif', size: 12, color: '#3a5278' };
+const LAYOUT_BASE   = {
+  paper_bgcolor: 'transparent', plot_bgcolor: 'transparent',
+  font: PLOTLY_FONT,
+  margin: { t: 8, r: 16, b: 40, l: 16 },
+};
+
+// ── Hero KPIs ────────────────────────────────────────────────────────────────
+document.getElementById('hero-kpis').innerHTML = `
+  <div class="kpi">
+    <div class="kpi-n">$${STATS.total_mktcap.toFixed(0)}<span>B</span></div>
+    <div class="kpi-l">Market cap total</div>
+    <div class="kpi-sub">51 empresas BMV · USD</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-n">${STATS.pct_interlocked}<span>%</span></div>
+    <div class="kpi-l">En redes interconectadas</div>
+    <div class="kpi-sub">${STATS.n_groups} grupos con vínculos</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-n">${(STATS.total_emp/1e6).toFixed(2)}<span>M</span></div>
+    <div class="kpi-l">Empleados totales</div>
+    <div class="kpi-sub">Capital laboral concentrado</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-n">${STATS.n_directors.toLocaleString()}</div>
+    <div class="kpi-l">Directores analizados</div>
+    <div class="kpi-sub">Perfil académico y carrera</div>
+  </div>
+`;
+
+document.getElementById('pct-lbl').textContent = STATS.pct_interlocked;
+
+// ── Insight Slim ────────────────────────────────────────────────────────────
+document.getElementById('insight-slim').innerHTML =
+  `<strong>Slim domina con ${STATS.slim_pct}% del market cap total</strong> mediante solo 5 empresas. ` +
+  `Grupo México (Gmexico) alcanza ${STATS.gmexico_pct}% con solo 2 compañías — la mayor concentración por empresa del universo. ` +
+  `Juntos, estos dos grupos controlan más del 41% de la capitalización bursátil de la muestra.`;
+
+// ── Section 01 Charts ────────────────────────────────────────────────────────
+const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
+               GROUPS_DATA.filter(g => g.group === 'Otro'));
+
+// Bar chart — market cap
+(function() {
+  const sorted = [...GROUPS_DATA].sort((a,b) => b.mktcap_usd - a.mktcap_usd);
+  Plotly.newPlot('chart-groups-bar', [{
+    type: 'bar',
+    orientation: 'h',
+    x: sorted.map(g => g.mktcap_usd),
+    y: sorted.map(g => g.group),
+    marker: { color: sorted.map(g => g.color) },
+    hovertemplate: '<b>%{y}</b><br>Market cap: $%{x}B USD<extra></extra>',
+    text: sorted.map(g => '$' + g.mktcap_usd.toFixed(0) + 'B'),
+    textposition: 'outside',
+    textfont: { size: 10 },
+  }], {
+    ...LAYOUT_BASE,
+    margin: { t: 8, r: 70, b: 40, l: 90 },
+    xaxis: { visible: false },
+    yaxis: { autorange: 'reversed', tickfont: { size: 11 } },
+    height: 340,
+  }, PLOTLY_CONFIG);
+})();
+
+// Pie chart
+(function() {
+  const d = GROUPS_DATA.filter(g => g.mktcap_usd > 0);
+  Plotly.newPlot('chart-groups-pie', [{
+    type: 'pie',
+    labels: d.map(g => g.group),
+    values: d.map(g => g.mktcap_usd),
+    marker: { colors: d.map(g => g.color) },
+    hole: 0.45,
+    hovertemplate: '<b>%{label}</b><br>$%{value}B (%{percent})<extra></extra>',
+    textinfo: 'label+percent',
+    textfont: { size: 10 },
+  }], {
+    ...LAYOUT_BASE,
+    height: 340,
+    margin: { t: 8, r: 8, b: 8, l: 8 },
+    showlegend: false,
+  }, PLOTLY_CONFIG);
+})();
+
+// Groups table
+(function() {
+  const maxMC = Math.max(...GROUPS_DATA.map(g => g.mktcap_usd));
+  const rows = GROUPS_DATA.map(g => {
+    const barW = Math.round(g.mktcap_usd / maxMC * 100);
+    return `<tr>
+      <td>
+        <span class="g-dot" style="background:${g.color}"></span>
+        <span class="g-name">${g.group}</span><br>
+        <span class="g-corps">${g.companies.slice(0,3).join(' · ')}${g.companies.length>3?'…':''}</span>
+      </td>
+      <td>${g.n}</td>
+      <td>
+        <div class="bar-cell">
+          <div class="bar-track"><div class="bar-fill" style="width:${barW}%;background:${g.color}"></div></div>
+          ${fmtB(g.mktcap_usd)}
+        </div>
+      </td>
+      <td>${fmtB(g.revenue_usd)}</td>
+      <td>${g.ebitda_margin != null ? g.ebitda_margin.toFixed(1)+'%' : '—'}</td>
+      <td>${g.roe != null ? g.roe.toFixed(1)+'%' : '—'}</td>
+      <td>${fmt(g.empleados)}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('groups-table').innerHTML = `
+    <thead><tr>
+      <th>Grupo</th>
+      <th style="text-align:center">Emp.</th>
+      <th>Market cap</th>
+      <th>Ingresos</th>
+      <th>Mg. EBITDA</th>
+      <th>ROE</th>
+      <th>Empleados</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  `;
+})();
+
+// ── Section 02 Charts ─────────────────────────────────────────────────────────
+// Treemap
+(function() {
+  const comps = COMPANIES_DATA.filter(c => c.mc_usd > 0);
+  const groupIds = [...new Set(comps.map(c => c.group))];
+
+  const ids     = ['México', ...groupIds, ...comps.map(c => c.id)];
+  const labels  = ['México', ...groupIds, ...comps.map(c => c.label)];
+  const parents = ['',       ...groupIds.map(() => 'México'), ...comps.map(c => c.group)];
+  const values  = [0,        ...groupIds.map(() => 0),        ...comps.map(c => c.mc_usd)];
+  const colors  = ['#f5f4ed',...groupIds.map(g => { const gd = GROUPS_DATA.find(x=>x.group===g); return gd?gd.color:'#aaa'; }),
+                   ...comps.map(c => c.color)];
+
+  const customdata = ['', ...groupIds.map(() => ''),
+    ...comps.map(c => {
+      const rev = c.rev_usd != null ? '$' + c.rev_usd.toFixed(1) + 'B' : '—';
+      const emp = c.emp != null ? c.emp.toLocaleString() : '—';
+      return `${c.group}<br>MC: $${(c.mc_usd/1000).toFixed(1)}B USD<br>Rev: ${rev}<br>Empleados: ${emp}`;
+    })
+  ];
+
+  Plotly.newPlot('chart-treemap', [{
+    type: 'treemap',
+    ids: ids, labels: labels, parents: parents, values: values,
+    branchvalues: 'remainder',
+    marker: { colors: colors },
+    customdata: customdata,
+    hovertemplate: '<b>%{label}</b><br>%{customdata}<extra></extra>',
+    textfont: { size: 11 },
+    pathbar: { visible: false },
+  }], {
+    ...LAYOUT_BASE,
+    height: 480,
+    margin: { t: 4, r: 4, b: 4, l: 4 },
+  }, PLOTLY_CONFIG);
+})();
+
+// Empleados bar
+(function() {
+  const d = [...GROUPS_DATA].sort((a,b) => b.empleados - a.empleados).filter(g=>g.empleados>0);
+  Plotly.newPlot('chart-empleados', [{
+    type: 'bar', orientation: 'h',
+    x: d.map(g => g.empleados),
+    y: d.map(g => g.group),
+    marker: { color: d.map(g => g.color) },
+    hovertemplate: '<b>%{y}</b><br>%{x:,} empleados<extra></extra>',
+    text: d.map(g => (g.empleados/1000).toFixed(0)+'k'),
+    textposition: 'outside', textfont: { size: 10 },
+  }], {
+    ...LAYOUT_BASE,
+    margin: { t: 8, r: 60, b: 32, l: 90 },
+    xaxis: { visible: false },
+    yaxis: { autorange: 'reversed', tickfont: { size: 11 } },
+    height: 320,
+  }, PLOTLY_CONFIG);
+})();
+
+// EBITDA margin bar
+(function() {
+  const d = GROUPS_DATA.filter(g=>g.ebitda_margin!=null && g.group!=='Otro')
+                       .sort((a,b) => b.ebitda_margin - a.ebitda_margin);
+  Plotly.newPlot('chart-ebitda', [{
+    type: 'bar', orientation: 'h',
+    x: d.map(g => g.ebitda_margin),
+    y: d.map(g => g.group),
+    marker: { color: d.map(g => g.color) },
+    hovertemplate: '<b>%{y}</b><br>EBITDA Margin: %{x:.1f}%<extra></extra>',
+    text: d.map(g => g.ebitda_margin.toFixed(1)+'%'),
+    textposition: 'outside', textfont: { size: 10 },
+  }], {
+    ...LAYOUT_BASE,
+    margin: { t: 8, r: 56, b: 32, l: 90 },
+    xaxis: { visible: false },
+    yaxis: { autorange: 'reversed', tickfont: { size: 11 } },
+    height: 320,
+  }, PLOTLY_CONFIG);
+})();
+
+// ── Section 03 Charts ─────────────────────────────────────────────────────────
+const TYPE_COLORS = {
+  'Privada MX':  '#1B365D',
+  'Extranjera':  '#B85C38',
+  'Pública MX':  '#5a9e3e',
+  'Certificación':'#7b52ab',
+  'Otra':        '#aaa',
+};
+
+// Institutions bar
+(function() {
+  const d = INSTITUTIONS_DATA.slice(0,15).reverse();
+  Plotly.newPlot('chart-inst', [{
+    type: 'bar', orientation: 'h',
+    x: d.map(i => i.n),
+    y: d.map(i => i.name.length > 28 ? i.name.substring(0,26)+'…' : i.name),
+    marker: { color: d.map(i => TYPE_COLORS[i.type] || '#aaa') },
+    hovertemplate: '<b>%{y}</b><br>%{x} directivos<extra></extra>',
+    text: d.map(i => i.n),
+    textposition: 'outside', textfont: { size: 10 },
+  }], {
+    ...LAYOUT_BASE,
+    margin: { t: 8, r: 40, b: 32, l: 200 },
+    xaxis: { visible: false },
+    yaxis: { tickfont: { size: 10 } },
+    height: 400,
+  }, PLOTLY_CONFIG);
+})();
+
+// Fields bar
+(function() {
+  const d = FIELDS_DATA.slice(0,12).reverse();
+  Plotly.newPlot('chart-fields', [{
+    type: 'bar', orientation: 'h',
+    x: d.map(f => f.n),
+    y: d.map(f => f.field.length > 28 ? f.field.substring(0,26)+'…' : f.field),
+    marker: { color: '#1B365D', opacity: 0.7 },
+    hovertemplate: '<b>%{y}</b><br>%{x} directivos<extra></extra>',
+    text: d.map(f => f.n),
+    textposition: 'outside', textfont: { size: 10 },
+  }], {
+    ...LAYOUT_BASE,
+    margin: { t: 8, r: 40, b: 32, l: 160 },
+    xaxis: { visible: false },
+    yaxis: { tickfont: { size: 10 } },
+    height: 400,
+  }, PLOTLY_CONFIG);
+})();
+
+// Institution type donut
+(function() {
+  const byType = {};
+  INSTITUTIONS_DATA.forEach(i => { byType[i.type] = (byType[i.type]||0) + i.n; });
+  const types  = Object.keys(byType);
+  const counts = Object.values(byType);
+  Plotly.newPlot('chart-inst-type', [{
+    type: 'pie',
+    labels: types,
+    values: counts,
+    marker: { colors: types.map(t => TYPE_COLORS[t]||'#aaa') },
+    hole: 0.5,
+    hovertemplate: '<b>%{label}</b><br>%{value} menciones (%{percent})<extra></extra>',
+    textinfo: 'label+percent', textfont: { size: 11 },
+  }], {
+    ...LAYOUT_BASE,
+    height: 280,
+    margin: { t: 8, r: 8, b: 8, l: 8 },
+    showlegend: false,
+  }, PLOTLY_CONFIG);
+})();
+
+// Degree levels bar
+(function() {
+  const d = LEVELS_DATA.filter(l => l.level && l.level !== 'nan' && l.level !== 'None')
+                       .sort((a,b) => b.n - a.n);
+  Plotly.newPlot('chart-levels', [{
+    type: 'bar',
+    x: d.map(l => l.level),
+    y: d.map(l => l.n),
+    marker: { color: '#1B365D', opacity: 0.75 },
+    hovertemplate: '<b>%{x}</b><br>%{y} directivos<extra></extra>',
+    text: d.map(l => l.n),
+    textposition: 'outside', textfont: { size: 11 },
+  }], {
+    ...LAYOUT_BASE,
+    margin: { t: 8, r: 16, b: 60, l: 16 },
+    xaxis: { tickfont: { size: 10 }, tickangle: -15 },
+    yaxis: { visible: false },
+    height: 280,
+  }, PLOTLY_CONFIG);
+})();
+
+// Education insight
+(function() {
+  const total = STATS.edu_mx_priv + STATS.edu_extranjera + STATS.edu_mx_pub;
+  const pctPriv = ((STATS.edu_mx_priv / total)*100).toFixed(0);
+  const pctExt  = ((STATS.edu_extranjera / total)*100).toFixed(0);
+  document.getElementById('insight-edu').innerHTML =
+    `<strong>El ${pctPriv}% de los estudios registrados provienen de universidades privadas mexicanas</strong> — encabezadas por el Tec de Monterrey e ITAM. ` +
+    `Las instituciones extranjeras (Harvard, Stanford, Wharton) representan el ${pctExt}% y están sobrerrepresentadas en los niveles de posgrado y MBA. ` +
+    `La UNAM, única universidad pública entre las 20 más frecuentes, ocupa el cuarto lugar.`;
+})();
+
+// ── Section 04: Career + Interlock flows ─────────────────────────────────────
+(function() {
+  const maxW = Math.max(...CAREER_DATA.map(f => f.weight));
+  const rows = CAREER_DATA.slice(0,15).map(f => {
+    const barW = Math.round(f.weight / maxW * 120);
+    const extTag = f.is_external ? '<span class="flow-ext">externo</span>' : '';
+    return `<div class="flow-row">
+      <div class="flow-labels">
+        <span class="flow-src">${f.source}</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-tgt">${f.target}</span>
+        ${extTag}
+      </div>
+      <div class="flow-bar">
+        <div class="bar-track" style="width:${barW}px">
+          <div class="bar-fill" style="width:100%;background:${f.is_external?'#B85C38':'#1B365D'}"></div>
+        </div>
+      </div>
+      <div class="flow-n">${f.weight}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('career-flows').innerHTML = rows;
+})();
+
+(function() {
+  const maxW = Math.max(...INTERLOCK_DATA.map(f => f.weight));
+  const rows = INTERLOCK_DATA.slice(0,12).map(f => {
+    const barW = Math.round(f.weight / maxW * 120);
+    return `<div class="flow-row">
+      <div class="flow-labels">
+        <span class="flow-src">${f.source}</span>
+        <span class="flow-arrow">↔</span>
+        <span class="flow-tgt">${f.target}</span>
+      </div>
+      <div class="flow-bar">
+        <div class="bar-track" style="width:${barW}px">
+          <div class="bar-fill" style="width:100%;background:${f.color||'#5b8db8'}"></div>
+        </div>
+      </div>
+      <div class="flow-n">${f.weight}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('interlock-flows').innerHTML = rows;
+})();
+
+// ── Fade-in on scroll ─────────────────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
