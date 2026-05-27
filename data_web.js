@@ -1918,3 +1918,1152 @@ const BOARD_STATS = {
   "n_previous": 1486,
   "n_companies": 47
 };
+
+const NETWORK_D3 = {
+  "nodes": [
+    {
+      "id": "005_Alfa SAB de CV",
+      "label": "Alfa SAB de CV",
+      "group": "Alfa",
+      "color": "#9467bd",
+      "mc_usd": 4784.0
+    },
+    {
+      "id": "009_Alpek",
+      "label": "Alpek SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 1556.0
+    },
+    {
+      "id": "010_Alsea SAB de CV",
+      "label": "Alsea SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 2343.0
+    },
+    {
+      "id": "011_Altos Hornos de Mexico SAB de CV",
+      "label": "Altos Hornos de Mexico SA de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 53.0
+    },
+    {
+      "id": "014_America Móvil",
+      "label": "America Movil SAB de CV",
+      "group": "Slim",
+      "color": "#1f77b4",
+      "mc_usd": 59900.0
+    },
+    {
+      "id": "019_Arca Continental",
+      "label": "Arca Continental SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 18036.0
+    },
+    {
+      "id": "041_Banco del Bajio SA Institucion de Banca Multiple",
+      "label": "Banco del Bajio SA Institucion de Banca Multiple",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 2869.0
+    },
+    {
+      "id": "056_Bbb Foods Inc",
+      "label": "Bbb Foods Inc",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 4344.0
+    },
+    {
+      "id": "057_Becle SAB de CV",
+      "label": "Becle SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 5304.0
+    },
+    {
+      "id": "070_CEMEX SAB de CV",
+      "label": "Cemex SAB de CV",
+      "group": "Cemex",
+      "color": "#8c564b",
+      "mc_usd": 8370.0
+    },
+    {
+      "id": "075_CFE",
+      "label": "CFE",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 0.0
+    },
+    {
+      "id": "095_Coca-Cola Femsa SAB de CV",
+      "label": "Coca-Cola Femsa SAB de CV",
+      "group": "Femsa",
+      "color": "#ff7f0e",
+      "mc_usd": 19729.0
+    },
+    {
+      "id": "101_Controladora Vuela Compania de Aviacion SAB de CV",
+      "label": "Controladora Vuela Compania de Aviacion SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 936.0
+    },
+    {
+      "id": "106_Corporacion Moctezuma SAB de CV",
+      "label": "Corporacion Moctezuma SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 3802.0
+    },
+    {
+      "id": "107_Corporativo Fragua SAB de CV",
+      "label": "Corporativo Fragua SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 3745.0
+    },
+    {
+      "id": "118_El puerto de Liverpool SAB de CV",
+      "label": "El Puerto de Liverpool SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 9031.0
+    },
+    {
+      "id": "150_Fibra Uno Administracion SA de CV",
+      "label": "Fibra Uno Administracion SA de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 4591.0
+    },
+    {
+      "id": "153_Fresnillo PLC",
+      "label": "Fresnillo PLC",
+      "group": "BAL",
+      "color": "#d62728",
+      "mc_usd": 5925.0
+    },
+    {
+      "id": "154_GCC SAB de CV",
+      "label": "GCC SAB de CV",
+      "group": "Cemex",
+      "color": "#8c564b",
+      "mc_usd": 3060.0
+    },
+    {
+      "id": "155_Gentera SAB de CV",
+      "label": "Gentera SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 2201.0
+    },
+    {
+      "id": "159_GMexico Transportes SAB de CV",
+      "label": "GMexico Transportes SAB de CV",
+      "group": "Gmexico",
+      "color": "#2ca02c",
+      "mc_usd": 8159.0
+    },
+    {
+      "id": "162_Gruma SAB de CV",
+      "label": "Gruma SAB de CV",
+      "group": "GrumaBanorte",
+      "color": "#17becf",
+      "mc_usd": 6468.0
+    },
+    {
+      "id": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
+      "label": "Grupo Aeroportuario del Centro Norte SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 3553.0
+    },
+    {
+      "id": "164_Grupo Aeroportuario del Pacifico SAB de CV",
+      "label": "Grupo Aeroportuario del Pacifico SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 9384.0
+    },
+    {
+      "id": "165_Grupo Aeroportuario del Sureste SAB de CV",
+      "label": "Grupo Aeroportuario del Sureste SAB de CV",
+      "group": "Yucatan",
+      "color": "#aec7e8",
+      "mc_usd": 8475.0
+    },
+    {
+      "id": "169_Grupo Bafar SAB de CV",
+      "label": "Grupo Bafar SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 1755.0
+    },
+    {
+      "id": "170_Grupo Bimbo",
+      "label": "Grupo Bimbo SAB de CV",
+      "group": "Bimbo",
+      "color": "#bcbd22",
+      "mc_usd": 16330.0
+    },
+    {
+      "id": "172_Grupo Carso SAB de CV",
+      "label": "Grupo Carso SAB de CV",
+      "group": "Slim",
+      "color": "#1f77b4",
+      "mc_usd": 15340.0
+    },
+    {
+      "id": "173_Grupo Comercial Chedraui SAB de CV",
+      "label": "Grupo Comercial Chedraui SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 0.0
+    },
+    {
+      "id": "176_Grupo Elektra SAB DE CV",
+      "label": "Grupo Elektra SAB DE CV",
+      "group": "Salinas",
+      "color": "#7f7f7f",
+      "mc_usd": 12216.0
+    },
+    {
+      "id": "178_Grupo Financiero Banorte SAB de CV",
+      "label": "Grupo Financiero Banorte SAB de CV",
+      "group": "GrumaBanorte",
+      "color": "#17becf",
+      "mc_usd": 24194.0
+    },
+    {
+      "id": "181_Grupo Financiero Inbursa SAB de CV",
+      "label": "Grupo Financiero Inbursa SAB de CV",
+      "group": "Slim",
+      "color": "#1f77b4",
+      "mc_usd": 16093.0
+    },
+    {
+      "id": "182_Grupo Gigante SAB de CV",
+      "label": "Grupo Gigante SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 1623.0
+    },
+    {
+      "id": "183_Grupo Herdez SAB de CV",
+      "label": "Grupo Herdez SAB de CV",
+      "group": "GrumaBanorte",
+      "color": "#17becf",
+      "mc_usd": 1060.0
+    },
+    {
+      "id": "184_Grupo KUO SAB De CV",
+      "label": "Grupo KUO SAB De CV",
+      "group": "Yucatan",
+      "color": "#aec7e8",
+      "mc_usd": 0.0
+    },
+    {
+      "id": "185_Grupo Lamosa SAB de CV",
+      "label": "Grupo Lamosa SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 2297.0
+    },
+    {
+      "id": "187_Grupo Mexico SAB de CV",
+      "label": "Grupo Mexico SAB de CV",
+      "group": "Gmexico",
+      "color": "#2ca02c",
+      "mc_usd": 43210.0
+    },
+    {
+      "id": "188_Grupo Nacional Provincial SAB",
+      "label": "Grupo Nacional Provincial SAB",
+      "group": "BAL",
+      "color": "#d62728",
+      "mc_usd": 1513.0
+    },
+    {
+      "id": "190_Grupo Palacio de Hierro SAB de CV",
+      "label": "Grupo Palacio de Hierro SAB de CV",
+      "group": "BAL",
+      "color": "#d62728",
+      "mc_usd": 1831.0
+    },
+    {
+      "id": "191_Grupo Profuturo SAB de CV",
+      "label": "Grupo Profuturo SAB de CV",
+      "group": "BAL",
+      "color": "#d62728",
+      "mc_usd": 1798.0
+    },
+    {
+      "id": "195_Grupo Simec SAB de CV",
+      "label": "Grupo Simec SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 5426.0
+    },
+    {
+      "id": "197_Grupo Televisa SAB",
+      "label": "Grupo Televisa SAB",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 1166.0
+    },
+    {
+      "id": "198_Grupo Traxion SAB de CV",
+      "label": "Grupo Traxion SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 588.0
+    },
+    {
+      "id": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "label": "Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "group": "Slim",
+      "color": "#1f77b4",
+      "mc_usd": 6467.0
+    },
+    {
+      "id": "206_Industrias CH SAB de CV",
+      "label": "Industrias CH SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 4455.0
+    },
+    {
+      "id": "207_Industrias Penoles SAB de CV",
+      "label": "Industrias Penoles SAB de CV",
+      "group": "BAL",
+      "color": "#d62728",
+      "mc_usd": 5703.0
+    },
+    {
+      "id": "221_Kimberly-Clark de Mexico SAB de CV",
+      "label": "Kimberly-Clark de Mexico SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 5204.0
+    },
+    {
+      "id": "223_La Comer SAB de CV",
+      "label": "La Comer SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 0.0
+    },
+    {
+      "id": "237_Megacable Holdings SAB de CV",
+      "label": "Megacable Holdings SAB de CV",
+      "group": "Otro",
+      "color": "#dddddd",
+      "mc_usd": 0.0
+    },
+    {
+      "id": "TV Azteca",
+      "label": "TV Azteca",
+      "group": "Salinas",
+      "color": "#7f7f7f",
+      "mc_usd": 0.0
+    }
+  ],
+  "edges": [
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "070_CEMEX SAB de CV",
+      "weight": 3,
+      "directors": [
+        "Mr. David Martinez Guzman",
+        "Mr. Francisco Javier Fernandez Carbajal",
+        "Mr. Armando Garza Sada"
+      ]
+    },
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "172_Grupo Carso SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Claudio Xavier Gonzalez Laporte , CPA"
+      ]
+    },
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "187_Grupo Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Claudio Xavier Gonzalez Laporte , CPA"
+      ]
+    },
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Claudio Xavier Gonzalez Laporte , CPA"
+      ]
+    },
+    {
+      "source": "172_Grupo Carso SAB de CV",
+      "target": "187_Grupo Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Claudio Xavier Gonzalez Laporte , CPA"
+      ]
+    },
+    {
+      "source": "172_Grupo Carso SAB de CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Antonio Cosio Arino",
+        "Mr. Claudio Xavier Gonzalez Laporte , CPA"
+      ]
+    },
+    {
+      "source": "187_Grupo Mexico SAB de CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Angel Emilio Gamboa",
+        "Mr. Claudio Xavier Gonzalez Laporte , CPA"
+      ]
+    },
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "173_Grupo Comercial Chedraui SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Jose Antonio Meade Kuribrena"
+      ]
+    },
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "118_El puerto de Liverpool SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Armando Garza Sada",
+        "Mr. Alejandro Ramirez Magana"
+      ]
+    },
+    {
+      "source": "005_Alfa SAB de CV",
+      "target": "185_Grupo Lamosa SAB de CV",
+      "weight": 3,
+      "directors": [
+        "Eng. Federico Toussaint Elosua",
+        "Mr. Armando Garza Sada",
+        "Mr. Rodrigo Fernandez Martinez"
+      ]
+    },
+    {
+      "source": "009_Alpek",
+      "target": "070_CEMEX SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Armando Garza Sada"
+      ]
+    },
+    {
+      "source": "009_Alpek",
+      "target": "118_El puerto de Liverpool SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Armando Garza Sada"
+      ]
+    },
+    {
+      "source": "009_Alpek",
+      "target": "185_Grupo Lamosa SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Armando Garza Sada",
+        "Mr. Rodrigo Fernandez Martinez"
+      ]
+    },
+    {
+      "source": "070_CEMEX SAB de CV",
+      "target": "118_El puerto de Liverpool SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Armando Garza Sada"
+      ]
+    },
+    {
+      "source": "070_CEMEX SAB de CV",
+      "target": "185_Grupo Lamosa SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Armando Garza Sada"
+      ]
+    },
+    {
+      "source": "118_El puerto de Liverpool SAB de CV",
+      "target": "185_Grupo Lamosa SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Armando Garza Sada"
+      ]
+    },
+    {
+      "source": "010_Alsea SAB de CV",
+      "target": "057_Becle SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Alberto Torrado Martinez"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "181_Grupo Financiero Inbursa SAB de CV",
+      "weight": 4,
+      "directors": [
+        "Ms. Patricia Raquel Hevia Coto",
+        "Mr. Antonio Cosio Pando",
+        "Mr. David Antonio Ibarra Munoz",
+        "Mr. Hector Slim Seade"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "172_Grupo Carso SAB de CV",
+      "weight": 5,
+      "directors": [
+        "Mr. David Antonio Ibarra Munoz",
+        "Mr. Carlos Slim Domit",
+        "Mr. Daniel Hajj Aboumrad",
+        "Ms. Vanessa Hajj Slim",
+        "Mr. Patrick Slim Domit"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Pablo Roberto Gonzalez Guajardo"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "weight": 3,
+      "directors": [
+        "Mr. Ernesto Vega Velasco",
+        "Ms. Claudia Janez Sanchez",
+        "Mr. David Antonio Ibarra Munoz"
+      ]
+    },
+    {
+      "source": "172_Grupo Carso SAB de CV",
+      "target": "181_Grupo Financiero Inbursa SAB de CV",
+      "weight": 4,
+      "directors": [
+        "Mr. Marco Antonio Slim Domit",
+        "Mr. Arturo Elias Ayub",
+        "Mr. Carlos Slim Helu",
+        "Mr. David Antonio Ibarra Munoz"
+      ]
+    },
+    {
+      "source": "172_Grupo Carso SAB de CV",
+      "target": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "weight": 3,
+      "directors": [
+        "Mr. Marco Antonio Slim Domit",
+        "Mr. Carlos Slim Helu",
+        "Mr. David Antonio Ibarra Munoz"
+      ]
+    },
+    {
+      "source": "181_Grupo Financiero Inbursa SAB de CV",
+      "target": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "weight": 3,
+      "directors": [
+        "Mr. Marco Antonio Slim Domit",
+        "Mr. Carlos Slim Helu",
+        "Mr. David Antonio Ibarra Munoz"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "173_Grupo Comercial Chedraui SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Francisco Jose Medina Chavez"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Ernesto Vega Velasco"
+      ]
+    },
+    {
+      "source": "014_America Móvil",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Ernesto Vega Velasco"
+      ]
+    },
+    {
+      "source": "184_Grupo KUO SAB De CV",
+      "target": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Ernesto Vega Velasco"
+      ]
+    },
+    {
+      "source": "184_Grupo KUO SAB De CV",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Ernesto Vega Velasco",
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Ernesto Vega Velasco"
+      ]
+    },
+    {
+      "source": "057_Becle SAB de CV",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Juan Francisco Beckmann Vidal"
+      ]
+    },
+    {
+      "source": "070_CEMEX SAB de CV",
+      "target": "162_Gruma SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Everardo Elizondo Almaguer"
+      ]
+    },
+    {
+      "source": "070_CEMEX SAB de CV",
+      "target": "178_Grupo Financiero Banorte SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Everardo Elizondo Almaguer"
+      ]
+    },
+    {
+      "source": "162_Gruma SAB de CV",
+      "target": "178_Grupo Financiero Banorte SAB de CV",
+      "weight": 4,
+      "directors": [
+        "Mr. Everardo Elizondo Almaguer",
+        "Mr. Thomas Stanley Heather Rodriguez",
+        "Mr. Carlos Hank Gonzalez",
+        "Mr. Juan Antonio Gonzalez Moreno"
+      ]
+    },
+    {
+      "source": "070_CEMEX SAB de CV",
+      "target": "154_GCC SAB de CV",
+      "weight": 4,
+      "directors": [
+        "Mr. Fernando Angel Gonzalez Olivieri",
+        "Mr. Armando J. Garcia Segovia",
+        "Mr. Ramiro Gerardo Villarreal Morales",
+        "Mr. Jose Antonio Gonzalez Flores"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Jose Antonio Vicente Fernandez Carbajal"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "165_Grupo Aeroportuario del Sureste SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Ricardo Guajardo Touche"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "154_GCC SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Luis Alfonso Nicolau Gutierrez"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "155_Gentera SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Luis Alfonso Nicolau Gutierrez"
+      ]
+    },
+    {
+      "source": "154_GCC SAB de CV",
+      "target": "155_Gentera SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Luis Alfonso Nicolau Gutierrez"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Enrique Francisco Jose Senior Hernandez"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "188_Grupo Nacional Provincial SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Victor Alberto Tiburcio Celorio"
+      ]
+    },
+    {
+      "source": "095_Coca-Cola Femsa SAB de CV",
+      "target": "190_Grupo Palacio de Hierro SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Victor Alberto Tiburcio Celorio"
+      ]
+    },
+    {
+      "source": "188_Grupo Nacional Provincial SAB",
+      "target": "190_Grupo Palacio de Hierro SAB de CV",
+      "weight": 8,
+      "directors": [
+        "Mr. Victor Alberto Tiburcio Celorio",
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D.",
+        "Mr. Fernando Benjamin Ruiz Sahagun",
+        "Mr. Eduardo Cepeda Fernandez",
+        "Mr. Raul Bailleres Gual",
+        "Mr. Juan Bordes Aznar",
+        "Mr. Alejandro Bailleres Gual",
+        "Mr. Jose Octavio Figueroa Garcia"
+      ]
+    },
+    {
+      "source": "101_Controladora Vuela Compania de Aviacion SAB de CV",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 2,
+      "directors": [
+        "Mr. Jose Luis Fernandez Fernandez , CPA",
+        "Mr. Ricardo Maldonado Yanez"
+      ]
+    },
+    {
+      "source": "106_Corporacion Moctezuma SAB de CV",
+      "target": "172_Grupo Carso SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Antonio Cosio Arino"
+      ]
+    },
+    {
+      "source": "106_Corporacion Moctezuma SAB de CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Antonio Cosio Arino"
+      ]
+    },
+    {
+      "source": "118_El puerto de Liverpool SAB de CV",
+      "target": "155_Gentera SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Carlos Antonio Danel Cendoya"
+      ]
+    },
+    {
+      "source": "118_El puerto de Liverpool SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Francisco Javier de Arrigunaga Gomez"
+      ]
+    },
+    {
+      "source": "153_Fresnillo PLC",
+      "target": "154_GCC SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Ruiz Sahagun , CPA"
+      ]
+    },
+    {
+      "source": "153_Fresnillo PLC",
+      "target": "187_Grupo Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Ruiz Sahagun , CPA"
+      ]
+    },
+    {
+      "source": "154_GCC SAB de CV",
+      "target": "187_Grupo Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Ruiz Sahagun , CPA"
+      ]
+    },
+    {
+      "source": "153_Fresnillo PLC",
+      "target": "188_Grupo Nacional Provincial SAB",
+      "weight": 1,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D."
+      ]
+    },
+    {
+      "source": "153_Fresnillo PLC",
+      "target": "190_Grupo Palacio de Hierro SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D."
+      ]
+    },
+    {
+      "source": "153_Fresnillo PLC",
+      "target": "191_Grupo Profuturo SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D."
+      ]
+    },
+    {
+      "source": "188_Grupo Nacional Provincial SAB",
+      "target": "191_Grupo Profuturo SAB de CV",
+      "weight": 6,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D.",
+        "Mr. Eduardo Cepeda Fernandez",
+        "Mr. Juan Bordes Aznar",
+        "Mr. Alejandro Bailleres Gual",
+        "Mr. Gerardo Carreto Chavez",
+        "Mr. Jose Octavio Figueroa Garcia"
+      ]
+    },
+    {
+      "source": "188_Grupo Nacional Provincial SAB",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 7,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D.",
+        "Mr. Raul Bailleres Gual",
+        "Mr. Fernando Senderos Mestre",
+        "Mr. Juan Bordes Aznar",
+        "Mr. Alejandro Bailleres Gual",
+        "Mr. Gerardo Carreto Chavez",
+        "Mr. Jose Octavio Figueroa Garcia"
+      ]
+    },
+    {
+      "source": "190_Grupo Palacio de Hierro SAB de CV",
+      "target": "191_Grupo Profuturo SAB de CV",
+      "weight": 6,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D.",
+        "Mr. Eduardo Cepeda Fernandez",
+        "Mr. Juan Bordes Aznar",
+        "Mr. Francisco Javier Simon Havaux",
+        "Mr. Alejandro Bailleres Gual",
+        "Mr. Jose Octavio Figueroa Garcia"
+      ]
+    },
+    {
+      "source": "190_Grupo Palacio de Hierro SAB de CV",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 6,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D.",
+        "Mr. Juan Pablo Bailleres Gual",
+        "Mr. Raul Bailleres Gual",
+        "Mr. Juan Bordes Aznar",
+        "Mr. Alejandro Bailleres Gual",
+        "Mr. Jose Octavio Figueroa Garcia"
+      ]
+    },
+    {
+      "source": "191_Grupo Profuturo SAB de CV",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 6,
+      "directors": [
+        "Dr. Arturo Manuel Fernandez Perez , Ph.D.",
+        "Mr. Juan Bordes Aznar",
+        "Mr. Alejandro Bailleres Gual",
+        "Mr. Tomas Lozano Molina",
+        "Mr. Gerardo Carreto Chavez",
+        "Mr. Jose Octavio Figueroa Garcia"
+      ]
+    },
+    {
+      "source": "155_Gentera SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Jose Manuel Canal Hernando"
+      ]
+    },
+    {
+      "source": "159_GMexico Transportes SAB de CV",
+      "target": "172_Grupo Carso SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "159_GMexico Transportes SAB de CV",
+      "target": "181_Grupo Financiero Inbursa SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "159_GMexico Transportes SAB de CV",
+      "target": "182_Grupo Gigante SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "159_GMexico Transportes SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "172_Grupo Carso SAB de CV",
+      "target": "182_Grupo Gigante SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "172_Grupo Carso SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "181_Grupo Financiero Inbursa SAB de CV",
+      "target": "182_Grupo Gigante SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "181_Grupo Financiero Inbursa SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "182_Grupo Gigante SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Arturo Elias Ayub"
+      ]
+    },
+    {
+      "source": "162_Gruma SAB de CV",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Carlos Hank Gonzalez"
+      ]
+    },
+    {
+      "source": "178_Grupo Financiero Banorte SAB de CV",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 3,
+      "directors": [
+        "Mr. Jose Antonio Chedraui Eguia",
+        "Mr. Carlos Hank Gonzalez",
+        "Mr. Alfonso de Angoitia Noriega"
+      ]
+    },
+    {
+      "source": "164_Grupo Aeroportuario del Pacifico SAB de CV",
+      "target": "182_Grupo Gigante SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Angel Losada Moreno"
+      ]
+    },
+    {
+      "source": "173_Grupo Comercial Chedraui SAB de CV",
+      "target": "178_Grupo Financiero Banorte SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Jose Antonio Chedraui Eguia",
+        "Mr. Federico Carlos Fernandez Senderos"
+      ]
+    },
+    {
+      "source": "173_Grupo Comercial Chedraui SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Federico Carlos Fernandez Senderos"
+      ]
+    },
+    {
+      "source": "178_Grupo Financiero Banorte SAB de CV",
+      "target": "184_Grupo KUO SAB De CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Federico Carlos Fernandez Senderos"
+      ]
+    },
+    {
+      "source": "173_Grupo Comercial Chedraui SAB de CV",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Jose Antonio Chedraui Eguia"
+      ]
+    },
+    {
+      "source": "176_Grupo Elektra SAB DE CV",
+      "target": "TV Azteca",
+      "weight": 4,
+      "directors": [
+        "Mr. Joaquin Arrangoiz Orvananos",
+        "Mr. Pedro Padilla Longoria",
+        "Mr. Luis Jorge Echarte Fernandez",
+        "Mr. Ricardo Benjamin Salinas Pliego"
+      ]
+    },
+    {
+      "source": "181_Grupo Financiero Inbursa SAB de CV",
+      "target": "206_Industrias CH SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Sergio Vigil Gonzalez"
+      ]
+    },
+    {
+      "source": "182_Grupo Gigante SAB de CV",
+      "target": "183_Grupo Herdez SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Luis Rebollar Corona"
+      ]
+    },
+    {
+      "source": "184_Grupo KUO SAB De CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 2,
+      "directors": [
+        "Mr. Fernando Senderos Mestre",
+        "Mr. Valentin Diez Morodo"
+      ]
+    },
+    {
+      "source": "184_Grupo KUO SAB De CV",
+      "target": "188_Grupo Nacional Provincial SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "184_Grupo KUO SAB De CV",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "188_Grupo Nacional Provincial SAB",
+      "target": "197_Grupo Televisa SAB",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "188_Grupo Nacional Provincial SAB",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "197_Grupo Televisa SAB",
+      "target": "207_Industrias Penoles SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "197_Grupo Televisa SAB",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "207_Industrias Penoles SAB de CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Fernando Senderos Mestre"
+      ]
+    },
+    {
+      "source": "187_Grupo Mexico SAB de CV",
+      "target": "191_Grupo Profuturo SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Angel Emilio Gamboa"
+      ]
+    },
+    {
+      "source": "191_Grupo Profuturo SAB de CV",
+      "target": "221_Kimberly-Clark de Mexico SAB de CV",
+      "weight": 1,
+      "directors": [
+        "Mr. Angel Emilio Gamboa"
+      ]
+    }
+  ]
+};

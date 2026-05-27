@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elite Empresarial México — Poder y Concentración</title>
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -251,6 +252,40 @@ nav {
 .tenure-co { font-size: 0.76rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tenure-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 
+/* ── Network section (07) ───────────────────────────────────── */
+#net-svg { display: block; cursor: grab; }
+#net-svg:active { cursor: grabbing; }
+.net-tooltip {
+  position: fixed; display: none;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+  font-size: 0.82rem; pointer-events: none;
+  box-shadow: 0 2px 12px rgba(27,54,93,.15); z-index: 999;
+  max-width: 220px; line-height: 1.5;
+}
+.net-detail-row {
+  padding: 10px 0; border-bottom: 1px solid #f0eeea;
+  font-size: 0.84rem; line-height: 1.55;
+}
+.net-detail-row:last-child { border-bottom: none; }
+.net-detail-row small { color: var(--muted); font-size: 0.76rem; display: block; margin-top: 2px; }
+.net-legend {
+  display: flex; flex-wrap: wrap; gap: 10px 20px;
+  margin-bottom: 16px; font-size: 0.8rem;
+}
+.net-legend-item { display: flex; align-items: center; gap: 6px; color: var(--ink2); }
+.net-controls {
+  display: flex; gap: 10px; margin-bottom: 12px;
+}
+.net-btn {
+  font-size: 0.78rem; font-weight: 500; padding: 5px 14px;
+  border: 1px solid var(--border); border-radius: 20px;
+  background: var(--white); color: var(--ink2); cursor: pointer;
+  transition: all .15s;
+}
+.net-btn:hover { border-color: var(--ink2); color: var(--ink); }
+.net-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
 /* ── Footer ─────────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
@@ -292,6 +327,7 @@ footer a { color: var(--ink2); }
     <li><a href="#trayectorias">Trayectorias</a></li>
     <li><a href="#propiedad">Propiedad</a></li>
     <li><a href="#permanencia">Permanencia</a></li>
+    <li><a href="#red">La red</a></li>
   </ul>
 </nav>
 
@@ -458,6 +494,49 @@ footer a { color: var(--ink2); }
 
   <div class="insight fade-in" id="insight-permanencia"></div>
 </section>
+
+<!-- SECTION 07: LA RED -->
+<section class="section fade-in" id="red">
+  <div class="section-label">07 — La red</div>
+  <h2 class="section-title">El mapa del poder — quién está conectado con quién</h2>
+  <p class="section-lead">
+    Cada nodo es una empresa, su tamaño proporcional al market cap.
+    Cada línea representa al menos un director en común — el grosor indica cuántos.
+    <strong>Arrastra</strong> nodos para reorganizar, <strong>zoom</strong> con la rueda del mouse,
+    y <strong>haz click</strong> en una empresa para ver sus conexiones.
+  </p>
+
+  <div class="card fade-in">
+    <div class="card-title">Red de interlocks — 90 vínculos entre empresas independientes (excluye subsidiarias)</div>
+
+    <!-- Leyenda de grupos -->
+    <div class="net-legend" id="net-legend"></div>
+
+    <!-- Controles -->
+    <div class="net-controls">
+      <button class="net-btn" id="btn-reset-zoom">↺ Reset zoom</button>
+      <button class="net-btn active" id="btn-labels">Etiquetas</button>
+    </div>
+
+    <!-- SVG container -->
+    <div style="position:relative; border-radius:8px; background:#fafaf7; overflow:hidden;">
+      <svg id="net-svg" style="width:100%; height:640px;"></svg>
+    </div>
+  </div>
+
+  <!-- Detail panel -->
+  <div class="card fade-in" style="margin-top:0;">
+    <div class="card-title" id="net-detail-title">Haz click en una empresa para ver sus interlocks</div>
+    <div id="net-detail" style="font-size:0.88rem; color:var(--muted); line-height:1.7; min-height:48px;">
+      Selecciona una empresa en la red para ver con quiénes comparte directores y qué nombres.
+    </div>
+  </div>
+
+  <div class="insight fade-in" id="insight-red"></div>
+</section>
+
+<!-- Tooltip (global, fixed) -->
+<div class="net-tooltip" id="net-tooltip"></div>
 
 <!-- FOOTER -->
 <footer class="fade-in">
@@ -959,6 +1038,199 @@ const TYPE_COLORS = {
     `En el lado de la rotación, <strong>Banorte destaca con 157 ex-directores</strong> frente a 28 actuales — ` +
     `reflejo de que, como banco público y privado durante décadas, ha atravesado múltiples ciclos de renovación. ` +
     `Gruma (4.1×) y Alsea muestran los consejos más activos en incorporar nuevos perfiles.`;
+})();
+
+// ── Section 07: La Red (D3 force graph) ──────────────────────────────────────
+(function() {
+  // ── Data ──────────────────────────────────────────────────────────────────
+  const nodes = NETWORK_D3.nodes.map(d => ({...d}));
+  const edges = NETWORK_D3.edges.map(d => ({...d}));
+
+  // Short label for display
+  function shortLabel(name) {
+    const skip = ['Grupo', 'Corporativo', 'Corporacion', 'Industrias', 'Controladora'];
+    const words = name.split(' ');
+    if (skip.includes(words[0]) && words.length > 1) {
+      return words[1].length > 9 ? words[1].substring(0, 8) + '…' : words[1];
+    }
+    return words[0].length > 10 ? words[0].substring(0, 9) + '…' : words[0];
+  }
+
+  // ── Legend ────────────────────────────────────────────────────────────────
+  const seenGroups = new Set();
+  const legendEl = document.getElementById('net-legend');
+  nodes.forEach(n => {
+    if (!seenGroups.has(n.group)) {
+      seenGroups.add(n.group);
+      legendEl.innerHTML += `<div class="net-legend-item">
+        <span class="g-dot" style="background:${n.color}"></span>${n.group}
+      </div>`;
+    }
+  });
+
+  // ── SVG setup ─────────────────────────────────────────────────────────────
+  const svgEl = document.getElementById('net-svg');
+  const W = svgEl.getBoundingClientRect().width || 900;
+  const H = 640;
+  svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  const svg = d3.select('#net-svg');
+  const g   = svg.append('g'); // zoomable group
+
+  // ── Scales ────────────────────────────────────────────────────────────────
+  const maxMC  = Math.max(...nodes.map(n => n.mc_usd || 0), 1);
+  const rScale = d3.scaleSqrt().domain([0, maxMC]).range([7, 34]);
+  const wScale = d3.scaleLinear().domain([1, d3.max(edges, e => e.weight)]).range([1.2, 7]);
+
+  // ── Force simulation ──────────────────────────────────────────────────────
+  const sim = d3.forceSimulation(nodes)
+    .force('link',    d3.forceLink(edges).id(d => d.id)
+                        .distance(d => 110 - Math.min(d.weight * 5, 50))
+                        .strength(0.4))
+    .force('charge',  d3.forceManyBody().strength(-260))
+    .force('center',  d3.forceCenter(W / 2, H / 2))
+    .force('collide', d3.forceCollide(d => rScale(d.mc_usd || 0) + 6));
+
+  // ── Draw edges ────────────────────────────────────────────────────────────
+  const linkSel = g.append('g').attr('class', 'links')
+    .selectAll('line')
+    .data(edges)
+    .join('line')
+    .attr('stroke', '#c8c5bc')
+    .attr('stroke-width', d => wScale(d.weight))
+    .attr('stroke-opacity', 0.55);
+
+  // ── Draw nodes ────────────────────────────────────────────────────────────
+  const nodeSel = g.append('g').attr('class', 'nodes')
+    .selectAll('circle')
+    .data(nodes)
+    .join('circle')
+    .attr('r', d => rScale(d.mc_usd || 0))
+    .attr('fill', d => d.color)
+    .attr('stroke', '#fff')
+    .attr('stroke-width', 1.8)
+    .style('cursor', 'pointer')
+    .call(d3.drag()
+      .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end',   (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
+
+  // ── Labels ────────────────────────────────────────────────────────────────
+  const labelSel = g.append('g').attr('class', 'labels')
+    .selectAll('text')
+    .data(nodes)
+    .join('text')
+    .text(d => shortLabel(d.label))
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => rScale(d.mc_usd || 0) + 11)
+    .attr('font-size', 9)
+    .attr('font-family', 'Inter, system-ui, sans-serif')
+    .attr('fill', '#1B365D')
+    .attr('font-weight', '500')
+    .style('pointer-events', 'none');
+
+  // ── Tick ──────────────────────────────────────────────────────────────────
+  sim.on('tick', () => {
+    linkSel
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    nodeSel
+      .attr('cx', d => d.x).attr('cy', d => d.y);
+    labelSel
+      .attr('x', d => d.x).attr('y', d => d.y);
+  });
+
+  // ── Zoom ──────────────────────────────────────────────────────────────────
+  const zoomBehavior = d3.zoom().scaleExtent([0.25, 4])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoomBehavior);
+
+  document.getElementById('btn-reset-zoom').addEventListener('click', () => {
+    svg.transition().duration(500).call(zoomBehavior.transform, d3.zoomIdentity);
+  });
+
+  // ── Label toggle ──────────────────────────────────────────────────────────
+  let labelsVisible = true;
+  document.getElementById('btn-labels').addEventListener('click', function() {
+    labelsVisible = !labelsVisible;
+    labelSel.attr('display', labelsVisible ? null : 'none');
+    this.classList.toggle('active', labelsVisible);
+  });
+
+  // ── Tooltip ───────────────────────────────────────────────────────────────
+  const tooltip = document.getElementById('net-tooltip');
+  const connectedTo = node => new Set(
+    edges.filter(e => e.source.id === node.id || e.target.id === node.id)
+         .flatMap(e => [e.source.id, e.target.id])
+  );
+
+  nodeSel
+    .on('mouseover', function(event, d) {
+      const connected = connectedTo(d);
+      nodeSel.attr('opacity', n => connected.has(n.id) ? 1 : 0.18);
+      linkSel.attr('opacity', e => (e.source.id === d.id || e.target.id === d.id) ? 0.9 : 0.04);
+      d3.select(this).attr('stroke-width', 3);
+      const mc = d.mc_usd ? '$' + (d.mc_usd / 1000).toFixed(1) + 'B' : 'sin datos';
+      tooltip.style.display = 'block';
+      tooltip.innerHTML = `<strong>${d.label}</strong><br>${d.group} · ${mc} USD`;
+    })
+    .on('mousemove', event => {
+      tooltip.style.left = (event.pageX + 14) + 'px';
+      tooltip.style.top  = (event.pageY - 36) + 'px';
+    })
+    .on('mouseout', function() {
+      nodeSel.attr('opacity', 1);
+      linkSel.attr('opacity', 0.55);
+      d3.select(this).attr('stroke-width', 1.8);
+      tooltip.style.display = 'none';
+    });
+
+  // ── Click — detail panel ──────────────────────────────────────────────────
+  nodeSel.on('click', (event, d) => {
+    event.stopPropagation();
+    const myEdges = edges.filter(e => e.source.id === d.id || e.target.id === d.id)
+                         .sort((a, b) => b.weight - a.weight);
+
+    const titleEl  = document.getElementById('net-detail-title');
+    const detailEl = document.getElementById('net-detail');
+    const mc = d.mc_usd ? ' · $' + (d.mc_usd / 1000).toFixed(1) + 'B USD' : '';
+
+    if (!myEdges.length) {
+      titleEl.textContent = d.label + mc;
+      detailEl.innerHTML  = '<span style="color:var(--muted)">Sin directores compartidos con otras empresas del universo.</span>';
+      return;
+    }
+
+    titleEl.textContent = `${d.label}${mc} — ${myEdges.length} interlocks`;
+    detailEl.innerHTML = myEdges.map(e => {
+      const other = e.source.id === d.id ? e.target : e.source;
+      const dirs  = e.directors.join(' · ');
+      return `<div class="net-detail-row">
+        <span class="g-dot" style="background:${other.color}"></span>
+        <strong>${other.label}</strong> — <strong>${e.weight}</strong> director${e.weight > 1 ? 'es' : ''} compartido${e.weight > 1 ? 's' : ''}
+        <small>${dirs}</small>
+      </div>`;
+    }).join('');
+
+    // Scroll to detail panel
+    detailEl.closest('.card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  // Click on background — deselect
+  svg.on('click', () => {
+    document.getElementById('net-detail-title').textContent = 'Haz click en una empresa para ver sus interlocks';
+    document.getElementById('net-detail').innerHTML = '<span style="color:var(--muted)">Selecciona una empresa en la red para ver con quiénes comparte directores y qué nombres.</span>';
+  });
+
+  // ── Insight ───────────────────────────────────────────────────────────────
+  document.getElementById('insight-red').innerHTML =
+    `<strong>Grupo KUO tiene la mayor centralidad de intermediación (betweenness) de la red</strong> — ` +
+    `actúa como "puente" entre clústeres que de otra forma no estarían conectados. ` +
+    `El grupo BAL (Baillères) es el más densamente interconectado internamente: ` +
+    `GNP, Palacio de Hierro, Profuturo y Peñoles comparten 6–8 directores entre sí — ` +
+    `son empresas separadas bajo el mismo control familiar, no subsidiarias. ` +
+    `<strong>Cemex → GCC</strong> tiene el mayor flujo de carrera del universo (17 personas) — ` +
+    `dos competidores del cemento con una cantera compartida de talento directivo.`;
 })();
 
 // ── Fade-in on scroll ─────────────────────────────────────────────────────────
