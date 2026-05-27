@@ -1176,3 +1176,745 @@ const INTERLOCK_DATA = [
     "color": "#2ca02c"
   }
 ];
+
+const CONCENTRATION_DATA = [
+  {
+    "company": "Becle",
+    "folder": "057_Becle SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 86.7,
+    "pct_total": 86.7,
+    "investor": "Beckmann Vidal (Juan Domingo & Family)",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Grupo Palacio de Hierro",
+    "folder": "190_Grupo Palacio de Hierro SAB de CV",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_top1": 82.8,
+    "pct_total": 82.8,
+    "investor": "Baillères Family",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Grupo Profuturo",
+    "folder": "191_Grupo Profuturo SAB de CV",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_top1": 76.4,
+    "pct_total": 76.4,
+    "investor": "Bailléres González (Alberto)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Grupo Carso",
+    "folder": "172_Grupo Carso SAB de CV",
+    "group": "Slim",
+    "color": "#1B365D",
+    "pct_top1": 76.0,
+    "pct_total": 76.0,
+    "investor": "Slim Helú family",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Fresnillo PLC",
+    "folder": "153_Fresnillo PLC",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_top1": 75.0,
+    "pct_total": 75.0,
+    "investor": "Industrias Penoles SAB de CV",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Comercial Chedraui",
+    "folder": "173_Grupo Comercial Chedraui SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 73.9,
+    "pct_total": 73.9,
+    "investor": "Chedraui Family",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Wal Mart de Mexico",
+    "folder": "323_Wal Mart de Mexico SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 70.6,
+    "pct_total": 70.6,
+    "investor": "Intersalt, S. de R.L. de C.V.",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "GMexico Transportes",
+    "folder": "159_GMexico Transportes SAB de CV",
+    "group": "Gmexico",
+    "color": "#c44a8a",
+    "pct_top1": 70.3,
+    "pct_total": 70.3,
+    "investor": "Grupo Mexico SAB de CV",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Herdez",
+    "folder": "183_Grupo Herdez SAB de CV",
+    "group": "GrumaBanorte",
+    "color": "#8c564b",
+    "pct_top1": 70.0,
+    "pct_total": 70.0,
+    "investor": "Familia (Hernández-Pons Torres)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Industrias CH",
+    "folder": "206_Industrias CH SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 66.0,
+    "pct_total": 66.0,
+    "investor": "Vigil González (Rufino)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Grupo Financiero Inbursa",
+    "folder": "181_Grupo Financiero Inbursa SAB de CV",
+    "group": "Slim",
+    "color": "#1B365D",
+    "pct_top1": 62.4,
+    "pct_total": 62.4,
+    "investor": "Slim Family",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Organizacion Soriana",
+    "folder": "260_Organizacion Soriana SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 57.3,
+    "pct_total": 86.2,
+    "investor": "Martín Bringas Family",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Grupo Simec",
+    "folder": "195_Grupo Simec SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 55.3,
+    "pct_total": 77.9,
+    "investor": "Industrias CH SAB de CV",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Lamosa",
+    "folder": "185_Grupo Lamosa SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 52.4,
+    "pct_total": 52.4,
+    "investor": "Elosua y Valdes Families",
+    "subtype": "Other Insider Investor"
+  },
+  {
+    "company": "Gruma",
+    "folder": "162_Gruma SAB de CV",
+    "group": "GrumaBanorte",
+    "color": "#8c564b",
+    "pct_top1": 52.3,
+    "pct_total": 52.3,
+    "investor": "Moreno Hernández (Graciela)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "La Comer",
+    "folder": "223_La Comer SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 51.9,
+    "pct_total": 51.9,
+    "investor": "Scotiabank Inverlat, S.A.",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Alfa",
+    "folder": "005_Alfa SAB de CV",
+    "group": "Alfa",
+    "color": "#2ca02c",
+    "pct_top1": 51.6,
+    "pct_total": 86.6,
+    "investor": "Fideicomiso Nafinsa",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Corporacion Moctezuma",
+    "folder": "106_Corporacion Moctezuma SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 51.5,
+    "pct_total": 76.9,
+    "investor": "Fresit, B.V.",
+    "subtype": "Holding Company"
+  },
+  {
+    "company": "GCC",
+    "folder": "154_GCC SAB de CV",
+    "group": "Cemex",
+    "color": "#d62728",
+    "pct_top1": 50.9,
+    "pct_total": 50.9,
+    "investor": "CAMCEM, SA de CV",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "America Movil",
+    "folder": "014_America Móvil",
+    "group": "Slim",
+    "color": "#1B365D",
+    "pct_top1": 50.4,
+    "pct_total": 50.4,
+    "investor": "Slim Domit Helú (Carlos)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Qualitas Controladora",
+    "folder": "275_Qualitas Controladora SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 50.0,
+    "pct_total": 50.0,
+    "investor": "Fideicomiso BanRegio 851-01287",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Orbia Advance Corp",
+    "folder": "259_Orbia Advance Corp SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 46.8,
+    "pct_total": 56.3,
+    "investor": "Grupo Empresarial Kaluz, S.A. de C.V.",
+    "subtype": "Holding Company"
+  },
+  {
+    "company": "Arca Continental",
+    "folder": "019_Arca Continental",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 46.6,
+    "pct_total": 46.6,
+    "investor": "Fideicomiso de Control",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Mexico",
+    "folder": "187_Grupo Mexico SAB de CV",
+    "group": "Gmexico",
+    "color": "#c44a8a",
+    "pct_top1": 40.6,
+    "pct_total": 63.4,
+    "investor": "Empresarios Industriales de Mexico, S.A. de C",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Bimbo",
+    "folder": "170_Grupo Bimbo",
+    "group": "Bimbo",
+    "color": "#7b52ab",
+    "pct_top1": 40.6,
+    "pct_total": 71.3,
+    "investor": "Normaciel, S.A. de C.V.",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Prologis Property Mexico SA",
+    "folder": "272_Prologis Property Mexico SA de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 34.6,
+    "pct_total": 34.6,
+    "investor": "Prologis Inc",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Industrias Penoles",
+    "folder": "207_Industrias Penoles SAB de CV",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_top1": 33.5,
+    "pct_total": 52.8,
+    "investor": "Albacor, S.A. de C.V.",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Gentera",
+    "folder": "155_Gentera SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 32.0,
+    "pct_total": 32.0,
+    "investor": "Promotora Social México, A.C",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Fibra Uno Administracion SA",
+    "folder": "150_Fibra Uno Administracion SA de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 27.4,
+    "pct_total": 27.4,
+    "investor": "Control Trust",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Aeroportuario del Sureste",
+    "folder": "165_Grupo Aeroportuario del Sureste SAB de CV",
+    "group": "Yucatan",
+    "color": "#5a9e3e",
+    "pct_top1": 23.5,
+    "pct_total": 46.5,
+    "investor": "CHPAF Holdings SAPI de CV",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Banco del Bajio SA Institucion de Banc",
+    "folder": "041_Banco del Bajio SA Institucion de Banca Multiple",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 22.1,
+    "pct_total": 32.5,
+    "investor": "Ascencio Salvador (Onate)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Vitro",
+    "folder": "322_Vitro SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 21.0,
+    "pct_total": 86.8,
+    "investor": "Martínez Guzmán (David M)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Grupo Aeroportuario del Centro Norte",
+    "folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 19.2,
+    "pct_total": 19.2,
+    "investor": "CONCESSOC 31 SAS",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Traxion",
+    "folder": "198_Grupo Traxion SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 13.7,
+    "pct_total": 13.7,
+    "investor": "Discovery Americas",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Gigante",
+    "folder": "182_Grupo Gigante SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 13.3,
+    "pct_total": 68.7,
+    "investor": "Fideicomiso Banamex",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Alsea",
+    "folder": "010_Alsea SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 12.4,
+    "pct_total": 39.0,
+    "investor": "Torrado Martinez (Cosme Alberto)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Regional",
+    "folder": "281_Regional SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 9.7,
+    "pct_total": 23.3,
+    "investor": "Rivero Santos (Jaime Alberto)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Grupo Bafar",
+    "folder": "169_Grupo Bafar SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 8.4,
+    "pct_total": 10.2,
+    "investor": "Baeza Fares (Jorge Alberto)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Vista Energy",
+    "folder": "321_Vista Energy SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 8.1,
+    "pct_total": 8.1,
+    "investor": "Galuccio (Miguel Matias)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Grupo Televisa",
+    "folder": "197_Grupo Televisa SAB",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 7.4,
+    "pct_total": 7.4,
+    "investor": "Fintech Holdings Inc",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Grupo Aeroportuario del Pacifico",
+    "folder": "164_Grupo Aeroportuario del Pacifico SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 5.0,
+    "pct_total": 5.0,
+    "investor": "Aeropuertos Mexicanos del Pacifico, S.A. de C",
+    "subtype": "Corporation"
+  },
+  {
+    "company": "Vesta Real Estate Corporation",
+    "folder": "318_Vesta Real Estate Corporation SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 2.4,
+    "pct_total": 4.2,
+    "investor": "Berho Corona (Lorenzo Manuel)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Nemak",
+    "folder": "253_Nemak SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 2.0,
+    "pct_total": 3.7,
+    "investor": "Armando (Garza Sada)",
+    "subtype": "Individual Investor"
+  },
+  {
+    "company": "Controladora Vuela Compania de Aviacio",
+    "folder": "101_Controladora Vuela Compania de Aviacion SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_top1": 1.0,
+    "pct_total": 1.1,
+    "investor": "Beltranena (Enrique)",
+    "subtype": "Individual Investor"
+  }
+];
+
+const PROP_STATS = {
+  "n_with_strategic": 44,
+  "n_majority": 21,
+  "n_no_strategic": 15,
+  "median_pct": 46.7,
+  "no_strategic": [
+    "Alpek",
+    "Bbb Foods Inc",
+    "Cemex",
+    "Coca-Cola Femsa",
+    "Corporativo Fragua",
+    "El Puerto de Liverpool",
+    "Grupo Financiero Banorte",
+    "Grupo Nacional Provincial",
+    "Grupo Sanborns",
+    "Impulsora del Desarrollo y el Empleo e",
+    "Industrias Bachoco",
+    "Kimberly-Clark de Mexico",
+    "Megacable Holdings",
+    "Operadora de Sites Mexicanos  De CV",
+    "Promotora y Operadora de Infraestructu"
+  ]
+};
+
+const TENURE_DATA = [
+  {
+    "name": "Mr. Angel Emilio Gamboa",
+    "company": "Kimberly-Clark de Mexico",
+    "position": "Independent Director",
+    "age": 86,
+    "years": 44,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Raul Bailleres Gual",
+    "company": "Industrias Penoles",
+    "position": "Executive Director",
+    "age": null,
+    "years": 43,
+    "group": "BAL",
+    "color": "#5b8db8"
+  },
+  {
+    "name": "Mr. Valentin Diez Morodo",
+    "company": "Kimberly-Clark de Mexico",
+    "position": "Independent Vice Chairman of the Board",
+    "age": 83,
+    "years": 42,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Antonio Cosio Arino",
+    "company": "Kimberly-Clark de Mexico",
+    "position": "Independent Director",
+    "age": 87,
+    "years": 38,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Fernando Senderos Mestre",
+    "company": "Industrias Penoles",
+    "position": "Independent Director",
+    "age": 74,
+    "years": 37,
+    "group": "BAL",
+    "color": "#5b8db8"
+  },
+  {
+    "name": "Mr. Alejandro Rafael Lara Hakim",
+    "company": "Grupo Comercial Chedraui",
+    "position": "Director - Works",
+    "age": 64,
+    "years": 37,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Claudio Xavier Gonzalez Laporte , CP",
+    "company": "Alfa",
+    "position": "Independent Director",
+    "age": 89,
+    "years": 37,
+    "group": "Alfa",
+    "color": "#2ca02c"
+  },
+  {
+    "name": "Mr. Roberto Cannizzo Consiglio",
+    "company": "Corporacion Moctezuma",
+    "position": "Independent Director",
+    "age": null,
+    "years": 36,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Juan Bordes Aznar",
+    "company": "Grupo Nacional Provincial",
+    "position": "Executive Proprietary Director",
+    "age": null,
+    "years": 35,
+    "group": "BAL",
+    "color": "#5b8db8"
+  },
+  {
+    "name": "Mr. Claudio Xavier Gonzalez Laporte , CP",
+    "company": "Grupo Mexico",
+    "position": "Independent Director",
+    "age": 89,
+    "years": 35,
+    "group": "Gmexico",
+    "color": "#c44a8a"
+  },
+  {
+    "name": "Mr. Juan Bordes Aznar",
+    "company": "Industrias Penoles",
+    "position": "Executive Director",
+    "age": null,
+    "years": 35,
+    "group": "BAL",
+    "color": "#5b8db8"
+  },
+  {
+    "name": "Mr. Rodolfo Jesus Garcia Gomez de Parada",
+    "company": "Industrias CH",
+    "position": "Independent Director",
+    "age": 71,
+    "years": 34,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Luis Bernardo Marquez Villalobos",
+    "company": "GCC",
+    "position": "Director",
+    "age": null,
+    "years": 34,
+    "group": "Cemex",
+    "color": "#d62728"
+  },
+  {
+    "name": "Ms. Maria Martha Marquez Villalobos",
+    "company": "GCC",
+    "position": "Director",
+    "age": null,
+    "years": 34,
+    "group": "Cemex",
+    "color": "#d62728"
+  },
+  {
+    "name": "Mr. Raul Carlos Obregon del Corral",
+    "company": "Grupo Palacio de Hierro",
+    "position": "Independent Director",
+    "age": null,
+    "years": 34,
+    "group": "BAL",
+    "color": "#5b8db8"
+  },
+  {
+    "name": "Mr. Jose Antonio Ponce Hernandez",
+    "company": "Grupo Financiero Inbursa",
+    "position": "Chief Executive Officer of Inversora Bur",
+    "age": null,
+    "years": 34,
+    "group": "Slim",
+    "color": "#1B365D"
+  },
+  {
+    "name": "Mr. Enrique G. Terrazas Torres",
+    "company": "GCC",
+    "position": "Director",
+    "age": null,
+    "years": 34,
+    "group": "Cemex",
+    "color": "#d62728"
+  },
+  {
+    "name": "Mr. Ramiro Gerardo Villarreal Morales",
+    "company": "GCC",
+    "position": "Director",
+    "age": null,
+    "years": 34,
+    "group": "Cemex",
+    "color": "#d62728"
+  },
+  {
+    "name": "Eng. Federico Toussaint Elosua",
+    "company": "Grupo Lamosa",
+    "position": "Chairman of the Board, Proprietary Direc",
+    "age": null,
+    "years": 33,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "name": "Mr. Pablo Jose Gonzalez Guerra",
+    "company": "La Comer",
+    "position": "Director",
+    "age": null,
+    "years": 33,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  }
+];
+
+const TURNOVER_DATA = [
+  {
+    "company": "Grupo Financiero Banorte",
+    "ratio": 5.6,
+    "current": 28,
+    "previous": 157,
+    "group": "GrumaBanorte",
+    "color": "#8c564b"
+  },
+  {
+    "company": "Gruma",
+    "ratio": 4.1,
+    "current": 14,
+    "previous": 58,
+    "group": "GrumaBanorte",
+    "color": "#8c564b"
+  },
+  {
+    "company": "Grupo Aeroportuario del Centro Norte",
+    "ratio": 3.0,
+    "current": 18,
+    "previous": 54,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "company": "Grupo Aeroportuario del Pacifico",
+    "ratio": 2.7,
+    "current": 19,
+    "previous": 52,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "company": "Alsea",
+    "ratio": 2.7,
+    "current": 21,
+    "previous": 57,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "company": "Coca-Cola Femsa",
+    "ratio": 2.4,
+    "current": 29,
+    "previous": 69,
+    "group": "Femsa",
+    "color": "#e07b39"
+  },
+  {
+    "company": "Grupo Bimbo",
+    "ratio": 2.3,
+    "current": 29,
+    "previous": 67,
+    "group": "Bimbo",
+    "color": "#7b52ab"
+  },
+  {
+    "company": "Grupo Simec",
+    "ratio": 2.3,
+    "current": 7,
+    "previous": 16,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  },
+  {
+    "company": "Industrias Penoles",
+    "ratio": 2.2,
+    "current": 33,
+    "previous": 74,
+    "group": "BAL",
+    "color": "#5b8db8"
+  },
+  {
+    "company": "Grupo Televisa",
+    "ratio": 2.1,
+    "current": 28,
+    "previous": 60,
+    "group": "Otro",
+    "color": "#a8a8a8"
+  }
+];
+
+const BOARD_STATS = {
+  "avg_age": 61.6,
+  "med_tenure": 6.0,
+  "avg_tenure": 8.8,
+  "n_current": 1042,
+  "n_previous": 1486,
+  "n_companies": 47
+};

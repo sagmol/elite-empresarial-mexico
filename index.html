@@ -210,6 +210,47 @@ nav {
 .flow-bar { flex-shrink: 0; }
 .flow-n { font-size: 0.78rem; color: var(--muted); min-width: 28px; text-align: right; }
 
+/* ── Stat mini cards (sections 05-06) ───────────────────────── */
+.stat-mini-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-bottom: 32px;
+}
+.stat-mini {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.stat-mini-n {
+  font-family: var(--font-s);
+  font-size: 2.4rem; font-weight: 600;
+  color: var(--ink); line-height: 1;
+}
+.stat-mini-n span { font-size: 1.1rem; color: var(--muted); margin-left: 3px; }
+.stat-mini-l {
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); margin-top: 8px;
+}
+.stat-mini-sub { font-size: 0.8rem; color: var(--ink2); margin-top: 3px; font-style: italic; }
+
+/* ── Tenure list (section 06) ────────────────────────────────── */
+.tenure-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 0; border-bottom: 1px solid #f0eeea;
+  font-size: 0.84rem;
+}
+.tenure-row:last-child { border-bottom: none; }
+.tenure-years {
+  font-family: var(--font-s); font-size: 1.6rem; font-weight: 600;
+  color: var(--ink); min-width: 54px; text-align: right; flex-shrink: 0; line-height: 1;
+}
+.tenure-years span { font-size: 0.7rem; color: var(--muted); display: block; }
+.tenure-info { flex: 1; overflow: hidden; }
+.tenure-name { font-weight: 500; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tenure-co { font-size: 0.76rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tenure-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
 /* ── Footer ─────────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
@@ -249,6 +290,8 @@ footer a { color: var(--ink2); }
     <li><a href="#concentracion">Concentración</a></li>
     <li><a href="#perfil">Perfil</a></li>
     <li><a href="#trayectorias">Trayectorias</a></li>
+    <li><a href="#propiedad">Propiedad</a></li>
+    <li><a href="#permanencia">Permanencia</a></li>
   </ul>
 </nav>
 
@@ -367,6 +410,53 @@ footer a { color: var(--ink2); }
       <div id="interlock-flows"></div>
     </div>
   </div>
+</section>
+
+<!-- SECTION 05: PROPIEDAD -->
+<section class="section fade-in" id="propiedad">
+  <div class="section-label">05 — Propiedad</div>
+  <h2 class="section-title">La bolsa mexicana tiene dueño — casi siempre es una familia</h2>
+  <p class="section-lead">
+    En <strong id="prop-n-maj">—</strong> de las <strong id="prop-n-total">—</strong> empresas con datos de accionistas,
+    un solo accionista estratégico — una familia, un holding o una corporación — controla más del 50% de las acciones.
+    En el extremo opuesto, <strong id="prop-n-none">—</strong> empresas cotizan sin un accionista dominante identificado:
+    su consejo lo elige el mercado institucional.
+  </p>
+
+  <div class="stat-mini-grid fade-in" id="prop-stats-cards"></div>
+
+  <div class="card fade-in">
+    <div class="card-title">% en manos del principal accionista estratégico — ordenado por concentración</div>
+    <div class="chart-wrap" style="min-height:840px;" id="chart-concentration"></div>
+  </div>
+
+  <div class="insight fade-in" id="insight-propiedad"></div>
+</section>
+
+<!-- SECTION 06: PERMANENCIA -->
+<section class="section fade-in" id="permanencia">
+  <div class="section-label">06 — Permanencia</div>
+  <h2 class="section-title">Los mismos de siempre — décadas en el mismo consejo</h2>
+  <p class="section-lead">
+    El director promedio lleva <strong id="perm-avg-years">—</strong> años en su puesto actual.
+    Algunos llevan más de cuatro décadas. Más allá de la permanencia individual,
+    la rotación histórica revela qué tan abiertos son los consejos a sangre nueva.
+  </p>
+
+  <div class="stat-mini-grid fade-in" id="perm-stats-cards"></div>
+
+  <div class="two-col fade-in">
+    <div class="card">
+      <div class="card-title">Top 20 — Directores actuales con más años en el mismo puesto</div>
+      <div id="tenure-list"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Rotación histórica — ex-directores vs. actuales (ratio)</div>
+      <div id="turnover-list"></div>
+    </div>
+  </div>
+
+  <div class="insight fade-in" id="insight-permanencia"></div>
 </section>
 
 <!-- FOOTER -->
@@ -738,6 +828,137 @@ const TYPE_COLORS = {
     </div>`;
   }).join('');
   document.getElementById('interlock-flows').innerHTML = rows;
+})();
+
+// ── Section 05: Propiedad ─────────────────────────────────────────────────────
+(function() {
+  document.getElementById('prop-n-maj').textContent   = PROP_STATS.n_majority;
+  document.getElementById('prop-n-total').textContent = PROP_STATS.n_with_strategic;
+  document.getElementById('prop-n-none').textContent  = PROP_STATS.n_no_strategic;
+
+  document.getElementById('prop-stats-cards').innerHTML = `
+    <div class="stat-mini">
+      <div class="stat-mini-n">${PROP_STATS.n_majority}</div>
+      <div class="stat-mini-l">Con mayoría absoluta</div>
+      <div class="stat-mini-sub">Un solo accionista &gt;50%</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-n">${PROP_STATS.median_pct}<span>%</span></div>
+      <div class="stat-mini-l">Concentración mediana</div>
+      <div class="stat-mini-sub">Entre empresas con accionista estratégico</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-n">${PROP_STATS.n_no_strategic}</div>
+      <div class="stat-mini-l">Sin accionista dominante</div>
+      <div class="stat-mini-sub">${PROP_STATS.no_strategic.slice(0,3).join(', ')}…</div>
+    </div>
+  `;
+
+  // Horizontal bar chart — concentration
+  const d = [...CONCENTRATION_DATA].sort((a, b) => a.pct_top1 - b.pct_top1);
+  const chartH = Math.max(540, d.length * 19 + 80);
+
+  Plotly.newPlot('chart-concentration', [{
+    type: 'bar', orientation: 'h',
+    y: d.map(c => c.company),
+    x: d.map(c => c.pct_top1),
+    marker: { color: d.map(c => c.color), opacity: 0.82 },
+    customdata: d.map(c => [c.investor, c.group, c.pct_total]),
+    hovertemplate: '<b>%{y}</b><br>%{customdata[0]}<br><b>%{x:.1f}%</b> outstanding<br>Grupo: %{customdata[1]}<extra></extra>',
+    text: d.map(c => c.pct_top1 >= 18 ? c.pct_top1.toFixed(1) + '%' : ''),
+    textposition: 'inside', insidetextanchor: 'middle',
+    textfont: { color: 'white', size: 9.5 },
+  }], {
+    ...LAYOUT_BASE,
+    height: chartH,
+    margin: { t: 12, r: 60, b: 40, l: 215 },
+    xaxis: { range: [0, 100], ticksuffix: '%', tickfont: { size: 10 } },
+    yaxis: { automargin: true, tickfont: { size: 10 } },
+    shapes: [{
+      type: 'line', x0: 50, x1: 50, y0: -0.5, y1: d.length - 0.5,
+      line: { color: '#B85C38', width: 1.5, dash: 'dash' }
+    }],
+    annotations: [{
+      x: 51, y: d.length - 0.5, text: 'Control mayoritario',
+      showarrow: false, xanchor: 'left',
+      font: { size: 10, color: '#B85C38' }
+    }],
+  }, PLOTLY_CONFIG);
+
+  document.getElementById('insight-propiedad').innerHTML =
+    `<strong>El caso más extremo: Becle — la familia Beckmann controla el 86.7% de la empresa productora de José Cuervo.</strong> ` +
+    `Palacio de Hierro (Baillères, 82.8%) y Grupo Carso (Slim, 76%) son ejemplos similares de control familiar absoluto. ` +
+    `En el extremo opuesto, <strong>${PROP_STATS.n_no_strategic} empresas</strong> — entre ellas Cemex, Banorte y Liverpool — ` +
+    `no tienen un accionista estratégico registrado: su gobierno corporativo lo determinan los inversionistas institucionales. ` +
+    `Nota: algunas empresas con control indirecto (Coca-Cola FEMSA controlada por FEMSA, o GNP por Baillères vía holding) ` +
+    `pueden no aparecer en esta clasificación si su vehículo de control no está registrado como entidad estratégica por Bloomberg.`;
+})();
+
+// ── Section 06: Permanencia ───────────────────────────────────────────────────
+(function() {
+  document.getElementById('perm-avg-years').textContent = BOARD_STATS.avg_tenure;
+
+  document.getElementById('perm-stats-cards').innerHTML = `
+    <div class="stat-mini">
+      <div class="stat-mini-n">${BOARD_STATS.avg_age}<span> años</span></div>
+      <div class="stat-mini-l">Edad promedio</div>
+      <div class="stat-mini-sub">${BOARD_STATS.n_current} directores en ${BOARD_STATS.n_companies} empresas</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-n">${BOARD_STATS.avg_tenure}<span> años</span></div>
+      <div class="stat-mini-l">En posición (promedio)</div>
+      <div class="stat-mini-sub">Mediana: ${BOARD_STATS.med_tenure} años</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-n">${BOARD_STATS.n_previous.toLocaleString()}</div>
+      <div class="stat-mini-l">Ex-directores históricos</div>
+      <div class="stat-mini-sub">Registros desde los años 2000</div>
+    </div>
+  `;
+
+  // Tenure list — top 20 longest-serving
+  const maxY = Math.max(...TENURE_DATA.map(t => t.years));
+  document.getElementById('tenure-list').innerHTML = TENURE_DATA.map(t => {
+    const trackW = Math.round(t.years / maxY * 100);
+    const posShort = t.position.length > 32 ? t.position.substring(0, 30) + '…' : t.position;
+    return `<div class="tenure-row">
+      <div class="tenure-years">${t.years}<span>años</span></div>
+      <div class="tenure-info">
+        <div class="tenure-name">${t.name}</div>
+        <div class="tenure-co">${t.company} · ${posShort}</div>
+        <div class="bar-track" style="width:${trackW}%; max-width:160px; height:4px; margin-top:5px;">
+          <div class="bar-fill" style="width:100%; background:${t.color}"></div>
+        </div>
+      </div>
+      <div class="tenure-dot" style="background:${t.color}"></div>
+    </div>`;
+  }).join('');
+
+  // Turnover list
+  const maxR = Math.max(...TURNOVER_DATA.map(t => t.ratio));
+  document.getElementById('turnover-list').innerHTML = TURNOVER_DATA.map(t => {
+    const barW = Math.round(t.ratio / maxR * 130);
+    return `<div class="flow-row">
+      <div class="flow-labels">
+        <span class="flow-src">${t.company}</span>
+        <span class="flow-arrow" style="font-size:0.72rem">${t.previous} ex / ${t.current} act.</span>
+      </div>
+      <div class="flow-bar">
+        <div class="bar-track" style="width:${barW}px">
+          <div class="bar-fill" style="width:100%; background:${t.color}"></div>
+        </div>
+      </div>
+      <div class="flow-n">${t.ratio.toFixed(1)}×</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('insight-permanencia').innerHTML =
+    `<strong>Claudio X. González Laporte encarna mejor que nadie la permanencia de la élite empresarial mexicana:</strong> ` +
+    `lleva 37 años como director en Alfa y 35 años en Grupo México — simultáneamente, en dos grupos distintos. ` +
+    `Raúl Baillères Gual acumula 43 años en Peñoles, mientras Ángel Emilio Gamboa lleva 44 años en Kimberly-Clark. ` +
+    `En el lado de la rotación, <strong>Banorte destaca con 157 ex-directores</strong> frente a 28 actuales — ` +
+    `reflejo de que, como banco público y privado durante décadas, ha atravesado múltiples ciclos de renovación. ` +
+    `Gruma (4.1×) y Alsea muestran los consejos más activos en incorporar nuevos perfiles.`;
 })();
 
 // ── Fade-in on scroll ─────────────────────────────────────────────────────────
