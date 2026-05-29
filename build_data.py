@@ -399,6 +399,66 @@ top_turnover       = to_native(top_turnover)
 board_stats        = to_native(board_stats)
 network_d3         = to_native(network_d3)
 
+# ── 10. COMMUNITY GRAPH (Sección 01) ─────────────────────────────────────────
+comm_res = pd.read_csv(f'{BASE}\\community_results_full.csv') if \
+    __import__('os').path.exists(f'{BASE}\\community_results_full.csv') else \
+    pd.read_csv(f'{BASE}\\community_full_results.csv')
+
+# Colores por comunidad
+COMM_COLORS = {
+    0:  '#d62728', 3:  '#1B365D', 9:  '#7b52ab', 12: '#bbbbbb',
+    14: '#5b8db8', 15: '#e07b39', 16: '#c44a8a', 17: '#8c564b',
+    18: '#17a0b0', 20: '#2ca02c', 24: '#a8a8a8', 25: '#5a9e3e',
+    27: '#cccccc',
+}
+COMM_NAMES = {
+    0:  'Cemex · Alfa', 3:  'Slim', 9:  'Arca · Fibra · Comer',
+    12: 'Fragua', 14: 'BAL', 15: 'Femsa · Consumer',
+    16: 'Gmexico', 17: 'Gruma · Bimbo · Banorte', 18: 'Bajío · GAP',
+    20: 'Salinas · ASUR', 24: 'CH · Simec', 25: 'Infraestructura · CFE',
+    27: 'Megacable',
+}
+
+# Nodos: dataset companies con su comunidad
+comm_map = {r['node_id']: r['community'] for _, r in comm_res.iterrows()}
+comm_nodes = []
+for node in net['nodes']:
+    if node['type'] != 'dataset':
+        continue
+    mc  = mc_by_id.get(node['id'], 0) or 0
+    cid = comm_map.get(node['id'], -1)
+    comm_nodes.append({
+        'id'        : node['id'],
+        'label'     : node['label'],
+        'group_manual': node['group'],
+        'community' : int(cid),
+        'comm_name' : COMM_NAMES.get(int(cid), f'C{cid}'),
+        'color'     : COMM_COLORS.get(int(cid), '#aaaaaa'),
+        'mc_usd'    : round(float(mc), 0),
+    })
+
+# Aristas: interlocks + career entre dataset nodes
+dataset_ids = {n['id'] for n in net['nodes'] if n['type'] == 'dataset'}
+comm_edges = []
+seen = set()
+for edge in net['edges_interlock'] + net.get('edges_career', []):
+    s, t = edge['source'], edge['target']
+    if s not in dataset_ids or t not in dataset_ids:
+        continue
+    if edge.get('is_subsidiary_link'):
+        continue
+    key = tuple(sorted([s, t]))
+    if key in seen:
+        continue
+    seen.add(key)
+    comm_edges.append({
+        'source': s, 'target': t,
+        'weight': edge.get('weight', 1),
+        'type'  : edge.get('network', 'interlock'),
+    })
+
+community_graph = to_native({'nodes': comm_nodes, 'edges': comm_edges})
+
 js = f"""// data_web.js — Elite Empresarial México
 // Generado automáticamente. No editar manualmente.
 
@@ -429,6 +489,8 @@ const TURNOVER_DATA = {json.dumps(top_turnover, ensure_ascii=False, indent=2)};
 const BOARD_STATS = {json.dumps(board_stats, ensure_ascii=False, indent=2)};
 
 const NETWORK_D3 = {json.dumps(network_d3, ensure_ascii=False, indent=2)};
+
+const COMMUNITY_GRAPH = {json.dumps(community_graph, ensure_ascii=False, indent=2)};
 """
 
 with open(OUT, 'w', encoding='utf-8') as f:

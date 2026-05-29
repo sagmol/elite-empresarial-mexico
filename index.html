@@ -367,6 +367,18 @@ footer a { color: var(--ink2); }
     <table class="groups-table" id="groups-table"></table>
   </div>
 
+  <div class="card fade-in" style="margin-top:24px;">
+    <div class="card-title">Red de comunidades — detección algorítmica (Louvain, Q=0.60)</div>
+    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:12px;">
+      Cada nodo es una empresa. El color indica la comunidad detectada. El grosor de la arista refleja directores compartidos o trayectorias comunes. Hover para ver detalle.
+    </div>
+    <svg id="comm-svg" style="width:100%;height:480px;display:block;"></svg>
+    <div id="comm-tooltip" style="position:fixed;background:rgba(27,54,93,.92);color:#fff;
+      padding:8px 12px;border-radius:6px;font-size:0.8rem;pointer-events:none;display:none;
+      max-width:220px;line-height:1.5;z-index:999;"></div>
+    <div id="comm-legend" style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:0.78rem;"></div>
+  </div>
+
   <div class="insight fade-in" id="insight-slim"></div>
 </section>
 
@@ -594,6 +606,75 @@ document.getElementById('hero-kpis').innerHTML = `
 
 const pctLbl = document.getElementById('pct-lbl');
 if (pctLbl) pctLbl.textContent = STATS.pct_interlocked;
+
+// ── Community Graph (Sección 01) ─────────────────────────────────────────────
+(function() {
+  const svg = d3.select('#comm-svg');
+  if (!svg.node() || !window.COMMUNITY_GRAPH) return;
+
+  const W = svg.node().clientWidth || 900;
+  const H = 480;
+  svg.attr('viewBox', `0 0 ${W} ${H}`);
+
+  const nodes = COMMUNITY_GRAPH.nodes.map(d => ({...d}));
+  const edges = COMMUNITY_GRAPH.edges.map(d => ({...d}));
+
+  // Scale node size by market cap
+  const mcMax = d3.max(nodes, d => d.mc_usd) || 1;
+  const rScale = d3.scaleSqrt().domain([0, mcMax]).range([4, 22]);
+
+  // Legend
+  const seen = new Map();
+  nodes.forEach(d => { if (!seen.has(d.community)) seen.set(d.community, {name: d.comm_name, color: d.color}); });
+  const legend = document.getElementById('comm-legend');
+  [...seen.entries()].sort((a,b)=>a[0]-b[0]).forEach(([id, {name, color}]) => {
+    const el = document.createElement('span');
+    el.style.cssText = 'display:flex;align-items:center;gap:4px;';
+    el.innerHTML = `<span style="width:10px;height:10px;border-radius:50%;background:${color};display:inline-block;flex-shrink:0;"></span>${name}`;
+    legend.appendChild(el);
+  });
+
+  // Simulation
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(edges).id(d => d.id)
+      .distance(d => 80 - d.weight * 4).strength(d => Math.min(d.weight / 8, 0.8)))
+    .force('charge', d3.forceManyBody().strength(-120))
+    .force('center', d3.forceCenter(W/2, H/2))
+    .force('collide', d3.forceCollide(d => rScale(d.mc_usd) + 3));
+
+  // Draw edges
+  const link = svg.append('g').selectAll('line').data(edges).join('line')
+    .attr('stroke', '#c8c4bc')
+    .attr('stroke-opacity', 0.5)
+    .attr('stroke-width', d => Math.sqrt(d.weight) * 0.8);
+
+  // Draw nodes
+  const tooltip = document.getElementById('comm-tooltip');
+  const node = svg.append('g').selectAll('circle').data(nodes).join('circle')
+    .attr('r', d => rScale(d.mc_usd || 1))
+    .attr('fill', d => d.color)
+    .attr('fill-opacity', 0.85)
+    .attr('stroke', '#fff').attr('stroke-width', 1.2)
+    .style('cursor', 'pointer')
+    .call(d3.drag()
+      .on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+      .on('drag',  (ev, d) => { d.fx=ev.x; d.fy=ev.y; })
+      .on('end',   (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }))
+    .on('mousemove', (ev, d) => {
+      tooltip.style.display = 'block';
+      tooltip.style.left = (ev.clientX + 14) + 'px';
+      tooltip.style.top  = (ev.clientY - 10) + 'px';
+      tooltip.innerHTML = `<strong>${d.label}</strong><br>Comunidad: ${d.comm_name}<br>Grupo manual: ${d.group_manual || '—'}<br>Market cap: $${(d.mc_usd/1000).toFixed(1)}B`;
+    })
+    .on('mouseleave', () => { tooltip.style.display = 'none'; });
+
+  sim.on('tick', () => {
+    link.attr('x1', d=>d.source.x).attr('y1', d=>d.source.y)
+        .attr('x2', d=>d.target.x).attr('y2', d=>d.target.y);
+    node.attr('cx', d => Math.max(22, Math.min(W-22, d.x)))
+        .attr('cy', d => Math.max(22, Math.min(H-22, d.y)));
+  });
+})();
 
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
