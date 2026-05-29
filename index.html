@@ -366,8 +366,13 @@ footer a { color: var(--ink2); }
   </div>
 
   <div class="card fade-in">
-    <div class="card-title">Detalle por grupo — métricas financieras 2023</div>
-    <table class="groups-table" id="groups-table"></table>
+    <div class="card-title">Empresas — tamaño, red y posición en la industria · FY2023</div>
+    <div style="font-size:0.76rem;color:var(--muted);margin-bottom:12px;">
+      Conexiones = empresas del dataset con las que comparte al menos un director. Puente = rol de intermediación entre comunidades (Alto/Medio/Bajo). P/S = precio/ventas; excluye financieras y empresas sin datos.
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="groups-table" id="groups-table" style="font-size:0.82rem;"></table>
+    </div>
   </div>
 
   <div class="insight fade-in" id="insight-slim"></div>
@@ -734,42 +739,52 @@ const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
   }, PLOTLY_CONFIG);
 })();
 
-// Groups table
+// Companies table — individual companies with network metrics
 (function() {
-  const maxMC = Math.max(...GROUPS_DATA.map(g => g.mktcap_usd));
-  const rows = GROUPS_DATA.map(g => {
-    const barW = Math.round(g.mktcap_usd / maxMC * 100);
-    return `<tr>
-      <td>
-        <span class="g-dot" style="background:${g.color}"></span>
-        <span class="g-name">${g.group}</span><br>
-        <span class="g-corps">${g.companies.slice(0,3).join(' · ')}${g.companies.length>3?'…':''}</span>
-      </td>
-      <td>${g.n}</td>
-      <td>
-        <div class="bar-cell">
-          <div class="bar-track"><div class="bar-fill" style="width:${barW}%;background:${g.color}"></div></div>
-          ${fmtB(g.mktcap_usd)}
-        </div>
-      </td>
-      <td>${fmtB(g.revenue_usd)}</td>
-      <td>${g.ebitda_margin != null ? g.ebitda_margin.toFixed(1)+'%' : '—'}</td>
-      <td>${g.roe != null ? g.roe.toFixed(1)+'%' : '—'}</td>
-      <td>${fmt(g.empleados)}</td>
-    </tr>`;
+  if (typeof COMPANIES_TABLE === 'undefined') return;
+  var BETW_COLOR = { 'Alto': '#B85C38', 'Medio': '#7a8898', 'Bajo': '#c8c4bc', '': '#eee' };
+  var lastGroup = null;
+
+  var rows = COMPANIES_TABLE.map(function(c) {
+    var groupSep = '';
+    if (c.group !== lastGroup) {
+      lastGroup = c.group;
+      var groupLabel = c.group === 'Otro' ? 'Independientes' : c.group;
+      groupSep = '<tr style="background:#f5f4ed;"><td colspan="9" style="padding:6px 12px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);">'
+               + '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + c.color + ';margin-right:6px;vertical-align:middle;"></span>'
+               + groupLabel + '</td></tr>';
+    }
+    var psCell = c.price_sales != null ? c.price_sales.toFixed(1) + 'x'
+               : c.financial ? '<span style="color:var(--muted);font-style:italic">financ.</span>'
+               : '—';
+    var betwCell = c.betw_cat
+      ? '<span style="padding:2px 7px;border-radius:10px;font-size:0.72rem;background:' + BETW_COLOR[c.betw_cat] + ';color:#fff;">' + c.betw_cat + '</span>'
+      : '—';
+
+    return groupSep + '<tr>'
+      + '<td style="max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="' + c.label + '">' + c.label + '</td>'
+      + '<td style="color:var(--muted);font-size:0.78rem;">' + (c.comm_name || '—') + '</td>'
+      + '<td style="text-align:right;font-variant-numeric:tabular-nums;">' + (c.mc_usd_b != null ? '$' + c.mc_usd_b.toFixed(1) + 'B' : '—') + '</td>'
+      + '<td style="text-align:right;font-variant-numeric:tabular-nums;">' + (c.rev_usd_b != null ? '$' + c.rev_usd_b.toFixed(1) + 'B' : '—') + '</td>'
+      + '<td style="text-align:right;">' + (c.emp != null ? (c.emp/1000).toFixed(0) + 'k' : '—') + '</td>'
+      + '<td style="text-align:center;font-weight:600;">' + (c.degree || '—') + '</td>'
+      + '<td style="text-align:center;">' + betwCell + '</td>'
+      + '<td style="text-align:right;font-variant-numeric:tabular-nums;">' + psCell + '</td>'
+      + '</tr>';
   }).join('');
-  document.getElementById('groups-table').innerHTML = `
-    <thead><tr>
-      <th>Grupo</th>
-      <th style="text-align:center">Emp.</th>
-      <th>Market cap</th>
-      <th>Ingresos</th>
-      <th>Mg. EBITDA</th>
-      <th>ROE</th>
-      <th>Empleados</th>
-    </tr></thead>
-    <tbody>${rows}</tbody>
-  `;
+
+  document.getElementById('groups-table').innerHTML =
+    '<thead><tr>'
+    + '<th>Empresa</th>'
+    + '<th>Comunidad</th>'
+    + '<th style="text-align:right">Mkt cap</th>'
+    + '<th style="text-align:right">Ingresos</th>'
+    + '<th style="text-align:right">Empleados</th>'
+    + '<th style="text-align:center">Conexiones</th>'
+    + '<th style="text-align:center">Puente</th>'
+    + '<th style="text-align:right">P/S</th>'
+    + '</tr></thead>'
+    + '<tbody>' + rows + '</tbody>';
 })();
 
 // ── Section 02 Charts ─────────────────────────────────────────────────────────

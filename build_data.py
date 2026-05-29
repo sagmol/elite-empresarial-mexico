@@ -459,6 +459,68 @@ for edge in net['edges_interlock'] + net.get('edges_career', []):
 
 community_graph = to_native({'nodes': comm_nodes, 'edges': comm_edges})
 
+# ── 11. COMPANIES TABLE (tabla enriquecida con red) ───────────────────────────
+from collections import Counter
+
+# Grado: n empresas con interlock (peer only)
+degree_map = Counter()
+for e in net['edges_interlock']:
+    if not e.get('is_subsidiary_link'):
+        degree_map[e['source']] += 1
+        degree_map[e['target']] += 1
+
+# Betweenness y comunidad desde full results
+comm_ds = comm_res[comm_res['is_dataset'] == True].copy()
+betw_map  = dict(zip(comm_ds['node_id'].astype(str), comm_ds['betweenness']))
+comm_id_map = dict(zip(comm_ds['node_id'].astype(str), comm_ds['community']))
+
+def betw_cat(b):
+    if b is None or (isinstance(b, float) and math.isnan(b)): return ''
+    if b > 0.04:  return 'Alto'
+    if b > 0.01:  return 'Medio'
+    return 'Bajo'
+
+# Empresas financieras (P/S no es comparable)
+FINANCIAL_KEYWORDS = ['financiero', 'banco', 'profuturo', 'gentera', 'seguros', 'cfe', 'asegura']
+def is_financial(name):
+    return any(k in str(name).lower() for k in FINANCIAL_KEYWORDS)
+
+companies_table = []
+for c in companies_data:
+    fid = c['id']
+    betw = betw_map.get(fid, 0.0)
+    cid  = comm_id_map.get(fid, -1)
+
+    # P/S ratio — solo para no-financieras con datos
+    ps = None
+    if c.get('rev_usd') and c['rev_usd'] > 0 and c.get('mc_usd') and not is_financial(c['label']):
+        ps = round(c['mc_usd'] / 1000 / (c['rev_usd'] / 1000), 2)
+
+    companies_table.append({
+        'id'        : fid,
+        'label'     : c['label'],
+        'group'     : c['group'],
+        'color'     : c['color'],
+        'comm_name' : COMM_NAMES.get(int(cid), '—') if int(cid) >= 0 else '—',
+        'mc_usd_b'  : round(c['mc_usd'] / 1000, 1) if c.get('mc_usd') else None,
+        'rev_usd_b' : round(c['rev_usd'] / 1000, 1) if c.get('rev_usd') else None,
+        'emp'       : c.get('emp'),
+        'degree'    : int(degree_map.get(fid, 0)),
+        'betw_cat'  : betw_cat(betw),
+        'betw_raw'  : round(float(betw), 4),
+        'price_sales': ps,
+        'financial' : is_financial(c['label']),
+    })
+
+# Ordenar: primero grupos nombrados (por mktcap desc), luego independientes
+group_order = ['Slim','Gmexico','GrumaBanorte','BAL','Bimbo','Salinas','Femsa','Yucatan','Cemex','Alfa']
+def sort_key(r):
+    gi = group_order.index(r['group']) if r['group'] in group_order else 99
+    mc = -(r['mc_usd_b'] or 0)
+    return (gi, mc)
+companies_table.sort(key=sort_key)
+companies_table = to_native(companies_table)
+
 js = f"""// data_web.js — Elite Empresarial México
 // Generado automáticamente. No editar manualmente.
 
@@ -491,6 +553,8 @@ const BOARD_STATS = {json.dumps(board_stats, ensure_ascii=False, indent=2)};
 const NETWORK_D3 = {json.dumps(network_d3, ensure_ascii=False, indent=2)};
 
 const COMMUNITY_GRAPH = {json.dumps(community_graph, ensure_ascii=False, indent=2)};
+
+const COMPANIES_TABLE = {json.dumps(companies_table, ensure_ascii=False, indent=2)};
 """
 
 with open(OUT, 'w', encoding='utf-8') as f:
