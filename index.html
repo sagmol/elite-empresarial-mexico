@@ -360,15 +360,9 @@ footer a { color: var(--ink2); }
     <div id="comm-legend" style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:0.76rem;color:var(--ink2);"></div>
   </div>
 
-  <div class="two-col-60">
-    <div class="card fade-in">
-      <div class="card-title">Market cap por grupo — USD miles de millones</div>
-      <div class="chart-wrap" id="chart-groups-bar"></div>
-    </div>
-    <div class="card fade-in">
-      <div class="card-title">Participación bursátil</div>
-      <div class="chart-wrap" id="chart-groups-pie"></div>
-    </div>
+  <div class="card fade-in">
+    <div class="card-title">Market cap por empresa — USD miles de millones</div>
+    <div class="chart-wrap" style="min-height:900px;" id="chart-groups-bar"></div>
   </div>
 
   <div class="card fade-in">
@@ -688,45 +682,55 @@ document.getElementById('insight-slim').innerHTML =
 const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
                GROUPS_DATA.filter(g => g.group === 'Otro'));
 
-// Bar chart — market cap
+// Dot plot — market cap por empresa individual (reemplaza bar + pie)
 (function() {
-  const sorted = [...GROUPS_DATA].sort((a,b) => b.mktcap_usd - a.mktcap_usd);
-  Plotly.newPlot('chart-groups-bar', [{
-    type: 'bar',
-    orientation: 'h',
-    x: sorted.map(g => g.mktcap_usd),
-    y: sorted.map(g => g.group),
-    marker: { color: sorted.map(g => g.color) },
-    hovertemplate: '<b>%{y}</b><br>Market cap: $%{x}B USD<extra></extra>',
-    text: sorted.map(g => '$' + g.mktcap_usd.toFixed(0) + 'B'),
-    textposition: 'outside',
-    textfont: { size: 10 },
-  }], {
-    ...LAYOUT_BASE,
-    margin: { t: 8, r: 70, b: 40, l: 90 },
-    xaxis: { visible: false },
-    yaxis: { autorange: 'reversed', tickfont: { size: 11 } },
-    height: 340,
-  }, PLOTLY_CONFIG);
-})();
+  // Ordenar empresas: primero por grupo (named first), luego por mc desc dentro del grupo
+  const groupOrder = ['Slim','Gmexico','GrumaBanorte','BAL','Bimbo','Salinas','Femsa','Yucatan','Cemex','Alfa'];
+  const colorByGroup = {};
+  GROUPS_DATA.forEach(g => { colorByGroup[g.group] = g.color; });
 
-// Pie chart
-(function() {
-  const d = GROUPS_DATA.filter(g => g.mktcap_usd > 0);
-  Plotly.newPlot('chart-groups-pie', [{
-    type: 'pie',
-    labels: d.map(g => g.group),
-    values: d.map(g => g.mktcap_usd),
-    marker: { colors: d.map(g => g.color) },
-    hole: 0.45,
-    hovertemplate: '<b>%{label}</b><br>$%{value}B (%{percent})<extra></extra>',
-    textinfo: 'label+percent',
-    textfont: { size: 10 },
+  const cos = [...COMPANIES_DATA].filter(c => c.mc_usd > 0);
+  cos.sort(function(a, b) {
+    const ai = groupOrder.indexOf(a.group);
+    const bi = groupOrder.indexOf(b.group);
+    const ag = ai === -1 ? 99 : ai;
+    const bg = bi === -1 ? 99 : bi;
+    if (ag !== bg) return ag - bg;
+    return b.mc_usd - a.mc_usd;
+  });
+
+  const labels = cos.map(c => c.label);
+  const values = cos.map(c => +(c.mc_usd / 1000).toFixed(1));
+  const colors = cos.map(c => colorByGroup[c.group] || '#aaa');
+  const groups_label = cos.map(c => c.group === 'Otro' ? 'Independiente' : c.group);
+
+  Plotly.newPlot('chart-groups-bar', [{
+    type: 'scatter',
+    mode: 'markers',
+    x: values,
+    y: labels,
+    marker: {
+      color: colors,
+      size: 10,
+      line: { color: '#fff', width: 1.5 }
+    },
+    customdata: groups_label,
+    hovertemplate: '<b>%{y}</b><br>Grupo: %{customdata}<br>Market cap: $%{x}B USD<extra></extra>',
   }], {
     ...LAYOUT_BASE,
-    height: 340,
-    margin: { t: 8, r: 8, b: 8, l: 8 },
-    showlegend: false,
+    height: 900,
+    margin: { t: 8, r: 60, b: 40, l: 200 },
+    xaxis: {
+      title: 'USD miles de millones',
+      tickfont: { size: 10 },
+      gridcolor: '#edecea',
+      zeroline: false,
+    },
+    yaxis: {
+      autorange: 'reversed',
+      tickfont: { size: 10 },
+      gridcolor: '#edecea',
+    },
   }, PLOTLY_CONFIG);
 })();
 
