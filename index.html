@@ -542,11 +542,11 @@ footer a { color: var(--ink2); }
 <footer class="fade-in">
   <div>
     <p><strong>Metodología</strong><br>
-    Datos financieros extraídos de Bloomberg Terminal (exportación oct–nov 2024), correspondientes al año fiscal 2023 (LFY). Market cap y tipo de cambio al cierre de diciembre 2023 (17.15 MXN/USD). Directores y accionistas: datos más recientes disponibles en Bloomberg a la fecha de exportación. Grupos definidos por control familiar declarado en prospectos y reportes anuales de la BMV. Las 51 empresas representan aproximadamente el 89% de la capitalización total de la BMV (estimación sobre ~$420B USD total, 2023).</p>
+    Datos extraídos de Refinitiv Eikon (LSEG). Directores y accionistas: descarga agosto 2024. Financieros: descarga oct–nov 2024, año fiscal 2023 (LFY). Market cap y tipo de cambio al cierre de diciembre 2023 (17.15 MXN/USD). Grupos definidos por control familiar declarado en prospectos y reportes anuales de la BMV. Las 51 empresas representan aproximadamente el 89% de la capitalización total de la BMV (estimación sobre ~$420B USD total, 2023).</p>
   </div>
   <div>
     <p><strong>Fuentes</strong><br>
-    Bolsa Mexicana de Valores · Bloomberg Terminal · CNBV<br>
+    Bolsa Mexicana de Valores · Refinitiv Eikon (LSEG) · CNBV<br>
     Datos: <a href="https://github.com/sagmol/elite-empresarial-mexico">github.com/sagmol/elite-empresarial-mexico</a></p>
   </div>
 </footer>
@@ -970,7 +970,7 @@ const TYPE_COLORS = {
     `En el extremo opuesto, <strong>${PROP_STATS.n_no_strategic} empresas</strong> — entre ellas Cemex, Banorte y Liverpool — ` +
     `no tienen un accionista estratégico registrado: su gobierno corporativo lo determinan los inversionistas institucionales. ` +
     `Nota: algunas empresas con control indirecto (Coca-Cola FEMSA controlada por FEMSA, o GNP por Baillères vía holding) ` +
-    `pueden no aparecer en esta clasificación si su vehículo de control no está registrado como entidad estratégica por Bloomberg.`;
+    `pueden no aparecer en esta clasificación si su vehículo de control no está registrado como entidad estratégica en Refinitiv Eikon.`;
 })();
 
 // ── Section 06: Permanencia ───────────────────────────────────────────────────
