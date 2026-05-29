@@ -343,10 +343,13 @@ footer a { color: var(--ink2); }
 <!-- SECTION 01: LOS GRUPOS -->
 <section class="section fade-in" id="grupos">
   <div class="section-label">01 — Los grupos</div>
-  <h2 class="section-title">Once familias, la mitad de la bolsa</h2>
+  <h2 class="section-title">Los grupos detrás de las 51 empresas</h2>
   <p class="section-lead">
-    Identificamos 11 conglomerados con directorios interconectados que operan 51 empresas listadas en la BMV. Juntos concentran el <strong id="pct-lbl"></strong>% del valor bursátil de la muestra. La <em>capitalización de mercado</em> —el precio de cada acción multiplicado por el número total de acciones en circulación— es la forma más directa de medir cuánto vale una empresa según el mercado.
+    Aplicamos detección de comunidades (algoritmo Louvain, Q=0.60) sobre una red de 256 nodos: las 50 empresas con datos de directores, más 207 organizaciones externas donde esos directores trabajaron previamente. Los grupos que emergen no son categorías asignadas a mano — son el resultado de quién comparte consejo con quién, y de dónde viene cada quien. La <em>capitalización de mercado</em> —precio por acción multiplicado por acciones en circulación— mide el valor que el mercado asigna a cada empresa.
   </p>
+  <div class="insight fade-in" style="margin-bottom:24px;">
+    <strong>Nota metodológica</strong> — Los grupos mostrados combinan la evidencia de interlocks de directores, relaciones de subsidiaria declaradas en Eikon, y —para algunos casos— investigación de campo sobre estructuras de propiedad no capturadas en los datos de directores. El grupo <em>Yucatan</em> (ASUR, KUO, Bachoco) no emerge del análisis de red: sus tres empresas caen en comunidades distintas. Su agrupación proviene de fuentes externas al dataset y requiere verificación adicional.
+  </div>
 
   <div class="two-col-60">
     <div class="card fade-in">
@@ -593,9 +596,10 @@ document.getElementById('pct-lbl').textContent = STATS.pct_interlocked;
 
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
-  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil total</strong> a través de solo 5 empresas listadas — desde América Móvil hasta Grupo Carso. ` +
-  `Grupo México, con 2 compañías, alcanza el ${STATS.gmexico_pct}%: la mayor concentración de valor por empresa de todo el universo analizado. ` +
-  `Juntos, estos dos conglomerados suman más del 41% de toda la capitalización de la muestra.`;
+  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil de la muestra</strong> a través de 5 empresas listadas. ` +
+  `Grupo México alcanza el ${STATS.gmexico_pct}% con solo 2 compañías — la mayor concentración de valor por empresa del universo analizado. ` +
+  `El análisis de red revela además que el grupo Slim comparte directores con exfuncionarios de Hacienda, NAFIN y Pemex — el gobierno aparece como un conector estructural en esa comunidad. ` +
+  `BAL (Baillères) es el grupo más cohesionado: sus 5 empresas forman una comunidad perfectamente aislada en el grafo, con hasta 8 directores compartidos entre pares.`;
 
 // ── Section 01 Charts ────────────────────────────────────────────────────────
 const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
