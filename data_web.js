@@ -4,6 +4,10 @@
 const STATS = {
   "n_companies": 51,
   "n_directors": 1106,
+  "n_dirs_unique": 987,
+  "n_dirs_with_bio": 821,
+  "n_dirs_with_edu": 661,
+  "n_dirs_with_roles": 676,
   "n_groups": 11,
   "total_mktcap": 372.0,
   "total_revenue": 315.0,
@@ -11,8 +15,8 @@ const STATS = {
   "pct_interlocked": 74.7,
   "slim_pct": 27.3,
   "gmexico_pct": 13.8,
-  "edu_mx_priv": 597,
-  "edu_extranjera": 209,
+  "edu_mx_priv": 599,
+  "edu_extranjera": 215,
   "edu_mx_pub": 87
 };
 
@@ -766,7 +770,7 @@ const INSTITUTIONS_DATA = [
   },
   {
     "name": "Universidad Iberoamericana",
-    "n": 94,
+    "n": 95,
     "type": "Privada MX"
   },
   {
@@ -791,12 +795,12 @@ const INSTITUTIONS_DATA = [
   },
   {
     "name": "Harvard University",
-    "n": 41,
+    "n": 43,
     "type": "Extranjera"
   },
   {
     "name": "Stanford University",
-    "n": 38,
+    "n": 42,
     "type": "Extranjera"
   },
   {
@@ -815,12 +819,12 @@ const INSTITUTIONS_DATA = [
     "type": "Extranjera"
   },
   {
-    "name": "Columbia University",
+    "name": "MIT",
     "n": 17,
     "type": "Extranjera"
   },
   {
-    "name": "MIT",
+    "name": "Columbia University",
     "n": 17,
     "type": "Extranjera"
   },
@@ -835,39 +839,39 @@ const INSTITUTIONS_DATA = [
     "type": "Extranjera"
   },
   {
+    "name": "Universidad La Salle",
+    "n": 13,
+    "type": "Privada MX"
+  },
+  {
     "name": "Yale University",
     "n": 13,
     "type": "Extranjera"
   },
   {
-    "name": "Universidad La Salle",
-    "n": 13,
+    "name": "Escuela Libre de Derecho",
+    "n": 12,
     "type": "Privada MX"
   },
   {
     "name": "University of Pennsylvania (Wharton)",
     "n": 12,
     "type": "Extranjera"
-  },
-  {
-    "name": "Escuela Libre de Derecho",
-    "n": 11,
-    "type": "Privada MX"
   }
 ];
 
 const FIELDS_DATA = [
   {
     "field": "Administración de Empresas",
-    "n": 347
+    "n": 350
   },
   {
     "field": "Derecho",
-    "n": 140
+    "n": 142
   },
   {
     "field": "Economía",
-    "n": 122
+    "n": 123
   },
   {
     "field": "Contaduría Pública",
@@ -875,11 +879,11 @@ const FIELDS_DATA = [
   },
   {
     "field": "Ingeniería Industrial",
-    "n": 74
+    "n": 75
   },
   {
     "field": "Finanzas",
-    "n": 55
+    "n": 57
   },
   {
     "field": "Ingeniería Química",
@@ -903,7 +907,7 @@ const FIELDS_DATA = [
   },
   {
     "field": "Ingeniería",
-    "n": 13
+    "n": 14
   },
   {
     "field": "Ingeniería Mecánica",
@@ -922,7 +926,7 @@ const FIELDS_DATA = [
 const LEVELS_DATA = [
   {
     "level": "Licenciatura",
-    "n": 702
+    "n": 708
   },
   {
     "level": "Maestría",
@@ -930,7 +934,7 @@ const LEVELS_DATA = [
   },
   {
     "level": "MBA",
-    "n": 122
+    "n": 123
   },
   {
     "level": "Certificación",
@@ -938,11 +942,11 @@ const LEVELS_DATA = [
   },
   {
     "level": "Doctorado",
-    "n": 32
+    "n": 33
   },
   {
     "level": "Programa Ejecutivo",
-    "n": 20
+    "n": 25
   }
 ];
 

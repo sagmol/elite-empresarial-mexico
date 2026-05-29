@@ -573,7 +573,7 @@ document.getElementById('hero-kpis').innerHTML = `
   <div class="kpi">
     <div class="kpi-n">$${STATS.total_mktcap.toFixed(0)}<span>B</span></div>
     <div class="kpi-l">Market cap · USD</div>
-    <div class="kpi-sub">Las 51 principales emisoras · ≈ 28% del PIB mexicano</div>
+    <div class="kpi-sub">51 empresas BMV · ≈ 28% del PIB mexicano</div>
   </div>
   <div class="kpi">
     <div class="kpi-n">${STATS.pct_interlocked}<span>%</span></div>
@@ -587,8 +587,8 @@ document.getElementById('hero-kpis').innerHTML = `
   </div>
   <div class="kpi">
     <div class="kpi-n">${STATS.n_directors.toLocaleString()}</div>
-    <div class="kpi-l">Directores analizados</div>
-    <div class="kpi-sub">Perfil académico y carrera</div>
+    <div class="kpi-l">Registros de directores</div>
+    <div class="kpi-sub">${STATS.n_dirs_unique} únicos · ${STATS.n_dirs_with_edu} con perfil académico · ${STATS.n_dirs_with_roles} con historial laboral</div>
   </div>
 `;
 
