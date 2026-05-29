@@ -336,7 +336,7 @@ footer a { color: var(--ink2); }
   <div class="hero-text fade-in">
     <div class="kicker">Análisis · 51 empresas BMV · Datos FY2023</div>
     <h1>¿Quién controla la economía mexicana?</h1>
-    <p>Un mapa de los principales grupos empresariales de México: las 51 empresas que concentran el <strong>89% de la capitalización de la Bolsa Mexicana de Valores</strong>, sus vínculos ocultos entre consejos de administración y el perfil de quienes toman las decisiones.</p>
+    <p>Un mapa de los principales grupos empresariales de México: las 51 empresas que concentran el <strong>89% de la capitalización bursátil nacional</strong> — el valor que el mercado asigna a sus acciones —, los vínculos entre consejos de administración y el perfil de quienes toman las decisiones.</p>
   </div>
   <div class="hero-kpis fade-in" id="hero-kpis">
     <!-- filled by JS -->
@@ -348,7 +348,7 @@ footer a { color: var(--ink2); }
   <div class="section-label">01 — Los grupos</div>
   <h2 class="section-title">Once familias, la mitad de la bolsa</h2>
   <p class="section-lead">
-    Identificamos 11 conglomerados con directorios interconectados que operan 51 empresas listadas en la BMV. Juntos concentran el <strong id="pct-lbl"></strong>% del market cap bursátil total de la muestra.
+    Identificamos 11 conglomerados con directorios interconectados que operan 51 empresas listadas en la BMV. Juntos concentran el <strong id="pct-lbl"></strong>% del valor bursátil de la muestra. La <em>capitalización de mercado</em> —el precio de cada acción multiplicado por el número total de acciones en circulación— es la forma más directa de medir cuánto vale una empresa según el mercado.
   </p>
 
   <div class="two-col-60">
@@ -542,11 +542,12 @@ footer a { color: var(--ink2); }
 <footer class="fade-in">
   <div>
     <p><strong>Metodología</strong><br>
-    Datos extraídos de Refinitiv Eikon (LSEG). Directores y accionistas: descarga agosto 2024. Financieros: descarga oct–nov 2024, año fiscal 2023 (LFY). Market cap y tipo de cambio al cierre de diciembre 2023 (17.15 MXN/USD). Grupos definidos por control familiar declarado en prospectos y reportes anuales de la BMV. Las 51 empresas representan aproximadamente el 89% de la capitalización total de la BMV (estimación sobre ~$420B USD total, 2023).</p>
+    Datos extraídos de Refinitiv Eikon (LSEG). Directores y accionistas: descarga agosto 2024. Financieros y market cap ("Curr Mkt Cap"): descarga oct–nov 2024, año fiscal 2023 (LFY). Tipo de cambio de referencia: 17.15 MXN/USD (cierre diciembre 2023). Grupos definidos por control familiar declarado en prospectos y reportes anuales. Cobertura: las 51 empresas representan aproximadamente el 89% de la capitalización del mercado accionario nacional de la BMV — calibración: según el <em>Informe Anual 2024 de Grupo BMV</em>, las 35 empresas del S&P/BMV IPC integran el 81% de la capitalización del mercado accionario; nuestras 51 incluyen esas 35 y 16 emisoras adicionales.</p>
   </div>
   <div>
     <p><strong>Fuentes</strong><br>
     Bolsa Mexicana de Valores · Refinitiv Eikon (LSEG) · CNBV<br>
+    Grupo BMV, <em>Informe Anual 2024</em> (IPC = 81% del mercado accionario)<br>
     Datos: <a href="https://github.com/sagmol/elite-empresarial-mexico">github.com/sagmol/elite-empresarial-mexico</a></p>
   </div>
 </footer>
@@ -572,7 +573,7 @@ document.getElementById('hero-kpis').innerHTML = `
   <div class="kpi">
     <div class="kpi-n">$${STATS.total_mktcap.toFixed(0)}<span>B</span></div>
     <div class="kpi-l">Market cap · USD</div>
-    <div class="kpi-sub">≈ 89% de la BMV · ≈ 28% del PIB · FY2023</div>
+    <div class="kpi-sub">≈ 89% del mercado accionario nacional · ≈ 28% del PIB mexicano</div>
   </div>
   <div class="kpi">
     <div class="kpi-n">${STATS.pct_interlocked}<span>%</span></div>
@@ -595,9 +596,9 @@ document.getElementById('pct-lbl').textContent = STATS.pct_interlocked;
 
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
-  `<strong>Slim domina con ${STATS.slim_pct}% del market cap total</strong> mediante solo 5 empresas. ` +
-  `Grupo México (Gmexico) alcanza ${STATS.gmexico_pct}% con solo 2 compañías — la mayor concentración por empresa del universo. ` +
-  `Juntos, estos dos grupos controlan más del 41% de la capitalización bursátil de la muestra.`;
+  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil total</strong> a través de solo 5 empresas listadas — desde América Móvil hasta Grupo Carso. ` +
+  `Grupo México, con 2 compañías, alcanza el ${STATS.gmexico_pct}%: la mayor concentración de valor por empresa de todo el universo analizado. ` +
+  `Juntos, estos dos conglomerados suman más del 41% de toda la capitalización de la muestra.`;
 
 // ── Section 01 Charts ────────────────────────────────────────────────────────
 const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
