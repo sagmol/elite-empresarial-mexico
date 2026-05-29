@@ -334,9 +334,9 @@ footer a { color: var(--ink2); }
 <!-- HERO -->
 <section id="hero">
   <div class="hero-text fade-in">
-    <div class="kicker">Análisis · Empresas BMV · 2023</div>
+    <div class="kicker">Análisis · 51 empresas BMV · Datos FY2023</div>
     <h1>¿Quién controla la economía mexicana?</h1>
-    <p>Un mapa de los grupos empresariales que dominan la Bolsa Mexicana de Valores: sus dimensiones, sus vínculos y el perfil de quienes toman las decisiones.</p>
+    <p>Un mapa de los principales grupos empresariales de México: las 51 empresas que concentran el <strong>89% de la capitalización de la Bolsa Mexicana de Valores</strong>, sus vínculos ocultos entre consejos de administración y el perfil de quienes toman las decisiones.</p>
   </div>
   <div class="hero-kpis fade-in" id="hero-kpis">
     <!-- filled by JS -->
@@ -373,9 +373,9 @@ footer a { color: var(--ink2); }
 <!-- SECTION 02: CONCENTRACIÓN -->
 <section class="section fade-in" id="concentracion">
   <div class="section-label">02 — Concentración bursátil</div>
-  <h2 class="section-title">$372 mil millones de dólares bajo redes interconectadas</h2>
+  <h2 class="section-title">$372 mil millones — mayor que el PIB entero de Chile</h2>
   <p class="section-lead">
-    Cada rectángulo es una empresa. Su tamaño refleja su market cap. El color indica a qué grupo pertenece. Al hacer hover, aparece su grupo, ingresos y empleados.
+    Capitalización bursátil al cierre de FY2023. Cada rectángulo es una empresa; su tamaño refleja su market cap y el color su grupo de control. Hover para ver ingresos y empleados.
   </p>
 
   <div class="card fade-in">
@@ -542,7 +542,7 @@ footer a { color: var(--ink2); }
 <footer class="fade-in">
   <div>
     <p><strong>Metodología</strong><br>
-    Directores extraídos de reportes anuales BMV 2022–2023. Financieros de Bloomberg Terminal LFY 2023. FX: 17.15 MXN/USD. Market cap: cierre 2023. Grupos definidos por control familiar declarado en prospectos.</p>
+    Datos financieros extraídos de Bloomberg Terminal (exportación oct–nov 2024), correspondientes al año fiscal 2023 (LFY). Market cap y tipo de cambio al cierre de diciembre 2023 (17.15 MXN/USD). Directores y accionistas: datos más recientes disponibles en Bloomberg a la fecha de exportación. Grupos definidos por control familiar declarado en prospectos y reportes anuales de la BMV. Las 51 empresas representan aproximadamente el 89% de la capitalización total de la BMV (estimación sobre ~$420B USD total, 2023).</p>
   </div>
   <div>
     <p><strong>Fuentes</strong><br>
@@ -571,18 +571,18 @@ const LAYOUT_BASE   = {
 document.getElementById('hero-kpis').innerHTML = `
   <div class="kpi">
     <div class="kpi-n">$${STATS.total_mktcap.toFixed(0)}<span>B</span></div>
-    <div class="kpi-l">Market cap total</div>
-    <div class="kpi-sub">51 empresas BMV · USD</div>
+    <div class="kpi-l">Market cap · USD</div>
+    <div class="kpi-sub">≈ 89% de la BMV · ≈ 28% del PIB · FY2023</div>
   </div>
   <div class="kpi">
     <div class="kpi-n">${STATS.pct_interlocked}<span>%</span></div>
     <div class="kpi-l">En redes interconectadas</div>
-    <div class="kpi-sub">${STATS.n_groups} grupos con vínculos</div>
+    <div class="kpi-sub">${STATS.n_groups} grupos familiares con vínculos</div>
   </div>
   <div class="kpi">
     <div class="kpi-n">${(STATS.total_emp/1e6).toFixed(2)}<span>M</span></div>
     <div class="kpi-l">Empleados totales</div>
-    <div class="kpi-sub">Capital laboral concentrado</div>
+    <div class="kpi-sub">Bajo estas redes de control</div>
   </div>
   <div class="kpi">
     <div class="kpi-n">${STATS.n_directors.toLocaleString()}</div>
