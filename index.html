@@ -336,7 +336,7 @@ footer a { color: var(--ink2); }
   <div class="hero-text fade-in">
     <div class="kicker">Análisis · 51 empresas BMV · Datos FY2023</div>
     <h1>¿Quién controla la economía mexicana?</h1>
-    <p>Un mapa de los principales grupos empresariales de México: las 51 empresas que concentran el <strong>89% de la capitalización bursátil nacional</strong> — el valor que el mercado asigna a sus acciones —, los vínculos entre consejos de administración y el perfil de quienes toman las decisiones.</p>
+    <p>Un mapa de los principales grupos empresariales de México: las <strong>51 mayores emisoras de la Bolsa Mexicana de Valores</strong>, sus vínculos entre consejos de administración y el perfil de quienes toman las decisiones.</p>
   </div>
   <div class="hero-kpis fade-in" id="hero-kpis">
     <!-- filled by JS -->
@@ -542,7 +542,7 @@ footer a { color: var(--ink2); }
 <footer class="fade-in">
   <div>
     <p><strong>Metodología</strong><br>
-    Datos extraídos de Refinitiv Eikon (LSEG). Directores y accionistas: descarga agosto 2024. Financieros y market cap ("Curr Mkt Cap"): descarga oct–nov 2024, año fiscal 2023 (LFY). Tipo de cambio de referencia: 17.15 MXN/USD (cierre diciembre 2023). Grupos definidos por control familiar declarado en prospectos y reportes anuales. Cobertura: las 51 empresas representan aproximadamente el 89% de la capitalización del mercado accionario nacional de la BMV — calibración: según el <em>Informe Anual 2024 de Grupo BMV</em>, las 35 empresas del S&P/BMV IPC integran el 81% de la capitalización del mercado accionario; nuestras 51 incluyen esas 35 y 16 emisoras adicionales.</p>
+    Datos extraídos de Refinitiv Eikon (LSEG). Directores y accionistas: descarga agosto 2024. Financieros y market cap ("Curr Mkt Cap"): descarga oct–nov 2024, año fiscal 2023 (LFY). Tipo de cambio de referencia: 17.15 MXN/USD (cierre diciembre 2023). Grupos definidos por control familiar declarado en prospectos y reportes anuales. El dataset cubre las 51 principales emisoras de renta variable de la BMV por capitalización; no se calculó la cobertura exacta del mercado por falta de un denominador verificado.</p>
   </div>
   <div>
     <p><strong>Fuentes</strong><br>
@@ -573,7 +573,7 @@ document.getElementById('hero-kpis').innerHTML = `
   <div class="kpi">
     <div class="kpi-n">$${STATS.total_mktcap.toFixed(0)}<span>B</span></div>
     <div class="kpi-l">Market cap · USD</div>
-    <div class="kpi-sub">≈ 89% del mercado accionario nacional · ≈ 28% del PIB mexicano</div>
+    <div class="kpi-sub">Las 51 principales emisoras · ≈ 28% del PIB mexicano</div>
   </div>
   <div class="kpi">
     <div class="kpi-n">${STATS.pct_interlocked}<span>%</span></div>
