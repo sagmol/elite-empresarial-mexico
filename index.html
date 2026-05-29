@@ -343,10 +343,22 @@ footer a { color: var(--ink2); }
 <!-- SECTION 01: LOS GRUPOS -->
 <section class="section fade-in" id="grupos">
   <div class="section-label">01 — Los grupos</div>
-  <h2 class="section-title">Once familias, la mitad de la bolsa</h2>
+  <h2 class="section-title">Los grupos detrás de las 51 empresas</h2>
   <p class="section-lead">
-    Identificamos 11 conglomerados con directorios interconectados que operan 51 empresas listadas en la BMV. Juntos concentran el <strong id="pct-lbl"></strong>% del valor bursátil de la muestra. La <em>capitalización de mercado</em> —el precio de cada acción multiplicado por el número total de acciones en circulación— es la forma más directa de medir cuánto vale una empresa según el mercado.
+    Aplicamos detección de comunidades (algoritmo Louvain, Q=0.60) sobre una red de 256 nodos: las 50 empresas con datos de directores más 207 organizaciones externas donde trabajaron previamente. Los grupos emergen de quién comparte consejo y de dónde viene cada quien — no de una clasificación manual.
   </p>
+  <div class="insight fade-in" style="margin-bottom:24px;">
+    <strong>Nota metodológica</strong> — Los grupos combinan interlocks de directores, subsidiarias declaradas en Eikon y —en algunos casos— investigación de campo. El grupo <em>Yucatan</em> (ASUR, KUO, Bachoco) no emerge de la red: las tres empresas caen en comunidades distintas. Su agrupación proviene de fuentes externas y requiere verificación adicional.
+  </div>
+
+  <div class="card fade-in" style="margin-bottom:24px;">
+    <div class="card-title">Red de comunidades — detección algorítmica (Louvain, Q=0.60)</div>
+    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:12px;">
+      Cada nodo es una empresa; tamaño = market cap. Color = comunidad detectada. Grosor de arista = directores compartidos o trayectorias comunes. Hover para detalle.
+    </div>
+    <svg id="comm-svg" style="width:100%;height:460px;display:block;background:transparent;"></svg>
+    <div id="comm-legend" style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:0.76rem;color:var(--ink2);"></div>
+  </div>
 
   <div class="two-col-60">
     <div class="card fade-in">
@@ -589,13 +601,87 @@ document.getElementById('hero-kpis').innerHTML = `
   </div>
 `;
 
-document.getElementById('pct-lbl').textContent = STATS.pct_interlocked;
+const pctLbl = document.getElementById('pct-lbl');
+if (pctLbl) pctLbl.textContent = STATS.pct_interlocked;
+
+// ── Community Graph (Sección 01) ─────────────────────────────────────────────
+(function() {
+  try {
+    const svgEl = document.getElementById('comm-svg');
+    if (!svgEl || typeof COMMUNITY_GRAPH === 'undefined') return;
+
+    const W = svgEl.parentElement.clientWidth || 860;
+    const H = 460;
+    const svg = d3.select(svgEl).attr('viewBox', `0 0 ${W} ${H}`);
+
+    const nodes = COMMUNITY_GRAPH.nodes.map(d => ({...d}));
+    const edges = COMMUNITY_GRAPH.edges.map(d => ({...d}));
+    const mcMax = d3.max(nodes, d => d.mc_usd) || 1;
+    const rScale = d3.scaleSqrt().domain([0, mcMax]).range([5, 24]);
+
+    // Tooltip (append to body to avoid clipping)
+    const tip = d3.select('body').append('div')
+      .style('position','fixed').style('display','none')
+      .style('background','rgba(27,54,93,.93)').style('color','#fff')
+      .style('padding','8px 12px').style('border-radius','6px')
+      .style('font-size','0.78rem').style('pointer-events','none')
+      .style('max-width','200px').style('line-height','1.5').style('z-index','9999');
+
+    // Legend
+    const seen = new Map();
+    nodes.forEach(d => { if (!seen.has(d.community)) seen.set(d.community, {name: d.comm_name, color: d.color}); });
+    const legend = document.getElementById('comm-legend');
+    [...seen.entries()].sort((a,b)=>a[0]-b[0]).forEach(([, {name, color}]) => {
+      const el = document.createElement('span');
+      el.style.cssText = 'display:inline-flex;align-items:center;gap:4px;';
+      el.innerHTML = `<span style="width:9px;height:9px;border-radius:50%;background:${color};flex-shrink:0;display:inline-block;"></span>${name}`;
+      legend.appendChild(el);
+    });
+
+    // Force simulation
+    const sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(edges).id(d => d.id)
+        .distance(d => Math.max(30, 90 - d.weight * 5))
+        .strength(d => Math.min(d.weight / 8, 0.9)))
+      .force('charge', d3.forceManyBody().strength(-100))
+      .force('center', d3.forceCenter(W/2, H/2))
+      .force('collide', d3.forceCollide(d => rScale(d.mc_usd || 1) + 4));
+
+    const link = svg.append('g').selectAll('line').data(edges).join('line')
+      .attr('stroke','#ccc8c0').attr('stroke-opacity',0.5)
+      .attr('stroke-width', d => Math.max(0.5, Math.sqrt(d.weight) * 0.7));
+
+    const node = svg.append('g').selectAll('circle').data(nodes).join('circle')
+      .attr('r', d => rScale(d.mc_usd || 1))
+      .attr('fill', d => d.color).attr('fill-opacity', 0.82)
+      .attr('stroke','#fff').attr('stroke-width', 1.2)
+      .style('cursor','pointer')
+      .call(d3.drag()
+        .on('start', (ev,d) => { if (!ev.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+        .on('drag',  (ev,d) => { d.fx=ev.x; d.fy=ev.y; })
+        .on('end',   (ev,d) => { if (!ev.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }))
+      .on('mousemove', (ev,d) => {
+        tip.style('display','block')
+           .style('left',(ev.clientX+14)+'px').style('top',(ev.clientY-10)+'px')
+           .html(`<strong>${d.label}</strong><br>Comunidad: ${d.comm_name}<br>Grupo ref: ${d.group_manual||'—'}<br>Mkt cap: $${(d.mc_usd/1000).toFixed(1)}B`);
+      })
+      .on('mouseleave', () => tip.style('display','none'));
+
+    sim.on('tick', () => {
+      link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y)
+          .attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
+      node.attr('cx',d=>Math.max(24,Math.min(W-24,d.x)))
+          .attr('cy',d=>Math.max(24,Math.min(H-24,d.y)));
+    });
+  } catch(e) { console.error('Community graph:', e); }
+})();
 
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
-  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil total</strong> a través de solo 5 empresas listadas — desde América Móvil hasta Grupo Carso. ` +
-  `Grupo México, con 2 compañías, alcanza el ${STATS.gmexico_pct}%: la mayor concentración de valor por empresa de todo el universo analizado. ` +
-  `Juntos, estos dos conglomerados suman más del 41% de toda la capitalización de la muestra.`;
+  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil de la muestra</strong> a través de 5 empresas listadas. ` +
+  `Grupo México alcanza el ${STATS.gmexico_pct}% con solo 2 compañías — la mayor concentración de valor por empresa del universo analizado. ` +
+  `El análisis de red muestra que la comunidad Slim comparte directores con exfuncionarios de Hacienda, NAFIN y Pemex. ` +
+  `BAL (Baillères) es el grupo más cohesionado: sus 5 empresas forman una comunidad perfectamente delimitada, con hasta 8 directores compartidos entre pares.`;
 
 // ── Section 01 Charts ────────────────────────────────────────────────────────
 const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
