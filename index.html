@@ -608,11 +608,13 @@ const pctLbl = document.getElementById('pct-lbl');
 if (pctLbl) pctLbl.textContent = STATS.pct_interlocked;
 
 // ── Community Graph (Sección 01) ─────────────────────────────────────────────
-(function() {
-  const svg = d3.select('#comm-svg');
-  if (!svg.node() || !window.COMMUNITY_GRAPH) return;
+function renderCommunityGraph() {
+  try {
+  const svgEl = document.getElementById('comm-svg');
+  if (!svgEl || !window.COMMUNITY_GRAPH) return;
+  const svg = d3.select(svgEl);
 
-  const W = svg.node().clientWidth || 900;
+  const W = svgEl.getBoundingClientRect().width || svgEl.parentElement.clientWidth || 860;
   const H = 480;
   svg.attr('viewBox', `0 0 ${W} ${H}`);
 
@@ -674,7 +676,9 @@ if (pctLbl) pctLbl.textContent = STATS.pct_interlocked;
     node.attr('cx', d => Math.max(22, Math.min(W-22, d.x)))
         .attr('cy', d => Math.max(22, Math.min(H-22, d.y)));
   });
-})();
+  } catch(e) { console.error('Community graph error:', e); }
+}
+requestAnimationFrame(renderCommunityGraph);
 
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
