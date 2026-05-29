@@ -592,7 +592,8 @@ document.getElementById('hero-kpis').innerHTML = `
   </div>
 `;
 
-document.getElementById('pct-lbl').textContent = STATS.pct_interlocked;
+const pctLbl = document.getElementById('pct-lbl');
+if (pctLbl) pctLbl.textContent = STATS.pct_interlocked;
 
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
