@@ -1420,12 +1420,11 @@ const TYPE_COLORS = {
     const HAVEN_COLORS = { 'Paraíso clásico': '#B85C38', 'Hub fiscal': '#7a8898' };
     document.getElementById('haven-details').innerHTML = globalDetails.length
       ? globalDetails.map(d => `
-          <div class="flow-row" style="font-size:0.78rem;">
-            <div style="flex:1;min-width:0;">
-              <span style="font-weight:500;">${d.name}</span>
-              <span style="color:var(--muted);margin-left:6px;">${d.country}</span>
-            </div>
-            <span style="font-size:0.68rem;padding:1px 6px;border-radius:4px;background:${HAVEN_COLORS[d.haven_type]||'#aaa'};color:#fff;white-space:nowrap;">${d.haven_type}</span>
+          <div class="flow-row" style="font-size:0.77rem;gap:6px;">
+            <span style="color:var(--muted);min-width:80px;flex-shrink:0;">${d.company}</span>
+            <span style="font-weight:500;flex:1;min-width:0;">${d.name}</span>
+            <span style="color:var(--muted);white-space:nowrap;">${d.country}</span>
+            <span style="font-size:0.66rem;padding:1px 6px;border-radius:4px;background:${HAVEN_COLORS[d.haven_type]||'#aaa'};color:#fff;white-space:nowrap;flex-shrink:0;">${d.haven_type}</span>
           </div>`).join('')
       : '<p style="color:var(--muted);font-size:0.82rem;">Sin casos notables identificados.</p>';
 

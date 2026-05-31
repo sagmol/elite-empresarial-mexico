@@ -6026,150 +6026,175 @@ const SUBSIDIARIES_DATA = {
     "haven_details": [
       {
         "name": "Telekom Austria Finance BV",
+        "company": "America Movil",
         "country": "Netherlands",
         "haven_type": "Hub fiscal",
         "industry": ""
       },
       {
         "name": "Claro Panama SA",
+        "company": "America Movil",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Integrated Telecommunications Services"
       },
       {
         "name": "Torino Re Ltd",
+        "company": "Cemex",
         "country": "Barbados",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Machu Pichu Investments BV",
+        "company": "Cemex",
         "country": "Netherlands",
         "haven_type": "Hub fiscal",
         "industry": "Industrial Machinery & Equipment"
       },
       {
         "name": "Arawak Concrete Solutions Ltd",
+        "company": "Cemex",
         "country": "Barbados",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "TTLI Trading Ltd",
+        "company": "Cemex",
         "country": "Barbados",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Arawak Cement Company Ltd",
+        "company": "Cemex",
         "country": "Barbados",
         "haven_type": "Paraíso clásico",
         "industry": "Construction Materials"
       },
       {
         "name": "Mustang RE Ltd",
+        "company": "Cemex",
         "country": "Bermuda",
         "haven_type": "Paraíso clásico",
         "industry": "Reinsurance"
       },
       {
         "name": "CxNetworks NV",
+        "company": "Cemex",
         "country": "Netherlands",
         "haven_type": "Hub fiscal",
         "industry": "Investment Holding Companies"
       },
       {
         "name": "Coca-Cola Femsa de Panama SA",
+        "company": "Coca-Cola Femsa",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Non-Alcoholic Beverages"
       },
       {
         "name": "London Overseas Inc",
+        "company": "Directors",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "London Caribbean Inc",
+        "company": "Directors",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Fargo Holding (Gibraltar)",
+        "company": "Grupo Bimbo",
         "country": "Gibraltar",
         "haven_type": "Paraíso clásico",
         "industry": "Investment Holding Companies"
       },
       {
         "name": "Bimbo de Panama SA",
+        "company": "Grupo Bimbo",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Food Processing"
       },
       {
         "name": "Bimbo Donuts Pirineus SLU",
+        "company": "Grupo Bimbo",
         "country": "Andorra",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Plycem Co Inc",
+        "company": "Grupo Carso",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
+        "company": "Grupo Financiero Banorte",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": "Banks"
       },
       {
         "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
+        "company": "Grupo Financiero Banorte",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": "Banks"
       },
       {
         "name": "Prospector Rig 2 Owning Cayman Co Ltd",
+        "company": "Grupo Mexico",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Prospector Rig 4 Owning Cayman Co Ltd",
+        "company": "Grupo Mexico",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Undershaft Investments NV",
+        "company": "Grupo Simec",
         "country": "Curacao",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Media Vision de Panama SA",
+        "company": "Grupo Televisa",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": ""
       },
       {
         "name": "Ideal Panama SA",
+        "company": "Impulsora del Desarrollo y e",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Electric Utilities"
       },
       {
         "name": "Cilsa Panama SA",
+        "company": "Impulsora del Desarrollo y e",
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Financial & Commodity Market Operators & Service Providers"
       },
       {
         "name": "Wiikit Re Ltd",
+        "company": "nan",
         "country": "Bermuda",
         "haven_type": "Paraíso clásico",
         "industry": ""
@@ -6525,12 +6550,14 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Telekom Austria Finance BV",
+          "company": "America Movil",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": ""
         },
         {
           "name": "Claro Panama SA",
+          "company": "America Movil",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Integrated Telecommunications Services"
@@ -6844,42 +6871,49 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Torino Re Ltd",
+          "company": "Cemex",
           "country": "Barbados",
           "haven_type": "Paraíso clásico",
           "industry": ""
         },
         {
           "name": "Machu Pichu Investments BV",
+          "company": "Cemex",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Industrial Machinery & Equipment"
         },
         {
           "name": "Arawak Concrete Solutions Ltd",
+          "company": "Cemex",
           "country": "Barbados",
           "haven_type": "Paraíso clásico",
           "industry": ""
         },
         {
           "name": "TTLI Trading Ltd",
+          "company": "Cemex",
           "country": "Barbados",
           "haven_type": "Paraíso clásico",
           "industry": ""
         },
         {
           "name": "Arawak Cement Company Ltd",
+          "company": "Cemex",
           "country": "Barbados",
           "haven_type": "Paraíso clásico",
           "industry": "Construction Materials"
         },
         {
           "name": "Mustang RE Ltd",
+          "company": "Cemex",
           "country": "Bermuda",
           "haven_type": "Paraíso clásico",
           "industry": "Reinsurance"
         },
         {
           "name": "CxNetworks NV",
+          "company": "Cemex",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Investment Holding Companies"
@@ -7000,6 +7034,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Coca-Cola Femsa de Panama SA",
+          "company": "Coca-Cola Femsa",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Non-Alcoholic Beverages"
@@ -7730,18 +7765,21 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Fargo Holding (Gibraltar)",
+          "company": "Grupo Bimbo",
           "country": "Gibraltar",
           "haven_type": "Paraíso clásico",
           "industry": "Investment Holding Companies"
         },
         {
           "name": "Bimbo de Panama SA",
+          "company": "Grupo Bimbo",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Food Processing"
         },
         {
           "name": "Bimbo Donuts Pirineus SLU",
+          "company": "Grupo Bimbo",
           "country": "Andorra",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -7868,6 +7906,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Plycem Co Inc",
+          "company": "Grupo Carso",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -7964,12 +8003,14 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
+          "company": "Grupo Financiero Banorte",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": "Banks"
         },
         {
           "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
+          "company": "Grupo Financiero Banorte",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": "Banks"
@@ -8192,12 +8233,14 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Prospector Rig 2 Owning Cayman Co Ltd",
+          "company": "Grupo Mexico",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": ""
         },
         {
           "name": "Prospector Rig 4 Owning Cayman Co Ltd",
+          "company": "Grupo Mexico",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -8368,6 +8411,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Undershaft Investments NV",
+          "company": "Grupo Simec",
           "country": "Curacao",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -8470,6 +8514,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Media Vision de Panama SA",
+          "company": "Grupo Televisa",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -8546,12 +8591,14 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Ideal Panama SA",
+          "company": "Impulsora del Desarrollo y e",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Electric Utilities"
         },
         {
           "name": "Cilsa Panama SA",
+          "company": "Impulsora del Desarrollo y e",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Financial & Commodity Market Operators & Service Providers"
@@ -8598,6 +8645,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Wiikit Re Ltd",
+          "company": "nan",
           "country": "Bermuda",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -8664,6 +8712,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Undershaft Investments NV",
+          "company": "Industrias CH",
           "country": "Curacao",
           "haven_type": "Paraíso clásico",
           "industry": ""
@@ -9109,18 +9158,21 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Mexichem Panama SA",
+          "company": "Orbia Advance Corp",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Commodity Chemicals"
         },
         {
           "name": "Riegos De Chiriqui SA",
+          "company": "Orbia Advance Corp",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Water & Related Utilities"
         },
         {
           "name": "Hortifim BV",
+          "company": "Orbia Advance Corp",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Investment Management & Fund Operators"
@@ -9257,30 +9309,35 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "PMI Holdings BV",
+          "company": "Pemex",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Oil Related Services and Equipment"
         },
         {
           "name": "Pasco Terminals, Inc.",
+          "company": "Pemex",
           "country": "Bahamas",
           "haven_type": "Paraíso clásico",
           "industry": ""
         },
         {
           "name": "Holdings Holanda Services BV",
+          "company": "Pemex",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Investment Holding Companies"
         },
         {
           "name": "PMI Holdings Petroleos Espana SL (Singapore Branch)",
+          "company": "Pemex",
           "country": "Singapore",
           "haven_type": "Hub fiscal",
           "industry": ""
         },
         {
           "name": "Pemex Finance Ltd",
+          "company": "Pemex",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": "Oil & Gas Refining and Marketing"
@@ -9631,12 +9688,14 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "London Overseas Inc",
+          "company": "Directors",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": ""
         },
         {
           "name": "London Caribbean Inc",
+          "company": "Directors",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": ""

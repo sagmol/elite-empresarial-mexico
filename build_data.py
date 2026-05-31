@@ -557,8 +557,11 @@ def agg_subs(df):
         key = (name, country)
         if key in seen: continue
         seen.add(key)
+        company_folder = str(r.get('company_folder', '')).strip()
+        company_short  = short_co(folder_to_name.get(company_folder, company_folder))
         notable.append({
             'name': name[:55],
+            'company': company_short[:28],
             'country': country,
             'haven_type': 'Paraíso clásico' if in_classic else 'Hub fiscal',
             'industry': industry if industry and industry != 'nan' else '',
