@@ -369,6 +369,7 @@ footer a { color: var(--ink2); }
     <li><a href="#perfil">Perfil</a></li>
     <li><a href="#trayectorias">Trayectorias</a></li>
     <li><a href="#propiedad">Propiedad</a></li>
+    <li><a href="#capital">Capital</a></li>
     <li><a href="#permanencia">Permanencia</a></li>
     <li><a href="#huella">Huella</a></li>
     <li><a href="#red">La red</a></li>
@@ -515,9 +516,55 @@ footer a { color: var(--ink2); }
   <div class="insight fade-in" id="insight-propiedad"></div>
 </section>
 
+<!-- SECTION 05: CAPITAL GLOBAL -->
+<section class="section fade-in" id="capital">
+  <div class="section-label">05 — Capital global</div>
+  <h2 class="section-title">Los dueños invisibles — quién pone el dinero institucional</h2>
+  <p class="section-lead">
+    Más allá de las familias controladoras, <strong id="inst-n-investors">—</strong> gestoras institucionales
+    de <strong id="inst-n-countries">—</strong> países mantienen posiciones en estas empresas,
+    sumando <strong id="inst-total-value">—</strong> mil millones de dólares.
+    Son los fondos de pensión, ETFs y gestoras que canalizan el ahorro global hacia el mercado mexicano.
+  </p>
+
+  <div class="stat-mini-grid fade-in" id="inst-stats-cards"></div>
+
+  <div class="two-col fade-in">
+    <div class="card">
+      <div class="card-title">Capital institucional por país de origen (USD B)</div>
+      <div class="chart-wrap" style="min-height:360px;" id="chart-inst-map"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Top 15 gestoras por valor total en el universo</div>
+      <div class="chart-wrap" style="min-height:360px;" id="chart-inst-top"></div>
+    </div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">El inversor más ubicuo — presencia simultánea en el universo</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
+      Estos fondos tienen posición en casi todas las empresas del universo a la vez.
+      Su voto en consejos se replica simultáneamente en decenas de empresas.
+    </p>
+    <div class="chart-wrap" style="min-height:340px;" id="chart-inst-connected"></div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">El peso real — México como fracción del portafolio global</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
+      Cada punto es un inversor. Eje X: activos globales en renta variable (escala log).
+      Eje Y: % de esos activos que están en este universo mexicano.
+      Los fondos locales tienen casi todo aquí; los globales tienen México como nota al pie.
+    </p>
+    <div class="chart-wrap" style="min-height:420px;" id="chart-inst-weight"></div>
+  </div>
+
+  <div class="insight fade-in" id="insight-capital"></div>
+</section>
+
 <!-- SECTION 06: PERMANENCIA -->
 <section class="section fade-in" id="permanencia">
-  <div class="section-label">05 — Permanencia</div>
+  <div class="section-label">06 — Permanencia</div>
   <h2 class="section-title">Los mismos de siempre — décadas en el mismo consejo</h2>
   <p class="section-lead">
     El director promedio lleva <strong id="perm-avg-years">—</strong> años en su puesto actual.
@@ -543,7 +590,7 @@ footer a { color: var(--ink2); }
 
 <!-- SECTION 07: HUELLA GLOBAL -->
 <section class="section fade-in" id="huella">
-  <div class="section-label">06 — Huella global</div>
+  <div class="section-label">07 — Huella global</div>
   <h2 class="section-title">Dónde operan — presencia internacional de los grupos</h2>
   <p class="section-lead">
     Las 61 empresas con datos de estructura corporativa suman <strong>3,226 subsidiarias</strong>
@@ -596,7 +643,7 @@ footer a { color: var(--ink2); }
 
 <!-- SECTION 08: LA RED -->
 <section class="section fade-in" id="red">
-  <div class="section-label">07 — La red</div>
+  <div class="section-label">08 — La red</div>
   <h2 class="section-title">El mapa del poder — quién está conectado con quién</h2>
   <p class="section-lead">
     Cada nodo es una empresa, su tamaño proporcional al market cap.
@@ -1247,6 +1294,132 @@ const TYPE_COLORS = {
     `no tienen un accionista estratégico registrado: su gobierno corporativo lo determinan los inversionistas institucionales.`;
 })();
 
+// ── Section 05: Capital global ────────────────────────────────────────────────
+(function() {
+  const D = INSTITUTIONAL_DATA;
+  const S = D.stats;
+
+  document.getElementById('inst-n-investors').textContent = S.n_investors.toLocaleString();
+  document.getElementById('inst-n-countries').textContent = S.n_countries;
+  document.getElementById('inst-total-value').textContent = S.total_value_b.toFixed(1);
+
+  document.getElementById('inst-stats-cards').innerHTML = `
+    <div class="stat-mini">
+      <div class="stat-mini-n">$${S.total_value_b.toFixed(0)}B</div>
+      <div class="stat-mini-l">Capital institucional</div>
+      <div class="stat-mini-sub">USD en posiciones activas</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-n">${S.n_investors.toLocaleString()}</div>
+      <div class="stat-mini-l">Gestoras</div>
+      <div class="stat-mini-sub">De ${S.n_countries} países distintos</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-n">${D.most_connected[0].n_companies}</div>
+      <div class="stat-mini-l">Máxima presencia</div>
+      <div class="stat-mini-sub">${D.most_connected[0].short_name} — empresas con posición</div>
+    </div>`;
+
+  // Capa 1a — choropleth
+  const countries = D.by_country.filter(c => c.country && c.total_value_b > 0);
+  Plotly.newPlot('chart-inst-map', [{
+    type: 'choropleth', locationmode: 'country names',
+    locations: countries.map(c => c.country),
+    z: countries.map(c => Math.log10(c.total_value_b + 0.01)),
+    customdata: countries.map(c => [c.country, c.total_value_b.toFixed(1), c.n_investors]),
+    colorscale: [[0,'#e8edf5'],[1,'#1B365D']], showscale: false,
+    hovertemplate: '<b>%{customdata[0]}</b><br>$%{customdata[1]}B USD<br>%{customdata[2]} gestoras<extra></extra>',
+  }], {
+    ...LAYOUT_BASE, height: 360, margin: { t:8, r:8, b:8, l:8 },
+    geo: { showframe:false, showcoastlines:true, coastlinecolor:'#ddd',
+           projection:{type:'natural earth'}, bgcolor:'transparent',
+           landcolor:'#f0efe9', oceancolor:'#f5f4ed', showocean:true },
+  }, PLOTLY_CONFIG);
+
+  // Capa 1b — top investors dot plot
+  const STYLE_COLORS = {
+    'Index':'#1B365D','Core Value':'#B85C38','Core Growth':'#5a9e3e',
+    'GARP':'#7b52ab','Growth':'#e0a030','Deep Value':'#5b8db8','Yield':'#888',
+  };
+  const top15 = [...D.weight_data].sort((a,b) => a.total_value_b - b.total_value_b).slice(-15);
+  Plotly.newPlot('chart-inst-top', [{
+    type: 'scatter', mode: 'markers+text',
+    x: top15.map(d => d.total_value_b),
+    y: top15.map(d => d.short_name),
+    marker: { color: top15.map(d => STYLE_COLORS[d.investment_style]||'#aaa'), size:11, line:{color:'#fff',width:1.5} },
+    text: top15.map(d => '$'+d.total_value_b.toFixed(2)+'B'),
+    textposition: 'middle right', textfont: { size:9, color:'#555' },
+    hovertemplate: '<b>%{y}</b><br>$%{x:.2f}B · %{customdata} empresas<extra></extra>',
+    customdata: top15.map(d => d.n_companies),
+  }], {
+    ...LAYOUT_BASE, height: 360,
+    margin: { t:8, r:80, b:32, l:170 },
+    xaxis: { visible:false, range:[0, Math.max(...top15.map(d=>d.total_value_b))*1.35] },
+    yaxis: { tickfont:{size:10}, gridcolor:'#edecea' },
+  }, PLOTLY_CONFIG);
+
+  // Capa 3 — most connected
+  const SUBTYPE_COLORS = {
+    'Investment Advisor':'#1B365D','Investment Advisor/Hedge Fund':'#5b8db8',
+    'Pension Fund':'#5a9e3e','Sovereign Wealth Fund':'#e0a030',
+    'Hedge Fund':'#B85C38','Bank and Trust':'#7b52ab',
+  };
+  const conn = [...D.most_connected].sort((a,b) => a.n_companies - b.n_companies);
+  Plotly.newPlot('chart-inst-connected', [{
+    type: 'scatter', mode: 'markers+text',
+    x: conn.map(d => d.n_companies),
+    y: conn.map(d => d.short_name),
+    marker: { color: conn.map(d => SUBTYPE_COLORS[d.investor_subtype]||'#aaa'), size:11, line:{color:'#fff',width:1.5} },
+    text: conn.map(d => d.n_companies),
+    textposition: 'middle right', textfont: { size:10, color:'#555' },
+    customdata: conn.map(d => [d.country, d.investor_subtype]),
+    hovertemplate: '<b>%{y}</b><br>%{x} empresas<br>%{customdata[0]} · %{customdata[1]}<extra></extra>',
+  }], {
+    ...LAYOUT_BASE, height: 340,
+    margin: { t:8, r:48, b:32, l:185 },
+    xaxis: { visible:false, range:[0,65] },
+    yaxis: { tickfont:{size:10}, gridcolor:'#edecea' },
+  }, PLOTLY_CONFIG);
+
+  // Capa 7 — weight scatter
+  const wd = D.weight_data;
+  Plotly.newPlot('chart-inst-weight', [{
+    type: 'scatter', mode: 'markers+text',
+    x: wd.map(d => d.equity_assets_b),
+    y: wd.map(d => d.pct_of_assets),
+    marker: {
+      color: wd.map(d => SUBTYPE_COLORS[d.investor_subtype]||'#aaa'),
+      size: wd.map(d => Math.sqrt(d.total_value_b)*8+6),
+      line: { color:'#fff', width:1.5 }, opacity:0.85,
+    },
+    text: wd.map(d => d.short_name),
+    textposition: 'top center', textfont: { size:8.5, color:'#444' },
+    customdata: wd.map(d => [d.total_value_b, d.n_companies, d.country]),
+    hovertemplate: '<b>%{text}</b><br>$%{customdata[0]:.2f}B en México (%{y:.2f}% de su portafolio)<br>Activos totales: $%{x:.0f}B · %{customdata[1]} empresas · %{customdata[2]}<extra></extra>',
+  }], {
+    ...LAYOUT_BASE, height: 420,
+    margin: { t:32, r:32, b:56, l:72 },
+    xaxis: { title:'Activos totales en renta variable (USD B, escala log)', type:'log', tickfont:{size:10}, gridcolor:'#edecea' },
+    yaxis: { title:'% de activos en este universo mexicano', ticksuffix:'%', tickfont:{size:10}, gridcolor:'#edecea' },
+    shapes: [{ type:'line', x0:0, x1:1, xref:'paper', y0:1, y1:1, line:{color:'#B85C38',width:1,dash:'dot'} }],
+    annotations: [{ x:0.01, xref:'paper', y:1.08, text:'1% del portafolio', showarrow:false, font:{size:9,color:'#B85C38'} }],
+  }, PLOTLY_CONFIG);
+
+  // Insight
+  const top1 = D.most_connected[0];
+  const vanguard = wd.find(d => d.investor_name && d.investor_name.includes('Vanguard Group')) || wd[1];
+  const inbursa  = wd.find(d => d.investor_name && d.investor_name.includes('Inbursa'));
+  document.getElementById('insight-capital').innerHTML =
+    `<strong>${top1.short_name} tiene posición en ${top1.n_companies} de las 60 empresas del universo</strong> — prácticamente omnipresente. ` +
+    `Junto con BlackRock, State Street y Vanguard forman el núcleo del "capitalismo indexado": ` +
+    `su voto se replica simultáneamente en casi todo el universo sin que ningún analista haya estudiado cada empresa. ` +
+    (vanguard ? `Vanguard maneja $${vanguard.equity_assets_b.toFixed(0)}B en activos globales — ` +
+    `su posición en México representa el <strong>${vanguard.pct_of_assets.toFixed(3)}% de su portafolio</strong>. ` : '') +
+    (inbursa ? `Inbursa, en cambio, tiene el <strong>${inbursa.pct_of_assets.toFixed(1)}% de sus activos en este universo</strong>. ` : '') +
+    `La asimetría es brutal: si los grandes fondos globales deciden salir de mercados emergentes, ` +
+    `el mercado mexicano colapsa — y ellos apenas lo notarían.`;
+})();
+
 // ── Section 06: Permanencia ───────────────────────────────────────────────────
 (function() {
   document.getElementById('perm-avg-years').textContent = BOARD_STATS.avg_tenure;
@@ -1314,7 +1487,7 @@ const TYPE_COLORS = {
     `Gruma (4.1×) y Alsea muestran los consejos más activos en incorporar nuevos perfiles.`;
 })();
 
-// ── Section 06: Huella global ─────────────────────────────────────────────────
+// ── Section 07: Huella global ─────────────────────────────────────────────────
 (function() {
   // Populate selector
   const sel = document.getElementById('subs-selector');
@@ -1450,7 +1623,7 @@ const TYPE_COLORS = {
   });
 })();
 
-// ── Section 07: La Red (D3 force graph) ──────────────────────────────────────
+// ── Section 08: La Red (D3 force graph) ──────────────────────────────────────
 (function() {
   // ── Data ──────────────────────────────────────────────────────────────────
   const nodes = NETWORK_D3.nodes.map(d => ({...d}));

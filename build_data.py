@@ -599,7 +599,88 @@ subsidiaries_data = {
 }
 subsidiaries_data = to_native(subsidiaries_data)
 
-# ── 12. COMPANIES TABLE (tabla enriquecida con red) ───────────────────────────
+# ── 12. INSTITUTIONAL INVESTORS DATA ─────────────────────────────────────────
+inst = sh_raw[sh_raw['investor_type'] == 'Investment Managers'].copy()
+inst = inst[inst['pct_outstanding'].notna()].copy()
+
+# Capa 1 — by country: total value, n_investors
+by_country_inst = (inst[inst['country'].notna()]
+    .groupby('country')
+    .agg(
+        total_value_b=('value_usd_m', lambda x: round(x.sum()/1000, 3)),
+        n_investors=('investor_name', 'nunique'),
+    )
+    .reset_index()
+    .sort_values('total_value_b', ascending=False)
+    .to_dict('records'))
+
+# Capa 3 — most connected: n_companies in universe
+most_connected = (inst.groupby(['investor_name','country','investor_subtype','investment_style','turnover'])
+    .agg(
+        n_companies=('company_folder','nunique'),
+        total_value_m=('value_usd_m','sum'),
+        equity_assets_b=('equity_assets_m','mean'),
+    )
+    .reset_index()
+    .sort_values('n_companies', ascending=False)
+    .head(25))
+most_connected['equity_assets_b'] = (most_connected['equity_assets_b'] / 1000).round(1)
+most_connected['total_value_b'] = (most_connected['total_value_m'] / 1000).round(3)
+most_connected = most_connected.drop(columns=['total_value_m']).to_dict('records')
+
+# Capa 7 — weight: equity_assets vs value_in_mexico
+weight_data = (inst.groupby(['investor_name','country','investor_subtype','investment_style','turnover'])
+    .agg(
+        n_companies=('company_folder','nunique'),
+        total_value_m=('value_usd_m','sum'),
+        equity_assets_m=('equity_assets_m','mean'),
+    )
+    .reset_index())
+weight_data = weight_data[
+    (weight_data['total_value_m'] > 200) &   # >$200M en México
+    (weight_data['equity_assets_m'] > 0)
+].copy()
+weight_data['equity_assets_b'] = (weight_data['equity_assets_m'] / 1000).round(1)
+weight_data['total_value_b']   = (weight_data['total_value_m'] / 1000).round(3)
+weight_data['pct_of_assets']   = (weight_data['total_value_m'] / weight_data['equity_assets_m'] * 100).round(3)
+weight_data = (weight_data
+    .sort_values('total_value_b', ascending=False)
+    .head(20)
+    .drop(columns=['total_value_m','equity_assets_m'])
+    .to_dict('records'))
+
+# Short name cleaner for investors
+def short_inv(name):
+    s = str(name)
+    for sfx in ['Investment Management', 'Asset Management', 'Global Advisors',
+                'Institutional Trust Company, N.A.', 'Management Company LLC',
+                'Management & Research Company LLC', 'Advisers, Inc.',
+                'Advisors, L.P.', 'Advisors, Ltd.', ', Inc.', ' LLC', ' Ltd.',
+                'S.A. de C.V.', 'S.A.B. de C.V.', 'SAB de CV']:
+        s = s.replace(sfx, '').strip(' ,()')
+    return s.strip()[:35]
+
+for d in most_connected: d['short_name'] = short_inv(d['investor_name'])
+for d in weight_data:     d['short_name'] = short_inv(d['investor_name'])
+
+# Summary stats
+total_inst_value = round(inst['value_usd_m'].sum() / 1000, 1)
+n_countries_inst = int(inst['country'].nunique())
+n_investors_inst = int(inst['investor_name'].nunique())
+
+institutional_data = {
+    'by_country'     : by_country_inst,
+    'most_connected' : most_connected,
+    'weight_data'    : weight_data,
+    'stats': {
+        'total_value_b'  : total_inst_value,
+        'n_countries'    : n_countries_inst,
+        'n_investors'    : n_investors_inst,
+    }
+}
+institutional_data = to_native(institutional_data)
+
+# ── 13. COMPANIES TABLE (tabla enriquecida con red) ───────────────────────────
 from collections import Counter
 
 # Grado: n empresas con interlock (peer only)
@@ -697,6 +778,8 @@ const COMMUNITY_GRAPH = {json.dumps(community_graph, ensure_ascii=False, indent=
 const COMPANIES_TABLE = {json.dumps(companies_table, ensure_ascii=False, indent=2)};
 
 const SUBSIDIARIES_DATA = {json.dumps(subsidiaries_data, ensure_ascii=False, indent=2)};
+
+const INSTITUTIONAL_DATA = {json.dumps(institutional_data, ensure_ascii=False, indent=2)};
 """
 
 with open(OUT, 'w', encoding='utf-8') as f:

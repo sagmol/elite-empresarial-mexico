@@ -9695,3 +9695,772 @@ const SUBSIDIARIES_DATA = {
     }
   }
 };
+
+const INSTITUTIONAL_DATA = {
+  "by_country": [
+    {
+      "country": "United States",
+      "total_value_b": 33.808,
+      "n_investors": 988
+    },
+    {
+      "country": "Mexico",
+      "total_value_b": 10.562,
+      "n_investors": 33
+    },
+    {
+      "country": "United Kingdom",
+      "total_value_b": 8.212,
+      "n_investors": 155
+    },
+    {
+      "country": "Norway",
+      "total_value_b": 3.209,
+      "n_investors": 7
+    },
+    {
+      "country": "Canada",
+      "total_value_b": 1.68,
+      "n_investors": 68
+    },
+    {
+      "country": "Netherlands",
+      "total_value_b": 1.628,
+      "n_investors": 12
+    },
+    {
+      "country": "Spain",
+      "total_value_b": 1.498,
+      "n_investors": 27
+    },
+    {
+      "country": "Switzerland",
+      "total_value_b": 0.959,
+      "n_investors": 51
+    },
+    {
+      "country": "Argentina",
+      "total_value_b": 0.82,
+      "n_investors": 5
+    },
+    {
+      "country": "Hong Kong",
+      "total_value_b": 0.779,
+      "n_investors": 23
+    },
+    {
+      "country": "Singapore",
+      "total_value_b": 0.756,
+      "n_investors": 19
+    },
+    {
+      "country": "France",
+      "total_value_b": 0.651,
+      "n_investors": 33
+    },
+    {
+      "country": "Germany",
+      "total_value_b": 0.628,
+      "n_investors": 63
+    },
+    {
+      "country": "Chile",
+      "total_value_b": 0.576,
+      "n_investors": 13
+    },
+    {
+      "country": "Denmark",
+      "total_value_b": 0.456,
+      "n_investors": 18
+    },
+    {
+      "country": "Sweden",
+      "total_value_b": 0.448,
+      "n_investors": 16
+    },
+    {
+      "country": "Ireland",
+      "total_value_b": 0.403,
+      "n_investors": 16
+    },
+    {
+      "country": "United Arab Emirates",
+      "total_value_b": 0.387,
+      "n_investors": 4
+    },
+    {
+      "country": "Luxembourg",
+      "total_value_b": 0.34,
+      "n_investors": 29
+    },
+    {
+      "country": "Australia",
+      "total_value_b": 0.263,
+      "n_investors": 28
+    },
+    {
+      "country": "Japan",
+      "total_value_b": 0.219,
+      "n_investors": 24
+    },
+    {
+      "country": "Brazil",
+      "total_value_b": 0.166,
+      "n_investors": 28
+    },
+    {
+      "country": "Finland",
+      "total_value_b": 0.118,
+      "n_investors": 11
+    },
+    {
+      "country": "Poland",
+      "total_value_b": 0.089,
+      "n_investors": 3
+    },
+    {
+      "country": "Italy",
+      "total_value_b": 0.054,
+      "n_investors": 13
+    },
+    {
+      "country": "South Africa",
+      "total_value_b": 0.038,
+      "n_investors": 11
+    },
+    {
+      "country": "Belgium",
+      "total_value_b": 0.036,
+      "n_investors": 4
+    },
+    {
+      "country": "Austria",
+      "total_value_b": 0.019,
+      "n_investors": 7
+    },
+    {
+      "country": "Taiwan",
+      "total_value_b": 0.01,
+      "n_investors": 9
+    },
+    {
+      "country": "Liechtenstein",
+      "total_value_b": 0.01,
+      "n_investors": 7
+    },
+    {
+      "country": "South Korea",
+      "total_value_b": 0.007,
+      "n_investors": 10
+    },
+    {
+      "country": "Iceland",
+      "total_value_b": 0.005,
+      "n_investors": 1
+    },
+    {
+      "country": "Andorra",
+      "total_value_b": 0.003,
+      "n_investors": 1
+    },
+    {
+      "country": "Puerto Rico",
+      "total_value_b": 0.003,
+      "n_investors": 1
+    },
+    {
+      "country": "India",
+      "total_value_b": 0.002,
+      "n_investors": 1
+    },
+    {
+      "country": "Bolivia",
+      "total_value_b": 0.002,
+      "n_investors": 1
+    },
+    {
+      "country": "Slovenia",
+      "total_value_b": 0.002,
+      "n_investors": 1
+    },
+    {
+      "country": "Peru",
+      "total_value_b": 0.002,
+      "n_investors": 4
+    },
+    {
+      "country": "Jersey",
+      "total_value_b": 0.002,
+      "n_investors": 1
+    },
+    {
+      "country": "Czech Republic",
+      "total_value_b": 0.001,
+      "n_investors": 1
+    },
+    {
+      "country": "Malaysia",
+      "total_value_b": 0.001,
+      "n_investors": 2
+    },
+    {
+      "country": "China (Mainland)",
+      "total_value_b": 0.0,
+      "n_investors": 4
+    },
+    {
+      "country": "Guernsey",
+      "total_value_b": 0.0,
+      "n_investors": 1
+    },
+    {
+      "country": "Israel",
+      "total_value_b": 0.0,
+      "n_investors": 3
+    },
+    {
+      "country": "Monaco",
+      "total_value_b": 0.0,
+      "n_investors": 1
+    },
+    {
+      "country": "Mauritius",
+      "total_value_b": 0.0,
+      "n_investors": 1
+    },
+    {
+      "country": "Malta",
+      "total_value_b": 0.0,
+      "n_investors": 1
+    },
+    {
+      "country": "Turkey",
+      "total_value_b": 0.0,
+      "n_investors": 1
+    }
+  ],
+  "most_connected": [
+    {
+      "investor_name": "Operadora Inbursa de Sociedades de Inversión, S.A. de C.V.",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Core Value",
+      "turnover": "Low",
+      "n_companies": 44,
+      "equity_assets_b": 4.2,
+      "total_value_b": 1.956,
+      "short_name": "Operadora Inbursa de Sociedades de "
+    },
+    {
+      "investor_name": "BlackRock Investment Management (UK) Ltd.",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 42,
+      "equity_assets_b": 622.8,
+      "total_value_b": 0.579,
+      "short_name": "BlackRock  (UK"
+    },
+    {
+      "investor_name": "Dimensional Fund Advisors, L.P.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Deep Value",
+      "turnover": "Low",
+      "n_companies": 42,
+      "equity_assets_b": 581.4,
+      "total_value_b": 1.006,
+      "short_name": "Dimensional Fund"
+    },
+    {
+      "investor_name": "Vanguard Investments Australia Ltd.",
+      "country": "Australia",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 41,
+      "equity_assets_b": 80.6,
+      "total_value_b": 0.047,
+      "short_name": "Vanguard Investments Australia"
+    },
+    {
+      "investor_name": "Norges Bank Investment Management (NBIM)",
+      "country": "Norway",
+      "investor_subtype": "Sovereign Wealth Fund",
+      "investment_style": "Core Value",
+      "turnover": "Low",
+      "n_companies": 39,
+      "equity_assets_b": 1182.0,
+      "total_value_b": 3.015,
+      "short_name": "Norges Bank  (NBIM"
+    },
+    {
+      "investor_name": "Operadora de Fondos GBM S.A.B. de C.V.",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Yield",
+      "turnover": "Low",
+      "n_companies": 39,
+      "equity_assets_b": 3.9,
+      "total_value_b": 1.093,
+      "short_name": "Operadora de Fondos GBM"
+    },
+    {
+      "investor_name": "California State Teachers Retirement System",
+      "country": "United States",
+      "investor_subtype": "Pension Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 37,
+      "equity_assets_b": 127.8,
+      "total_value_b": 0.289,
+      "short_name": "California State Teachers Retiremen"
+    },
+    {
+      "investor_name": "State Street Global Advisors (US)",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 36,
+      "equity_assets_b": 2481.4,
+      "total_value_b": 0.527,
+      "short_name": "State Street  (US"
+    },
+    {
+      "investor_name": "Franklin Templeton Institutional, LLC",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 36,
+      "equity_assets_b": 1.4,
+      "total_value_b": 0.073,
+      "short_name": "Franklin Templeton Institutional"
+    },
+    {
+      "investor_name": "Boston Partners",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Deep Value",
+      "turnover": "Low",
+      "n_companies": 36,
+      "equity_assets_b": 92.9,
+      "total_value_b": 0.013,
+      "short_name": "Boston Partners"
+    },
+    {
+      "investor_name": "Northern Trust Investments, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 35,
+      "equity_assets_b": 391.0,
+      "total_value_b": 0.524,
+      "short_name": "Northern Trust Investments"
+    },
+    {
+      "investor_name": "State Street Global Advisors Ireland Limited",
+      "country": "Ireland",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 35,
+      "equity_assets_b": 63.3,
+      "total_value_b": 0.022,
+      "short_name": "State Street  Ireland Limited"
+    },
+    {
+      "investor_name": "Charles Schwab Investment Management, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 585.8,
+      "total_value_b": 0.369,
+      "short_name": "Charles Schwab"
+    },
+    {
+      "investor_name": "The Vanguard Group, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 7610.9,
+      "total_value_b": 4.55,
+      "short_name": "The Vanguard Group"
+    },
+    {
+      "investor_name": "HSBC Global Asset Management (México), S. A. de C. V.",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Growth",
+      "turnover": "Moderate",
+      "n_companies": 34,
+      "equity_assets_b": 1.1,
+      "total_value_b": 0.082,
+      "short_name": "HSBC Global  (México), S. A. de C. "
+    },
+    {
+      "investor_name": "BlackRock Institutional Trust Company, N.A.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 3992.8,
+      "total_value_b": 4.646,
+      "short_name": "BlackRock"
+    },
+    {
+      "investor_name": "Legal & General Investment Management Ltd.",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 552.3,
+      "total_value_b": 0.172,
+      "short_name": "Legal & General"
+    },
+    {
+      "investor_name": "State Street Global Advisors (UK) Ltd.",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 33,
+      "equity_assets_b": 100.2,
+      "total_value_b": 0.222,
+      "short_name": "State Street  (UK"
+    },
+    {
+      "investor_name": "HSBC Global Asset Management (UK) Limited",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 33,
+      "equity_assets_b": 191.5,
+      "total_value_b": 0.079,
+      "short_name": "HSBC Global  (UK) Limited"
+    },
+    {
+      "investor_name": "Actinver S.A. de C.V.",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 33,
+      "equity_assets_b": 1.3,
+      "total_value_b": 0.085,
+      "short_name": "Actinver"
+    },
+    {
+      "investor_name": "Geode Capital Management, L.L.C.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 33,
+      "equity_assets_b": 1353.4,
+      "total_value_b": 0.695,
+      "short_name": "Geode Capital Management, L.L.C."
+    },
+    {
+      "investor_name": "BlackRock Advisors (UK) Limited",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 32,
+      "equity_assets_b": 306.6,
+      "total_value_b": 0.96,
+      "short_name": "BlackRock Advisors (UK) Limited"
+    },
+    {
+      "investor_name": "Mellon Investments Corporation",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "GARP",
+      "turnover": "Low",
+      "n_companies": 32,
+      "equity_assets_b": 281.0,
+      "total_value_b": 0.17,
+      "short_name": "Mellon Investments Corporation"
+    },
+    {
+      "investor_name": "Invesco Capital Management LLC",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 32,
+      "equity_assets_b": 250.4,
+      "total_value_b": 0.054,
+      "short_name": "Invesco Capital Management"
+    },
+    {
+      "investor_name": "Scottish Equity Partners LLP",
+      "country": "United Kingdom",
+      "investor_subtype": "Venture Capital",
+      "investment_style": "VC/Private Equity",
+      "turnover": "Low",
+      "n_companies": 32,
+      "equity_assets_b": 0.5,
+      "total_value_b": 0.006,
+      "short_name": "Scottish Equity Partners LLP"
+    }
+  ],
+  "weight_data": [
+    {
+      "investor_name": "BlackRock Institutional Trust Company, N.A.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 3992.8,
+      "total_value_b": 4.646,
+      "pct_of_assets": 0.116,
+      "short_name": "BlackRock"
+    },
+    {
+      "investor_name": "The Vanguard Group, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 7610.9,
+      "total_value_b": 4.55,
+      "pct_of_assets": 0.06,
+      "short_name": "The Vanguard Group"
+    },
+    {
+      "investor_name": "Norges Bank Investment Management (NBIM)",
+      "country": "Norway",
+      "investor_subtype": "Sovereign Wealth Fund",
+      "investment_style": "Core Value",
+      "turnover": "Low",
+      "n_companies": 39,
+      "equity_assets_b": 1182.0,
+      "total_value_b": 3.015,
+      "pct_of_assets": 0.255,
+      "short_name": "Norges Bank  (NBIM"
+    },
+    {
+      "investor_name": "Operadora Inbursa de Sociedades de Inversión, S.A. de C.V.",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Core Value",
+      "turnover": "Low",
+      "n_companies": 44,
+      "equity_assets_b": 4.2,
+      "total_value_b": 1.956,
+      "pct_of_assets": 46.276,
+      "short_name": "Operadora Inbursa de Sociedades de "
+    },
+    {
+      "investor_name": "Fidelity Management & Research Company LLC",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "GARP",
+      "turnover": "Low",
+      "n_companies": 26,
+      "equity_assets_b": 2256.2,
+      "total_value_b": 1.708,
+      "pct_of_assets": 0.076,
+      "short_name": "Fidelity"
+    },
+    {
+      "investor_name": "Capital World Investors",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Growth",
+      "turnover": "Low",
+      "n_companies": 8,
+      "equity_assets_b": 847.5,
+      "total_value_b": 1.663,
+      "pct_of_assets": 0.196,
+      "short_name": "Capital World Investors"
+    },
+    {
+      "investor_name": "Capital Research Global Investors",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Growth",
+      "turnover": "Low",
+      "n_companies": 17,
+      "equity_assets_b": 1310.7,
+      "total_value_b": 1.522,
+      "pct_of_assets": 0.116,
+      "short_name": "Capital Research Global Investors"
+    },
+    {
+      "investor_name": "Operadora de Fondos GBM S.A.B. de C.V.",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Yield",
+      "turnover": "Low",
+      "n_companies": 39,
+      "equity_assets_b": 3.9,
+      "total_value_b": 1.093,
+      "pct_of_assets": 28.23,
+      "short_name": "Operadora de Fondos GBM"
+    },
+    {
+      "investor_name": "Invesco Advisers, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "GARP",
+      "turnover": "Low",
+      "n_companies": 10,
+      "equity_assets_b": 297.4,
+      "total_value_b": 1.073,
+      "pct_of_assets": 0.361,
+      "short_name": "Invesco"
+    },
+    {
+      "investor_name": "Dimensional Fund Advisors, L.P.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Deep Value",
+      "turnover": "Low",
+      "n_companies": 42,
+      "equity_assets_b": 581.4,
+      "total_value_b": 1.006,
+      "pct_of_assets": 0.173,
+      "short_name": "Dimensional Fund"
+    },
+    {
+      "investor_name": "BlackRock Advisors (UK) Limited",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 32,
+      "equity_assets_b": 306.6,
+      "total_value_b": 0.96,
+      "pct_of_assets": 0.313,
+      "short_name": "BlackRock Advisors (UK) Limited"
+    },
+    {
+      "investor_name": "APG Asset Management N.V.",
+      "country": "Netherlands",
+      "investor_subtype": "Pension Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 23,
+      "equity_assets_b": 113.9,
+      "total_value_b": 0.77,
+      "pct_of_assets": 0.675,
+      "short_name": "APG  N.V."
+    },
+    {
+      "investor_name": "Geode Capital Management, L.L.C.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 33,
+      "equity_assets_b": 1353.4,
+      "total_value_b": 0.695,
+      "pct_of_assets": 0.051,
+      "short_name": "Geode Capital Management, L.L.C."
+    },
+    {
+      "investor_name": "BBVA Asset Management México, SA de CV",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Growth",
+      "turnover": "Low",
+      "n_companies": 28,
+      "equity_assets_b": 13.3,
+      "total_value_b": 0.629,
+      "pct_of_assets": 4.713,
+      "short_name": "BBVA  México, SA de CV"
+    },
+    {
+      "investor_name": "JP Morgan Asset Management",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "GARP",
+      "turnover": "Low",
+      "n_companies": 32,
+      "equity_assets_b": 770.6,
+      "total_value_b": 0.585,
+      "pct_of_assets": 0.076,
+      "short_name": "JP Morgan"
+    },
+    {
+      "investor_name": "BlackRock Investment Management (UK) Ltd.",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 42,
+      "equity_assets_b": 622.8,
+      "total_value_b": 0.579,
+      "pct_of_assets": 0.093,
+      "short_name": "BlackRock  (UK"
+    },
+    {
+      "investor_name": "State Street Global Advisors (US)",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 36,
+      "equity_assets_b": 2481.4,
+      "total_value_b": 0.527,
+      "pct_of_assets": 0.021,
+      "short_name": "State Street  (US"
+    },
+    {
+      "investor_name": "Northern Trust Investments, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 35,
+      "equity_assets_b": 391.0,
+      "total_value_b": 0.524,
+      "pct_of_assets": 0.134,
+      "short_name": "Northern Trust Investments"
+    },
+    {
+      "investor_name": "DWS Investment GmbH",
+      "country": "Germany",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "GARP",
+      "turnover": "Low",
+      "n_companies": 25,
+      "equity_assets_b": 169.9,
+      "total_value_b": 0.429,
+      "pct_of_assets": 0.252,
+      "short_name": "DWS Investment GmbH"
+    },
+    {
+      "investor_name": "BlackRock Mexico Operadora SA de CV SOFI",
+      "country": "Mexico",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "GARP",
+      "turnover": "Moderate",
+      "n_companies": 20,
+      "equity_assets_b": 4.2,
+      "total_value_b": 0.406,
+      "pct_of_assets": 9.727,
+      "short_name": "BlackRock Mexico Operadora SA de CV"
+    }
+  ],
+  "stats": {
+    "total_value_b": 68.9,
+    "n_countries": 48,
+    "n_investors": 1760
+  }
+};
