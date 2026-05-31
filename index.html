@@ -208,6 +208,53 @@ nav {
 .flow-bar { flex-shrink: 0; }
 .flow-n { font-size: 0.78rem; color: var(--muted); min-width: 28px; text-align: right; }
 
+/* ── Dynasty grid ────────────────────────────────────────────── */
+#dynasty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.dynasty-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: var(--bg);
+}
+.dynasty-company {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.dynasty-shareholder {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.dynasty-pct {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--navy);
+  border-radius: 4px;
+  padding: 1px 7px;
+  margin-left: 6px;
+}
+.dynasty-directors { list-style: none; padding: 0; margin: 0; }
+.dynasty-directors li {
+  font-size: 0.78rem;
+  color: var(--ink);
+  padding: 3px 0;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.dynasty-directors li .d-name { font-weight: 500; flex-shrink: 0; }
+.dynasty-directors li .d-role { color: var(--muted); font-size: 0.73rem; }
+
 /* ── Stat mini cards (sections 05-06) ───────────────────────── */
 .stat-mini-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
@@ -453,6 +500,15 @@ footer a { color: var(--ink2); }
   <div class="card fade-in">
     <div class="card-title">% en manos del principal accionista estratégico — ordenado por concentración</div>
     <div class="chart-wrap" style="min-height:840px;" id="chart-concentration"></div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">Control dinástico confirmado — la familia también dirige el consejo</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:0 0 16px;">
+      En estas empresas el apellido del accionista mayoritario aparece en el propio consejo de administración.
+      El capital y el poder ejecutivo son la misma familia.
+    </p>
+    <div id="dynasty-grid"></div>
   </div>
 
   <div class="insight fade-in" id="insight-propiedad"></div>
@@ -1010,13 +1066,112 @@ const TYPE_COLORS = {
     }],
   }, PLOTLY_CONFIG);
 
+  // Dynasty grid
+  const DYNASTY_DATA = [
+    { company: 'Becle', shareholder: 'Beckmann Vidal (Juan Domingo & Familia)', pct: 86.7,
+      directors: [
+        { name: 'Juan Domingo Beckmann Legorreta', role: 'Chairman & CEO' },
+        { name: 'Juan Francisco Beckmann Vidal',   role: 'Honorary Chairman' },
+      ]},
+    { company: 'Chedraui', shareholder: 'Chedraui Family', pct: 73.9,
+      directors: [
+        { name: 'Alfredo Chedraui Obeso',     role: 'Chairman, Fundador' },
+        { name: 'Jose Antonio Chedraui Obeso',role: 'Director propietario, Fundador' },
+        { name: 'Jose Antonio Chedraui Eguia', role: 'CEO' },
+        { name: 'Jose Ramon Chedraui Eguia',  role: 'Director — Marca Propia' },
+        { name: 'Alfredo Chedraui Lopez',     role: 'Director — Bienes Raíces' },
+      ]},
+    { company: 'Grupo Herdez', shareholder: 'Familia Hernández-Pons Torres', pct: 70.0,
+      directors: [
+        { name: 'Hector Ignacio Hernandez-Pons Torres', role: 'Chairman & CEO' },
+        { name: 'Enrique Hernandez-Pons Torres',        role: 'Vice Chairman & Deputy CEO' },
+      ]},
+    { company: 'Industrias CH', shareholder: 'Vigil González (Rufino)', pct: 65.9,
+      directors: [
+        { name: 'Rufino Vigil Gonzalez',         role: 'Chairman & CEO del Grupo Simec' },
+        { name: 'Sergio Vigil Gonzalez',          role: 'CEO' },
+        { name: 'Eduardo Vigil Gonzalez',         role: 'COO' },
+        { name: 'Gerardo Vigil Sanchez-Conde',    role: 'CEO — Plantas Matamoros y SLP' },
+        { name: 'Jaime Vigil Sanchez-Conde',      role: 'CEO — Republic Steel' },
+      ]},
+    { company: 'Grupo Lamosa', shareholder: 'Elosua y Valdés Families', pct: 52.4,
+      directors: [
+        { name: 'Federico Toussaint Elosua',  role: 'Chairman & CEO' },
+        { name: 'Guillermo Barragan Elosua',  role: 'Director propietario' },
+        { name: 'Antonio Elosua Gonzalez',    role: 'Director propietario' },
+        { name: 'Bernardo Elosua Robles',     role: 'Director propietario' },
+      ]},
+    { company: 'América Móvil', shareholder: 'Slim Domit Helú (Carlos)', pct: 50.4,
+      directors: [
+        { name: 'Carlos Slim Domit',  role: 'Chairman' },
+        { name: 'Patrick Slim Domit', role: 'Chairman' },
+      ]},
+    { company: 'Alsea', shareholder: 'Torrado Martínez (3 hermanos)', pct: 36.3,
+      directors: [
+        { name: 'Alberto Torrado Martinez',       role: 'Chairman' },
+        { name: 'Armando Torrado Martinez',       role: 'CEO' },
+        { name: 'Cosme Alberto Torrado Martinez', role: 'Director' },
+        { name: 'Alfredo Sanchez Torrado',        role: 'Director independiente' },
+      ]},
+    { company: 'Alfa', shareholder: 'Garza Sada Family', pct: 35.0,
+      directors: [
+        { name: 'Armando Garza Sada',    role: 'Chairman' },
+        { name: 'Alvaro Fernandez Garza', role: 'CEO' },
+      ]},
+    { company: 'Gruma', shareholder: 'Moreno Hernández (Graciela)', pct: 52.3,
+      directors: [
+        { name: 'Juan Antonio Gonzalez Moreno', role: 'Chairman & CEO' },
+        { name: 'Homero Huerta Moreno',         role: 'Director administrativo' },
+      ]},
+    { company: 'Grupo México', shareholder: 'Larrea Mota-Velasco (Germán)', pct: 19.2,
+      directors: [
+        { name: 'German Larrea Mota Velasco',       role: 'Chairman & CEO' },
+        { name: 'Fernando Lopez Guerra Larrea',     role: 'Director & CEO Transporte' },
+        { name: 'Carlos Rojas Mota Velasco',        role: 'Director independiente' },
+      ]},
+    { company: 'Grupo Bafar', shareholder: 'Baeza Fares (Jorge Alberto)', pct: 8.4,
+      directors: [
+        { name: 'Oscar Eugenio Baeza Fares',     role: 'Chairman & CEO' },
+        { name: 'Guillermo Enrique Baeza Fares', role: 'Vice Chairman' },
+        { name: 'Jorge Alberto Baeza Fares',     role: 'Director — Área Alimentos' },
+        { name: 'Eugenio Baeza Montes',          role: 'Director — División Ganadería' },
+      ]},
+    { company: 'Grupo Gigante', shareholder: 'Barrutieta / Losada', pct: 6.6,
+      directors: [
+        { name: 'Angel Losada Moreno',     role: 'Executive Chairman' },
+        { name: 'Gonzalo Barrutieta Losada', role: 'Director propietario' },
+        { name: 'Angel Alverde Losada',    role: 'CEO Gigante Grupo Inmobiliario' },
+        { name: 'Jaime Alverde Losada',    role: 'CEO Office Depot México' },
+        { name: 'Juan Carlos Alverde Losada', role: 'CEO Grupo Restaurantero Gigante' },
+      ]},
+    { company: 'ASUR', shareholder: 'Chico Pardo (Fernando)', pct: 8.3,
+      directors: [
+        { name: 'Fernando Chico Pardo', role: 'Chairman' },
+        { name: 'Pablo Chico Hernandez', role: 'Director' },
+      ]},
+  ];
+
+  document.getElementById('dynasty-grid').innerHTML = DYNASTY_DATA.map(d => `
+    <div class="dynasty-card">
+      <div class="dynasty-company">${d.company}</div>
+      <div class="dynasty-shareholder">${d.shareholder}<span class="dynasty-pct">${d.pct}%</span></div>
+      <ul class="dynasty-directors">
+        ${d.directors.map(dir => `
+          <li>
+            <span class="d-name">${dir.name}</span>
+            <span class="d-role">${dir.role}</span>
+          </li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
+
   document.getElementById('insight-propiedad').innerHTML =
-    `<strong>El caso más extremo: Becle — la familia Beckmann controla el 86.7% de la empresa productora de José Cuervo.</strong> ` +
-    `Palacio de Hierro (Baillères, 82.8%) y Grupo Carso (Slim, 76%) son ejemplos similares de control familiar absoluto. ` +
+    `En 13 de las empresas analizadas el apellido del accionista mayoritario aparece directamente en el consejo de administración — ` +
+    `<strong>el capital y el poder ejecutivo son la misma familia.</strong> ` +
+    `El caso más extremo es Industrias CH: Rufino Vigil González controla el 66% del capital y tiene cinco familiares Vigil en el consejo, ` +
+    `incluyendo los CEOs de todas las divisiones. En Chedraui, cinco miembros de la familia ocupan asientos en el consejo con el 74% del capital. ` +
     `En el extremo opuesto, <strong>${PROP_STATS.n_no_strategic} empresas</strong> — entre ellas Cemex, Banorte y Liverpool — ` +
-    `no tienen un accionista estratégico registrado: su gobierno corporativo lo determinan los inversionistas institucionales. ` +
-    `Nota: algunas empresas con control indirecto (Coca-Cola FEMSA controlada por FEMSA, o GNP por Baillères vía holding) ` +
-    `pueden no aparecer en esta clasificación si su vehículo de control no está registrado como entidad estratégica en Refinitiv Eikon.`;
+    `no tienen un accionista estratégico registrado: su gobierno corporativo lo determinan los inversionistas institucionales.`;
 })();
 
 // ── Section 06: Permanencia ───────────────────────────────────────────────────
