@@ -862,18 +862,18 @@ const TYPE_COLORS = {
 
 // El caminito — dot plot agrupado por nivel y región
 (function() {
-  // Hardcoded from education_clean.csv analysis (excl. Certificación, Programa Ejecutivo)
+  // From education_clean.csv with expanded institution classification (excl. Certificación, Programa Ejecutivo)
   const PATH_DATA = [
-    { level: 'Licenciatura', mx: 404, eua: 32,  eu: 6,  otro: 266 },
-    { level: 'Maestría',     mx: 80,  eua: 116, eu: 20, otro: 123 },
-    { level: 'MBA',          mx: 26,  eua: 47,  eu: 10, otro: 40  },
-    { level: 'Doctorado',    mx: 0,   eua: 20,  eu: 0,  otro: 13  },
+    { level: 'Licenciatura', mx: 542, eua: 65,  eu: 28, otro: 73 },
+    { level: 'Maestría',     mx: 120, eua: 137, eu: 29, otro: 53 },
+    { level: 'MBA',          mx: 40,  eua: 55,  eu: 10, otro: 18 },
+    { level: 'Doctorado',    mx: 0,   eua: 22,  eu: 6,  otro: 5  },
   ];
   const regions = [
     { key: 'mx',   label: 'México',         color: '#1B365D' },
     { key: 'eua',  label: 'EUA',            color: '#B85C38' },
     { key: 'eu',   label: 'Europa/Canadá',  color: '#5a9e3e' },
-    { key: 'otro', label: 'No clasificado', color: '#c8c4bc' },
+    { key: 'otro', label: 'Otras',          color: '#c8c4bc' },
   ];
   const traces = regions.map(r => ({
     type: 'scatter', mode: 'markers+text',
@@ -903,9 +903,9 @@ const TYPE_COLORS = {
   const pctExt  = ((STATS.edu_extranjera / total)*100).toFixed(0);
   document.getElementById('insight-edu').innerHTML =
     `<strong>El ${pctPriv}% de los estudios registrados provienen de universidades privadas mexicanas</strong> — encabezadas por el Tec de Monterrey e ITAM. ` +
-    `Las instituciones extranjeras representan el ${pctExt}% del total, pero concentran el 50% de las maestrías y el 61% de los doctorados — ` +
+    `Las instituciones extranjeras representan el ${pctExt}% del total, pero concentran el 55% de las maestrías, el 53% de los MBAs y el 85% de los doctorados — ` +
     `el posgrado en el extranjero es el pasaporte de legitimidad de la élite. ` +
-    `<strong>89 directivos siguieron el camino clásico: licenciatura en México, maestría o MBA en EUA o Europa.</strong> ` +
+    `<strong>127 directivos siguieron el camino clásico: licenciatura en México, maestría o MBA en EUA o Europa.</strong> ` +
     `La UNAM, única universidad pública entre las 20 más frecuentes, ocupa el cuarto lugar.`;
 })();
 
