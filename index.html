@@ -864,16 +864,17 @@ const TYPE_COLORS = {
 (function() {
   // From education_clean.csv with expanded institution classification (excl. Certificación, Programa Ejecutivo)
   const PATH_DATA = [
-    { level: 'Licenciatura', mx: 542, eua: 65,  eu: 28, otro: 73 },
-    { level: 'Maestría',     mx: 120, eua: 137, eu: 29, otro: 53 },
-    { level: 'MBA',          mx: 40,  eua: 55,  eu: 10, otro: 18 },
-    { level: 'Doctorado',    mx: 0,   eua: 22,  eu: 6,  otro: 5  },
+    { level: 'Licenciatura', mx: 544, eua: 74,  eu: 31, latam: 11, otro: 48 },
+    { level: 'Maestría',     mx: 120, eua: 161, eu: 30, latam: 4,  otro: 24 },
+    { level: 'MBA',          mx: 40,  eua: 60,  eu: 11, latam: 1,  otro: 11 },
+    { level: 'Doctorado',    mx: 0,   eua: 23,  eu: 6,  latam: 0,  otro: 4  },
   ];
   const regions = [
-    { key: 'mx',   label: 'México',         color: '#1B365D' },
-    { key: 'eua',  label: 'EUA',            color: '#B85C38' },
-    { key: 'eu',   label: 'Europa/Canadá',  color: '#5a9e3e' },
-    { key: 'otro', label: 'Otras',          color: '#c8c4bc' },
+    { key: 'mx',    label: 'México',        color: '#1B365D' },
+    { key: 'eua',   label: 'EUA',           color: '#B85C38' },
+    { key: 'eu',    label: 'Europa',        color: '#5a9e3e' },
+    { key: 'latam', label: 'Latinoamérica', color: '#e0a030' },
+    { key: 'otro',  label: 'Otras',         color: '#c8c4bc' },
   ];
   const traces = regions.map(r => ({
     type: 'scatter', mode: 'markers+text',
