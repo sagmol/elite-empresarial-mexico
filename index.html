@@ -319,7 +319,6 @@ footer a { color: var(--ink2); }
   <a class="nav-brand" href="#">Elite Empresarial México</a>
   <ul class="nav-links">
     <li><a href="#grupos">Los grupos</a></li>
-    <li><a href="#concentracion">Concentración</a></li>
     <li><a href="#perfil">Perfil</a></li>
     <li><a href="#trayectorias">Trayectorias</a></li>
     <li><a href="#propiedad">Propiedad</a></li>
@@ -378,34 +377,11 @@ footer a { color: var(--ink2); }
   <div class="insight fade-in" id="insight-slim"></div>
 </section>
 
-<!-- SECTION 02: CONCENTRACIÓN -->
-<section class="section fade-in" id="concentracion">
-  <div class="section-label">02 — Concentración bursátil</div>
-  <h2 class="section-title">$372 mil millones — mayor que el PIB entero de Chile</h2>
-  <p class="section-lead">
-    Capitalización bursátil al cierre de FY2023. Cada rectángulo es una empresa; su tamaño refleja su market cap y el color su grupo de control. Hover para ver ingresos y empleados.
-  </p>
 
-  <div class="card fade-in">
-    <div class="card-title">Mapa empresarial — market cap relativo</div>
-    <div class="chart-wrap" style="min-height:480px;" id="chart-treemap"></div>
-  </div>
-
-  <div class="two-col">
-    <div class="card fade-in">
-      <div class="card-title">Empleados por grupo</div>
-      <div class="chart-wrap" id="chart-empleados"></div>
-    </div>
-    <div class="card fade-in">
-      <div class="card-title">Margen EBITDA promedio por grupo</div>
-      <div class="chart-wrap" id="chart-ebitda"></div>
-    </div>
-  </div>
-</section>
 
 <!-- SECTION 03: PERFIL -->
 <section class="section fade-in" id="perfil">
-  <div class="section-label">03 — Perfil de la élite</div>
+  <div class="section-label">02 — Perfil de la élite</div>
   <h2 class="section-title">¿Dónde se forman los directivos mexicanos?</h2>
   <p class="section-lead">
     Analizamos <strong>1,106 directores</strong> extraídos de los reportes anuales de 51 empresas. Sus trayectorias académicas revelan la concentración del capital educativo.
@@ -438,7 +414,7 @@ footer a { color: var(--ink2); }
 
 <!-- SECTION 04: TRAYECTORIAS -->
 <section class="section fade-in" id="trayectorias">
-  <div class="section-label">04 — Trayectorias</div>
+  <div class="section-label">03 — Trayectorias</div>
   <h2 class="section-title">Movilidad de talento entre grupos</h2>
   <p class="section-lead">
     Los flujos de carrera muestran cuántos directivos pasaron de una empresa o sector a otro. Las conexiones más fuertes revelan las autopistas del poder corporativo.
@@ -458,7 +434,7 @@ footer a { color: var(--ink2); }
 
 <!-- SECTION 05: PROPIEDAD -->
 <section class="section fade-in" id="propiedad">
-  <div class="section-label">05 — Propiedad</div>
+  <div class="section-label">04 — Propiedad</div>
   <h2 class="section-title">La bolsa mexicana tiene dueño — casi siempre es una familia</h2>
   <p class="section-lead">
     En <strong id="prop-n-maj">—</strong> de las <strong id="prop-n-total">—</strong> empresas con datos de accionistas,
@@ -479,7 +455,7 @@ footer a { color: var(--ink2); }
 
 <!-- SECTION 06: PERMANENCIA -->
 <section class="section fade-in" id="permanencia">
-  <div class="section-label">06 — Permanencia</div>
+  <div class="section-label">05 — Permanencia</div>
   <h2 class="section-title">Los mismos de siempre — décadas en el mismo consejo</h2>
   <p class="section-lead">
     El director promedio lleva <strong id="perm-avg-years">—</strong> años en su puesto actual.
@@ -505,7 +481,7 @@ footer a { color: var(--ink2); }
 
 <!-- SECTION 07: LA RED -->
 <section class="section fade-in" id="red">
-  <div class="section-label">07 — La red</div>
+  <div class="section-label">06 — La red</div>
   <h2 class="section-title">El mapa del poder — quién está conectado con quién</h2>
   <p class="section-lead">
     Cada nodo es una empresa, su tamaño proporcional al market cap.
@@ -785,84 +761,6 @@ const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
     + '<th style="text-align:right">P/S</th>'
     + '</tr></thead>'
     + '<tbody>' + rows + '</tbody>';
-})();
-
-// ── Section 02 Charts ─────────────────────────────────────────────────────────
-// Treemap
-(function() {
-  const comps = COMPANIES_DATA.filter(c => c.mc_usd > 0);
-  const groupIds = [...new Set(comps.map(c => c.group))];
-
-  const ids     = ['México', ...groupIds, ...comps.map(c => c.id)];
-  const labels  = ['México', ...groupIds, ...comps.map(c => c.label)];
-  const parents = ['',       ...groupIds.map(() => 'México'), ...comps.map(c => c.group)];
-  const values  = [0,        ...groupIds.map(() => 0),        ...comps.map(c => c.mc_usd)];
-  const colors  = ['#f5f4ed',...groupIds.map(g => { const gd = GROUPS_DATA.find(x=>x.group===g); return gd?gd.color:'#aaa'; }),
-                   ...comps.map(c => c.color)];
-
-  const customdata = ['', ...groupIds.map(() => ''),
-    ...comps.map(c => {
-      const rev = c.rev_usd != null ? '$' + c.rev_usd.toFixed(1) + 'B' : '—';
-      const emp = c.emp != null ? c.emp.toLocaleString() : '—';
-      return `${c.group}<br>MC: $${(c.mc_usd/1000).toFixed(1)}B USD<br>Rev: ${rev}<br>Empleados: ${emp}`;
-    })
-  ];
-
-  Plotly.newPlot('chart-treemap', [{
-    type: 'treemap',
-    ids: ids, labels: labels, parents: parents, values: values,
-    branchvalues: 'remainder',
-    marker: { colors: colors },
-    customdata: customdata,
-    hovertemplate: '<b>%{label}</b><br>%{customdata}<extra></extra>',
-    textfont: { size: 11 },
-    pathbar: { visible: false },
-  }], {
-    ...LAYOUT_BASE,
-    height: 480,
-    margin: { t: 4, r: 4, b: 4, l: 4 },
-  }, PLOTLY_CONFIG);
-})();
-
-// Empleados bar
-(function() {
-  const d = [...GROUPS_DATA].sort((a,b) => b.empleados - a.empleados).filter(g=>g.empleados>0);
-  Plotly.newPlot('chart-empleados', [{
-    type: 'bar', orientation: 'h',
-    x: d.map(g => g.empleados),
-    y: d.map(g => g.group),
-    marker: { color: d.map(g => g.color) },
-    hovertemplate: '<b>%{y}</b><br>%{x:,} empleados<extra></extra>',
-    text: d.map(g => (g.empleados/1000).toFixed(0)+'k'),
-    textposition: 'outside', textfont: { size: 10 },
-  }], {
-    ...LAYOUT_BASE,
-    margin: { t: 8, r: 60, b: 32, l: 90 },
-    xaxis: { visible: false },
-    yaxis: { autorange: 'reversed', tickfont: { size: 11 } },
-    height: 320,
-  }, PLOTLY_CONFIG);
-})();
-
-// EBITDA margin bar
-(function() {
-  const d = GROUPS_DATA.filter(g=>g.ebitda_margin!=null && g.group!=='Otro')
-                       .sort((a,b) => b.ebitda_margin - a.ebitda_margin);
-  Plotly.newPlot('chart-ebitda', [{
-    type: 'bar', orientation: 'h',
-    x: d.map(g => g.ebitda_margin),
-    y: d.map(g => g.group),
-    marker: { color: d.map(g => g.color) },
-    hovertemplate: '<b>%{y}</b><br>EBITDA Margin: %{x:.1f}%<extra></extra>',
-    text: d.map(g => g.ebitda_margin.toFixed(1)+'%'),
-    textposition: 'outside', textfont: { size: 10 },
-  }], {
-    ...LAYOUT_BASE,
-    margin: { t: 8, r: 56, b: 32, l: 90 },
-    xaxis: { visible: false },
-    yaxis: { autorange: 'reversed', tickfont: { size: 11 } },
-    height: 320,
-  }, PLOTLY_CONFIG);
 })();
 
 // ── Section 03 Charts ─────────────────────────────────────────────────────────
