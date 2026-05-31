@@ -529,13 +529,19 @@ footer a { color: var(--ink2); }
 
   <div class="stat-mini-grid fade-in" id="inst-stats-cards"></div>
 
+  <div style="margin-bottom:20px;">
+    <select id="inst-selector" style="font-size:0.85rem;padding:7px 12px;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--ink);cursor:pointer;min-width:260px;">
+      <option value="global">— Todas las empresas —</option>
+    </select>
+  </div>
+
   <div class="two-col fade-in">
     <div class="card">
-      <div class="card-title">Capital institucional por país de origen (USD B)</div>
+      <div class="card-title" id="inst-map-title">Capital institucional por país de origen (USD B)</div>
       <div class="chart-wrap" style="min-height:360px;" id="chart-inst-map"></div>
     </div>
     <div class="card">
-      <div class="card-title">Top 15 gestoras por valor total en el universo</div>
+      <div class="card-title" id="inst-top-title">Top 15 gestoras por valor total en el universo</div>
       <div class="chart-wrap" style="min-height:360px;" id="chart-inst-top"></div>
     </div>
   </div>
@@ -1320,43 +1326,82 @@ const TYPE_COLORS = {
       <div class="stat-mini-sub">${D.most_connected[0].short_name} — empresas con posición</div>
     </div>`;
 
-  // Capa 1a — choropleth
-  const countries = D.by_country.filter(c => c.country && c.total_value_b > 0);
-  Plotly.newPlot('chart-inst-map', [{
-    type: 'choropleth', locationmode: 'country names',
-    locations: countries.map(c => c.country),
-    z: countries.map(c => Math.log10(c.total_value_b + 0.01)),
-    customdata: countries.map(c => [c.country, c.total_value_b.toFixed(1), c.n_investors]),
-    colorscale: [[0,'#e8edf5'],[1,'#1B365D']], showscale: false,
-    hovertemplate: '<b>%{customdata[0]}</b><br>$%{customdata[1]}B USD<br>%{customdata[2]} gestoras<extra></extra>',
-  }], {
-    ...LAYOUT_BASE, height: 360, margin: { t:8, r:8, b:8, l:8 },
-    geo: { showframe:false, showcoastlines:true, coastlinecolor:'#ddd',
-           projection:{type:'natural earth'}, bgcolor:'transparent',
-           landcolor:'#f0efe9', oceancolor:'#f5f4ed', showocean:true },
-  }, PLOTLY_CONFIG);
-
-  // Capa 1b — top investors dot plot
   const STYLE_COLORS = {
     'Index':'#1B365D','Core Value':'#B85C38','Core Growth':'#5a9e3e',
     'GARP':'#7b52ab','Growth':'#e0a030','Deep Value':'#5b8db8','Yield':'#888',
   };
-  const top15 = [...D.weight_data].sort((a,b) => a.total_value_b - b.total_value_b).slice(-15);
-  Plotly.newPlot('chart-inst-top', [{
-    type: 'scatter', mode: 'markers+text',
-    x: top15.map(d => d.total_value_b),
-    y: top15.map(d => d.short_name),
-    marker: { color: top15.map(d => STYLE_COLORS[d.investment_style]||'#aaa'), size:11, line:{color:'#fff',width:1.5} },
-    text: top15.map(d => '$'+d.total_value_b.toFixed(2)+'B'),
-    textposition: 'middle right', textfont: { size:9, color:'#555' },
-    hovertemplate: '<b>%{y}</b><br>$%{x:.2f}B · %{customdata} empresas<extra></extra>',
-    customdata: top15.map(d => d.n_companies),
-  }], {
-    ...LAYOUT_BASE, height: 360,
-    margin: { t:8, r:80, b:32, l:170 },
-    xaxis: { visible:false, range:[0, Math.max(...top15.map(d=>d.total_value_b))*1.35] },
-    yaxis: { tickfont:{size:10}, gridcolor:'#edecea' },
-  }, PLOTLY_CONFIG);
+
+  // Populate selector
+  const instSel = document.getElementById('inst-selector');
+  const byCoInst = D.by_company;
+  Object.entries(byCoInst)
+    .sort((a,b) => b[1].total_value_b - a[1].total_value_b)
+    .forEach(([folder, co]) => {
+      const opt = document.createElement('option');
+      opt.value = folder;
+      opt.textContent = co.name + ' ($' + co.total_value_b.toFixed(1) + 'B)';
+      instSel.appendChild(opt);
+    });
+
+  function renderInstMapTop(key) {
+    const isGlobal = key === 'global';
+    const co = isGlobal ? null : byCoInst[key];
+    const label = isGlobal ? 'todas las empresas' : (co ? co.name : '');
+    const color = isGlobal ? '#1B365D' : (co ? co.color : '#1B365D');
+
+    document.getElementById('inst-map-title').textContent =
+      'Capital institucional por país de origen — ' + label;
+    document.getElementById('inst-top-title').textContent =
+      'Top gestoras por valor — ' + label;
+
+    // Map
+    const countries = isGlobal
+      ? D.by_country.filter(c => c.country && c.total_value_b > 0)
+      : (co ? co.by_country.filter(c => c.country && c.total_value_b > 0) : []);
+    const zMax = Math.max(...countries.map(c => c.total_value_b));
+
+    Plotly.newPlot('chart-inst-map', [{
+      type: 'choropleth', locationmode: 'country names',
+      locations: countries.map(c => c.country),
+      z: countries.map(c => Math.log10(c.total_value_b + 0.001)),
+      customdata: countries.map(c => [c.country, c.total_value_b.toFixed(isGlobal?1:3), c.n_investors]),
+      colorscale: [[0,'#e8edf5'],[1, color]], showscale: false,
+      hovertemplate: '<b>%{customdata[0]}</b><br>$%{customdata[1]}B USD<br>%{customdata[2]} gestoras<extra></extra>',
+    }], {
+      ...LAYOUT_BASE, height: 360, margin: { t:8, r:8, b:8, l:8 },
+      geo: { showframe:false, showcoastlines:true, coastlinecolor:'#ddd',
+             projection:{type:'natural earth'}, bgcolor:'transparent',
+             landcolor:'#f0efe9', oceancolor:'#f5f4ed', showocean:true },
+    }, PLOTLY_CONFIG);
+
+    // Top investors
+    const investors = isGlobal
+      ? [...D.weight_data].sort((a,b) => a.total_value_b - b.total_value_b).slice(-15)
+      : (co ? [...co.top_investors].sort((a,b) => a.total_value_b - b.total_value_b) : []);
+    const nameKey = isGlobal ? 'short_name' : 'short_name';
+    const maxV = Math.max(...investors.map(d => d.total_value_b));
+
+    Plotly.newPlot('chart-inst-top', [{
+      type: 'scatter', mode: 'markers+text',
+      x: investors.map(d => d.total_value_b),
+      y: investors.map(d => d[nameKey]),
+      marker: { color: investors.map(d => STYLE_COLORS[d.investment_style]||'#aaa'), size:11, line:{color:'#fff',width:1.5} },
+      text: investors.map(d => '$'+d.total_value_b.toFixed(isGlobal?2:3)+'B'),
+      textposition: 'middle right', textfont: { size:9, color:'#555' },
+      customdata: investors.map(d => isGlobal ? d.n_companies : d.investor_subtype),
+      hovertemplate: isGlobal
+        ? '<b>%{y}</b><br>$%{x:.2f}B · %{customdata} empresas<extra></extra>'
+        : '<b>%{y}</b><br>$%{x:.3f}B · %{customdata}<extra></extra>',
+    }], {
+      ...LAYOUT_BASE, height: 360,
+      margin: { t:8, r:80, b:32, l:185 },
+      xaxis: { visible:false, range:[0, maxV*1.35] },
+      yaxis: { tickfont:{size:10}, gridcolor:'#edecea' },
+    }, PLOTLY_CONFIG);
+  }
+
+  renderInstMapTop('global');
+  instSel.addEventListener('change', function() { renderInstMapTop(this.value); });
 
   // Capa 3 — most connected
   const SUBTYPE_COLORS = {

@@ -668,10 +668,47 @@ total_inst_value = round(inst['value_usd_m'].sum() / 1000, 1)
 n_countries_inst = int(inst['country'].nunique())
 n_investors_inst = int(inst['investor_name'].nunique())
 
+# Per-company institutional data
+by_company_inst = {}
+for folder, grp in inst.groupby('company_folder'):
+    folder = str(folder)
+    g = folder_to_grp.get(folder, 'Otro')
+    co_name = short_co(folder_to_name.get(folder, folder) if str(folder_to_name.get(folder, folder)) != 'nan' else folder)
+
+    # by country
+    co_countries = (grp[grp['country'].notna()]
+        .groupby('country')
+        .agg(total_value_b=('value_usd_m', lambda x: round(x.sum()/1000, 3)),
+             n_investors=('investor_name','nunique'))
+        .reset_index()
+        .sort_values('total_value_b', ascending=False)
+        .to_dict('records'))
+
+    # top investors
+    top_inv = (grp.groupby(['investor_name','investor_subtype','investment_style'])
+        .agg(total_value_m=('value_usd_m','sum'))
+        .reset_index()
+        .sort_values('total_value_m', ascending=False)
+        .head(15))
+    top_inv['total_value_b'] = (top_inv['total_value_m']/1000).round(3)
+    top_inv['short_name'] = top_inv['investor_name'].apply(short_inv)
+    top_inv_list = top_inv[['short_name','investor_name','investor_subtype','investment_style','total_value_b']].to_dict('records')
+
+    by_company_inst[folder] = {
+        'name'        : co_name,
+        'group'       : g,
+        'color'       : GROUP_COLORS.get(g, '#aaa'),
+        'total_value_b': round(float(grp['value_usd_m'].sum()/1000), 2),
+        'n_investors' : int(grp['investor_name'].nunique()),
+        'by_country'  : co_countries,
+        'top_investors': top_inv_list,
+    }
+
 institutional_data = {
     'by_country'     : by_country_inst,
     'most_connected' : most_connected,
     'weight_data'    : weight_data,
+    'by_company'     : by_company_inst,
     'stats': {
         'total_value_b'  : total_inst_value,
         'n_countries'    : n_countries_inst,
