@@ -6095,20 +6095,6 @@ const SUBSIDIARIES_DATA = {
         "industry": "Non-Alcoholic Beverages"
       },
       {
-        "name": "London Overseas Inc",
-        "company": "Directors",
-        "country": "Cayman Islands",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
-        "name": "London Caribbean Inc",
-        "company": "Directors",
-        "country": "Cayman Islands",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
         "name": "Fargo Holding (Gibraltar)",
         "company": "Grupo Bimbo",
         "country": "Gibraltar",
@@ -6198,6 +6184,20 @@ const SUBSIDIARIES_DATA = {
         "country": "Bermuda",
         "haven_type": "Paraíso clásico",
         "industry": ""
+      },
+      {
+        "name": "Mexichem Panama SA",
+        "company": "Orbia Advance Corp",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": "Commodity Chemicals"
+      },
+      {
+        "name": "Riegos De Chiriqui SA",
+        "company": "Orbia Advance Corp",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": "Water & Related Utilities"
       }
     ],
     "total": 3226,
@@ -9685,22 +9685,7 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
-      "haven_details": [
-        {
-          "name": "London Overseas Inc",
-          "company": "Directors",
-          "country": "Cayman Islands",
-          "haven_type": "Paraíso clásico",
-          "industry": ""
-        },
-        {
-          "name": "London Caribbean Inc",
-          "company": "Directors",
-          "country": "Cayman Islands",
-          "haven_type": "Paraíso clásico",
-          "industry": ""
-        }
-      ],
+      "haven_details": [],
       "total": 26,
       "n_haven": 2,
       "n_classic": 2,
