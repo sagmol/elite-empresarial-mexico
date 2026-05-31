@@ -208,32 +208,39 @@ def short_co(name):
     return s.strip(' .,').strip()[:38]
 
 strat_pos = strat[strat.pct > 0].copy()
-top1_sh = (strat_pos.sort_values('pct', ascending=False)
-           .groupby('company_folder').first().reset_index())
-total_sh = strat_pos.groupby('company_folder')['pct'].sum().reset_index()
-total_sh.columns = ['company_folder', 'pct_total']
-top1_sh = top1_sh.merge(total_sh, on='company_folder', how='left')
 # Exclude Southern Copper (pure subsidiary listed abroad)
-top1_sh = top1_sh[~top1_sh.company_folder.astype(str).str.startswith('299_')].copy()
-top1_sh = top1_sh.sort_values('pct', ascending=False).reset_index(drop=True)
+strat_pos = strat_pos[~strat_pos.company_folder.astype(str).str.startswith('299_')].copy()
 
 folder_to_grp = dict(zip(tree.company_folder, tree.group_short))
 
 concentration_data = []
-for _, r in top1_sh.iterrows():
-    folder = str(r['company_folder'])
+for folder, grp in strat_pos.sort_values('pct', ascending=False).groupby('company_folder', sort=False):
+    folder = str(folder)
+    top3 = grp.sort_values('pct', ascending=False).head(3)
     g = folder_to_grp.get(folder, 'Otro')
-    pt = r.get('pct_total', r['pct'])
+    shareholders = []
+    for _, r in top3.iterrows():
+        shareholders.append({
+            'name'   : str(r['investor_name'])[:50],
+            'pct'    : round(float(r['pct']), 1),
+            'subtype': str(r['investor_subtype']),
+        })
+    pct_top1  = shareholders[0]['pct'] if shareholders else 0
+    pct_total = round(float(top3['pct'].sum()), 1)
+    company_name = grp.iloc[0]['company_name']
     concentration_data.append({
-        'company'  : short_co(r['company_name']),
-        'folder'   : folder,
-        'group'    : g,
-        'color'    : GROUP_COLORS.get(g, '#aaa'),
-        'pct_top1' : round(float(r['pct']), 1),
-        'pct_total': round(float(pt), 1) if pd.notna(pt) else round(float(r['pct']), 1),
-        'investor' : str(r['investor_name'])[:45],
-        'subtype'  : str(r['investor_subtype']),
+        'company'     : short_co(company_name),
+        'folder'      : folder,
+        'group'       : g,
+        'color'       : GROUP_COLORS.get(g, '#aaa'),
+        'pct_top1'    : pct_top1,
+        'pct_total'   : pct_total,
+        'investor'    : shareholders[0]['name'],
+        'subtype'     : shareholders[0]['subtype'],
+        'shareholders': shareholders,
     })
+
+concentration_data.sort(key=lambda x: -x['pct_top1'])
 
 all_sh_folders   = set(sh_raw.company_folder.astype(str).unique())
 strat_folders_set = set(strat_pos.company_folder.astype(str).unique())
@@ -459,7 +466,55 @@ for edge in net['edges_interlock'] + net.get('edges_career', []):
 
 community_graph = to_native({'nodes': comm_nodes, 'edges': comm_edges})
 
-# ── 11. COMPANIES TABLE (tabla enriquecida con red) ───────────────────────────
+# ── 11. SUBSIDIARIES DATA ────────────────────────────────────────────────────
+subs_raw = pd.read_csv(f'{BASE}\\subsidiaries_clean.csv', encoding='utf-8-sig')
+subs_raw = subs_raw[subs_raw['company_folder'].notna()].copy()
+
+# Map folder → group/color/short name
+folder_to_name  = {}
+folder_to_group = {}
+for _, r in tree.iterrows():
+    folder_to_name[str(r['company_folder'])]  = str(r['company_name'])
+    folder_to_group[str(r['company_folder'])] = str(r['group_short'])
+
+# Also get short name from financial data
+fin_folder_name = {}
+for _, r in fin_co.iterrows():
+    folder_to_name[str(r.get('company_folder',''))] = str(r.get('company_name',''))
+
+def agg_subs(df):
+    """Return {by_country: [...], by_sector: [...], total: n}"""
+    by_country = (df.groupby('country').size()
+                    .reset_index(name='n')
+                    .sort_values('n', ascending=False)
+                    .to_dict('records'))
+    by_sector = (df[df['sector'] != 'Otros'].groupby('sector').size()
+                   .reset_index(name='n')
+                   .sort_values('n', ascending=False)
+                   .to_dict('records'))
+    return {'by_country': by_country, 'by_sector': by_sector, 'total': len(df)}
+
+# Global
+subs_global = agg_subs(subs_raw)
+
+# Per company
+subs_by_company = {}
+for folder, grp in subs_raw.groupby('company_folder'):
+    folder = str(folder)
+    g = folder_to_group.get(folder, 'Otro')
+    agg = agg_subs(grp)
+    agg['name']  = short_co(folder_to_name.get(folder, folder))
+    agg['group'] = g
+    agg['color'] = GROUP_COLORS.get(g, '#aaa')
+    subs_by_company[folder] = agg
+
+subsidiaries_data = {
+    'global': subs_global,
+    'by_company': subs_by_company,
+}
+subsidiaries_data = to_native(subsidiaries_data)
+
+# ── 12. COMPANIES TABLE (tabla enriquecida con red) ───────────────────────────
 from collections import Counter
 
 # Grado: n empresas con interlock (peer only)
@@ -555,6 +610,8 @@ const NETWORK_D3 = {json.dumps(network_d3, ensure_ascii=False, indent=2)};
 const COMMUNITY_GRAPH = {json.dumps(community_graph, ensure_ascii=False, indent=2)};
 
 const COMPANIES_TABLE = {json.dumps(companies_table, ensure_ascii=False, indent=2)};
+
+const SUBSIDIARIES_DATA = {json.dumps(subsidiaries_data, ensure_ascii=False, indent=2)};
 """
 
 with open(OUT, 'w', encoding='utf-8') as f:

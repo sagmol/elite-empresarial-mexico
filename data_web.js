@@ -5594,3 +5594,3224 @@ const COMPANIES_TABLE = [
     "financial": false
   }
 ];
+
+const SUBSIDIARIES_DATA = {
+  "global": {
+    "by_country": [
+      {
+        "country": "Mexico",
+        "n": 2014
+      },
+      {
+        "country": "United States",
+        "n": 271
+      },
+      {
+        "country": "Spain",
+        "n": 91
+      },
+      {
+        "country": "Austria",
+        "n": 70
+      },
+      {
+        "country": "Brazil",
+        "n": 44
+      },
+      {
+        "country": "Argentina",
+        "n": 39
+      },
+      {
+        "country": "Colombia",
+        "n": 39
+      },
+      {
+        "country": "Peru",
+        "n": 39
+      },
+      {
+        "country": "Guatemala",
+        "n": 36
+      },
+      {
+        "country": "Costa Rica",
+        "n": 35
+      },
+      {
+        "country": "China",
+        "n": 31
+      },
+      {
+        "country": "United Kingdom",
+        "n": 30
+      },
+      {
+        "country": "Germany",
+        "n": 30
+      },
+      {
+        "country": "Honduras",
+        "n": 26
+      },
+      {
+        "country": "Netherlands",
+        "n": 26
+      },
+      {
+        "country": "Canada",
+        "n": 24
+      },
+      {
+        "country": "Chile",
+        "n": 23
+      },
+      {
+        "country": "Ecuador",
+        "n": 23
+      },
+      {
+        "country": "El Salvador",
+        "n": 21
+      },
+      {
+        "country": "Nicaragua",
+        "n": 18
+      },
+      {
+        "country": "France",
+        "n": 16
+      },
+      {
+        "country": "Uruguay",
+        "n": 14
+      },
+      {
+        "country": "Panama",
+        "n": 14
+      },
+      {
+        "country": "Cayman Islands",
+        "n": 12
+      },
+      {
+        "country": "Switzerland",
+        "n": 12
+      },
+      {
+        "country": "Italy",
+        "n": 12
+      },
+      {
+        "country": "Bulgaria",
+        "n": 11
+      },
+      {
+        "country": "Croatia",
+        "n": 11
+      },
+      {
+        "country": "Venezuela",
+        "n": 11
+      },
+      {
+        "country": "Belarus",
+        "n": 10
+      },
+      {
+        "country": "Trinidad and Tobago",
+        "n": 8
+      },
+      {
+        "country": "Macedonia",
+        "n": 8
+      },
+      {
+        "country": "Portugal",
+        "n": 8
+      },
+      {
+        "country": "Russia",
+        "n": 8
+      },
+      {
+        "country": "Puerto Rico",
+        "n": 7
+      },
+      {
+        "country": "Poland",
+        "n": 7
+      },
+      {
+        "country": "Hungary",
+        "n": 6
+      },
+      {
+        "country": "Turkey",
+        "n": 6
+      },
+      {
+        "country": "Czech Republic",
+        "n": 6
+      },
+      {
+        "country": "Republic of Serbia",
+        "n": 5
+      },
+      {
+        "country": "Dominican Republic",
+        "n": 5
+      },
+      {
+        "country": "India",
+        "n": 5
+      },
+      {
+        "country": "Malaysia",
+        "n": 5
+      },
+      {
+        "country": "Paraguay",
+        "n": 4
+      },
+      {
+        "country": "Barbados",
+        "n": 4
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "n": 4
+      },
+      {
+        "country": "South Africa",
+        "n": 4
+      },
+      {
+        "country": "Morocco",
+        "n": 4
+      },
+      {
+        "country": "Korea; Republic (S. Korea)",
+        "n": 4
+      },
+      {
+        "country": "Israel",
+        "n": 4
+      },
+      {
+        "country": "Jamaica",
+        "n": 4
+      },
+      {
+        "country": "Slovenia",
+        "n": 4
+      },
+      {
+        "country": "Ukraine",
+        "n": 4
+      },
+      {
+        "country": "Singapore",
+        "n": 4
+      },
+      {
+        "country": "Philippines",
+        "n": 4
+      },
+      {
+        "country": "Romania",
+        "n": 4
+      },
+      {
+        "country": "Slovak Republic",
+        "n": 3
+      },
+      {
+        "country": "Ireland",
+        "n": 3
+      },
+      {
+        "country": "Bermuda",
+        "n": 3
+      },
+      {
+        "country": "Curacao",
+        "n": 2
+      },
+      {
+        "country": "Bahamas",
+        "n": 2
+      },
+      {
+        "country": "Andorra",
+        "n": 2
+      },
+      {
+        "country": "Cyprus",
+        "n": 2
+      },
+      {
+        "country": "Egypt",
+        "n": 2
+      },
+      {
+        "country": "Oman",
+        "n": 2
+      },
+      {
+        "country": "Republic of Montenegro",
+        "n": 2
+      },
+      {
+        "country": "Gibraltar",
+        "n": 2
+      },
+      {
+        "country": "Guyana",
+        "n": 2
+      },
+      {
+        "country": "Anguilla",
+        "n": 1
+      },
+      {
+        "country": "Australia",
+        "n": 1
+      },
+      {
+        "country": "Luxembourg",
+        "n": 1
+      },
+      {
+        "country": "Japan",
+        "n": 1
+      },
+      {
+        "country": "Haiti",
+        "n": 1
+      },
+      {
+        "country": "Denmark",
+        "n": 1
+      },
+      {
+        "country": "Norway",
+        "n": 1
+      },
+      {
+        "country": "Saint Kitts and Nevis",
+        "n": 1
+      },
+      {
+        "country": "Taiwan",
+        "n": 1
+      },
+      {
+        "country": "Thailand",
+        "n": 1
+      }
+    ],
+    "by_sector": [
+      {
+        "sector": "Alimentos y bebidas",
+        "n": 360
+      },
+      {
+        "sector": "Construcción y materiales",
+        "n": 192
+      },
+      {
+        "sector": "Minería y metales",
+        "n": 177
+      },
+      {
+        "sector": "Química y petroquímica",
+        "n": 159
+      },
+      {
+        "sector": "Telecomunicaciones y medios",
+        "n": 123
+      },
+      {
+        "sector": "Servicios financieros",
+        "n": 102
+      },
+      {
+        "sector": "Transporte y logística",
+        "n": 97
+      },
+      {
+        "sector": "Servicios empresariales",
+        "n": 96
+      },
+      {
+        "sector": "Holding e inversión",
+        "n": 75
+      },
+      {
+        "sector": "Bienes raíces",
+        "n": 57
+      },
+      {
+        "sector": "Manufactura",
+        "n": 50
+      },
+      {
+        "sector": "Retail",
+        "n": 42
+      },
+      {
+        "sector": "Energía",
+        "n": 24
+      },
+      {
+        "sector": "Tecnología",
+        "n": 18
+      }
+    ],
+    "total": 3226
+  },
+  "by_company": {
+    "009_Alpek": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 22
+        },
+        {
+          "country": "United States",
+          "n": 10
+        },
+        {
+          "country": "Brazil",
+          "n": 6
+        },
+        {
+          "country": "Argentina",
+          "n": 4
+        },
+        {
+          "country": "Spain",
+          "n": 4
+        },
+        {
+          "country": "Chile",
+          "n": 2
+        },
+        {
+          "country": "Canada",
+          "n": 2
+        },
+        {
+          "country": "Oman",
+          "n": 2
+        },
+        {
+          "country": "United Kingdom",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Química y petroquímica",
+          "n": 44
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 4
+        }
+      ],
+      "total": 54,
+      "name": "Alpek",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "010_Alsea SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 14
+        },
+        {
+          "country": "Colombia",
+          "n": 7
+        },
+        {
+          "country": "Spain",
+          "n": 6
+        },
+        {
+          "country": "Chile",
+          "n": 3
+        },
+        {
+          "country": "Argentina",
+          "n": 3
+        },
+        {
+          "country": "Portugal",
+          "n": 2
+        },
+        {
+          "country": "Netherlands",
+          "n": 1
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 27
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 3
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 1
+        },
+        {
+          "sector": "Manufactura",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 37,
+      "name": "Alsea",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "011_Altos Hornos de Mexico SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 6
+        },
+        {
+          "country": "Israel",
+          "n": 2
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 4
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 1
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "total": 9,
+      "name": "Altos Hornos de Mexico SA",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "014_America Móvil": {
+      "by_country": [
+        {
+          "country": "Austria",
+          "n": 64
+        },
+        {
+          "country": "Mexico",
+          "n": 40
+        },
+        {
+          "country": "Bulgaria",
+          "n": 10
+        },
+        {
+          "country": "Belarus",
+          "n": 10
+        },
+        {
+          "country": "Macedonia",
+          "n": 8
+        },
+        {
+          "country": "Brazil",
+          "n": 8
+        },
+        {
+          "country": "Croatia",
+          "n": 6
+        },
+        {
+          "country": "Honduras",
+          "n": 6
+        },
+        {
+          "country": "Guatemala",
+          "n": 6
+        },
+        {
+          "country": "Nicaragua",
+          "n": 6
+        },
+        {
+          "country": "Germany",
+          "n": 6
+        },
+        {
+          "country": "El Salvador",
+          "n": 4
+        },
+        {
+          "country": "Netherlands",
+          "n": 4
+        },
+        {
+          "country": "Switzerland",
+          "n": 4
+        },
+        {
+          "country": "Puerto Rico",
+          "n": 4
+        },
+        {
+          "country": "Republic of Serbia",
+          "n": 4
+        },
+        {
+          "country": "United States",
+          "n": 4
+        },
+        {
+          "country": "Slovenia",
+          "n": 4
+        },
+        {
+          "country": "Ecuador",
+          "n": 2
+        },
+        {
+          "country": "Hungary",
+          "n": 2
+        },
+        {
+          "country": "Bosnia and Herzegovina",
+          "n": 2
+        },
+        {
+          "country": "Argentina",
+          "n": 2
+        },
+        {
+          "country": "Cyprus",
+          "n": 2
+        },
+        {
+          "country": "Dominican Republic",
+          "n": 2
+        },
+        {
+          "country": "Italy",
+          "n": 2
+        },
+        {
+          "country": "Peru",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Romania",
+          "n": 2
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        },
+        {
+          "country": "Turkey",
+          "n": 2
+        },
+        {
+          "country": "United Kingdom",
+          "n": 2
+        },
+        {
+          "country": "Uruguay",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Telecomunicaciones y medios",
+          "n": 84
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 12
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 12
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 12
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 6
+        },
+        {
+          "sector": "Tecnología",
+          "n": 4
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 226,
+      "name": "America Movil",
+      "group": "Slim",
+      "color": "#1B365D"
+    },
+    "019_Arca Continental": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 47
+        },
+        {
+          "country": "Ecuador",
+          "n": 14
+        },
+        {
+          "country": "Argentina",
+          "n": 5
+        },
+        {
+          "country": "Peru",
+          "n": 4
+        },
+        {
+          "country": "United States",
+          "n": 4
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        },
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 31
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 3
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        },
+        {
+          "sector": "Manufactura",
+          "n": 2
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        }
+      ],
+      "total": 77,
+      "name": "Arca Continental",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "041_Banco del Bajio SA Institucion de Banca Multiple": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 3
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 3,
+      "name": "Banco del Bajio SA Institucion de Banc",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "057_Becle SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        }
+      ],
+      "total": 1,
+      "name": "Becle",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "070_CEMEX SAB de CV": {
+      "by_country": [
+        {
+          "country": "United States",
+          "n": 12
+        },
+        {
+          "country": "Spain",
+          "n": 10
+        },
+        {
+          "country": "Netherlands",
+          "n": 9
+        },
+        {
+          "country": "Trinidad and Tobago",
+          "n": 8
+        },
+        {
+          "country": "France",
+          "n": 5
+        },
+        {
+          "country": "United Kingdom",
+          "n": 5
+        },
+        {
+          "country": "Philippines",
+          "n": 4
+        },
+        {
+          "country": "Croatia",
+          "n": 4
+        },
+        {
+          "country": "Barbados",
+          "n": 4
+        },
+        {
+          "country": "Mexico",
+          "n": 3
+        },
+        {
+          "country": "Switzerland",
+          "n": 2
+        },
+        {
+          "country": "Republic of Montenegro",
+          "n": 2
+        },
+        {
+          "country": "Bosnia and Herzegovina",
+          "n": 2
+        },
+        {
+          "country": "Jamaica",
+          "n": 2
+        },
+        {
+          "country": "Guyana",
+          "n": 2
+        },
+        {
+          "country": "Germany",
+          "n": 2
+        },
+        {
+          "country": "Egypt",
+          "n": 2
+        },
+        {
+          "country": "Anguilla",
+          "n": 1
+        },
+        {
+          "country": "Luxembourg",
+          "n": 1
+        },
+        {
+          "country": "Israel",
+          "n": 1
+        },
+        {
+          "country": "Haiti",
+          "n": 1
+        },
+        {
+          "country": "Bermuda",
+          "n": 1
+        },
+        {
+          "country": "Czech Republic",
+          "n": 1
+        },
+        {
+          "country": "Denmark",
+          "n": 1
+        },
+        {
+          "country": "Dominican Republic",
+          "n": 1
+        },
+        {
+          "country": "Malaysia",
+          "n": 1
+        },
+        {
+          "country": "Republic of Serbia",
+          "n": 1
+        },
+        {
+          "country": "Puerto Rico",
+          "n": 1
+        },
+        {
+          "country": "Poland",
+          "n": 1
+        },
+        {
+          "country": "Russia",
+          "n": 1
+        },
+        {
+          "country": "Singapore",
+          "n": 1
+        },
+        {
+          "country": "Saint Kitts and Nevis",
+          "n": 1
+        },
+        {
+          "country": "Thailand",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 48
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 7
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 4
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 2
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        },
+        {
+          "sector": "Manufactura",
+          "n": 1
+        }
+      ],
+      "total": 94,
+      "name": "Cemex",
+      "group": "Cemex",
+      "color": "#d62728"
+    },
+    "075_CFE": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 20
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Energía",
+          "n": 15
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 1
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 21,
+      "name": "CFE",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "095_Coca-Cola Femsa SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 24
+        },
+        {
+          "country": "Brazil",
+          "n": 8
+        },
+        {
+          "country": "Colombia",
+          "n": 4
+        },
+        {
+          "country": "Spain",
+          "n": 4
+        },
+        {
+          "country": "Argentina",
+          "n": 2
+        },
+        {
+          "country": "Nicaragua",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Uruguay",
+          "n": 2
+        },
+        {
+          "country": "Venezuela",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 36
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 6
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        },
+        {
+          "sector": "Manufactura",
+          "n": 2
+        }
+      ],
+      "total": 50,
+      "name": "Coca-Cola Femsa",
+      "group": "Femsa",
+      "color": "#e07b39"
+    },
+    "101_Controladora Vuela Compania de Aviacion SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 23
+        },
+        {
+          "country": "Guatemala",
+          "n": 3
+        },
+        {
+          "country": "El Salvador",
+          "n": 1
+        },
+        {
+          "country": "Costa Rica",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "total": 28,
+      "name": "Controladora Vuela Compania de Aviacio",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "106_Corporacion Moctezuma SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 17
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 8
+        }
+      ],
+      "total": 17,
+      "name": "Corporacion Moctezuma",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "107_Corporativo Fragua SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 7
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 7,
+      "name": "Corporativo Fragua",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "118_El puerto de Liverpool SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 32
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Retail",
+          "n": 9
+        },
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 1
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "total": 32,
+      "name": "El Puerto de Liverpool",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "150_Fibra Uno Administracion SA de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 2
+        }
+      ],
+      "total": 2,
+      "name": "Fibra Uno Administracion SA",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "153_Fresnillo PLC": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 21
+        },
+        {
+          "country": "Peru",
+          "n": 2
+        },
+        {
+          "country": "Chile",
+          "n": 2
+        },
+        {
+          "country": "Canada",
+          "n": 1
+        },
+        {
+          "country": "United Kingdom",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 11
+        },
+        {
+          "sector": "Manufactura",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Tecnología",
+          "n": 1
+        }
+      ],
+      "total": 27,
+      "name": "Fresnillo PLC",
+      "group": "BAL",
+      "color": "#5b8db8"
+    },
+    "154_GCC SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 9
+        },
+        {
+          "country": "United States",
+          "n": 8
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 9
+        },
+        {
+          "sector": "Manufactura",
+          "n": 1
+        },
+        {
+          "sector": "Minería y metales",
+          "n": 1
+        },
+        {
+          "sector": "Tecnología",
+          "n": 1
+        }
+      ],
+      "total": 17,
+      "name": "GCC",
+      "group": "Cemex",
+      "color": "#d62728"
+    },
+    "155_Gentera SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 4
+        },
+        {
+          "country": "Guatemala",
+          "n": 1
+        },
+        {
+          "country": "Peru",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 6,
+      "name": "Gentera",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "159_GMexico Transportes SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 4
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Transporte y logística",
+          "n": 4
+        }
+      ],
+      "total": 5,
+      "name": "GMexico Transportes",
+      "group": "Gmexico",
+      "color": "#c44a8a"
+    },
+    "162_Gruma SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 48
+        },
+        {
+          "country": "Spain",
+          "n": 6
+        },
+        {
+          "country": "Costa Rica",
+          "n": 4
+        },
+        {
+          "country": "Honduras",
+          "n": 4
+        },
+        {
+          "country": "Malaysia",
+          "n": 4
+        },
+        {
+          "country": "Guatemala",
+          "n": 4
+        },
+        {
+          "country": "El Salvador",
+          "n": 4
+        },
+        {
+          "country": "United States",
+          "n": 4
+        },
+        {
+          "country": "Venezuela",
+          "n": 4
+        },
+        {
+          "country": "China",
+          "n": 2
+        },
+        {
+          "country": "Ecuador",
+          "n": 2
+        },
+        {
+          "country": "Russia",
+          "n": 2
+        },
+        {
+          "country": "Nicaragua",
+          "n": 2
+        },
+        {
+          "country": "Ukraine",
+          "n": 2
+        },
+        {
+          "country": "Turkey",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 54
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 4
+        },
+        {
+          "sector": "Manufactura",
+          "n": 2
+        },
+        {
+          "sector": "Minería y metales",
+          "n": 2
+        }
+      ],
+      "total": 94,
+      "name": "Gruma",
+      "group": "GrumaBanorte",
+      "color": "#8c564b"
+    },
+    "163_Grupo Aeroportuario del Centro Norte SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 24
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Transporte y logística",
+          "n": 7
+        }
+      ],
+      "total": 24,
+      "name": "Grupo Aeroportuario del Centro Norte",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "164_Grupo Aeroportuario del Pacifico SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 32
+        },
+        {
+          "country": "Brazil",
+          "n": 2
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Transporte y logística",
+          "n": 16
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        }
+      ],
+      "total": 36,
+      "name": "Grupo Aeroportuario del Pacifico",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "165_Grupo Aeroportuario del Sureste SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 30
+        },
+        {
+          "country": "Puerto Rico",
+          "n": 2
+        },
+        {
+          "country": "United States",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Transporte y logística",
+          "n": 18
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 2
+        }
+      ],
+      "total": 34,
+      "name": "Grupo Aeroportuario del Sureste",
+      "group": "Yucatan",
+      "color": "#5a9e3e"
+    },
+    "169_Grupo Bafar SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 33
+        },
+        {
+          "country": "United States",
+          "n": 7
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 9
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 40,
+      "name": "Grupo Bafar",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "170_Grupo Bimbo": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 130
+        },
+        {
+          "country": "United States",
+          "n": 52
+        },
+        {
+          "country": "Spain",
+          "n": 30
+        },
+        {
+          "country": "China",
+          "n": 28
+        },
+        {
+          "country": "Guatemala",
+          "n": 14
+        },
+        {
+          "country": "Canada",
+          "n": 12
+        },
+        {
+          "country": "Argentina",
+          "n": 10
+        },
+        {
+          "country": "France",
+          "n": 10
+        },
+        {
+          "country": "Honduras",
+          "n": 10
+        },
+        {
+          "country": "Colombia",
+          "n": 6
+        },
+        {
+          "country": "Uruguay",
+          "n": 6
+        },
+        {
+          "country": "Chile",
+          "n": 4
+        },
+        {
+          "country": "Austria",
+          "n": 4
+        },
+        {
+          "country": "Brazil",
+          "n": 4
+        },
+        {
+          "country": "United Kingdom",
+          "n": 4
+        },
+        {
+          "country": "Italy",
+          "n": 4
+        },
+        {
+          "country": "El Salvador",
+          "n": 4
+        },
+        {
+          "country": "India",
+          "n": 4
+        },
+        {
+          "country": "Morocco",
+          "n": 4
+        },
+        {
+          "country": "Korea; Republic (S. Korea)",
+          "n": 4
+        },
+        {
+          "country": "Germany",
+          "n": 4
+        },
+        {
+          "country": "Costa Rica",
+          "n": 4
+        },
+        {
+          "country": "Russia",
+          "n": 4
+        },
+        {
+          "country": "Venezuela",
+          "n": 4
+        },
+        {
+          "country": "South Africa",
+          "n": 4
+        },
+        {
+          "country": "Peru",
+          "n": 4
+        },
+        {
+          "country": "Portugal",
+          "n": 4
+        },
+        {
+          "country": "Paraguay",
+          "n": 4
+        },
+        {
+          "country": "Andorra",
+          "n": 2
+        },
+        {
+          "country": "Ecuador",
+          "n": 2
+        },
+        {
+          "country": "Gibraltar",
+          "n": 2
+        },
+        {
+          "country": "Hungary",
+          "n": 2
+        },
+        {
+          "country": "Czech Republic",
+          "n": 2
+        },
+        {
+          "country": "Nicaragua",
+          "n": 2
+        },
+        {
+          "country": "Romania",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Ukraine",
+          "n": 2
+        },
+        {
+          "country": "Turkey",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 156
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 14
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 6
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 4
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 4
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 2
+        },
+        {
+          "sector": "Tecnología",
+          "n": 2
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 396,
+      "name": "Grupo Bimbo",
+      "group": "Bimbo",
+      "color": "#7b52ab"
+    },
+    "172_Grupo Carso SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 112
+        },
+        {
+          "country": "United States",
+          "n": 16
+        },
+        {
+          "country": "Colombia",
+          "n": 10
+        },
+        {
+          "country": "Brazil",
+          "n": 6
+        },
+        {
+          "country": "Honduras",
+          "n": 4
+        },
+        {
+          "country": "El Salvador",
+          "n": 4
+        },
+        {
+          "country": "Peru",
+          "n": 4
+        },
+        {
+          "country": "Argentina",
+          "n": 2
+        },
+        {
+          "country": "Chile",
+          "n": 2
+        },
+        {
+          "country": "Guatemala",
+          "n": 2
+        },
+        {
+          "country": "Ecuador",
+          "n": 2
+        },
+        {
+          "country": "Dominican Republic",
+          "n": 2
+        },
+        {
+          "country": "Costa Rica",
+          "n": 2
+        },
+        {
+          "country": "Nicaragua",
+          "n": 2
+        },
+        {
+          "country": "Jamaica",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Uruguay",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 34
+        },
+        {
+          "sector": "Retail",
+          "n": 12
+        },
+        {
+          "sector": "Minería y metales",
+          "n": 8
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 6
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 6
+        },
+        {
+          "sector": "Energía",
+          "n": 2
+        },
+        {
+          "sector": "Telecomunicaciones y medios",
+          "n": 2
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 176,
+      "name": "Grupo Carso",
+      "group": "Slim",
+      "color": "#1B365D"
+    },
+    "173_Grupo Comercial Chedraui SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 16
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 3
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        }
+      ],
+      "total": 17,
+      "name": "Grupo Comercial Chedraui",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "178_Grupo Financiero Banorte SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 194
+        },
+        {
+          "country": "United States",
+          "n": 10
+        },
+        {
+          "country": "Cayman Islands",
+          "n": 4
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios financieros",
+          "n": 28
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 14
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 8
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 6
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 6
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 4
+        },
+        {
+          "sector": "Manufactura",
+          "n": 2
+        }
+      ],
+      "total": 208,
+      "name": "Grupo Financiero Banorte",
+      "group": "GrumaBanorte",
+      "color": "#8c564b"
+    },
+    "181_Grupo Financiero Inbursa SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 42
+        },
+        {
+          "country": "Brazil",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios financieros",
+          "n": 28
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 44,
+      "name": "Grupo Financiero Inbursa",
+      "group": "Slim",
+      "color": "#1B365D"
+    },
+    "182_Grupo Gigante SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 19
+        },
+        {
+          "country": "Colombia",
+          "n": 1
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Retail",
+          "n": 3
+        },
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 2
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        }
+      ],
+      "total": 21,
+      "name": "Grupo Gigante",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "183_Grupo Herdez SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 50
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        },
+        {
+          "country": "United States",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 10
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 4
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        }
+      ],
+      "total": 54,
+      "name": "Grupo Herdez",
+      "group": "GrumaBanorte",
+      "color": "#8c564b"
+    },
+    "185_Grupo Lamosa SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 3
+        },
+        {
+          "country": "Argentina",
+          "n": 1
+        },
+        {
+          "country": "Spain",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 4
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 1
+        }
+      ],
+      "total": 5,
+      "name": "Grupo Lamosa",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "187_Grupo Mexico SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 126
+        },
+        {
+          "country": "United States",
+          "n": 48
+        },
+        {
+          "country": "Peru",
+          "n": 6
+        },
+        {
+          "country": "Cayman Islands",
+          "n": 4
+        },
+        {
+          "country": "Spain",
+          "n": 4
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 38
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 24
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 12
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 12
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 6
+        },
+        {
+          "sector": "Energía",
+          "n": 4
+        },
+        {
+          "sector": "Manufactura",
+          "n": 2
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        }
+      ],
+      "total": 188,
+      "name": "Grupo Mexico",
+      "group": "Gmexico",
+      "color": "#c44a8a"
+    },
+    "188_Grupo Nacional Provincial SAB": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 11
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        }
+      ],
+      "total": 11,
+      "name": "Grupo Nacional Provincial",
+      "group": "BAL",
+      "color": "#5b8db8"
+    },
+    "190_Grupo Palacio de Hierro SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 52
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Retail",
+          "n": 4
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        }
+      ],
+      "total": 52,
+      "name": "Grupo Palacio de Hierro",
+      "group": "BAL",
+      "color": "#5b8db8"
+    },
+    "191_Grupo Profuturo SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 26
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios financieros",
+          "n": 5
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        }
+      ],
+      "total": 26,
+      "name": "Grupo Profuturo",
+      "group": "BAL",
+      "color": "#5b8db8"
+    },
+    "192_Grupo Sanborns SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 26
+        },
+        {
+          "country": "El Salvador",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Retail",
+          "n": 10
+        }
+      ],
+      "total": 28,
+      "name": "nan",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "195_Grupo Simec SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 37
+        },
+        {
+          "country": "United States",
+          "n": 11
+        },
+        {
+          "country": "Brazil",
+          "n": 2
+        },
+        {
+          "country": "Curacao",
+          "n": 1
+        },
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 20
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 1
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 1
+        }
+      ],
+      "total": 52,
+      "name": "Grupo Simec",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "197_Grupo Televisa SAB": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 232
+        },
+        {
+          "country": "United States",
+          "n": 12
+        },
+        {
+          "country": "Colombia",
+          "n": 6
+        },
+        {
+          "country": "Chile",
+          "n": 4
+        },
+        {
+          "country": "Argentina",
+          "n": 4
+        },
+        {
+          "country": "Spain",
+          "n": 4
+        },
+        {
+          "country": "Peru",
+          "n": 4
+        },
+        {
+          "country": "Switzerland",
+          "n": 4
+        },
+        {
+          "country": "Nicaragua",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Uruguay",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Telecomunicaciones y medios",
+          "n": 30
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 10
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 8
+        },
+        {
+          "sector": "Tecnología",
+          "n": 4
+        },
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 2
+        },
+        {
+          "sector": "Retail",
+          "n": 2
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 2
+        }
+      ],
+      "total": 276,
+      "name": "Grupo Televisa",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "198_Grupo Traxion SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "total": 2,
+      "name": "Grupo Traxion",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 37
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 4
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 3
+        },
+        {
+          "sector": "Energía",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 39,
+      "name": "Impulsora del Desarrollo y el Empleo e",
+      "group": "Slim",
+      "color": "#1B365D"
+    },
+    "205_Industrias Bachoco SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 22
+        },
+        {
+          "country": "United States",
+          "n": 6
+        },
+        {
+          "country": "Bermuda",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 18
+        },
+        {
+          "sector": "Tecnología",
+          "n": 2
+        }
+      ],
+      "total": 30,
+      "name": "nan",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "206_Industrias CH SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 70
+        },
+        {
+          "country": "United States",
+          "n": 10
+        },
+        {
+          "country": "Brazil",
+          "n": 2
+        },
+        {
+          "country": "Curacao",
+          "n": 1
+        },
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 30
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 3
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 2
+        }
+      ],
+      "total": 84,
+      "name": "Industrias CH",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "207_Industrias Penoles SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 94
+        },
+        {
+          "country": "Chile",
+          "n": 6
+        },
+        {
+          "country": "Peru",
+          "n": 6
+        },
+        {
+          "country": "United States",
+          "n": 4
+        },
+        {
+          "country": "Canada",
+          "n": 2
+        },
+        {
+          "country": "United Kingdom",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 48
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 4
+        },
+        {
+          "sector": "Manufactura",
+          "n": 4
+        },
+        {
+          "sector": "Tecnología",
+          "n": 4
+        },
+        {
+          "sector": "Energía",
+          "n": 2
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 2
+        }
+      ],
+      "total": 114,
+      "name": "Industrias Penoles",
+      "group": "BAL",
+      "color": "#5b8db8"
+    },
+    "221_Kimberly-Clark de Mexico SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 3
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "total": 4,
+      "name": "Kimberly-Clark de Mexico",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "223_La Comer SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 1
+        }
+      ],
+      "total": 1,
+      "name": "La Comer",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "237_Megacable Holdings SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 22
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Telecomunicaciones y medios",
+          "n": 7
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 4
+        }
+      ],
+      "total": 22,
+      "name": "Megacable Holdings",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "253_Nemak SAB de CV": {
+      "by_country": [
+        {
+          "country": "Germany",
+          "n": 12
+        },
+        {
+          "country": "Mexico",
+          "n": 12
+        },
+        {
+          "country": "United States",
+          "n": 6
+        },
+        {
+          "country": "Austria",
+          "n": 2
+        },
+        {
+          "country": "Argentina",
+          "n": 2
+        },
+        {
+          "country": "Czech Republic",
+          "n": 2
+        },
+        {
+          "country": "Canada",
+          "n": 2
+        },
+        {
+          "country": "Brazil",
+          "n": 2
+        },
+        {
+          "country": "Hungary",
+          "n": 2
+        },
+        {
+          "country": "Italy",
+          "n": 2
+        },
+        {
+          "country": "Poland",
+          "n": 2
+        },
+        {
+          "country": "Slovak Republic",
+          "n": 2
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Manufactura",
+          "n": 22
+        },
+        {
+          "sector": "Minería y metales",
+          "n": 14
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 4
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        }
+      ],
+      "total": 50,
+      "name": "Nemak",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "258_Operadora de Sites Mexicanos SAB De CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 1
+        }
+      ],
+      "by_sector": [],
+      "total": 1,
+      "name": "Operadora de Sites Mexicanos  De CV",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "259_Orbia Advance Corp SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 12
+        },
+        {
+          "country": "United Kingdom",
+          "n": 8
+        },
+        {
+          "country": "United States",
+          "n": 7
+        },
+        {
+          "country": "Germany",
+          "n": 6
+        },
+        {
+          "country": "Italy",
+          "n": 4
+        },
+        {
+          "country": "Poland",
+          "n": 4
+        },
+        {
+          "country": "Colombia",
+          "n": 3
+        },
+        {
+          "country": "Netherlands",
+          "n": 3
+        },
+        {
+          "country": "Peru",
+          "n": 3
+        },
+        {
+          "country": "Canada",
+          "n": 3
+        },
+        {
+          "country": "Brazil",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Costa Rica",
+          "n": 2
+        },
+        {
+          "country": "Australia",
+          "n": 1
+        },
+        {
+          "country": "Argentina",
+          "n": 1
+        },
+        {
+          "country": "China",
+          "n": 1
+        },
+        {
+          "country": "Croatia",
+          "n": 1
+        },
+        {
+          "country": "Czech Republic",
+          "n": 1
+        },
+        {
+          "country": "Bulgaria",
+          "n": 1
+        },
+        {
+          "country": "Israel",
+          "n": 1
+        },
+        {
+          "country": "Ireland",
+          "n": 1
+        },
+        {
+          "country": "India",
+          "n": 1
+        },
+        {
+          "country": "Honduras",
+          "n": 1
+        },
+        {
+          "country": "Guatemala",
+          "n": 1
+        },
+        {
+          "country": "France",
+          "n": 1
+        },
+        {
+          "country": "El Salvador",
+          "n": 1
+        },
+        {
+          "country": "Ecuador",
+          "n": 1
+        },
+        {
+          "country": "Nicaragua",
+          "n": 1
+        },
+        {
+          "country": "Norway",
+          "n": 1
+        },
+        {
+          "country": "Japan",
+          "n": 1
+        },
+        {
+          "country": "Russia",
+          "n": 1
+        },
+        {
+          "country": "Slovak Republic",
+          "n": 1
+        },
+        {
+          "country": "Singapore",
+          "n": 1
+        },
+        {
+          "country": "Taiwan",
+          "n": 1
+        },
+        {
+          "country": "Venezuela",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Química y petroquímica",
+          "n": 35
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 11
+        },
+        {
+          "sector": "Manufactura",
+          "n": 6
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 4
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 81,
+      "name": "Orbia Advance Corp",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "260_Organizacion Soriana SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 12
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Bienes raíces",
+          "n": 6
+        },
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 2
+        }
+      ],
+      "total": 12,
+      "name": "Organizacion Soriana",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "264_Pemex": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 76
+        },
+        {
+          "country": "United States",
+          "n": 12
+        },
+        {
+          "country": "Spain",
+          "n": 10
+        },
+        {
+          "country": "Netherlands",
+          "n": 6
+        },
+        {
+          "country": "United Kingdom",
+          "n": 6
+        },
+        {
+          "country": "Bahamas",
+          "n": 2
+        },
+        {
+          "country": "Cayman Islands",
+          "n": 2
+        },
+        {
+          "country": "Ireland",
+          "n": 2
+        },
+        {
+          "country": "Singapore",
+          "n": 2
+        },
+        {
+          "country": "Switzerland",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Química y petroquímica",
+          "n": 26
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 6
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 4
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 4
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 2
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 120,
+      "name": "Pemex",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "274_Promotora y Operadora de Infraestructura SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 27
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 9
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 4
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 27,
+      "name": "Promotora y Operadora de Infraestructu",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "275_Qualitas Controladora SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 5
+        },
+        {
+          "country": "United States",
+          "n": 4
+        },
+        {
+          "country": "Costa Rica",
+          "n": 1
+        },
+        {
+          "country": "El Salvador",
+          "n": 1
+        },
+        {
+          "country": "Peru",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Holding e inversión",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "total": 12,
+      "name": "Qualitas Controladora",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "281_Regional SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 10
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios financieros",
+          "n": 2
+        }
+      ],
+      "total": 10,
+      "name": "Regional",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "299_Southern Copper Corp Peru": {
+      "by_country": [
+        {
+          "country": "Peru",
+          "n": 2
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Minería y metales",
+          "n": 1
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 1
+        }
+      ],
+      "total": 3,
+      "name": "Southern Copper Corp Peru",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "318_Vesta Real Estate Corporation SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 12
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Bienes raíces",
+          "n": 1
+        }
+      ],
+      "total": 12,
+      "name": "Vesta Real Estate Corporation",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "321_Vista Energy SAB de CV": {
+      "by_country": [
+        {
+          "country": "Argentina",
+          "n": 3
+        },
+        {
+          "country": "Mexico",
+          "n": 1
+        },
+        {
+          "country": "United States",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Química y petroquímica",
+          "n": 3
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 1
+        }
+      ],
+      "total": 5,
+      "name": "Vista Energy",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "322_Vitro SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 52
+        },
+        {
+          "country": "United States",
+          "n": 8
+        },
+        {
+          "country": "Canada",
+          "n": 2
+        },
+        {
+          "country": "Guatemala",
+          "n": 2
+        },
+        {
+          "country": "Colombia",
+          "n": 2
+        },
+        {
+          "country": "Portugal",
+          "n": 2
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Construcción y materiales",
+          "n": 24
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 24
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 4
+        },
+        {
+          "sector": "Manufactura",
+          "n": 4
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        }
+      ],
+      "total": 70,
+      "name": "Vitro",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "323_Wal Mart de Mexico SAB de CV": {
+      "by_country": [
+        {
+          "country": "Costa Rica",
+          "n": 2
+        },
+        {
+          "country": "Guatemala",
+          "n": 1
+        },
+        {
+          "country": "Honduras",
+          "n": 1
+        },
+        {
+          "country": "Mexico",
+          "n": 1
+        },
+        {
+          "country": "Nicaragua",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 3
+        },
+        {
+          "sector": "Retail",
+          "n": 2
+        }
+      ],
+      "total": 6,
+      "name": "Wal Mart de Mexico",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    },
+    "Directors": {
+      "by_country": [
+        {
+          "country": "Costa Rica",
+          "n": 19
+        },
+        {
+          "country": "United States",
+          "n": 3
+        },
+        {
+          "country": "Cayman Islands",
+          "n": 2
+        },
+        {
+          "country": "Guatemala",
+          "n": 2
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 5
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 2
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        }
+      ],
+      "total": 26,
+      "name": "Directors",
+      "group": "Otro",
+      "color": "#a8a8a8"
+    }
+  }
+};

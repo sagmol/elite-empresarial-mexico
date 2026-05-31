@@ -370,6 +370,7 @@ footer a { color: var(--ink2); }
     <li><a href="#trayectorias">Trayectorias</a></li>
     <li><a href="#propiedad">Propiedad</a></li>
     <li><a href="#permanencia">Permanencia</a></li>
+    <li><a href="#huella">Huella</a></li>
     <li><a href="#red">La red</a></li>
   </ul>
 </nav>
@@ -540,9 +541,37 @@ footer a { color: var(--ink2); }
   <div class="insight fade-in" id="insight-permanencia"></div>
 </section>
 
-<!-- SECTION 07: LA RED -->
+<!-- SECTION 07: HUELLA GLOBAL -->
+<section class="section fade-in" id="huella">
+  <div class="section-label">06 — Huella global</div>
+  <h2 class="section-title">Dónde operan — presencia internacional de los grupos</h2>
+  <p class="section-lead">
+    Las 61 empresas con datos de estructura corporativa suman <strong>3,226 subsidiarias</strong>
+    en más de 60 países. Selecciona una empresa para ver su huella específica,
+    o el universo completo para ver el patrón agregado.
+  </p>
+
+  <div style="margin-bottom:20px;">
+    <select id="subs-selector" style="font-size:0.85rem;padding:7px 12px;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--ink);cursor:pointer;min-width:260px;">
+      <option value="global">— Todas las empresas —</option>
+    </select>
+  </div>
+
+  <div class="two-col">
+    <div class="card fade-in">
+      <div class="card-title" id="map-title">Subsidiarias por país</div>
+      <div class="chart-wrap" style="min-height:380px;" id="chart-subs-map"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title" id="sector-title">Subsidiarias por sector</div>
+      <div class="chart-wrap" style="min-height:380px;" id="chart-subs-sector"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 08: LA RED -->
 <section class="section fade-in" id="red">
-  <div class="section-label">06 — La red</div>
+  <div class="section-label">07 — La red</div>
   <h2 class="section-title">El mapa del poder — quién está conectado con quién</h2>
   <p class="section-lead">
     Cada nodo es una empresa, su tamaño proporcional al market cap.
@@ -1258,6 +1287,91 @@ const TYPE_COLORS = {
     `En el lado de la rotación, <strong>Banorte destaca con 157 ex-directores</strong> frente a 28 actuales — ` +
     `reflejo de que, como banco público y privado durante décadas, ha atravesado múltiples ciclos de renovación. ` +
     `Gruma (4.1×) y Alsea muestran los consejos más activos en incorporar nuevos perfiles.`;
+})();
+
+// ── Section 06: Huella global ─────────────────────────────────────────────────
+(function() {
+  // Populate selector
+  const sel = document.getElementById('subs-selector');
+  const byCompany = SUBSIDIARIES_DATA.by_company;
+  const folders = Object.keys(byCompany).sort((a, b) =>
+    byCompany[b].total - byCompany[a].total
+  );
+  folders.forEach(folder => {
+    const d = byCompany[folder];
+    const opt = document.createElement('option');
+    opt.value = folder;
+    opt.textContent = `${d.name} (${d.total})`;
+    sel.appendChild(opt);
+  });
+
+  function renderCharts(key) {
+    const data  = key === 'global' ? SUBSIDIARIES_DATA.global : byCompany[key];
+    const color = key === 'global' ? '#1B365D' : (byCompany[key] || {}).color || '#1B365D';
+    const label = key === 'global' ? 'todas las empresas' : (byCompany[key] || {}).name;
+
+    document.getElementById('map-title').textContent    = `Subsidiarias por país — ${label}`;
+    document.getElementById('sector-title').textContent = `Subsidiarias por sector — ${label}`;
+
+    // Choropleth map
+    const countries = (data.by_country || []).filter(c => c.country && c.country !== 'nan');
+    Plotly.newPlot('chart-subs-map', [{
+      type: 'choropleth',
+      locationmode: 'country names',
+      locations: countries.map(c => c.country),
+      z: countries.map(c => c.n),
+      colorscale: [[0, '#e8edf5'], [1, color]],
+      showscale: true,
+      colorbar: { thickness: 12, len: 0.6, title: { text: 'n', font: { size: 10 } } },
+      hovertemplate: '<b>%{location}</b><br>%{z} subsidiarias<extra></extra>',
+    }], {
+      ...LAYOUT_BASE,
+      height: 380,
+      margin: { t: 8, r: 8, b: 8, l: 8 },
+      geo: {
+        showframe: false,
+        showcoastlines: true,
+        coastlinecolor: '#ddd',
+        projection: { type: 'natural earth' },
+        bgcolor: 'transparent',
+        landcolor: '#f0efe9',
+        oceancolor: '#f5f4ed',
+        showocean: true,
+      },
+    }, PLOTLY_CONFIG);
+
+    // Sector treemap / dot plot
+    const sectors = (data.by_sector || []).filter(s => s.sector && s.sector !== 'Otros');
+    if (sectors.length === 0) {
+      document.getElementById('chart-subs-sector').innerHTML =
+        '<p style="padding:24px;color:var(--muted);font-size:0.85rem;">Sin datos de sector para esta empresa.</p>';
+      return;
+    }
+    const maxN = Math.max(...sectors.map(s => s.n));
+    Plotly.newPlot('chart-subs-sector', [{
+      type: 'scatter', mode: 'markers+text',
+      x: sectors.map(s => s.n),
+      y: sectors.map(s => s.sector),
+      marker: { color: color, size: 11, opacity: 0.85, line: { color: '#fff', width: 1.5 } },
+      text: sectors.map(s => s.n),
+      textposition: 'middle right',
+      textfont: { size: 10, color: '#555' },
+      hovertemplate: '<b>%{y}</b><br>%{x} subsidiarias<extra></extra>',
+    }], {
+      ...LAYOUT_BASE,
+      height: 380,
+      margin: { t: 8, r: 48, b: 32, l: 170 },
+      xaxis: { visible: false, range: [0, maxN * 1.25] },
+      yaxis: { tickfont: { size: 10 }, gridcolor: '#edecea', autorange: 'reversed' },
+    }, PLOTLY_CONFIG);
+  }
+
+  // Initial render
+  renderCharts('global');
+
+  sel.addEventListener('change', function() {
+    renderCharts(this.value);
+  });
 })();
 
 // ── Section 07: La Red (D3 force graph) ──────────────────────────────────────
