@@ -410,7 +410,7 @@ footer a { color: var(--ink2); }
   </div>
 
   <div class="card fade-in">
-    <div class="card-title">El caminito — dónde estudian según el nivel académico</div>
+    <div class="card-title">Trayectoria educativa — dónde estudian según el nivel académico</div>
     <div class="chart-wrap" style="min-height:320px;" id="chart-edu-path"></div>
   </div>
 
@@ -913,7 +913,7 @@ const TYPE_COLORS = {
 // ── Section 04: Career + Interlock flows ─────────────────────────────────────
 (function() {
   const maxW = Math.max(...CAREER_DATA.map(f => f.weight));
-  const rows = CAREER_DATA.slice(0,15).map(f => {
+  const rows = CAREER_DATA.map(f => {
     const barW = Math.round(f.weight / maxW * 120);
     const extTag = f.is_external ? '<span class="flow-ext">externo</span>' : '';
     return `<div class="flow-row">
@@ -936,7 +936,7 @@ const TYPE_COLORS = {
 
 (function() {
   const maxW = Math.max(...INTERLOCK_DATA.map(f => f.weight));
-  const rows = INTERLOCK_DATA.slice(0,12).map(f => {
+  const rows = INTERLOCK_DATA.map(f => {
     const barW = Math.round(f.weight / maxW * 120);
     return `<div class="flow-row">
       <div class="flow-labels">
