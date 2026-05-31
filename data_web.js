@@ -5969,7 +5969,164 @@ const SUBSIDIARIES_DATA = {
         "n": 18
       }
     ],
-    "total": 3226
+    "by_haven": [
+      {
+        "country": "Netherlands",
+        "n": 26
+      },
+      {
+        "country": "Panama",
+        "n": 14
+      },
+      {
+        "country": "Switzerland",
+        "n": 12
+      },
+      {
+        "country": "Cayman Islands",
+        "n": 12
+      },
+      {
+        "country": "Barbados",
+        "n": 4
+      },
+      {
+        "country": "Singapore",
+        "n": 4
+      },
+      {
+        "country": "Ireland",
+        "n": 3
+      },
+      {
+        "country": "Bermuda",
+        "n": 3
+      },
+      {
+        "country": "Andorra",
+        "n": 2
+      },
+      {
+        "country": "Bahamas",
+        "n": 2
+      },
+      {
+        "country": "Curacao",
+        "n": 2
+      },
+      {
+        "country": "Gibraltar",
+        "n": 2
+      },
+      {
+        "country": "Luxembourg",
+        "n": 1
+      }
+    ],
+    "haven_details": [
+      {
+        "name": "Starbucks Coffee Netherlands BV",
+        "country": "Netherlands",
+        "industry": "Food Retail & Distribution"
+      },
+      {
+        "name": "America Movil BV",
+        "country": "Netherlands",
+        "industry": "Wireless Telecommunications Services"
+      },
+      {
+        "name": "Mobilkom Mazedonien Geschaeftsentwicklungs GmbH",
+        "country": "Switzerland",
+        "industry": "nan"
+      },
+      {
+        "name": "Telekom Austria Finance BV",
+        "country": "Netherlands",
+        "industry": "nan"
+      },
+      {
+        "name": "Jetstream Switzerland GmbH",
+        "country": "Switzerland",
+        "industry": "nan"
+      },
+      {
+        "name": "Claro Panama SA",
+        "country": "Panama",
+        "industry": "Integrated Telecommunications Services"
+      },
+      {
+        "name": "Arca Europe Cooperatief UA",
+        "country": "Netherlands",
+        "industry": "nan"
+      },
+      {
+        "name": "Torino Re Ltd",
+        "country": "Barbados",
+        "industry": "nan"
+      },
+      {
+        "name": "Cemex Latam Holdings SA (Brugg Branch)",
+        "country": "Switzerland",
+        "industry": "nan"
+      },
+      {
+        "name": "Cemex Asia BV",
+        "country": "Netherlands",
+        "industry": "Investment Management & Fund Operators"
+      },
+      {
+        "name": "Machu Pichu Investments BV",
+        "country": "Netherlands",
+        "industry": "Industrial Machinery & Equipment"
+      },
+      {
+        "name": "Cemex Asia Holdings Ltd",
+        "country": "Singapore",
+        "industry": "Investment Holding Companies"
+      },
+      {
+        "name": "Cemex Caracas Investments BV",
+        "country": "Netherlands",
+        "industry": "nan"
+      },
+      {
+        "name": "Cemex Egyptian Investments II BV",
+        "country": "Netherlands",
+        "industry": "nan"
+      },
+      {
+        "name": "Cemex Shipping BV",
+        "country": "Netherlands",
+        "industry": "nan"
+      },
+      {
+        "name": "Cemex Luxembourg Holdings RL SA",
+        "country": "Luxembourg",
+        "industry": "Investment Holding Companies"
+      },
+      {
+        "name": "Cemex Egyptian Investments BV",
+        "country": "Netherlands",
+        "industry": "Investment Holding Companies"
+      },
+      {
+        "name": "Cemex Caracas Ii Investments BV",
+        "country": "Netherlands",
+        "industry": "nan"
+      },
+      {
+        "name": "Arawak Concrete Solutions Ltd",
+        "country": "Barbados",
+        "industry": "nan"
+      },
+      {
+        "name": "TTLI Trading Ltd",
+        "country": "Barbados",
+        "industry": "nan"
+      }
+    ],
+    "total": 3226,
+    "n_haven": 87
   },
   "by_company": {
     "009_Alpek": {
@@ -6021,7 +6178,10 @@ const SUBSIDIARIES_DATA = {
           "n": 4
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 54,
+      "n_haven": 0,
       "name": "Alpek",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6083,7 +6243,21 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Starbucks Coffee Netherlands BV",
+          "country": "Netherlands",
+          "industry": "Food Retail & Distribution"
+        }
+      ],
       "total": 37,
+      "n_haven": 1,
       "name": "Alsea",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6117,7 +6291,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 9,
+      "n_haven": 0,
       "name": "Altos Hornos de Mexico SA",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6283,7 +6460,49 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 4
+        },
+        {
+          "country": "Switzerland",
+          "n": 4
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "America Movil BV",
+          "country": "Netherlands",
+          "industry": "Wireless Telecommunications Services"
+        },
+        {
+          "name": "Mobilkom Mazedonien Geschaeftsentwicklungs GmbH",
+          "country": "Switzerland",
+          "industry": "nan"
+        },
+        {
+          "name": "Telekom Austria Finance BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Jetstream Switzerland GmbH",
+          "country": "Switzerland",
+          "industry": "nan"
+        },
+        {
+          "name": "Claro Panama SA",
+          "country": "Panama",
+          "industry": "Integrated Telecommunications Services"
+        }
+      ],
       "total": 226,
+      "n_haven": 10,
       "name": "America Movil",
       "group": "Slim",
       "color": "#1B365D"
@@ -6341,7 +6560,21 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Arca Europe Cooperatief UA",
+          "country": "Netherlands",
+          "industry": "nan"
+        }
+      ],
       "total": 77,
+      "n_haven": 1,
       "name": "Arca Continental",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6359,7 +6592,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 3,
+      "n_haven": 0,
       "name": "Banco del Bajio SA Institucion de Banc",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6377,7 +6613,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 1,
+      "n_haven": 0,
       "name": "Becle",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6543,7 +6782,126 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 9
+        },
+        {
+          "country": "Barbados",
+          "n": 4
+        },
+        {
+          "country": "Switzerland",
+          "n": 2
+        },
+        {
+          "country": "Bermuda",
+          "n": 1
+        },
+        {
+          "country": "Luxembourg",
+          "n": 1
+        },
+        {
+          "country": "Singapore",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Torino Re Ltd",
+          "country": "Barbados",
+          "industry": "nan"
+        },
+        {
+          "name": "Cemex Latam Holdings SA (Brugg Branch)",
+          "country": "Switzerland",
+          "industry": "nan"
+        },
+        {
+          "name": "Cemex Asia BV",
+          "country": "Netherlands",
+          "industry": "Investment Management & Fund Operators"
+        },
+        {
+          "name": "Machu Pichu Investments BV",
+          "country": "Netherlands",
+          "industry": "Industrial Machinery & Equipment"
+        },
+        {
+          "name": "Cemex Asia Holdings Ltd",
+          "country": "Singapore",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Cemex Caracas Investments BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Cemex Egyptian Investments II BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Cemex Shipping BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Cemex Luxembourg Holdings RL SA",
+          "country": "Luxembourg",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Cemex Egyptian Investments BV",
+          "country": "Netherlands",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Cemex Caracas Ii Investments BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Arawak Concrete Solutions Ltd",
+          "country": "Barbados",
+          "industry": "nan"
+        },
+        {
+          "name": "TTLI Trading Ltd",
+          "country": "Barbados",
+          "industry": "nan"
+        },
+        {
+          "name": "Arawak Cement Company Ltd",
+          "country": "Barbados",
+          "industry": "Construction Materials"
+        },
+        {
+          "name": "Mustang RE Ltd",
+          "country": "Bermuda",
+          "industry": "Reinsurance"
+        },
+        {
+          "name": "Cemex Innovation Holding AG",
+          "country": "Switzerland",
+          "industry": "Construction Materials"
+        },
+        {
+          "name": "Cemex Ventures BV",
+          "country": "Netherlands",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "CxNetworks NV",
+          "country": "Netherlands",
+          "industry": "Investment Holding Companies"
+        }
+      ],
       "total": 94,
+      "n_haven": 18,
       "name": "Cemex",
       "group": "Cemex",
       "color": "#d62728"
@@ -6581,7 +6939,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 21,
+      "n_haven": 0,
       "name": "CFE",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6643,7 +7004,21 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Coca-Cola Femsa de Panama SA",
+          "country": "Panama",
+          "industry": "Non-Alcoholic Beverages"
+        }
+      ],
       "total": 50,
+      "n_haven": 2,
       "name": "Coca-Cola Femsa",
       "group": "Femsa",
       "color": "#e07b39"
@@ -6677,7 +7052,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 28,
+      "n_haven": 0,
       "name": "Controladora Vuela Compania de Aviacio",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6695,7 +7073,10 @@ const SUBSIDIARIES_DATA = {
           "n": 8
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 17,
+      "n_haven": 0,
       "name": "Corporacion Moctezuma",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6713,7 +7094,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 7,
+      "n_haven": 0,
       "name": "Corporativo Fragua",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6747,7 +7131,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 32,
+      "n_haven": 0,
       "name": "El Puerto de Liverpool",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6765,7 +7152,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 2,
+      "n_haven": 0,
       "name": "Fibra Uno Administracion SA",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6811,7 +7201,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 27,
+      "n_haven": 0,
       "name": "Fresnillo PLC",
       "group": "BAL",
       "color": "#5b8db8"
@@ -6845,7 +7238,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 17,
+      "n_haven": 0,
       "name": "GCC",
       "group": "Cemex",
       "color": "#d62728"
@@ -6875,7 +7271,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 6,
+      "n_haven": 0,
       "name": "Gentera",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -6897,7 +7296,10 @@ const SUBSIDIARIES_DATA = {
           "n": 4
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 5,
+      "n_haven": 0,
       "name": "GMexico Transportes",
       "group": "Gmexico",
       "color": "#c44a8a"
@@ -6983,7 +7385,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 94,
+      "n_haven": 0,
       "name": "Gruma",
       "group": "GrumaBanorte",
       "color": "#8c564b"
@@ -7001,7 +7406,10 @@ const SUBSIDIARIES_DATA = {
           "n": 7
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 24,
+      "n_haven": 0,
       "name": "Grupo Aeroportuario del Centro Norte",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7035,7 +7443,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 36,
+      "n_haven": 0,
       "name": "Grupo Aeroportuario del Pacifico",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7069,7 +7480,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 34,
+      "n_haven": 0,
       "name": "Grupo Aeroportuario del Sureste",
       "group": "Yucatan",
       "color": "#5a9e3e"
@@ -7099,7 +7513,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 40,
+      "n_haven": 0,
       "name": "Grupo Bafar",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7293,7 +7710,39 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Andorra",
+          "n": 2
+        },
+        {
+          "country": "Gibraltar",
+          "n": 2
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Fargo Holding (Gibraltar)",
+          "country": "Gibraltar",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Bimbo de Panama SA",
+          "country": "Panama",
+          "industry": "Food Processing"
+        },
+        {
+          "name": "Bimbo Donuts Pirineus SLU",
+          "country": "Andorra",
+          "industry": "nan"
+        }
+      ],
       "total": 396,
+      "n_haven": 6,
       "name": "Grupo Bimbo",
       "group": "Bimbo",
       "color": "#7b52ab"
@@ -7403,7 +7852,21 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Plycem Co Inc",
+          "country": "Panama",
+          "industry": "nan"
+        }
+      ],
       "total": 176,
+      "n_haven": 2,
       "name": "Grupo Carso",
       "group": "Slim",
       "color": "#1B365D"
@@ -7429,7 +7892,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 17,
+      "n_haven": 0,
       "name": "Grupo Comercial Chedraui",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7479,7 +7945,26 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Cayman Islands",
+          "n": 4
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
+          "country": "Cayman Islands",
+          "industry": "Banks"
+        },
+        {
+          "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
+          "country": "Cayman Islands",
+          "industry": "Banks"
+        }
+      ],
       "total": 208,
+      "n_haven": 4,
       "name": "Grupo Financiero Banorte",
       "group": "GrumaBanorte",
       "color": "#8c564b"
@@ -7505,7 +7990,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 44,
+      "n_haven": 0,
       "name": "Grupo Financiero Inbursa",
       "group": "Slim",
       "color": "#1B365D"
@@ -7543,7 +8031,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 21,
+      "n_haven": 0,
       "name": "Grupo Gigante",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7577,7 +8068,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 54,
+      "n_haven": 0,
       "name": "Grupo Herdez",
       "group": "GrumaBanorte",
       "color": "#8c564b"
@@ -7607,7 +8101,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 5,
+      "n_haven": 0,
       "name": "Grupo Lamosa",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7669,7 +8166,26 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Cayman Islands",
+          "n": 4
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Prospector Rig 2 Owning Cayman Co Ltd",
+          "country": "Cayman Islands",
+          "industry": "nan"
+        },
+        {
+          "name": "Prospector Rig 4 Owning Cayman Co Ltd",
+          "country": "Cayman Islands",
+          "industry": "nan"
+        }
+      ],
       "total": 188,
+      "n_haven": 4,
       "name": "Grupo Mexico",
       "group": "Gmexico",
       "color": "#c44a8a"
@@ -7687,7 +8203,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 11,
+      "n_haven": 0,
       "name": "Grupo Nacional Provincial",
       "group": "BAL",
       "color": "#5b8db8"
@@ -7709,7 +8228,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 52,
+      "n_haven": 0,
       "name": "Grupo Palacio de Hierro",
       "group": "BAL",
       "color": "#5b8db8"
@@ -7735,7 +8257,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 26,
+      "n_haven": 0,
       "name": "Grupo Profuturo",
       "group": "BAL",
       "color": "#5b8db8"
@@ -7757,7 +8282,10 @@ const SUBSIDIARIES_DATA = {
           "n": 10
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 28,
+      "n_haven": 0,
       "name": "nan",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7803,7 +8331,30 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [
+        {
+          "country": "Curacao",
+          "n": 1
+        },
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "GS Steel BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Undershaft Investments NV",
+          "country": "Curacao",
+          "industry": "nan"
+        }
+      ],
       "total": 52,
+      "n_haven": 2,
       "name": "Grupo Simec",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7885,7 +8436,35 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Switzerland",
+          "n": 4
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Mexvisa Ltd",
+          "country": "Switzerland",
+          "industry": "nan"
+        },
+        {
+          "name": "Mountrigi Management Group Ltd",
+          "country": "Switzerland",
+          "industry": "nan"
+        },
+        {
+          "name": "Media Vision de Panama SA",
+          "country": "Panama",
+          "industry": "nan"
+        }
+      ],
       "total": 276,
+      "n_haven": 6,
       "name": "Grupo Televisa",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7903,7 +8482,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 2,
+      "n_haven": 0,
       "name": "Grupo Traxion",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -7941,7 +8523,26 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Ideal Panama SA",
+          "country": "Panama",
+          "industry": "Electric Utilities"
+        },
+        {
+          "name": "Cilsa Panama SA",
+          "country": "Panama",
+          "industry": "Financial & Commodity Market Operators & Service Providers"
+        }
+      ],
       "total": 39,
+      "n_haven": 2,
       "name": "Impulsora del Desarrollo y el Empleo e",
       "group": "Slim",
       "color": "#1B365D"
@@ -7971,7 +8572,21 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Bermuda",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Wiikit Re Ltd",
+          "country": "Bermuda",
+          "industry": "nan"
+        }
+      ],
       "total": 30,
+      "n_haven": 2,
       "name": "nan",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8017,7 +8632,30 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Curacao",
+          "n": 1
+        },
+        {
+          "country": "Netherlands",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "GS Steel BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Undershaft Investments NV",
+          "country": "Curacao",
+          "industry": "nan"
+        }
+      ],
       "total": 84,
+      "n_haven": 2,
       "name": "Industrias CH",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8079,7 +8717,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 114,
+      "n_haven": 0,
       "name": "Industrias Penoles",
       "group": "BAL",
       "color": "#5b8db8"
@@ -8105,7 +8746,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 4,
+      "n_haven": 0,
       "name": "Kimberly-Clark de Mexico",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8123,7 +8767,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 1,
+      "n_haven": 0,
       "name": "La Comer",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8145,7 +8792,10 @@ const SUBSIDIARIES_DATA = {
           "n": 4
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 22,
+      "n_haven": 0,
       "name": "Megacable Holdings",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8223,7 +8873,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 50,
+      "n_haven": 0,
       "name": "Nemak",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8236,7 +8889,10 @@ const SUBSIDIARIES_DATA = {
         }
       ],
       "by_sector": [],
+      "by_haven": [],
+      "haven_details": [],
       "total": 1,
+      "n_haven": 0,
       "name": "Operadora de Sites Mexicanos  De CV",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8410,7 +9066,63 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 3
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Ireland",
+          "n": 1
+        },
+        {
+          "country": "Singapore",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Mexichem Panama SA",
+          "country": "Panama",
+          "industry": "Commodity Chemicals"
+        },
+        {
+          "name": "Riegos De Chiriqui SA",
+          "country": "Panama",
+          "industry": "Water & Related Utilities"
+        },
+        {
+          "name": "Hortifim BV",
+          "country": "Netherlands",
+          "industry": "Investment Management & Fund Operators"
+        },
+        {
+          "name": "Wavin Ireland Ltd",
+          "country": "Ireland",
+          "industry": "Commodity Chemicals"
+        },
+        {
+          "name": "Wavin BV",
+          "country": "Netherlands",
+          "industry": "Construction & Engineering"
+        },
+        {
+          "name": "Wavin Singapore Holding Pte Ltd",
+          "country": "Singapore",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Wavin Nederland BV",
+          "country": "Netherlands",
+          "industry": "Construction Supplies & Fixtures"
+        }
+      ],
       "total": 81,
+      "n_haven": 7,
       "name": "Orbia Advance Corp",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8432,7 +9144,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 12,
+      "n_haven": 0,
       "name": "Organizacion Soriana",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8506,7 +9221,76 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 6
+        },
+        {
+          "country": "Bahamas",
+          "n": 2
+        },
+        {
+          "country": "Cayman Islands",
+          "n": 2
+        },
+        {
+          "country": "Ireland",
+          "n": 2
+        },
+        {
+          "country": "Singapore",
+          "n": 2
+        },
+        {
+          "country": "Switzerland",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "PMI Holdings BV",
+          "country": "Netherlands",
+          "industry": "Oil Related Services and Equipment"
+        },
+        {
+          "name": "Pasco Terminals, Inc.",
+          "country": "Bahamas",
+          "industry": "nan"
+        },
+        {
+          "name": "Holdings Holanda Services BV",
+          "country": "Netherlands",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "PMI Marine Ltd",
+          "country": "Ireland",
+          "industry": "Marine Port Services"
+        },
+        {
+          "name": "Kot Insurance Company AG",
+          "country": "Switzerland",
+          "industry": "Reinsurance"
+        },
+        {
+          "name": "PMI Holdings Petroleos Espana SL (Singapore Branch)",
+          "country": "Singapore",
+          "industry": "nan"
+        },
+        {
+          "name": "PMI Services BV",
+          "country": "Netherlands",
+          "industry": "nan"
+        },
+        {
+          "name": "Pemex Finance Ltd",
+          "country": "Cayman Islands",
+          "industry": "Oil & Gas Refining and Marketing"
+        }
+      ],
       "total": 120,
+      "n_haven": 16,
       "name": "Pemex",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8540,7 +9324,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 27,
+      "n_haven": 0,
       "name": "Promotora y Operadora de Infraestructu",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8578,7 +9365,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 12,
+      "n_haven": 0,
       "name": "Qualitas Controladora",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8596,7 +9386,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 10,
+      "n_haven": 0,
       "name": "Regional",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8622,7 +9415,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 3,
+      "n_haven": 0,
       "name": "Southern Copper Corp Peru",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8640,7 +9436,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 12,
+      "n_haven": 0,
       "name": "Vesta Real Estate Corporation",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8670,7 +9469,10 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 5,
+      "n_haven": 0,
       "name": "Vista Energy",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8732,7 +9534,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 70,
+      "n_haven": 0,
       "name": "Vitro",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8770,7 +9575,10 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [],
+      "haven_details": [],
       "total": 6,
+      "n_haven": 0,
       "name": "Wal Mart de Mexico",
       "group": "Otro",
       "color": "#a8a8a8"
@@ -8808,7 +9616,26 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         }
       ],
+      "by_haven": [
+        {
+          "country": "Cayman Islands",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "London Overseas Inc",
+          "country": "Cayman Islands",
+          "industry": "nan"
+        },
+        {
+          "name": "London Caribbean Inc",
+          "country": "Cayman Islands",
+          "industry": "nan"
+        }
+      ],
       "total": 26,
+      "n_haven": 2,
       "name": "Directors",
       "group": "Otro",
       "color": "#a8a8a8"

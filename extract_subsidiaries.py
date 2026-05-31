@@ -19,6 +19,16 @@ COUNTRY_NORM = {
     "Channel Islands": "Channel Islands",
 }
 
+# Tax havens
+TAX_HAVENS = {
+    'Cayman Islands', 'British Virgin Islands', 'Bermuda', 'Luxembourg',
+    'Netherlands', 'Ireland', 'Switzerland', 'Panama', 'Jersey',
+    'Guernsey', 'Isle of Man', 'Malta', 'Mauritius', 'Singapore',
+    'Hong Kong', 'Bahamas', 'Barbados', 'Curacao', 'Belize',
+    'Liechtenstein', 'Monaco', 'Andorra', 'Seychelles',
+    'Marshall Islands', 'Gibraltar',
+}
+
 # Industry grouping (Refinitiv → broader sector)
 SECTOR_MAP = {
     "Food Processing": "Alimentos y bebidas",
@@ -172,6 +182,7 @@ for f in files:
                 'country': country,
                 'industry': str(industry_raw).strip() if pd.notna(industry_raw) else None,
                 'sector': sector,
+                'is_haven': country in TAX_HAVENS if country else False,
                 'revenue_usd': rev,
                 'employees': emp,
             })

@@ -567,6 +567,30 @@ footer a { color: var(--ink2); }
       <div class="chart-wrap" style="min-height:380px;" id="chart-subs-sector"></div>
     </div>
   </div>
+
+  <div class="card fade-in" id="haven-card">
+    <div class="card-title">Estructura fiscal — subsidiarias en paraísos fiscales</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:0 0 20px;">
+      Jurisdicciones con regímenes fiscales preferentes: Irlanda, Países Bajos, Panamá, Suiza, Islas Caimán, Bermuda, entre otros.
+      Su presencia no implica ilegalidad — es planeación fiscal estándar para empresas globales.
+    </p>
+    <div class="two-col">
+      <div>
+        <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px;">
+          Subsidiarias en paraísos por empresa
+        </div>
+        <div class="chart-wrap" style="min-height:300px;" id="chart-haven-bar"></div>
+      </div>
+      <div>
+        <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px;">
+          Casos notables
+        </div>
+        <div id="haven-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight fade-in" id="insight-huella"></div>
 </section>
 
 <!-- SECTION 08: LA RED -->
@@ -1365,6 +1389,54 @@ const TYPE_COLORS = {
       yaxis: { tickfont: { size: 10 }, gridcolor: '#edecea', autorange: 'reversed' },
     }, PLOTLY_CONFIG);
   }
+
+  // ── Haven bar (always global) ─────────────────────────────────────────────
+  (function() {
+    const havenByCompany = Object.entries(byCompany)
+      .map(([folder, d]) => ({ name: d.name, n: d.n_haven, color: d.color, folder }))
+      .filter(d => d.n > 0)
+      .sort((a, b) => b.n - a.n);
+
+    Plotly.newPlot('chart-haven-bar', [{
+      type: 'scatter', mode: 'markers+text',
+      x: havenByCompany.map(d => d.n),
+      y: havenByCompany.map(d => d.name),
+      marker: { color: havenByCompany.map(d => d.color), size: 11, line: { color: '#fff', width: 1.5 } },
+      text: havenByCompany.map(d => d.n),
+      textposition: 'middle right',
+      textfont: { size: 10, color: '#555' },
+      hovertemplate: '<b>%{y}</b><br>%{x} subsidiarias en paraísos<extra></extra>',
+    }], {
+      ...LAYOUT_BASE,
+      height: 300,
+      margin: { t: 8, r: 40, b: 32, l: 160 },
+      xaxis: { visible: false, range: [0, Math.max(...havenByCompany.map(d=>d.n)) * 1.25] },
+      yaxis: { tickfont: { size: 10 }, gridcolor: '#edecea', autorange: 'reversed' },
+    }, PLOTLY_CONFIG);
+
+    // Notable cases — global
+    const globalDetails = SUBSIDIARIES_DATA.global.haven_details || [];
+    document.getElementById('haven-details').innerHTML = globalDetails.length
+      ? globalDetails.map(d => `
+          <div class="flow-row" style="font-size:0.78rem;">
+            <div style="flex:1;min-width:0;">
+              <span style="font-weight:500;">${d.name}</span>
+              <span style="color:var(--muted);margin-left:6px;">${d.country}</span>
+            </div>
+            ${d.industry ? `<span style="font-size:0.7rem;color:var(--muted);padding-left:8px;">${d.industry}</span>` : ''}
+          </div>`).join('')
+      : '<p style="color:var(--muted);font-size:0.82rem;">Sin casos notables identificados.</p>';
+
+    // Global insight
+    const globalHaven = SUBSIDIARIES_DATA.global.n_haven;
+    const topHaven = havenByCompany[0];
+    document.getElementById('insight-huella').innerHTML =
+      `De las 3,226 subsidiarias registradas, <strong>${globalHaven} operan en paraísos fiscales</strong> — jurisdicciones con regímenes tributarios preferentes. ` +
+      `<strong>CEMEX encabeza con 18 subsidiarias en 10 jurisdicciones distintas</strong>: Irlanda, Países Bajos, Suiza, Luxemburgo, Barbados, Bermuda, Jersey, Isle of Man, Panamá y Singapur. ` +
+      `Llamativo es también <strong>Pemex — empresa del Estado mexicano</strong> — con 8 subsidiarias en paraísos fiscales incluyendo Bahamas e Islas Caimán. ` +
+      `Irlanda (47) y Países Bajos (24) son los principales hubs fiscales europeos de estos grupos. ` +
+      `Nota: la presencia en estas jurisdicciones es legal y común en empresas globales; su uso responde a planeación fiscal, protección de activos y acceso a mercados de capital internacionales.`;
+  })();
 
   // Initial render
   renderCharts('global');

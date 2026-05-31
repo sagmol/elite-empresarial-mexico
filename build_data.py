@@ -482,8 +482,17 @@ fin_folder_name = {}
 for _, r in fin_co.iterrows():
     folder_to_name[str(r.get('company_folder',''))] = str(r.get('company_name',''))
 
+TAX_HAVENS = {
+    'Cayman Islands', 'British Virgin Islands', 'Bermuda', 'Luxembourg',
+    'Netherlands', 'Ireland', 'Switzerland', 'Panama', 'Jersey',
+    'Guernsey', 'Isle of Man', 'Malta', 'Mauritius', 'Singapore',
+    'Hong Kong', 'Bahamas', 'Barbados', 'Curacao', 'Belize',
+    'Liechtenstein', 'Monaco', 'Andorra', 'Seychelles',
+    'Marshall Islands', 'Gibraltar',
+}
+
 def agg_subs(df):
-    """Return {by_country: [...], by_sector: [...], total: n}"""
+    """Return {by_country, by_sector, by_haven, haven_details, total, n_haven}"""
     by_country = (df.groupby('country').size()
                     .reset_index(name='n')
                     .sort_values('n', ascending=False)
@@ -492,7 +501,39 @@ def agg_subs(df):
                    .reset_index(name='n')
                    .sort_values('n', ascending=False)
                    .to_dict('records'))
-    return {'by_country': by_country, 'by_sector': by_sector, 'total': len(df)}
+    # Haven breakdown
+    havens = df[df['is_haven'] == True].copy()
+    by_haven = (havens.groupby('country').size()
+                      .reset_index(name='n')
+                      .sort_values('n', ascending=False)
+                      .to_dict('records'))
+    # Notable cases: named entities in havens
+    haven_details = []
+    for _, r in havens.iterrows():
+        name = str(r.get('sub_name', '') or '').strip()
+        if name and name != 'nan':
+            haven_details.append({
+                'name': name[:55],
+                'country': str(r.get('country', '')),
+                'industry': str(r.get('industry', '') or ''),
+            })
+    # deduplicate
+    seen = set()
+    haven_details_dedup = []
+    for h in haven_details:
+        key = (h['name'], h['country'])
+        if key not in seen:
+            seen.add(key)
+            haven_details_dedup.append(h)
+
+    return {
+        'by_country': by_country,
+        'by_sector': by_sector,
+        'by_haven': by_haven,
+        'haven_details': haven_details_dedup[:20],
+        'total': len(df),
+        'n_haven': int(len(havens)),
+    }
 
 # Global
 subs_global = agg_subs(subs_raw)
