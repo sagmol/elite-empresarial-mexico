@@ -1190,7 +1190,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 86.7,
     "pct_total": 86.7,
     "investor": "Beckmann Vidal (Juan Domingo & Family)",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Beckmann Vidal (Juan Domingo & Family)",
+        "pct": 86.7,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Palacio de Hierro",
@@ -1200,7 +1207,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 82.8,
     "pct_total": 82.8,
     "investor": "Baillères Family",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Baillères Family",
+        "pct": 82.8,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Profuturo",
@@ -1210,7 +1224,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 76.4,
     "pct_total": 76.4,
     "investor": "Bailléres González (Alberto)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Bailléres González (Alberto)",
+        "pct": 76.4,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Carso",
@@ -1220,7 +1241,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 76.0,
     "pct_total": 76.0,
     "investor": "Slim Helú family",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Slim Helú family",
+        "pct": 76.0,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Fresnillo PLC",
@@ -1230,7 +1258,24 @@ const CONCENTRATION_DATA = [
     "pct_top1": 75.0,
     "pct_total": 75.0,
     "investor": "Industrias Penoles SAB de CV",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Industrias Penoles SAB de CV",
+        "pct": 75.0,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Ruiz (Fernando)",
+        "pct": 0.0,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Bordes (Juan)",
+        "pct": 0.0,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Comercial Chedraui",
@@ -1240,7 +1285,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 73.9,
     "pct_total": 73.9,
     "investor": "Chedraui Family",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Chedraui Family",
+        "pct": 73.9,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Wal Mart de Mexico",
@@ -1250,7 +1302,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 70.6,
     "pct_total": 70.6,
     "investor": "Intersalt, S. de R.L. de C.V.",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Intersalt, S. de R.L. de C.V.",
+        "pct": 70.6,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "GMexico Transportes",
@@ -1260,7 +1319,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 70.3,
     "pct_total": 70.3,
     "investor": "Grupo Mexico SAB de CV",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Grupo Mexico SAB de CV",
+        "pct": 70.3,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Herdez",
@@ -1270,7 +1336,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 70.0,
     "pct_total": 70.0,
     "investor": "Familia (Hernández-Pons Torres)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Familia (Hernández-Pons Torres)",
+        "pct": 70.0,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Industrias CH",
@@ -1280,7 +1353,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 66.0,
     "pct_total": 66.0,
     "investor": "Vigil González (Rufino)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Vigil González (Rufino)",
+        "pct": 66.0,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Financiero Inbursa",
@@ -1290,7 +1370,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 62.4,
     "pct_total": 62.4,
     "investor": "Slim Family",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Slim Family",
+        "pct": 62.4,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Organizacion Soriana",
@@ -1300,7 +1387,19 @@ const CONCENTRATION_DATA = [
     "pct_top1": 57.3,
     "pct_total": 86.2,
     "investor": "Martín Bringas Family",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Martín Bringas Family",
+        "pct": 57.3,
+        "subtype": "Other Insider Investor"
+      },
+      {
+        "name": "Martín Soberón Family",
+        "pct": 28.9,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Simec",
@@ -1308,9 +1407,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 55.3,
-    "pct_total": 77.9,
+    "pct_total": 76.6,
     "investor": "Industrias CH SAB de CV",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Industrias CH SAB de CV",
+        "pct": 55.3,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Tuberías Procarsa, S.A. de C.V.",
+        "pct": 20.0,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Joist Estructuras, S.A. de C.V.",
+        "pct": 1.2,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Lamosa",
@@ -1320,7 +1436,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 52.4,
     "pct_total": 52.4,
     "investor": "Elosua y Valdes Families",
-    "subtype": "Other Insider Investor"
+    "subtype": "Other Insider Investor",
+    "shareholders": [
+      {
+        "name": "Elosua y Valdes Families",
+        "pct": 52.4,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Gruma",
@@ -1330,7 +1453,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 52.3,
     "pct_total": 52.3,
     "investor": "Moreno Hernández (Graciela)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Moreno Hernández (Graciela)",
+        "pct": 52.3,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "La Comer",
@@ -1340,7 +1470,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 51.9,
     "pct_total": 51.9,
     "investor": "Scotiabank Inverlat, S.A.",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Scotiabank Inverlat, S.A.",
+        "pct": 51.9,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Alfa",
@@ -1350,7 +1487,19 @@ const CONCENTRATION_DATA = [
     "pct_top1": 51.6,
     "pct_total": 86.6,
     "investor": "Fideicomiso Nafinsa",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Fideicomiso Nafinsa",
+        "pct": 51.6,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Garza Sada Family",
+        "pct": 35.0,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Corporacion Moctezuma",
@@ -1360,7 +1509,24 @@ const CONCENTRATION_DATA = [
     "pct_top1": 51.5,
     "pct_total": 76.9,
     "investor": "Fresit, B.V.",
-    "subtype": "Holding Company"
+    "subtype": "Holding Company",
+    "shareholders": [
+      {
+        "name": "Fresit, B.V.",
+        "pct": 51.5,
+        "subtype": "Holding Company"
+      },
+      {
+        "name": "Presa Internacional, B.V.",
+        "pct": 15.2,
+        "subtype": "Holding Company"
+      },
+      {
+        "name": "Cosío Ariño (Antonio)",
+        "pct": 10.2,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "GCC",
@@ -1370,7 +1536,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 50.9,
     "pct_total": 50.9,
     "investor": "CAMCEM, SA de CV",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "CAMCEM, SA de CV",
+        "pct": 50.9,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "America Movil",
@@ -1380,7 +1553,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 50.4,
     "pct_total": 50.4,
     "investor": "Slim Domit Helú (Carlos)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Slim Domit Helú (Carlos)",
+        "pct": 50.4,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Qualitas Controladora",
@@ -1390,7 +1570,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 50.0,
     "pct_total": 50.0,
     "investor": "Fideicomiso BanRegio 851-01287",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Fideicomiso BanRegio 851-01287",
+        "pct": 50.0,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Orbia Advance Corp",
@@ -1400,7 +1587,19 @@ const CONCENTRATION_DATA = [
     "pct_top1": 46.8,
     "pct_total": 56.3,
     "investor": "Grupo Empresarial Kaluz, S.A. de C.V.",
-    "subtype": "Holding Company"
+    "subtype": "Holding Company",
+    "shareholders": [
+      {
+        "name": "Grupo Empresarial Kaluz, S.A. de C.V.",
+        "pct": 46.8,
+        "subtype": "Holding Company"
+      },
+      {
+        "name": "del Valle Family",
+        "pct": 9.5,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Arca Continental",
@@ -1410,7 +1609,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 46.6,
     "pct_total": 46.6,
     "investor": "Fideicomiso de Control",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Fideicomiso de Control",
+        "pct": 46.6,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Mexico",
@@ -1418,9 +1624,26 @@ const CONCENTRATION_DATA = [
     "group": "Gmexico",
     "color": "#c44a8a",
     "pct_top1": 40.6,
-    "pct_total": 63.4,
-    "investor": "Empresarios Industriales de Mexico, S.A. de C",
-    "subtype": "Corporation"
+    "pct_total": 61.7,
+    "investor": "Empresarios Industriales de Mexico, S.A. de C.V.",
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Empresarios Industriales de Mexico, S.A. de C.V.",
+        "pct": 40.6,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Larrea Mota-Velasco (German)",
+        "pct": 19.2,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Cuenta Numerada CNP35",
+        "pct": 1.9,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Bimbo",
@@ -1428,9 +1651,26 @@ const CONCENTRATION_DATA = [
     "group": "Bimbo",
     "color": "#7b52ab",
     "pct_top1": 40.6,
-    "pct_total": 71.3,
+    "pct_total": 58.6,
     "investor": "Normaciel, S.A. de C.V.",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Normaciel, S.A. de C.V.",
+        "pct": 40.6,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Promociones Monser, S.A. de C.V.",
+        "pct": 12.7,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Philae, S.A. de C.V.",
+        "pct": 5.4,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Prologis Property Mexico SA",
@@ -1440,7 +1680,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 34.6,
     "pct_total": 34.6,
     "investor": "Prologis Inc",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Prologis Inc",
+        "pct": 34.6,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Industrias Penoles",
@@ -1450,7 +1697,19 @@ const CONCENTRATION_DATA = [
     "pct_top1": 33.5,
     "pct_total": 52.8,
     "investor": "Albacor, S.A. de C.V.",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Albacor, S.A. de C.V.",
+        "pct": 33.5,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Baillères Family",
+        "pct": 19.3,
+        "subtype": "Other Insider Investor"
+      }
+    ]
   },
   {
     "company": "Gentera",
@@ -1460,7 +1719,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 32.0,
     "pct_total": 32.0,
     "investor": "Promotora Social México, A.C",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Promotora Social México, A.C",
+        "pct": 32.0,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Fibra Uno Administracion SA",
@@ -1470,7 +1736,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 27.4,
     "pct_total": 27.4,
     "investor": "Control Trust",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Control Trust",
+        "pct": 27.4,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Aeroportuario del Sureste",
@@ -1480,7 +1753,24 @@ const CONCENTRATION_DATA = [
     "pct_top1": 23.5,
     "pct_total": 46.5,
     "investor": "CHPAF Holdings SAPI de CV",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "CHPAF Holdings SAPI de CV",
+        "pct": 23.5,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Grupo ADO, S.A. de C.V.",
+        "pct": 14.8,
+        "subtype": "Holding Company"
+      },
+      {
+        "name": "Chico Pardo (Fernando)",
+        "pct": 8.3,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Banco del Bajio SA Institucion de Banc",
@@ -1488,9 +1778,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 22.1,
-    "pct_total": 32.5,
+    "pct_total": 28.8,
     "investor": "Ascencio Salvador (Onate)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Ascencio Salvador (Onate)",
+        "pct": 22.1,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Martinez (Alejandro Martinez)",
+        "pct": 4.2,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Uribe Fernandez (Fabian Federico)",
+        "pct": 2.5,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Vitro",
@@ -1498,9 +1805,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 21.0,
-    "pct_total": 86.8,
+    "pct_total": 61.7,
     "investor": "Martínez Guzmán (David M)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Martínez Guzmán (David M)",
+        "pct": 21.0,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Sada González (Adrián G)",
+        "pct": 20.7,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Sada Cueva (Adrián G)",
+        "pct": 20.0,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Aeroportuario del Centro Norte",
@@ -1510,7 +1834,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 19.2,
     "pct_total": 19.2,
     "investor": "CONCESSOC 31 SAS",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "CONCESSOC 31 SAS",
+        "pct": 19.2,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Traxion",
@@ -1520,7 +1851,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 13.7,
     "pct_total": 13.7,
     "investor": "Discovery Americas",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Discovery Americas",
+        "pct": 13.7,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Gigante",
@@ -1528,9 +1866,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 13.3,
-    "pct_total": 68.7,
+    "pct_total": 38.9,
     "investor": "Fideicomiso Banamex",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Fideicomiso Banamex",
+        "pct": 13.3,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Fideicomiso Invex",
+        "pct": 13.2,
+        "subtype": "Corporation"
+      },
+      {
+        "name": "Fideicomiso IXE",
+        "pct": 12.4,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Alsea",
@@ -1538,9 +1893,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 12.4,
-    "pct_total": 39.0,
+    "pct_total": 36.7,
     "investor": "Torrado Martinez (Cosme Alberto)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Torrado Martinez (Cosme Alberto)",
+        "pct": 12.4,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Torrado Martinez (Armando)",
+        "pct": 12.3,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Torrado Martinez (Alberto)",
+        "pct": 11.9,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Regional",
@@ -1548,9 +1920,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 9.7,
-    "pct_total": 23.3,
+    "pct_total": 22.3,
     "investor": "Rivero Santos (Jaime Alberto)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Rivero Santos (Jaime Alberto)",
+        "pct": 9.7,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Rivero Santos (Manuel Gerardo)",
+        "pct": 9.3,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Rivero Zambrano (Manuel Gerardo)",
+        "pct": 3.3,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Bafar",
@@ -1558,9 +1947,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 8.4,
-    "pct_total": 10.2,
+    "pct_total": 10.0,
     "investor": "Baeza Fares (Jorge Alberto)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Baeza Fares (Jorge Alberto)",
+        "pct": 8.4,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Baeza Montes (Eugenio)",
+        "pct": 1.0,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Oscar Eugenio (Baeza Fares)",
+        "pct": 0.6,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Vista Energy",
@@ -1570,7 +1976,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 8.1,
     "pct_total": 8.1,
     "investor": "Galuccio (Miguel Matias)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Galuccio (Miguel Matias)",
+        "pct": 8.1,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Grupo Televisa",
@@ -1580,7 +1993,14 @@ const CONCENTRATION_DATA = [
     "pct_top1": 7.4,
     "pct_total": 7.4,
     "investor": "Fintech Holdings Inc",
-    "subtype": "Corporation"
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Fintech Holdings Inc",
+        "pct": 7.4,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Grupo Aeroportuario del Pacifico",
@@ -1589,8 +2009,15 @@ const CONCENTRATION_DATA = [
     "color": "#a8a8a8",
     "pct_top1": 5.0,
     "pct_total": 5.0,
-    "investor": "Aeropuertos Mexicanos del Pacifico, S.A. de C",
-    "subtype": "Corporation"
+    "investor": "Aeropuertos Mexicanos del Pacifico, S.A. de C.V.",
+    "subtype": "Corporation",
+    "shareholders": [
+      {
+        "name": "Aeropuertos Mexicanos del Pacifico, S.A. de C.V.",
+        "pct": 5.0,
+        "subtype": "Corporation"
+      }
+    ]
   },
   {
     "company": "Vesta Real Estate Corporation",
@@ -1598,9 +2025,26 @@ const CONCENTRATION_DATA = [
     "group": "Otro",
     "color": "#a8a8a8",
     "pct_top1": 2.4,
-    "pct_total": 4.2,
+    "pct_total": 2.9,
     "investor": "Berho Corona (Lorenzo Manuel)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Berho Corona (Lorenzo Manuel)",
+        "pct": 2.4,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Berho Carranza (Lorenzo Dominique)",
+        "pct": 0.3,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Berho Corona (Alejandro)",
+        "pct": 0.2,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Nemak",
@@ -1610,7 +2054,19 @@ const CONCENTRATION_DATA = [
     "pct_top1": 2.0,
     "pct_total": 3.7,
     "investor": "Armando (Garza Sada)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Armando (Garza Sada)",
+        "pct": 2.0,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Fernandez Garza (Alvaro)",
+        "pct": 1.8,
+        "subtype": "Individual Investor"
+      }
+    ]
   },
   {
     "company": "Controladora Vuela Compania de Aviacio",
@@ -1620,7 +2076,24 @@ const CONCENTRATION_DATA = [
     "pct_top1": 1.0,
     "pct_total": 1.1,
     "investor": "Beltranena (Enrique)",
-    "subtype": "Individual Investor"
+    "subtype": "Individual Investor",
+    "shareholders": [
+      {
+        "name": "Beltranena (Enrique)",
+        "pct": 1.0,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Pous (Jaime)",
+        "pct": 0.1,
+        "subtype": "Individual Investor"
+      },
+      {
+        "name": "Jose (Luis Suarez)",
+        "pct": 0.0,
+        "subtype": "Individual Investor"
+      }
+    ]
   }
 ];
 
