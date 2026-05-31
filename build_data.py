@@ -482,14 +482,29 @@ fin_folder_name = {}
 for _, r in fin_co.iterrows():
     folder_to_name[str(r.get('company_folder',''))] = str(r.get('company_name',''))
 
-TAX_HAVENS = {
-    'Cayman Islands', 'British Virgin Islands', 'Bermuda', 'Luxembourg',
-    'Netherlands', 'Ireland', 'Switzerland', 'Panama', 'Jersey',
-    'Guernsey', 'Isle of Man', 'Malta', 'Mauritius', 'Singapore',
-    'Hong Kong', 'Bahamas', 'Barbados', 'Curacao', 'Belize',
-    'Liechtenstein', 'Monaco', 'Andorra', 'Seychelles',
-    'Marshall Islands', 'Gibraltar',
+# Classic tax havens: zero or tiny real economy, purely fiscal
+CLASSIC_HAVENS = {
+    'Cayman Islands', 'British Virgin Islands', 'Bermuda', 'Panama',
+    'Jersey', 'Guernsey', 'Isle of Man', 'Malta', 'Mauritius',
+    'Bahamas', 'Barbados', 'Curacao', 'Belize', 'Liechtenstein',
+    'Monaco', 'Andorra', 'Seychelles', 'Marshall Islands', 'Gibraltar',
 }
+# Fiscal hubs: real economies but commonly used for tax optimization
+FISCAL_HUBS = {
+    'Netherlands', 'Ireland', 'Luxembourg', 'Switzerland', 'Singapore', 'Hong Kong',
+}
+TAX_HAVENS = CLASSIC_HAVENS | FISCAL_HUBS
+
+# Shell-like name keywords (holding/finance vehicles, not operational)
+SHELL_KEYWORDS = ['holding', 'holdings', 'investment', 'investments', 'finance',
+                  'financing', 'treasury', 'capital', 'ventures', 'assets']
+
+def is_shell_like(name, industry):
+    if not name or str(name) == 'nan': return False
+    nl = str(name).lower()
+    il = str(industry or '').lower()
+    return (any(k in nl for k in SHELL_KEYWORDS) or
+            'holding' in il or 'investment' in il)
 
 def agg_subs(df):
     """Return {by_country, by_sector, by_haven, haven_details, total, n_haven}"""
@@ -501,38 +516,45 @@ def agg_subs(df):
                    .reset_index(name='n')
                    .sort_values('n', ascending=False)
                    .to_dict('records'))
-    # Haven breakdown
+
+    # All havens for counts
     havens = df[df['is_haven'] == True].copy()
     by_haven = (havens.groupby('country').size()
                       .reset_index(name='n')
                       .sort_values('n', ascending=False)
                       .to_dict('records'))
-    # Notable cases: named entities in havens
-    haven_details = []
+
+    # Notable cases: classic tax havens OR fiscal hubs with shell-like names
+    notable = []
+    seen = set()
     for _, r in havens.iterrows():
         name = str(r.get('sub_name', '') or '').strip()
-        if name and name != 'nan':
-            haven_details.append({
-                'name': name[:55],
-                'country': str(r.get('country', '')),
-                'industry': str(r.get('industry', '') or ''),
-            })
-    # deduplicate
-    seen = set()
-    haven_details_dedup = []
-    for h in haven_details:
-        key = (h['name'], h['country'])
-        if key not in seen:
-            seen.add(key)
-            haven_details_dedup.append(h)
+        country = str(r.get('country', '')).strip()
+        industry = str(r.get('industry', '') or '').strip()
+        if not name or name == 'nan':
+            continue
+        in_classic = country in CLASSIC_HAVENS
+        in_hub_shell = country in FISCAL_HUBS and is_shell_like(name, industry)
+        if not (in_classic or in_hub_shell):
+            continue
+        key = (name, country)
+        if key in seen: continue
+        seen.add(key)
+        notable.append({
+            'name': name[:55],
+            'country': country,
+            'haven_type': 'Paraíso clásico' if in_classic else 'Hub fiscal',
+            'industry': industry if industry and industry != 'nan' else '',
+        })
 
     return {
         'by_country': by_country,
         'by_sector': by_sector,
         'by_haven': by_haven,
-        'haven_details': haven_details_dedup[:20],
+        'haven_details': notable[:25],
         'total': len(df),
         'n_haven': int(len(havens)),
+        'n_classic': int(havens['country'].isin(CLASSIC_HAVENS).sum()),
     }
 
 # Global

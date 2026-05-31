@@ -571,8 +571,9 @@ footer a { color: var(--ink2); }
   <div class="card fade-in" id="haven-card">
     <div class="card-title">Estructura fiscal — subsidiarias en paraísos fiscales</div>
     <p style="font-size:0.82rem;color:var(--muted);margin:0 0 20px;">
-      Jurisdicciones con regímenes fiscales preferentes: Irlanda, Países Bajos, Panamá, Suiza, Islas Caimán, Bermuda, entre otros.
-      Su presencia no implica ilegalidad — es planeación fiscal estándar para empresas globales.
+      <strong style="color:var(--ink);">Paraísos clásicos</strong> — jurisdicciones sin economía real significativa (Islas Caimán, BVI, Bermuda, Panamá, Jersey…) —
+      y <strong style="color:var(--ink);">hubs fiscales</strong> — economías reales con regímenes tributarios favorables (Países Bajos, Irlanda, Luxemburgo, Suiza).
+      En los hubs, solo se destacan entidades con nombre de vehículo financiero (holdings, investments, capital), no subsidiarias operativas.
     </p>
     <div class="two-col">
       <div>
@@ -1416,6 +1417,7 @@ const TYPE_COLORS = {
 
     // Notable cases — global
     const globalDetails = SUBSIDIARIES_DATA.global.haven_details || [];
+    const HAVEN_COLORS = { 'Paraíso clásico': '#B85C38', 'Hub fiscal': '#7a8898' };
     document.getElementById('haven-details').innerHTML = globalDetails.length
       ? globalDetails.map(d => `
           <div class="flow-row" style="font-size:0.78rem;">
@@ -1423,7 +1425,7 @@ const TYPE_COLORS = {
               <span style="font-weight:500;">${d.name}</span>
               <span style="color:var(--muted);margin-left:6px;">${d.country}</span>
             </div>
-            ${d.industry ? `<span style="font-size:0.7rem;color:var(--muted);padding-left:8px;">${d.industry}</span>` : ''}
+            <span style="font-size:0.68rem;padding:1px 6px;border-radius:4px;background:${HAVEN_COLORS[d.haven_type]||'#aaa'};color:#fff;white-space:nowrap;">${d.haven_type}</span>
           </div>`).join('')
       : '<p style="color:var(--muted);font-size:0.82rem;">Sin casos notables identificados.</p>';
 
@@ -1431,11 +1433,12 @@ const TYPE_COLORS = {
     const globalHaven = SUBSIDIARIES_DATA.global.n_haven;
     const topHaven = havenByCompany[0];
     document.getElementById('insight-huella').innerHTML =
-      `De las 3,226 subsidiarias registradas, <strong>${globalHaven} operan en paraísos fiscales</strong> — jurisdicciones con regímenes tributarios preferentes. ` +
-      `<strong>CEMEX encabeza con 18 subsidiarias en 10 jurisdicciones distintas</strong>: Irlanda, Países Bajos, Suiza, Luxemburgo, Barbados, Bermuda, Jersey, Isle of Man, Panamá y Singapur. ` +
-      `Llamativo es también <strong>Pemex — empresa del Estado mexicano</strong> — con 8 subsidiarias en paraísos fiscales incluyendo Bahamas e Islas Caimán. ` +
-      `Irlanda (47) y Países Bajos (24) son los principales hubs fiscales europeos de estos grupos. ` +
-      `Nota: la presencia en estas jurisdicciones es legal y común en empresas globales; su uso responde a planeación fiscal, protección de activos y acceso a mercados de capital internacionales.`;
+      `De las 3,226 subsidiarias registradas, <strong>${SUBSIDIARIES_DATA.global.n_classic} están en paraísos clásicos</strong> — ` +
+      `jurisdicciones sin economía real significativa como Islas Caimán, BVI, Bermuda o Panamá. ` +
+      `<strong>CEMEX encabeza la estructura fiscal más compleja</strong>: 18 subsidiarias en 10 jurisdicciones, incluyendo vehículos con nombres como ` +
+      `"Machu Pichu Investments BV" (Países Bajos) o "Cemex Caracas Investments BV" (Países Bajos). ` +
+      `Llamativo es <strong>Pemex — empresa del Estado mexicano</strong> — con subsidiarias en Bahamas e Islas Caimán. ` +
+      `La presencia en estas jurisdicciones es legal; su uso responde a planeación fiscal, protección de activos y acceso a mercados de capital internacionales.`;
   })();
 
   // Initial render
