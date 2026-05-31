@@ -559,7 +559,8 @@ def agg_subs(df):
         seen.add(key)
         company_folder = str(r.get('company_folder', '')).strip()
         if company_folder in ('nan', '', 'Directors'): continue
-        company_short  = short_co(folder_to_name.get(company_folder, company_folder))
+        raw_name = folder_to_name.get(company_folder, company_folder)
+        company_short = short_co(raw_name if str(raw_name) != 'nan' else company_folder)
         notable.append({
             'name': name[:55],
             'company': company_short[:28],

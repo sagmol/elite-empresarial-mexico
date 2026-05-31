@@ -6180,7 +6180,7 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "name": "Wiikit Re Ltd",
-        "company": "nan",
+        "company": "Industrias Bachoco",
         "country": "Bermuda",
         "haven_type": "Paraíso clásico",
         "industry": ""
@@ -8645,7 +8645,7 @@ const SUBSIDIARIES_DATA = {
       "haven_details": [
         {
           "name": "Wiikit Re Ltd",
-          "company": "nan",
+          "company": "Industrias Bachoco",
           "country": "Bermuda",
           "haven_type": "Paraíso clásico",
           "industry": ""
