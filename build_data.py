@@ -497,10 +497,27 @@ TAX_HAVENS = CLASSIC_HAVENS | FISCAL_HUBS
 
 # Shell-like name keywords (holding/finance vehicles, not operational)
 SHELL_KEYWORDS = ['holding', 'holdings', 'investment', 'investments', 'finance',
-                  'financing', 'treasury', 'capital', 'ventures', 'assets']
+                  'financing', 'treasury', 'capital', 'ventures', 'assets',
+                  ' re ', ' re ltd', 'reinsur', 'overseas', 'offshore',
+                  'rig owning', 'owning co']
+
+OPERATIONAL_SIGNALS = ['claro', 'coca-cola', 'coke', 'bimbo', 'cemex', 'starbucks',
+                       'telcel', 'telmex', 'femsa', 'walmart', 'oxxo', 'sanborns',
+                       'restaurant', 'hotel', 'cement', 'concrete', 'steel',
+                       'mining', 'telecom', 'television', 'broadcast', 'airport',
+                       'arawak', 'donut', 'bread', 'bakery', 'wavin']
+
+def is_operational(name, industry):
+    nl = str(name or '').lower()
+    il = str(industry or '').lower()
+    if any(k in nl for k in OPERATIONAL_SIGNALS): return True
+    op_ind = ['food', 'beverage', 'cement', 'construction material', 'retail',
+              'restaurant', 'broadcast', 'steel', 'airline', 'telecom service']
+    return any(k in il for k in op_ind)
 
 def is_shell_like(name, industry):
     if not name or str(name) == 'nan': return False
+    if is_operational(name, industry): return False
     nl = str(name).lower()
     il = str(industry or '').lower()
     return (any(k in nl for k in SHELL_KEYWORDS) or

@@ -6043,58 +6043,10 @@ const SUBSIDIARIES_DATA = {
         "industry": ""
       },
       {
-        "name": "Cemex Latam Holdings SA (Brugg Branch)",
-        "country": "Switzerland",
-        "haven_type": "Hub fiscal",
-        "industry": ""
-      },
-      {
-        "name": "Cemex Asia BV",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": "Investment Management & Fund Operators"
-      },
-      {
         "name": "Machu Pichu Investments BV",
         "country": "Netherlands",
         "haven_type": "Hub fiscal",
         "industry": "Industrial Machinery & Equipment"
-      },
-      {
-        "name": "Cemex Asia Holdings Ltd",
-        "country": "Singapore",
-        "haven_type": "Hub fiscal",
-        "industry": "Investment Holding Companies"
-      },
-      {
-        "name": "Cemex Caracas Investments BV",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": ""
-      },
-      {
-        "name": "Cemex Egyptian Investments II BV",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": ""
-      },
-      {
-        "name": "Cemex Luxembourg Holdings RL SA",
-        "country": "Luxembourg",
-        "haven_type": "Hub fiscal",
-        "industry": "Investment Holding Companies"
-      },
-      {
-        "name": "Cemex Egyptian Investments BV",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": "Investment Holding Companies"
-      },
-      {
-        "name": "Cemex Caracas Ii Investments BV",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": ""
       },
       {
         "name": "Arawak Concrete Solutions Ltd",
@@ -6119,18 +6071,6 @@ const SUBSIDIARIES_DATA = {
         "country": "Bermuda",
         "haven_type": "Paraíso clásico",
         "industry": "Reinsurance"
-      },
-      {
-        "name": "Cemex Innovation Holding AG",
-        "country": "Switzerland",
-        "haven_type": "Hub fiscal",
-        "industry": "Construction Materials"
-      },
-      {
-        "name": "Cemex Ventures BV",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": "Investment Holding Companies"
       },
       {
         "name": "CxNetworks NV",
@@ -6171,6 +6111,66 @@ const SUBSIDIARIES_DATA = {
       {
         "name": "Bimbo Donuts Pirineus SLU",
         "country": "Andorra",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Plycem Co Inc",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
+        "country": "Cayman Islands",
+        "haven_type": "Paraíso clásico",
+        "industry": "Banks"
+      },
+      {
+        "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
+        "country": "Cayman Islands",
+        "haven_type": "Paraíso clásico",
+        "industry": "Banks"
+      },
+      {
+        "name": "Prospector Rig 2 Owning Cayman Co Ltd",
+        "country": "Cayman Islands",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Prospector Rig 4 Owning Cayman Co Ltd",
+        "country": "Cayman Islands",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Undershaft Investments NV",
+        "country": "Curacao",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Media Vision de Panama SA",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Ideal Panama SA",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": "Electric Utilities"
+      },
+      {
+        "name": "Cilsa Panama SA",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": "Financial & Commodity Market Operators & Service Providers"
+      },
+      {
+        "name": "Wiikit Re Ltd",
+        "country": "Bermuda",
         "haven_type": "Paraíso clásico",
         "industry": ""
       }
@@ -6849,58 +6849,10 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         },
         {
-          "name": "Cemex Latam Holdings SA (Brugg Branch)",
-          "country": "Switzerland",
-          "haven_type": "Hub fiscal",
-          "industry": ""
-        },
-        {
-          "name": "Cemex Asia BV",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Management & Fund Operators"
-        },
-        {
           "name": "Machu Pichu Investments BV",
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Industrial Machinery & Equipment"
-        },
-        {
-          "name": "Cemex Asia Holdings Ltd",
-          "country": "Singapore",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
-        },
-        {
-          "name": "Cemex Caracas Investments BV",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": ""
-        },
-        {
-          "name": "Cemex Egyptian Investments II BV",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": ""
-        },
-        {
-          "name": "Cemex Luxembourg Holdings RL SA",
-          "country": "Luxembourg",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
-        },
-        {
-          "name": "Cemex Egyptian Investments BV",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
-        },
-        {
-          "name": "Cemex Caracas Ii Investments BV",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": ""
         },
         {
           "name": "Arawak Concrete Solutions Ltd",
@@ -6925,18 +6877,6 @@ const SUBSIDIARIES_DATA = {
           "country": "Bermuda",
           "haven_type": "Paraíso clásico",
           "industry": "Reinsurance"
-        },
-        {
-          "name": "Cemex Innovation Holding AG",
-          "country": "Switzerland",
-          "haven_type": "Hub fiscal",
-          "industry": "Construction Materials"
-        },
-        {
-          "name": "Cemex Ventures BV",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
         },
         {
           "name": "CxNetworks NV",
@@ -9184,12 +9124,6 @@ const SUBSIDIARIES_DATA = {
           "country": "Netherlands",
           "haven_type": "Hub fiscal",
           "industry": "Investment Management & Fund Operators"
-        },
-        {
-          "name": "Wavin Singapore Holding Pte Ltd",
-          "country": "Singapore",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
         }
       ],
       "total": 81,
