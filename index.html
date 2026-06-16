@@ -565,6 +565,39 @@ footer a { color: var(--ink2); }
     <div class="chart-wrap" style="min-height:420px;" id="chart-inst-weight"></div>
   </div>
 
+  <div class="card fade-in">
+    <div class="card-title">Control vs. float — ¿de quién es realmente el capital?</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
+      Del capital total declarado por accionistas (estratégicos + institucionales), la gran mayoría sigue
+      en manos de los accionistas de control. El "float" libre — el que cotiza activamente — es una porción
+      menor, y de ese float, la mayor parte es capital extranjero.
+    </p>
+    <div class="two-col">
+      <div class="chart-wrap" style="min-height:280px;" id="chart-capital-control"></div>
+      <div class="chart-wrap" style="min-height:280px;" id="chart-capital-float"></div>
+    </div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">El capital "mexicano" del float — ¿quién lo administra realmente?</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
+      De los $10.6B del float administrados por gestoras mexicanas, casi nada es capital independiente:
+      la mayoría son filiales de los mismos grupos del universo (Slim, GBM, Banorte) o sucursales
+      locales de bancos globales (BlackRock, BBVA, Santander…).
+    </p>
+    <div class="chart-wrap" style="min-height:260px;" id="chart-capital-filiales"></div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">¿Qué tipo de capital es? — permanente, activo u oportunista</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
+      Clasificando por estilo de inversión declarado: el capital "permanente" (fondos índice, value de largo plazo,
+      yield) no responde a noticias de una empresa específica — sigue al índice. El capital extranjero
+      es mayoritariamente de este tipo.
+    </p>
+    <div class="chart-wrap" style="min-height:260px;" id="chart-capital-comportamiento"></div>
+  </div>
+
   <div class="insight fade-in" id="insight-capital"></div>
 </section>
 
@@ -644,6 +677,42 @@ footer a { color: var(--ink2); }
     </div>
   </div>
 
+  <div class="card fade-in">
+    <div class="card-title">Subsidiarias ≠ ingresos — el verdadero peso de "lo internacional"</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:0 0 16px;">
+      El % de subsidiarias fuera de México es un proxy de huella legal, no de peso económico.
+      Aquí comparamos ese porcentaje contra el % de <strong>ingresos</strong> que cada empresa
+      genera fuera de México (datos de segmentos geográficos, Refinitiv FY2023). La divergencia
+      revela casos como Peñoles (pocas subsidiarias, 79% de ingresos en el extranjero) o
+      Becle (casi sin subsidiarias fuera, 56% de ingresos internacionales vía exportación).
+    </p>
+    <div class="chart-wrap" style="min-height:520px;" id="chart-intl-divergencia"></div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">Tres formas de ser global</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:0 0 16px;">
+      Más allá de cuánto se internacionalizan, las multilatinas mexicanas lo hacen de formas
+      distintas. Tres modelos, ejemplificados con casos del propio universo:
+    </p>
+    <div id="modelos-expansion-grid"></div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">¿Qué tan global es realmente el universo? — segmentación completa (60 empresas)</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:0 0 16px;">
+      El corte de "multilatinas reales" usaba un umbral de ≥10 países. Aquí se segmentan
+      las <strong>60 empresas del universo</strong> (no solo las más internacionales) según
+      número de países <em>y</em> de continentes alcanzados por sus subsidiarias:
+      <strong>multilatina global</strong> (≥10 países en ≥3 continentes),
+      <strong>multinacional regional</strong> (≥3 países en ≥2 continentes),
+      <strong>presencia puntual</strong> (1-2 países) y <strong>doméstica</strong>
+      (sin subsidiarias fuera de México).
+    </p>
+    <div class="chart-wrap" style="min-height:340px;" id="chart-segmentacion-resumen"></div>
+    <div class="chart-wrap" style="min-height:1400px;margin-top:16px;" id="chart-segmentacion-detalle"></div>
+  </div>
+
   <div class="insight fade-in" id="insight-huella"></div>
 </section>
 
@@ -705,7 +774,7 @@ footer a { color: var(--ink2); }
 </footer>
 
 <!-- DATA + SCRIPTS -->
-<script src="data_web.js?v=2"></script>
+<script src="data_web.js?v=6"></script>
 <script>
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const fmt  = n => n == null ? '—' : Number(n).toLocaleString('es-MX');
@@ -1450,6 +1519,95 @@ const TYPE_COLORS = {
     annotations: [{ x:0.01, xref:'paper', y:1.08, text:'1% del portafolio', showarrow:false, font:{size:9,color:'#B85C38'} }],
   }, PLOTLY_CONFIG);
 
+  // ── Control vs. float ──────────────────────────────────────────────────────
+  const CS = CAPITAL_STRUCTURE_DATA;
+  const G = CS.global;
+
+  Plotly.newPlot('chart-capital-control', [
+    {
+      type: 'bar', orientation: 'h', x: [G.strategic_pct], y: ['Capital total'],
+      text: [`Control estratégico — $${G.strategic_b}B (${G.strategic_pct}%)`],
+      textposition: 'inside', insidetextanchor: 'middle',
+      marker: { color: '#8a6d4a' },
+      hovertemplate: '%{text}<extra></extra>',
+    },
+    {
+      type: 'bar', orientation: 'h', x: [G.float_pct], y: ['Capital total'],
+      text: [`Float libre — $${G.float_b}B (${G.float_pct}%)`],
+      textposition: 'inside', insidetextanchor: 'middle',
+      marker: { color: '#c9a876' },
+      hovertemplate: '%{text}<extra></extra>',
+    },
+  ], {
+    ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
+    title: { text: `Capital total declarado: $${G.total_b}B`, font: { size: 12 } },
+    margin: { t:48, r:24, b:24, l:24 },
+    xaxis: { visible: false, range: [0,100] },
+    yaxis: { visible: false },
+  }, PLOTLY_CONFIG);
+
+  Plotly.newPlot('chart-capital-float', [
+    {
+      type: 'bar', orientation: 'h', x: [G.float_mx_pct], y: ['Float'],
+      text: [`Mexicano — $${G.float_mx_b}B (${G.float_mx_pct}%)`],
+      textposition: 'inside', insidetextanchor: 'middle',
+      marker: { color: '#5b7a8c' },
+      hovertemplate: '%{text}<extra></extra>',
+    },
+    {
+      type: 'bar', orientation: 'h', x: [G.float_ext_pct], y: ['Float'],
+      text: [`Extranjero — $${G.float_ext_b}B (${G.float_ext_pct}%)`],
+      textposition: 'inside', insidetextanchor: 'middle',
+      marker: { color: '#B85C38' },
+      hovertemplate: '%{text}<extra></extra>',
+    },
+  ], {
+    ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
+    title: { text: `Composición del float: $${G.float_b}B`, font: { size: 12 } },
+    margin: { t:48, r:24, b:24, l:24 },
+    xaxis: { visible: false, range: [0,100] },
+    yaxis: { visible: false },
+  }, PLOTLY_CONFIG);
+
+  // ── Filiales del capital "mexicano" ────────────────────────────────────────
+  Plotly.newPlot('chart-capital-filiales', [{
+    type: 'bar',
+    x: CS.filiales.map(d => d.valor_b),
+    y: CS.filiales.map(d => d.categoria),
+    orientation: 'h',
+    text: CS.filiales.map(d => `$${d.valor_b}B (${d.pct}%)`),
+    textposition: 'outside',
+    marker: { color: ['#8a6d4a', '#5b7a8c', '#B85C38'] },
+    hovertemplate: '%{y}<br>$%{x}B<extra></extra>',
+  }], {
+    ...LAYOUT_BASE, height: 260,
+    margin: { t:16, r:80, b:40, l:230 },
+    xaxis: { title: 'USD B', gridcolor: '#edecea' },
+    yaxis: { automargin: true },
+  }, PLOTLY_CONFIG);
+
+  // ── Comportamiento del capital por origen ──────────────────────────────────
+  const cb = CS.comportamiento;
+  const tipos = [
+    { key: 'permanente_pct', name: 'Permanente (índice/value/yield)', color: '#5b7a8c' },
+    { key: 'activo_pct', name: 'Activo (GARP/growth)', color: '#c9a876' },
+    { key: 'oportunista_pct', name: 'Oportunista (deep value)', color: '#B85C38' },
+    { key: 'sin_clasificar_pct', name: 'Sin clasificar', color: '#ddd6cc' },
+  ];
+  Plotly.newPlot('chart-capital-comportamiento', tipos.map(t => ({
+    type: 'bar', orientation: 'h',
+    name: t.name,
+    x: cb.map(d => d[t.key]),
+    y: cb.map(d => `${d.origen} ($${d.total_b}B)`),
+    marker: { color: t.color },
+    hovertemplate: `${t.name}: %{x}%<extra></extra>`,
+  })), {
+    ...LAYOUT_BASE, height: 260, barmode: 'stack',
+    margin: { t:16, r:24, b:40, l:170 },
+    xaxis: { title: '% del capital', ticksuffix: '%', gridcolor: '#edecea', range: [0,100], autorange: false },
+    legend: { orientation: 'h', y: -0.25 },
+  }, PLOTLY_CONFIG);
+
   // Insight
   const top1 = D.most_connected[0];
   const vanguard = wd.find(d => d.investor_name && d.investor_name.includes('Vanguard Group')) || wd[1];
@@ -1645,6 +1803,110 @@ const TYPE_COLORS = {
             <span style="font-size:0.66rem;padding:1px 6px;border-radius:4px;background:${HAVEN_COLORS[d.haven_type]||'#aaa'};color:#fff;white-space:nowrap;flex-shrink:0;">${d.haven_type}</span>
           </div>`).join('')
       : '<p style="color:var(--muted);font-size:0.82rem;">Sin casos notables identificados.</p>';
+
+    // ── Subsidiarias vs. ingresos internacionales ──────────────────────────
+    const ID = INTERNACIONALIZACION_DATA;
+    const idc = ID.companies.filter(d => d.rev_intl_pct !== null).slice(0, 20);
+
+    Plotly.newPlot('chart-intl-divergencia', [
+      {
+        type: 'bar', orientation: 'h', name: '% ingresos fuera de México',
+        x: idc.map(d => d.rev_intl_pct), y: idc.map(d => d.empresa),
+        marker: { color: '#1B365D' },
+        hovertemplate: '<b>%{y}</b><br>Ingresos fuera de México: %{x}%<extra></extra>',
+      },
+      {
+        type: 'bar', orientation: 'h', name: '% subsidiarias fuera de México',
+        x: idc.map(d => d.pct_fuera_subs), y: idc.map(d => d.empresa),
+        marker: { color: '#c9a876' },
+        hovertemplate: '<b>%{y}</b><br>Subsidiarias fuera de México: %{x}%<extra></extra>',
+      },
+    ], {
+      ...LAYOUT_BASE, height: 520, barmode: 'group',
+      margin: { t:16, r:24, b:40, l:230 },
+      xaxis: { title: '%', range: [0,100], ticksuffix: '%', gridcolor: '#edecea' },
+      yaxis: { automargin: true, autorange: 'reversed' },
+      legend: { orientation: 'h', y: -0.08 },
+    }, PLOTLY_CONFIG);
+
+    // ── Tres modelos de expansión ────────────────────────────────────────────
+    const MODELO_COLORS = {
+      construccion: '#5a9e3e', adquisicion: '#1B365D', ficcion: '#B85C38',
+    };
+    const byModelo = {};
+    ID.companies.forEach(d => {
+      if (!d.modelo) return;
+      (byModelo[d.modelo] ||= []).push(d);
+    });
+    document.getElementById('modelos-expansion-grid').innerHTML =
+      `<div class="two-col" style="grid-template-columns:repeat(3,1fr);">` +
+      Object.entries(ID.modelos).map(([key, label]) => {
+        const cos = byModelo[key] || [];
+        return `
+          <div style="border:1px solid var(--border);border-radius:8px;padding:14px;">
+            <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+                        color:${MODELO_COLORS[key]};margin-bottom:8px;">${key}</div>
+            <p style="font-size:0.78rem;color:var(--muted);margin:0 0 10px;">${label}</p>
+            ${cos.map(c => `
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;padding:4px 0;border-top:1px solid var(--border);">
+                <span>${c.empresa}</span>
+                <span style="color:var(--muted);">
+                  ${c.rev_intl_pct !== null ? c.rev_intl_pct + '% ingr.' : '—'}
+                  ${c.divergencia !== null ? ` · div. ${c.divergencia > 0 ? '+' : ''}${c.divergencia}` : ''}
+                </span>
+              </div>`).join('')}
+          </div>`;
+      }).join('') +
+      `</div>`;
+
+    // ── Segmentación completa del universo (60 empresas) ────────────────────
+    const SD = SEGMENTACION_DATA;
+    const SEG_COLORS = {
+      '1. Multilatina global': '#1B365D',
+      '2. Multinacional regional': '#5a8fc9',
+      '3. Presencia puntual': '#c9a876',
+      '4. Doméstica': '#d8d4cc',
+    };
+    const segKeys = Object.keys(SD.labels).sort();
+
+    Plotly.newPlot('chart-segmentacion-resumen', [{
+      type: 'bar', orientation: 'h',
+      x: segKeys.map(k => SD.summary[k]),
+      y: segKeys.map(k => SD.labels[k]),
+      marker: { color: segKeys.map(k => SEG_COLORS[k]) },
+      text: segKeys.map(k => `${SD.summary[k]} empresas`),
+      textposition: 'auto',
+      hovertemplate: '<b>%{y}</b><br>%{x} empresas<extra></extra>',
+    }], {
+      ...LAYOUT_BASE, height: 280,
+      margin: { t:16, r:24, b:40, l:230 },
+      xaxis: { title: 'N° de empresas', gridcolor: '#edecea' },
+      yaxis: { automargin: true, autorange: 'reversed' },
+      showlegend: false,
+    }, PLOTLY_CONFIG);
+
+    const segSorted = [...SD.companies].sort((a,b) => {
+      const sa = segKeys.indexOf(a.segmento), sb = segKeys.indexOf(b.segmento);
+      if (sa !== sb) return sa - sb;
+      return b.fuera_mexico - a.fuera_mexico;
+    });
+    Plotly.newPlot('chart-segmentacion-detalle', [{
+      type: 'bar', orientation: 'h',
+      x: segSorted.map(d => d.fuera_mexico),
+      y: segSorted.map(d => d.empresa),
+      marker: { color: segSorted.map(d => SEG_COLORS[d.segmento]) },
+      customdata: segSorted.map(d => [SD.labels[d.segmento], d.n_paises, d.n_continentes, d.continentes || 'Ninguno', d.pct_fuera]),
+      hovertemplate: '<b>%{y}</b><br>%{customdata[0]}' +
+        '<br>Subsidiarias fuera de México: %{x} (%{customdata[4]}%)' +
+        '<br>Países: %{customdata[1]} | Continentes: %{customdata[2]}' +
+        '<br>%{customdata[3]}<extra></extra>',
+    }], {
+      ...LAYOUT_BASE, height: 1400,
+      margin: { t:16, r:24, b:40, l:260 },
+      xaxis: { title: 'N° de subsidiarias fuera de México', gridcolor: '#edecea' },
+      yaxis: { automargin: true, autorange: 'reversed', tickfont: { size: 10 } },
+      showlegend: false,
+    }, PLOTLY_CONFIG);
 
     // Global insight
     const globalHaven = SUBSIDIARIES_DATA.global.n_haven;

@@ -46,15 +46,15 @@ GROUP_COLORS = {
 GROUP_COMPANIES = {
     "Slim":        ["América Móvil", "Grupo Carso", "Inbursa", "IDEAL", "Sanborns"],
     "Gmexico":     ["Grupo México", "GMexico Transportes"],
-    "GrumaBanorte":["Grupo Financiero Banorte", "Gruma", "Grupo Herdez"],
-    "Femsa":       ["Coca-Cola FEMSA"],
+    "GrumaBanorte":["Grupo Financiero Banorte", "Gruma"],
+    "Femsa":       ["Coca-Cola FEMSA", "FEMSA"],
     "BAL":         ["GNP", "Palacio de Hierro", "Profuturo", "Industrias Peñoles", "Fresnillo"],
     "Bimbo":       ["Grupo Bimbo"],
     "Salinas":     ["Grupo Elektra"],
     "Yucatan":     ["ASUR", "Grupo KUO", "Industrias Bachoco"],
     "Cemex":       ["CEMEX", "GCC"],
     "Alfa":        ["Alfa SAB de CV"],
-    "Otro":        ["27 empresas independientes"],
+    "Otro":        ["28 empresas independientes"],
 }
 
 # ── 1. GROUPS DATA ──────────────────────────────────────────────────────────
@@ -337,7 +337,7 @@ n_dirs_with_bio   = int(dirs[dirs['bio'].notna() & (dirs['bio'].str.strip() != '
 
 stats = {
     "n_companies":      51,
-    "n_directors":      1106,
+    "n_directors":      1130,
     "n_dirs_unique":    n_dirs_unique,
     "n_dirs_with_bio":  n_dirs_with_bio,
     "n_dirs_with_edu":  n_dirs_with_edu,
@@ -717,6 +717,196 @@ institutional_data = {
 }
 institutional_data = to_native(institutional_data)
 
+# ── 12b. CAPITAL STRUCTURE: control vs. float, filiales, comportamiento ──────
+strat_all = sh_raw[sh_raw['investor_type'] == 'Strategic Entities'].copy()
+strat_total_m = float(strat_all['value_usd_m'].sum())
+
+im_total_m = float(inst['value_usd_m'].sum())
+im_mx = inst[inst['country'] == 'Mexico'].copy()
+im_ext = inst[inst['country'] != 'Mexico'].copy()
+im_mx_m = float(im_mx['value_usd_m'].sum())
+im_ext_m = float(im_ext['value_usd_m'].sum())
+
+total_m = strat_total_m + im_total_m
+
+capital_global = {
+    'total_b'        : round(total_m/1000, 1),
+    'strategic_b'    : round(strat_total_m/1000, 1),
+    'strategic_pct'  : round(strat_total_m/total_m*100, 1),
+    'float_b'        : round(im_total_m/1000, 1),
+    'float_pct'      : round(im_total_m/total_m*100, 1),
+    'float_mx_b'     : round(im_mx_m/1000, 1),
+    'float_mx_pct'   : round(im_mx_m/im_total_m*100, 1),
+    'float_ext_b'    : round(im_ext_m/1000, 1),
+    'float_ext_pct'  : round(im_ext_m/im_total_m*100, 1),
+}
+
+# Filiales: clasificación del capital institucional mexicano
+FILIALES_UNIVERSO = {
+    'Operadora Inbursa':            'Slim / Inbursa',
+    'Operadora de Fondos Banorte':  'GrumaBanorte / Banorte',
+    'GBM Administradora':           'GBM (independiente MX)',
+    'Operadora de Fondos GBM':      'GBM (independiente MX)',
+    'Impulsora del Fondo M':        'GBM (independiente MX)',
+    'Nexxus Capital':               'Nexxus (independiente MX)',
+    'Actinver':                     'Actinver (independiente MX)',
+    'Operadora de Fondos Finamex':  'Finamex (independiente MX)',
+}
+FILIALES_GLOBALES = {
+    'BlackRock Mexico':             'BlackRock',
+    'BBVA Asset Management M':      'BBVA',
+    'Gestión Santander Mexico': 'Santander',
+    'Scotia Fondos':                'Scotiabank',
+    'HSBC Global Asset Management': 'HSBC',
+    'Compass Investments de M':     'Compass / Bancomer',
+    'Sura Investment Management':   'Sura (Colombia)',
+}
+def classify_filial(name):
+    if pd.isna(name): return 'C. Capital MX genuino'
+    n = str(name)
+    for key in FILIALES_UNIVERSO:
+        if key in n: return 'A. Filial de grupo del universo'
+    for key in FILIALES_GLOBALES:
+        if key in n: return 'B. Filial local de banco global'
+    return 'C. Capital MX genuino'
+
+im_mx['categoria_filial'] = im_mx['investor_name'].apply(classify_filial)
+filiales_cat = (im_mx.groupby('categoria_filial')['value_usd_m'].sum() / 1000).round(2)
+filiales_data = []
+for cat in ['A. Filial de grupo del universo', 'B. Filial local de banco global', 'C. Capital MX genuino']:
+    val_b = float(filiales_cat.get(cat, 0.0))
+    filiales_data.append({
+        'categoria': cat,
+        'valor_b': round(val_b, 2),
+        'pct': round(val_b/im_mx_m*1000*100, 1) if im_mx_m > 0 else 0,
+    })
+
+# Comportamiento: permanente / activo / oportunista por origen
+PERMANENTE = ['Index', 'Core Value', 'Core Growth', 'Yield']
+ACTIVO     = ['GARP', 'Growth']
+def origen_capital(row):
+    if row['country'] != 'Mexico':
+        return 'Extranjero'
+    cat = classify_filial(row['investor_name'])
+    if cat == 'B. Filial local de banco global':
+        return 'Filial banco global'
+    return 'Gestor MX (universo/local)'
+def tipo_capital(style):
+    if style in PERMANENTE: return 'Permanente'
+    if style in ACTIVO:     return 'Activo'
+    if style == 'Deep Value': return 'Oportunista'
+    return 'Sin clasificar'
+
+inst_b = inst.copy()
+inst_b['origen'] = inst_b.apply(origen_capital, axis=1)
+inst_b['tipo_capital'] = inst_b['investment_style'].apply(tipo_capital)
+
+comportamiento_data = []
+for origen, grp in inst_b.groupby('origen'):
+    tot = float(grp['value_usd_m'].sum())
+    if tot <= 0: continue
+    by_tipo = (grp.groupby('tipo_capital')['value_usd_m'].sum() / tot * 100).round(1)
+    comportamiento_data.append({
+        'origen'   : origen,
+        'total_b'  : round(tot/1000, 2),
+        'permanente_pct'  : float(by_tipo.get('Permanente', 0.0)),
+        'activo_pct'      : float(by_tipo.get('Activo', 0.0)),
+        'oportunista_pct' : float(by_tipo.get('Oportunista', 0.0)),
+        'sin_clasificar_pct': float(by_tipo.get('Sin clasificar', 0.0)),
+    })
+comportamiento_data.sort(key=lambda d: -d['total_b'])
+
+capital_structure_data = to_native({
+    'global'        : capital_global,
+    'filiales'      : filiales_data,
+    'comportamiento': comportamiento_data,
+})
+
+# ── 12c. INTERNACIONALIZACIÓN: % ingresos vs % subsidiarias fuera ────────────
+INTL_PATH = r'C:\pw\proyectos\04_internacionalizacion\outputs\internacionalizacion.csv'
+intl_df = pd.read_csv(INTL_PATH, encoding='utf-8-sig')
+
+# Tres modelos de expansión (clasificación manual, sesión 2026-06-09/10)
+MODELOS_EXPANSION = {
+    '170_Grupo Bimbo'                          : 'construccion',
+    '162_Gruma SAB de CV'                      : 'construccion',
+    '070_CEMEX SAB de CV'                      : 'adquisicion',
+    '014_America Móvil'                        : 'adquisicion',
+    '187_Grupo Mexico SAB de CV'                : 'adquisicion',
+    '197_Grupo Televisa SAB'                   : 'ficcion',
+    '172_Grupo Carso SAB de CV'                : 'ficcion',
+}
+MODELO_LABELS = {
+    'construccion': 'Construcción — operación real en mercados nuevos',
+    'adquisicion' : 'Adquisición — compra de activos/empresas existentes',
+    'ficcion'     : 'Ficción documental — subsidiarias formales, ingresos marginales',
+}
+
+intl_data = []
+for _, r in intl_df.iterrows():
+    folder = str(r['company_folder'])
+    if folder == 'Directors':
+        continue
+    rev_intl = r.get('rev_intl_pct')
+    pct_fuera = r.get('pct_fuera')
+    if pd.isna(rev_intl) and pd.isna(pct_fuera):
+        continue
+    intl_data.append({
+        'company_folder': folder,
+        'empresa'       : short_co(folder_to_name.get(folder, r.get('empresa', folder))),
+        'group'         : folder_to_grp.get(folder, 'Otro'),
+        'pct_fuera_subs': None if pd.isna(pct_fuera) else round(float(pct_fuera), 1),
+        'rev_intl_pct'  : None if pd.isna(rev_intl) else round(float(rev_intl), 1),
+        'divergencia'   : None if pd.isna(r.get('divergencia')) else round(float(r['divergencia']), 1),
+        'n_paises'      : None if pd.isna(r.get('n_paises')) else int(r['n_paises']),
+        'modelo'        : MODELOS_EXPANSION.get(folder),
+    })
+intl_data.sort(key=lambda d: (d['rev_intl_pct'] is None, -(d['rev_intl_pct'] or 0)))
+
+internacionalizacion_data = to_native({
+    'companies': intl_data,
+    'modelos'  : MODELO_LABELS,
+})
+
+# ── 12d. SEGMENTACIÓN DEL UNIVERSO COMPLETO (no solo "≥10 países") ──────────
+# El corte binario "n_paises >= 10" (Vector A) solo distinguía 9 multilatinas.
+# Aquí se segmentan las 60 empresas del universo según n° de países Y de
+# continentes alcanzados (exploracion/11_segmentacion_universo.py).
+SEG_PATH = r'C:\pw\proyectos\04_internacionalizacion\outputs\segmentacion_universo.csv'
+seg_df = pd.read_csv(SEG_PATH, encoding='utf-8-sig')
+
+SEGMENTO_LABELS = {
+    '1. Multilatina global'     : 'Multilatina global — ≥10 países en ≥3 continentes',
+    '2. Multinacional regional' : 'Multinacional regional — ≥3 países en ≥2 continentes',
+    '3. Presencia puntual'      : 'Presencia puntual — 1-2 países',
+    '4. Doméstica'              : 'Doméstica — sin subsidiarias fuera de México',
+}
+
+folder_by_empresa = {str(r['empresa']): str(r['company_folder']) for _, r in intl_df.iterrows()}
+
+seg_companies = []
+for _, r in seg_df.iterrows():
+    folder = folder_by_empresa.get(r['empresa'])
+    seg_companies.append({
+        'empresa'       : short_co(folder_to_name.get(folder, r['empresa'])) if folder else r['empresa'],
+        'group'         : folder_to_grp.get(folder, 'Otro') if folder else 'Otro',
+        'segmento'      : r['segmento'],
+        'fuera_mexico'  : int(r['fuera_mexico']),
+        'pct_fuera'     : round(float(r['pct_fuera']), 1),
+        'n_paises'      : int(r['n_paises']),
+        'n_continentes' : int(r['n_continentes']),
+        'continentes'   : None if r['continentes'] == '—' else r['continentes'],
+        'rev_intl_pct'  : None if pd.isna(r['rev_intl_pct']) else round(float(r['rev_intl_pct']), 1),
+    })
+
+seg_summary = seg_df.groupby('segmento').size().reindex(sorted(SEGMENTO_LABELS.keys())).fillna(0).astype(int)
+
+segmentacion_data = to_native({
+    'companies': seg_companies,
+    'labels'   : SEGMENTO_LABELS,
+    'summary'  : {k: int(v) for k, v in seg_summary.items()},
+})
+
 # ── 13. COMPANIES TABLE (tabla enriquecida con red) ───────────────────────────
 from collections import Counter
 
@@ -817,6 +1007,12 @@ const COMPANIES_TABLE = {json.dumps(companies_table, ensure_ascii=False, indent=
 const SUBSIDIARIES_DATA = {json.dumps(subsidiaries_data, ensure_ascii=False, indent=2)};
 
 const INSTITUTIONAL_DATA = {json.dumps(institutional_data, ensure_ascii=False, indent=2)};
+
+const CAPITAL_STRUCTURE_DATA = {json.dumps(capital_structure_data, ensure_ascii=False, indent=2)};
+
+const INTERNACIONALIZACION_DATA = {json.dumps(internacionalizacion_data, ensure_ascii=False, indent=2)};
+
+const SEGMENTACION_DATA = {json.dumps(segmentacion_data, ensure_ascii=False, indent=2)};
 """
 
 with open(OUT, 'w', encoding='utf-8') as f:
