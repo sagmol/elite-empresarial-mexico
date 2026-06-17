@@ -2181,15 +2181,6 @@ const TENURE_DATA = [
     "color": "#5b8db8"
   },
   {
-    "name": "Mr. Alejandro Rafael Lara Hakim",
-    "company": "Grupo Comercial Chedraui",
-    "position": "Director - Works",
-    "age": 64,
-    "years": 37,
-    "group": "Otro",
-    "color": "#a8a8a8"
-  },
-  {
     "name": "Mr. Claudio Xavier Gonzalez Laporte , CP",
     "company": "Alfa",
     "position": "Independent Director",
@@ -2197,6 +2188,15 @@ const TENURE_DATA = [
     "years": 37,
     "group": "Alfa",
     "color": "#2ca02c"
+  },
+  {
+    "name": "Mr. Alejandro Rafael Lara Hakim",
+    "company": "Grupo Comercial Chedraui",
+    "position": "Director - Works",
+    "age": 64,
+    "years": 37,
+    "group": "Otro",
+    "color": "#a8a8a8"
   },
   {
     "name": "Mr. Roberto Cannizzo Consiglio",
@@ -2253,15 +2253,6 @@ const TENURE_DATA = [
     "color": "#d62728"
   },
   {
-    "name": "Ms. Maria Martha Marquez Villalobos",
-    "company": "GCC",
-    "position": "Director",
-    "age": null,
-    "years": 34,
-    "group": "Cemex",
-    "color": "#d62728"
-  },
-  {
     "name": "Mr. Raul Carlos Obregon del Corral",
     "company": "Grupo Palacio de Hierro",
     "position": "Independent Director",
@@ -2269,24 +2260,6 @@ const TENURE_DATA = [
     "years": 34,
     "group": "BAL",
     "color": "#5b8db8"
-  },
-  {
-    "name": "Mr. Jose Antonio Ponce Hernandez",
-    "company": "Grupo Financiero Inbursa",
-    "position": "Chief Executive Officer of Inversora Bur",
-    "age": null,
-    "years": 34,
-    "group": "Slim",
-    "color": "#1B365D"
-  },
-  {
-    "name": "Mr. Enrique G. Terrazas Torres",
-    "company": "GCC",
-    "position": "Director",
-    "age": null,
-    "years": 34,
-    "group": "Cemex",
-    "color": "#d62728"
   },
   {
     "name": "Mr. Ramiro Gerardo Villarreal Morales",
@@ -2298,18 +2271,45 @@ const TENURE_DATA = [
     "color": "#d62728"
   },
   {
-    "name": "Eng. Federico Toussaint Elosua",
-    "company": "Grupo Lamosa",
-    "position": "Chairman of the Board, Proprietary Direc",
+    "name": "Mr. Enrique G. Terrazas Torres",
+    "company": "GCC",
+    "position": "Director",
     "age": null,
+    "years": 34,
+    "group": "Cemex",
+    "color": "#d62728"
+  },
+  {
+    "name": "Mr. Jose Antonio Ponce Hernandez",
+    "company": "Grupo Financiero Inbursa",
+    "position": "Chief Executive Officer of Inversora Bur",
+    "age": null,
+    "years": 34,
+    "group": "Slim",
+    "color": "#1B365D"
+  },
+  {
+    "name": "Ms. Maria Martha Marquez Villalobos",
+    "company": "GCC",
+    "position": "Director",
+    "age": null,
+    "years": 34,
+    "group": "Cemex",
+    "color": "#d62728"
+  },
+  {
+    "name": "Mr. Enrique Luis Castillo Sanchez Mejora",
+    "company": "Grupo Herdez",
+    "position": "Independent Director",
+    "age": 68,
     "years": 33,
     "group": "Otro",
     "color": "#a8a8a8"
   },
   {
-    "name": "Mr. Pablo Jose Gonzalez Guerra",
-    "company": "La Comer",
-    "position": "Director",
+    "name": "Eng. Federico Toussaint Elosua",
+    "company": "Grupo Lamosa",
+    "position": "Chairman of the Board, Proprietary Direc",
     "age": null,
     "years": 33,
     "group": "Otro",
@@ -2391,22 +2391,22 @@ const TURNOVER_DATA = [
     "color": "#5b8db8"
   },
   {
-    "company": "Grupo Televisa",
-    "ratio": 2.1,
-    "current": 28,
-    "previous": 60,
-    "group": "Otro",
-    "color": "#a8a8a8"
+    "company": "Fomento Economico Mexicano",
+    "ratio": 2.2,
+    "current": 24,
+    "previous": 53,
+    "group": "Femsa",
+    "color": "#e07b39"
   }
 ];
 
 const BOARD_STATS = {
-  "avg_age": 61.6,
+  "avg_age": 61.7,
   "med_tenure": 6.0,
   "avg_tenure": 8.8,
-  "n_current": 1042,
-  "n_previous": 1486,
-  "n_companies": 47
+  "n_current": 1066,
+  "n_previous": 1539,
+  "n_companies": 48
 };
 
 const NETWORK_D3 = {
@@ -5780,54 +5780,58 @@ const SUBSIDIARIES_DATA = {
     "by_country": [
       {
         "country": "Mexico",
-        "n": 1300
+        "n": 1335
       },
       {
         "country": "United States",
-        "n": 169
+        "n": 175
       },
       {
         "country": "Spain",
-        "n": 55
+        "n": 57
       },
       {
         "country": "Austria",
-        "n": 35
+        "n": 40
+      },
+      {
+        "country": "Germany",
+        "n": 36
+      },
+      {
+        "country": "Brazil",
+        "n": 31
       },
       {
         "country": "Costa Rica",
         "n": 30
       },
       {
+        "country": "Colombia",
+        "n": 28
+      },
+      {
         "country": "Argentina",
-        "n": 26
+        "n": 27
       },
       {
         "country": "Peru",
         "n": 26
       },
       {
-        "country": "Brazil",
-        "n": 25
-      },
-      {
-        "country": "Colombia",
-        "n": 25
-      },
-      {
         "country": "United Kingdom",
-        "n": 22
+        "n": 24
       },
       {
         "country": "Guatemala",
-        "n": 22
+        "n": 23
       },
       {
         "country": "Netherlands",
         "n": 21
       },
       {
-        "country": "Germany",
+        "country": "Chile",
         "n": 19
       },
       {
@@ -5839,16 +5843,16 @@ const SUBSIDIARIES_DATA = {
         "n": 16
       },
       {
-        "country": "Honduras",
-        "n": 14
-      },
-      {
-        "country": "Chile",
-        "n": 14
+        "country": "Switzerland",
+        "n": 15
       },
       {
         "country": "Canada",
-        "n": 13
+        "n": 14
+      },
+      {
+        "country": "Honduras",
+        "n": 14
       },
       {
         "country": "El Salvador",
@@ -5860,18 +5864,14 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Nicaragua",
-        "n": 10
+        "n": 11
       },
       {
         "country": "Panama",
-        "n": 9
+        "n": 10
       },
       {
-        "country": "Italy",
-        "n": 8
-      },
-      {
-        "country": "Croatia",
+        "country": "Uruguay",
         "n": 8
       },
       {
@@ -5879,15 +5879,19 @@ const SUBSIDIARIES_DATA = {
         "n": 8
       },
       {
+        "country": "Croatia",
+        "n": 8
+      },
+      {
+        "country": "Italy",
+        "n": 8
+      },
+      {
+        "country": "Venezuela",
+        "n": 7
+      },
+      {
         "country": "Cayman Islands",
-        "n": 7
-      },
-      {
-        "country": "Uruguay",
-        "n": 7
-      },
-      {
-        "country": "Switzerland",
         "n": 7
       },
       {
@@ -5895,15 +5899,11 @@ const SUBSIDIARIES_DATA = {
         "n": 6
       },
       {
-        "country": "Venezuela",
+        "country": "Poland",
         "n": 6
       },
       {
         "country": "Portugal",
-        "n": 5
-      },
-      {
-        "country": "Poland",
         "n": 5
       },
       {
@@ -5916,6 +5916,10 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Philippines",
+        "n": 4
+      },
+      {
+        "country": "Israel",
         "n": 4
       },
       {
@@ -5935,7 +5939,7 @@ const SUBSIDIARIES_DATA = {
         "n": 4
       },
       {
-        "country": "Israel",
+        "country": "Luxembourg",
         "n": 4
       },
       {
@@ -5943,7 +5947,7 @@ const SUBSIDIARIES_DATA = {
         "n": 3
       },
       {
-        "country": "Singapore",
+        "country": "Norway",
         "n": 3
       },
       {
@@ -5959,11 +5963,11 @@ const SUBSIDIARIES_DATA = {
         "n": 3
       },
       {
-        "country": "Dominican Republic",
+        "country": "Singapore",
         "n": 3
       },
       {
-        "country": "Jamaica",
+        "country": "Dominican Republic",
         "n": 3
       },
       {
@@ -5971,19 +5975,19 @@ const SUBSIDIARIES_DATA = {
         "n": 3
       },
       {
-        "country": "Malaysia",
+        "country": "Jamaica",
         "n": 3
       },
       {
-        "country": "Ukraine",
-        "n": 2
+        "country": "Malaysia",
+        "n": 3
       },
       {
         "country": "Bermuda",
         "n": 2
       },
       {
-        "country": "South Africa",
+        "country": "Sweden",
         "n": 2
       },
       {
@@ -5991,7 +5995,11 @@ const SUBSIDIARIES_DATA = {
         "n": 2
       },
       {
-        "country": "Republic of Montenegro",
+        "country": "South Africa",
+        "n": 2
+      },
+      {
+        "country": "Ukraine",
         "n": 2
       },
       {
@@ -5999,23 +6007,15 @@ const SUBSIDIARIES_DATA = {
         "n": 2
       },
       {
-        "country": "Guyana",
-        "n": 2
-      },
-      {
         "country": "Curacao",
         "n": 2
       },
       {
-        "country": "Slovak Republic",
+        "country": "Guyana",
         "n": 2
       },
       {
         "country": "Paraguay",
-        "n": 2
-      },
-      {
-        "country": "Morocco",
         "n": 2
       },
       {
@@ -6027,16 +6027,20 @@ const SUBSIDIARIES_DATA = {
         "n": 2
       },
       {
-        "country": "Romania",
+        "country": "Morocco",
         "n": 2
       },
       {
-        "country": "Andorra",
-        "n": 1
+        "country": "Republic of Montenegro",
+        "n": 2
       },
       {
-        "country": "Australia",
-        "n": 1
+        "country": "Slovak Republic",
+        "n": 2
+      },
+      {
+        "country": "Romania",
+        "n": 2
       },
       {
         "country": "Bahamas",
@@ -6047,19 +6051,15 @@ const SUBSIDIARIES_DATA = {
         "n": 1
       },
       {
+        "country": "Andorra",
+        "n": 1
+      },
+      {
+        "country": "Australia",
+        "n": 1
+      },
+      {
         "country": "Cyprus",
-        "n": 1
-      },
-      {
-        "country": "Denmark",
-        "n": 1
-      },
-      {
-        "country": "Gibraltar",
-        "n": 1
-      },
-      {
-        "country": "Luxembourg",
         "n": 1
       },
       {
@@ -6071,15 +6071,19 @@ const SUBSIDIARIES_DATA = {
         "n": 1
       },
       {
-        "country": "Oman",
+        "country": "Denmark",
         "n": 1
       },
       {
-        "country": "Norway",
+        "country": "Gibraltar",
         "n": 1
       },
       {
         "country": "Saint Kitts and Nevis",
+        "n": 1
+      },
+      {
+        "country": "Oman",
         "n": 1
       },
       {
@@ -6094,39 +6098,39 @@ const SUBSIDIARIES_DATA = {
     "by_sector": [
       {
         "sector": "Alimentos y bebidas",
-        "n": 218
+        "n": 261
       },
       {
         "sector": "Construcción y materiales",
-        "n": 146
+        "n": 147
       },
       {
         "sector": "Minería y metales",
-        "n": 120
+        "n": 122
       },
       {
         "sector": "Química y petroquímica",
-        "n": 101
+        "n": 104
+      },
+      {
+        "sector": "Servicios empresariales",
+        "n": 73
       },
       {
         "sector": "Telecomunicaciones y medios",
         "n": 65
       },
       {
-        "sector": "Servicios empresariales",
-        "n": 65
-      },
-      {
         "sector": "Servicios financieros",
-        "n": 61
+        "n": 64
       },
       {
         "sector": "Transporte y logística",
-        "n": 60
+        "n": 61
       },
       {
         "sector": "Holding e inversión",
-        "n": 50
+        "n": 56
       },
       {
         "sector": "Bienes raíces",
@@ -6134,11 +6138,11 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "sector": "Manufactura",
-        "n": 31
+        "n": 33
       },
       {
         "sector": "Retail",
-        "n": 27
+        "n": 28
       },
       {
         "sector": "Energía",
@@ -6155,12 +6159,12 @@ const SUBSIDIARIES_DATA = {
         "n": 21
       },
       {
-        "country": "Panama",
-        "n": 9
+        "country": "Switzerland",
+        "n": 15
       },
       {
-        "country": "Switzerland",
-        "n": 7
+        "country": "Panama",
+        "n": 10
       },
       {
         "country": "Cayman Islands",
@@ -6171,12 +6175,12 @@ const SUBSIDIARIES_DATA = {
         "n": 4
       },
       {
-        "country": "Singapore",
-        "n": 3
+        "country": "Luxembourg",
+        "n": 4
       },
       {
-        "country": "Ireland",
-        "n": 2
+        "country": "Singapore",
+        "n": 3
       },
       {
         "country": "Bermuda",
@@ -6187,15 +6191,15 @@ const SUBSIDIARIES_DATA = {
         "n": 2
       },
       {
-        "country": "Bahamas",
-        "n": 1
+        "country": "Ireland",
+        "n": 2
       },
       {
         "country": "Andorra",
         "n": 1
       },
       {
-        "country": "Luxembourg",
+        "country": "Bahamas",
         "n": 1
       },
       {
@@ -6273,6 +6277,27 @@ const SUBSIDIARIES_DATA = {
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Non-Alcoholic Beverages"
+      },
+      {
+        "name": "bob Finance AG",
+        "company": "Fomento Economico Mexicano",
+        "country": "Switzerland",
+        "haven_type": "Hub fiscal",
+        "industry": "Financial & Commodity Market Operators & Service Providers"
+      },
+      {
+        "name": "Valora Europe Holding SA",
+        "company": "Fomento Economico Mexicano",
+        "country": "Luxembourg",
+        "haven_type": "Hub fiscal",
+        "industry": "Investment Holding Companies"
+      },
+      {
+        "name": "Valora International AG",
+        "company": "Fomento Economico Mexicano",
+        "country": "Switzerland",
+        "haven_type": "Hub fiscal",
+        "industry": "Investment Holding Companies"
       },
       {
         "name": "Fargo Holding (Gibraltar)",
@@ -6357,32 +6382,11 @@ const SUBSIDIARIES_DATA = {
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Financial & Commodity Market Operators & Service Providers"
-      },
-      {
-        "name": "Wiikit Re Ltd",
-        "company": "Industrias Bachoco",
-        "country": "Bermuda",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
-        "name": "Mexichem Panama SA",
-        "company": "Orbia Advance Corp",
-        "country": "Panama",
-        "haven_type": "Paraíso clásico",
-        "industry": "Commodity Chemicals"
-      },
-      {
-        "name": "Riegos De Chiriqui SA",
-        "company": "Orbia Advance Corp",
-        "country": "Panama",
-        "haven_type": "Paraíso clásico",
-        "industry": "Water & Related Utilities"
       }
     ],
-    "total": 2064,
-    "n_haven": 61,
-    "n_classic": 27
+    "total": 2168,
+    "n_haven": 73,
+    "n_classic": 28
   },
   "by_company": {
     "009_Alpek": {
@@ -6865,7 +6869,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "United States",
-          "n": 11
+          "n": 12
         },
         {
           "country": "Spain",
@@ -6999,7 +7003,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Construcción y materiales",
-          "n": 47
+          "n": 48
         },
         {
           "sector": "Holding e inversión",
@@ -7099,7 +7103,7 @@ const SUBSIDIARIES_DATA = {
           "industry": "Investment Holding Companies"
         }
       ],
-      "total": 93,
+      "total": 94,
       "n_haven": 18,
       "n_classic": 5,
       "name": "Cemex",
@@ -7313,13 +7317,13 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 31
+          "n": 32
         }
       ],
       "by_sector": [
         {
           "sector": "Retail",
-          "n": 8
+          "n": 9
         },
         {
           "sector": "Alimentos y bebidas",
@@ -7340,7 +7344,7 @@ const SUBSIDIARIES_DATA = {
       ],
       "by_haven": [],
       "haven_details": [],
-      "total": 31,
+      "total": 32,
       "n_haven": 0,
       "n_classic": 0,
       "name": "El Puerto de Liverpool",
@@ -7368,6 +7372,166 @@ const SUBSIDIARIES_DATA = {
       "name": "Fibra Uno Administracion SA",
       "group": "Otro",
       "color": "#a8a8a8"
+    },
+    "152_Fomento Economico Mexicano SAB de CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 32
+        },
+        {
+          "country": "Germany",
+          "n": 17
+        },
+        {
+          "country": "Switzerland",
+          "n": 8
+        },
+        {
+          "country": "Brazil",
+          "n": 6
+        },
+        {
+          "country": "Austria",
+          "n": 5
+        },
+        {
+          "country": "Chile",
+          "n": 5
+        },
+        {
+          "country": "Luxembourg",
+          "n": 3
+        },
+        {
+          "country": "Colombia",
+          "n": 3
+        },
+        {
+          "country": "United States",
+          "n": 2
+        },
+        {
+          "country": "Spain",
+          "n": 2
+        },
+        {
+          "country": "Norway",
+          "n": 2
+        },
+        {
+          "country": "Sweden",
+          "n": 2
+        },
+        {
+          "country": "United Kingdom",
+          "n": 2
+        },
+        {
+          "country": "Argentina",
+          "n": 1
+        },
+        {
+          "country": "Guatemala",
+          "n": 1
+        },
+        {
+          "country": "Nicaragua",
+          "n": 1
+        },
+        {
+          "country": "Panama",
+          "n": 1
+        },
+        {
+          "country": "Uruguay",
+          "n": 1
+        },
+        {
+          "country": "Venezuela",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 42
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 8
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 6
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 3
+        },
+        {
+          "sector": "Manufactura",
+          "n": 2
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 2
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "by_haven": [
+        {
+          "country": "Switzerland",
+          "n": 8
+        },
+        {
+          "country": "Luxembourg",
+          "n": 3
+        },
+        {
+          "country": "Panama",
+          "n": 1
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Coca-Cola Femsa de Panama SA",
+          "company": "Fomento Economico Mexicano",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": "Non-Alcoholic Beverages"
+        },
+        {
+          "name": "bob Finance AG",
+          "company": "Fomento Economico Mexicano",
+          "country": "Switzerland",
+          "haven_type": "Hub fiscal",
+          "industry": "Financial & Commodity Market Operators & Service Providers"
+        },
+        {
+          "name": "Valora Europe Holding SA",
+          "company": "Fomento Economico Mexicano",
+          "country": "Luxembourg",
+          "haven_type": "Hub fiscal",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Valora International AG",
+          "company": "Fomento Economico Mexicano",
+          "country": "Switzerland",
+          "haven_type": "Hub fiscal",
+          "industry": "Investment Holding Companies"
+        }
+      ],
+      "total": 95,
+      "n_haven": 12,
+      "n_classic": 1,
+      "name": "Fomento Economico Mexicano",
+      "group": "Femsa",
+      "color": "#e07b39"
     },
     "153_Fresnillo PLC": {
       "by_country": [
@@ -7427,7 +7591,7 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "United States",
-          "n": 7
+          "n": 8
         }
       ],
       "by_sector": [
@@ -7440,13 +7604,17 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
+          "sector": "Minería y metales",
+          "n": 1
+        },
+        {
           "sector": "Tecnología",
           "n": 1
         }
       ],
       "by_haven": [],
       "haven_details": [],
-      "total": 16,
+      "total": 17,
       "n_haven": 0,
       "n_classic": 0,
       "name": "GCC",
@@ -7743,7 +7911,7 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "United States",
-          "n": 25
+          "n": 26
         },
         {
           "country": "Spain",
@@ -7893,7 +8061,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Alimentos y bebidas",
-          "n": 75
+          "n": 76
         },
         {
           "sector": "Bienes raíces",
@@ -7961,7 +8129,7 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 195,
+      "total": 196,
       "n_haven": 3,
       "n_classic": 3,
       "name": "Grupo Bimbo",
@@ -8537,7 +8705,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 36
+          "n": 37
         },
         {
           "country": "United States",
@@ -8593,7 +8761,7 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 51,
+      "total": 52,
       "n_haven": 2,
       "n_classic": 1,
       "name": "Grupo Simec",
@@ -8608,7 +8776,7 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "United States",
-          "n": 5
+          "n": 6
         },
         {
           "country": "Colombia",
@@ -8696,7 +8864,7 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 137,
+      "total": 138,
       "n_haven": 3,
       "n_classic": 1,
       "name": "Grupo Televisa",
@@ -8838,7 +9006,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 69
+          "n": 70
         },
         {
           "country": "United States",
@@ -8860,7 +9028,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Minería y metales",
-          "n": 29
+          "n": 30
         },
         {
           "sector": "Servicios empresariales",
@@ -8894,7 +9062,7 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 83,
+      "total": 84,
       "n_haven": 2,
       "n_classic": 1,
       "name": "Industrias CH",
@@ -9168,10 +9336,14 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "Poland",
-          "n": 3
+          "n": 4
         },
         {
           "country": "Colombia",
+          "n": 3
+        },
+        {
+          "country": "Netherlands",
           "n": 3
         },
         {
@@ -9179,7 +9351,7 @@ const SUBSIDIARIES_DATA = {
           "n": 3
         },
         {
-          "country": "Netherlands",
+          "country": "Canada",
           "n": 3
         },
         {
@@ -9192,10 +9364,6 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "Costa Rica",
-          "n": 2
-        },
-        {
-          "country": "Canada",
           "n": 2
         },
         {
@@ -9290,7 +9458,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Química y petroquímica",
-          "n": 34
+          "n": 35
         },
         {
           "sector": "Construcción y materiales",
@@ -9354,7 +9522,7 @@ const SUBSIDIARIES_DATA = {
           "industry": "Investment Management & Fund Operators"
         }
       ],
-      "total": 79,
+      "total": 81,
       "n_haven": 7,
       "n_classic": 2,
       "name": "Orbia Advance Corp",

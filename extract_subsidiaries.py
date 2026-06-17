@@ -190,6 +190,12 @@ for f in files:
         print(f"ERROR {os.path.basename(f)}: {e}")
 
 df_out = pd.DataFrame(rows)
+# Dedup: las TreeStructure traen filas exactas repetidas (afectaba 27/61
+# empresas, ej. Pemex paraísos 16→8). Se folda el dedup aquí para que el
+# script sea reproducible (antes se hacía a mano sobre el CSV).
+before = len(df_out)
+df_out = df_out.drop_duplicates().reset_index(drop=True)
+print(f"Dedup: {before} -> {len(df_out)} filas ({before - len(df_out)} duplicados exactos eliminados)")
 out_path = r"C:\pw\proyectos\01_directors_extraction\exploracion\subsidiaries_clean.csv"
 df_out.to_csv(out_path, index=False, encoding='utf-8-sig')
 print(f"Guardado: {len(df_out)} subsidiarias de {df_out['company_folder'].nunique()} empresas")
