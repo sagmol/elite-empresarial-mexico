@@ -22501,37 +22501,37 @@ const INSTITUTIONAL_DATA = {
 
 const CAPITAL_STRUCTURE_DATA = {
   "global": {
-    "total_b": 363.8,
+    "total_b": 363.76,
     "strategic_b": 289.7,
     "strategic_pct": 79.6,
-    "float_b": 74.1,
+    "float_b": 74.05,
     "float_pct": 20.4,
-    "float_mx_b": 11.5,
+    "float_mx_b": 11.55,
     "float_mx_pct": 15.6,
-    "float_ext_b": 62.5,
+    "float_ext_b": 62.51,
     "float_ext_pct": 84.4
   },
   "filiales": [
     {
       "categoria": "A. Filial de grupo del universo",
-      "valor_b": 8.49,
+      "valor_b": 8.488,
       "pct": 73.5
     },
     {
       "categoria": "B. Filial local de banco global",
-      "valor_b": 2.79,
-      "pct": 24.2
+      "valor_b": 2.787,
+      "pct": 24.1
     },
     {
       "categoria": "C. Capital MX genuino",
-      "valor_b": 0.27,
-      "pct": 2.3
+      "valor_b": 0.272,
+      "pct": 2.4
     }
   ],
   "comportamiento": [
     {
       "origen": "Extranjero",
-      "total_b": 62.51,
+      "total_b": 62.507,
       "permanente_pct": 58.1,
       "activo_pct": 27.5,
       "oportunista_pct": 3.2,
@@ -22539,7 +22539,7 @@ const CAPITAL_STRUCTURE_DATA = {
     },
     {
       "origen": "Gestor MX (universo/local)",
-      "total_b": 8.76,
+      "total_b": 8.761,
       "permanente_pct": 41.0,
       "activo_pct": 0.0,
       "oportunista_pct": 0.0,
@@ -22547,13 +22547,3287 @@ const CAPITAL_STRUCTURE_DATA = {
     },
     {
       "origen": "Filial banco global",
-      "total_b": 2.79,
+      "total_b": 2.787,
       "permanente_pct": 6.6,
       "activo_pct": 87.9,
       "oportunista_pct": 0.0,
       "sin_clasificar_pct": 5.6
     }
-  ]
+  ],
+  "n_inst": 9722,
+  "n_strat": 157
+};
+
+const CAPITAL_STRUCTURE_BY_COMPANY = {
+  "005_Alfa SAB de CV": {
+    "global": {
+      "total_b": 3.7,
+      "strategic_b": 3.12,
+      "strategic_pct": 84.4,
+      "float_b": 0.58,
+      "float_pct": 15.6,
+      "float_mx_b": 0.17,
+      "float_mx_pct": 30.1,
+      "float_ext_b": 0.4,
+      "float_ext_pct": 69.9
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.128,
+        "pct": 73.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.042,
+        "pct": 24.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.004,
+        "pct": 2.3
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.404,
+        "permanente_pct": 71.0,
+        "activo_pct": 9.6,
+        "oportunista_pct": 13.8,
+        "sin_clasificar_pct": 5.5
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.132,
+        "permanente_pct": 40.4,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 59.6
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.042,
+        "permanente_pct": 8.2,
+        "activo_pct": 91.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.8
+      }
+    ],
+    "n_inst": 192,
+    "n_strat": 2,
+    "name": "Alfa"
+  },
+  "009_Alpek": {
+    "global": {
+      "total_b": 0.08,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.08,
+      "float_pct": 100.0,
+      "float_mx_b": 0.05,
+      "float_mx_pct": 59.2,
+      "float_ext_b": 0.03,
+      "float_ext_pct": 40.8
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.043,
+        "pct": 89.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.005,
+        "pct": 10.4
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 2.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.043,
+        "permanente_pct": 79.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 20.1
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.033,
+        "permanente_pct": 73.1,
+        "activo_pct": 2.5,
+        "oportunista_pct": 21.7,
+        "sin_clasificar_pct": 2.7
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.005,
+        "permanente_pct": 89.0,
+        "activo_pct": 8.1,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 2.9
+      }
+    ],
+    "n_inst": 87,
+    "n_strat": 0,
+    "name": "Alpek"
+  },
+  "010_Alsea SAB de CV": {
+    "global": {
+      "total_b": 1.86,
+      "strategic_b": 1.2,
+      "strategic_pct": 64.3,
+      "float_b": 0.67,
+      "float_pct": 35.7,
+      "float_mx_b": 0.23,
+      "float_mx_pct": 34.1,
+      "float_ext_b": 0.44,
+      "float_ext_pct": 65.9
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.2,
+        "pct": 88.1
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.021,
+        "pct": 9.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.007,
+        "pct": 3.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.438,
+        "permanente_pct": 69.5,
+        "activo_pct": 9.6,
+        "oportunista_pct": 4.5,
+        "sin_clasificar_pct": 16.3
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.207,
+        "permanente_pct": 70.2,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 29.8
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.021,
+        "permanente_pct": 0.0,
+        "activo_pct": 66.7,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 33.3
+      }
+    ],
+    "n_inst": 161,
+    "n_strat": 6,
+    "name": "Alsea"
+  },
+  "014_America Móvil": {
+    "global": {
+      "total_b": 32.93,
+      "strategic_b": 29.5,
+      "strategic_pct": 89.6,
+      "float_b": 3.43,
+      "float_pct": 10.4,
+      "float_mx_b": 1.08,
+      "float_mx_pct": 31.5,
+      "float_ext_b": 2.35,
+      "float_ext_pct": 68.5
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.855,
+        "pct": 79.2
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.2,
+        "pct": 18.5
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.024,
+        "pct": 2.2
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 2.353,
+        "permanente_pct": 79.3,
+        "activo_pct": 14.3,
+        "oportunista_pct": 2.7,
+        "sin_clasificar_pct": 3.6
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.879,
+        "permanente_pct": 48.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 52.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.2,
+        "permanente_pct": 0.4,
+        "activo_pct": 96.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 3.6
+      }
+    ],
+    "n_inst": 240,
+    "n_strat": 1,
+    "name": "America Movil"
+  },
+  "019_Arca Continental": {
+    "global": {
+      "total_b": 11.36,
+      "strategic_b": 8.99,
+      "strategic_pct": 79.1,
+      "float_b": 2.38,
+      "float_pct": 20.9,
+      "float_mx_b": 0.28,
+      "float_mx_pct": 11.7,
+      "float_ext_b": 2.1,
+      "float_ext_pct": 88.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.171,
+        "pct": 61.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.096,
+        "pct": 34.6
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.01,
+        "pct": 3.6
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 2.098,
+        "permanente_pct": 54.7,
+        "activo_pct": 36.4,
+        "oportunista_pct": 2.1,
+        "sin_clasificar_pct": 6.8
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.181,
+        "permanente_pct": 6.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.096,
+        "permanente_pct": 0.7,
+        "activo_pct": 97.9,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 1.4
+      }
+    ],
+    "n_inst": 325,
+    "n_strat": 1,
+    "name": "Arca Continental"
+  },
+  "041_Banco del Bajio SA Institucion de Banca Multiple": {
+    "global": {
+      "total_b": 1.93,
+      "strategic_b": 1.29,
+      "strategic_pct": 67.0,
+      "float_b": 0.64,
+      "float_pct": 33.0,
+      "float_mx_b": 0.08,
+      "float_mx_pct": 12.8,
+      "float_ext_b": 0.56,
+      "float_ext_pct": 87.2
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.055,
+        "pct": 67.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.024,
+        "pct": 29.4
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.002,
+        "pct": 2.4
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.557,
+        "permanente_pct": 45.2,
+        "activo_pct": 32.4,
+        "oportunista_pct": 5.8,
+        "sin_clasificar_pct": 16.6
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.057,
+        "permanente_pct": 5.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 94.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.024,
+        "permanente_pct": 0.0,
+        "activo_pct": 89.9,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 10.1
+      }
+    ],
+    "n_inst": 224,
+    "n_strat": 8,
+    "name": "Banco del Bajio SA Institucion de Banc"
+  },
+  "056_Bbb Foods Inc": {
+    "global": {
+      "total_b": 1.22,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 1.22,
+      "float_pct": 100.0,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 1.22,
+      "float_ext_pct": 100.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 1.22,
+        "permanente_pct": 14.7,
+        "activo_pct": 48.8,
+        "oportunista_pct": 0.1,
+        "sin_clasificar_pct": 36.4
+      }
+    ],
+    "n_inst": 146,
+    "n_strat": 0,
+    "name": "Bbb Foods Inc"
+  },
+  "057_Becle SAB de CV": {
+    "global": {
+      "total_b": 6.48,
+      "strategic_b": 6.11,
+      "strategic_pct": 94.3,
+      "float_b": 0.37,
+      "float_pct": 5.7,
+      "float_mx_b": 0.04,
+      "float_mx_pct": 11.6,
+      "float_ext_b": 0.33,
+      "float_ext_pct": 88.4
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.029,
+        "pct": 68.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.011,
+        "pct": 25.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.002,
+        "pct": 4.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.326,
+        "permanente_pct": 49.9,
+        "activo_pct": 9.3,
+        "oportunista_pct": 9.7,
+        "sin_clasificar_pct": 31.1
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.031,
+        "permanente_pct": 6.2,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.8
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.011,
+        "permanente_pct": 22.2,
+        "activo_pct": 60.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 17.4
+      }
+    ],
+    "n_inst": 129,
+    "n_strat": 1,
+    "name": "Becle"
+  },
+  "070_CEMEX SAB de CV": {
+    "global": {
+      "total_b": 3.09,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 3.09,
+      "float_pct": 100.0,
+      "float_mx_b": 0.69,
+      "float_mx_pct": 22.4,
+      "float_ext_b": 2.4,
+      "float_ext_pct": 77.6
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.537,
+        "pct": 77.6
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.133,
+        "pct": 19.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.022,
+        "pct": 3.2
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 2.398,
+        "permanente_pct": 88.8,
+        "activo_pct": 5.6,
+        "oportunista_pct": 2.0,
+        "sin_clasificar_pct": 3.6
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.559,
+        "permanente_pct": 34.4,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 65.6
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.133,
+        "permanente_pct": 14.1,
+        "activo_pct": 81.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 5.0
+      }
+    ],
+    "n_inst": 230,
+    "n_strat": 0,
+    "name": "Cemex"
+  },
+  "095_Coca-Cola Femsa SAB de CV": {
+    "global": {
+      "total_b": 0.8,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.8,
+      "float_pct": 100.0,
+      "float_mx_b": 0.17,
+      "float_mx_pct": 20.8,
+      "float_ext_b": 0.63,
+      "float_ext_pct": 79.2
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.085,
+        "pct": 51.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.074,
+        "pct": 44.7
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.006,
+        "pct": 3.6
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.63,
+        "permanente_pct": 82.1,
+        "activo_pct": 9.4,
+        "oportunista_pct": 6.1,
+        "sin_clasificar_pct": 2.4
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.091,
+        "permanente_pct": 7.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.074,
+        "permanente_pct": 11.0,
+        "activo_pct": 87.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 1.7
+      }
+    ],
+    "n_inst": 223,
+    "n_strat": 0,
+    "name": "Coca-Cola Femsa"
+  },
+  "101_Controladora Vuela Compania de Aviacion SAB de CV": {
+    "global": {
+      "total_b": 0.3,
+      "strategic_b": 0.01,
+      "strategic_pct": 3.9,
+      "float_b": 0.28,
+      "float_pct": 96.1,
+      "float_mx_b": 0.02,
+      "float_mx_pct": 7.3,
+      "float_ext_b": 0.26,
+      "float_ext_pct": 92.7
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.008,
+        "pct": 38.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.011,
+        "pct": 53.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.002,
+        "pct": 9.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.264,
+        "permanente_pct": 21.0,
+        "activo_pct": 1.4,
+        "oportunista_pct": 0.8,
+        "sin_clasificar_pct": 76.8
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.011,
+        "permanente_pct": 0.0,
+        "activo_pct": 98.6,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 1.4
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.01,
+        "permanente_pct": 14.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 85.1
+      }
+    ],
+    "n_inst": 68,
+    "n_strat": 6,
+    "name": "Controladora Vuela Compania de Aviacio"
+  },
+  "106_Corporacion Moctezuma SAB de CV": {
+    "global": {
+      "total_b": 3.04,
+      "strategic_b": 2.95,
+      "strategic_pct": 97.1,
+      "float_b": 0.09,
+      "float_pct": 2.9,
+      "float_mx_b": 0.01,
+      "float_mx_pct": 15.7,
+      "float_ext_b": 0.07,
+      "float_ext_pct": 84.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.014,
+        "pct": 100.6
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.075,
+        "permanente_pct": 87.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 7.8,
+        "sin_clasificar_pct": 4.3
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.014,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 9,
+    "n_strat": 4,
+    "name": "Corporacion Moctezuma"
+  },
+  "107_Corporativo Fragua SAB de CV": {
+    "global": {
+      "total_b": 0.35,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.35,
+      "float_pct": 100.0,
+      "float_mx_b": 0.14,
+      "float_mx_pct": 38.7,
+      "float_ext_b": 0.22,
+      "float_ext_pct": 61.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.132,
+        "pct": 96.1
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.005,
+        "pct": 3.6
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.217,
+        "permanente_pct": 82.8,
+        "activo_pct": 16.0,
+        "oportunista_pct": 0.3,
+        "sin_clasificar_pct": 0.9
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.132,
+        "permanente_pct": 85.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 14.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.005,
+        "permanente_pct": 0.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 100.0
+      }
+    ],
+    "n_inst": 30,
+    "n_strat": 0,
+    "name": "Corporativo Fragua"
+  },
+  "118_El puerto de Liverpool SAB de CV": {
+    "global": {
+      "total_b": 0.43,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.43,
+      "float_pct": 100.0,
+      "float_mx_b": 0.28,
+      "float_mx_pct": 66.8,
+      "float_ext_b": 0.14,
+      "float_ext_pct": 33.2
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.163,
+        "pct": 57.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.116,
+        "pct": 40.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.006,
+        "pct": 2.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.168,
+        "permanente_pct": 53.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 46.2
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.142,
+        "permanente_pct": 55.0,
+        "activo_pct": 23.8,
+        "oportunista_pct": 10.3,
+        "sin_clasificar_pct": 10.9
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.116,
+        "permanente_pct": 0.0,
+        "activo_pct": 95.8,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 4.2
+      }
+    ],
+    "n_inst": 109,
+    "n_strat": 0,
+    "name": "El Puerto de Liverpool"
+  },
+  "150_Fibra Uno Administracion SA de CV": {
+    "global": {
+      "total_b": 2.89,
+      "strategic_b": 1.88,
+      "strategic_pct": 64.9,
+      "float_b": 1.01,
+      "float_pct": 35.1,
+      "float_mx_b": 0.19,
+      "float_mx_pct": 18.5,
+      "float_ext_b": 0.83,
+      "float_ext_pct": 81.5
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.16,
+        "pct": 85.2
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.028,
+        "pct": 14.9
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.827,
+        "permanente_pct": 66.2,
+        "activo_pct": 22.5,
+        "oportunista_pct": 7.3,
+        "sin_clasificar_pct": 4.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.16,
+        "permanente_pct": 99.5,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.5
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.028,
+        "permanente_pct": 0.0,
+        "activo_pct": 65.2,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 34.8
+      }
+    ],
+    "n_inst": 236,
+    "n_strat": 1,
+    "name": "Fibra Uno Administracion SA"
+  },
+  "152_Fomento Economico Mexicano SAB de CV": {
+    "global": {
+      "total_b": 5.2,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 5.2,
+      "float_pct": 100.0,
+      "float_mx_b": 0.99,
+      "float_mx_pct": 19.0,
+      "float_ext_b": 4.21,
+      "float_ext_pct": 81.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.696,
+        "pct": 70.6
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.262,
+        "pct": 26.6
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.027,
+        "pct": 2.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 4.214,
+        "permanente_pct": 57.7,
+        "activo_pct": 36.1,
+        "oportunista_pct": 2.0,
+        "sin_clasificar_pct": 4.2
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.723,
+        "permanente_pct": 22.7,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 77.3
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.262,
+        "permanente_pct": 10.8,
+        "activo_pct": 84.5,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 4.7
+      }
+    ],
+    "n_inst": 286,
+    "n_strat": 0,
+    "name": "Fomento Economico Mexicano"
+  },
+  "153_Fresnillo PLC": {
+    "global": {
+      "total_b": 5.46,
+      "strategic_b": 4.18,
+      "strategic_pct": 76.6,
+      "float_b": 1.28,
+      "float_pct": 23.4,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 1.28,
+      "float_ext_pct": 100.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 1.28,
+        "permanente_pct": 50.1,
+        "activo_pct": 26.1,
+        "oportunista_pct": 4.4,
+        "sin_clasificar_pct": 19.3
+      }
+    ],
+    "n_inst": 227,
+    "n_strat": 4,
+    "name": "Fresnillo PLC"
+  },
+  "154_GCC SAB de CV": {
+    "global": {
+      "total_b": 2.53,
+      "strategic_b": 1.95,
+      "strategic_pct": 77.1,
+      "float_b": 0.58,
+      "float_pct": 22.9,
+      "float_mx_b": 0.12,
+      "float_mx_pct": 21.0,
+      "float_ext_b": 0.46,
+      "float_ext_pct": 79.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.08,
+        "pct": 65.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.034,
+        "pct": 27.9
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.008,
+        "pct": 6.6
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.457,
+        "permanente_pct": 71.7,
+        "activo_pct": 17.5,
+        "oportunista_pct": 5.4,
+        "sin_clasificar_pct": 5.3
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.087,
+        "permanente_pct": 8.6,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 91.4
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.034,
+        "permanente_pct": 0.0,
+        "activo_pct": 77.2,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 22.8
+      }
+    ],
+    "n_inst": 131,
+    "n_strat": 1,
+    "name": "GCC"
+  },
+  "155_Gentera SAB de CV": {
+    "global": {
+      "total_b": 1.17,
+      "strategic_b": 0.71,
+      "strategic_pct": 60.5,
+      "float_b": 0.46,
+      "float_pct": 39.5,
+      "float_mx_b": 0.08,
+      "float_mx_pct": 17.8,
+      "float_ext_b": 0.38,
+      "float_ext_pct": 82.2
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.055,
+        "pct": 67.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.022,
+        "pct": 26.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.005,
+        "pct": 6.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.379,
+        "permanente_pct": 68.8,
+        "activo_pct": 14.1,
+        "oportunista_pct": 8.0,
+        "sin_clasificar_pct": 9.1
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.06,
+        "permanente_pct": 27.7,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 72.3
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.022,
+        "permanente_pct": 35.1,
+        "activo_pct": 53.6,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 11.2
+      }
+    ],
+    "n_inst": 159,
+    "n_strat": 1,
+    "name": "Gentera"
+  },
+  "159_GMexico Transportes SAB de CV": {
+    "global": {
+      "total_b": 7.05,
+      "strategic_b": 6.92,
+      "strategic_pct": 98.1,
+      "float_b": 0.13,
+      "float_pct": 1.9,
+      "float_mx_b": 0.02,
+      "float_mx_pct": 17.4,
+      "float_ext_b": 0.11,
+      "float_ext_pct": 82.6
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.02,
+        "pct": 87.9
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.003,
+        "pct": 13.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.108,
+        "permanente_pct": 89.8,
+        "activo_pct": 8.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 2.2
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.02,
+        "permanente_pct": 27.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 72.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.003,
+        "permanente_pct": 0.0,
+        "activo_pct": 9.5,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 90.5
+      }
+    ],
+    "n_inst": 52,
+    "n_strat": 1,
+    "name": "GMexico Transportes"
+  },
+  "162_Gruma SAB de CV": {
+    "global": {
+      "total_b": 5.4,
+      "strategic_b": 3.74,
+      "strategic_pct": 69.3,
+      "float_b": 1.66,
+      "float_pct": 30.7,
+      "float_mx_b": 0.21,
+      "float_mx_pct": 12.4,
+      "float_ext_b": 1.45,
+      "float_ext_pct": 87.6
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.154,
+        "pct": 74.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.047,
+        "pct": 22.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.005,
+        "pct": 2.4
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 1.454,
+        "permanente_pct": 66.9,
+        "activo_pct": 20.5,
+        "oportunista_pct": 8.5,
+        "sin_clasificar_pct": 4.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.159,
+        "permanente_pct": 19.6,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 80.4
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.047,
+        "permanente_pct": 27.0,
+        "activo_pct": 72.4,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.5
+      }
+    ],
+    "n_inst": 259,
+    "n_strat": 1,
+    "name": "Gruma"
+  },
+  "163_Grupo Aeroportuario del Centro Norte SAB de CV": {
+    "global": {
+      "total_b": 1.64,
+      "strategic_b": 0.73,
+      "strategic_pct": 44.6,
+      "float_b": 0.91,
+      "float_pct": 55.4,
+      "float_mx_b": 0.14,
+      "float_mx_pct": 15.0,
+      "float_ext_b": 0.77,
+      "float_ext_pct": 85.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.083,
+        "pct": 60.9
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.05,
+        "pct": 36.7
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.003,
+        "pct": 2.2
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.772,
+        "permanente_pct": 61.3,
+        "activo_pct": 23.3,
+        "oportunista_pct": 3.0,
+        "sin_clasificar_pct": 12.4
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.086,
+        "permanente_pct": 6.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 94.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.05,
+        "permanente_pct": 3.9,
+        "activo_pct": 89.4,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 6.6
+      }
+    ],
+    "n_inst": 254,
+    "n_strat": 1,
+    "name": "Grupo Aeroportuario del Centro Norte"
+  },
+  "164_Grupo Aeroportuario del Pacifico SAB de CV": {
+    "global": {
+      "total_b": 3.08,
+      "strategic_b": 0.39,
+      "strategic_pct": 12.8,
+      "float_b": 2.69,
+      "float_pct": 87.2,
+      "float_mx_b": 0.42,
+      "float_mx_pct": 15.5,
+      "float_ext_b": 2.27,
+      "float_ext_pct": 84.5
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.255,
+        "pct": 61.1
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.155,
+        "pct": 37.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.007,
+        "pct": 1.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 2.269,
+        "permanente_pct": 47.5,
+        "activo_pct": 36.1,
+        "oportunista_pct": 1.5,
+        "sin_clasificar_pct": 14.8
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.262,
+        "permanente_pct": 3.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 96.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.155,
+        "permanente_pct": 10.8,
+        "activo_pct": 88.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 1.2
+      }
+    ],
+    "n_inst": 303,
+    "n_strat": 2,
+    "name": "Grupo Aeroportuario del Pacifico"
+  },
+  "165_Grupo Aeroportuario del Sureste SAB de CV": {
+    "global": {
+      "total_b": 5.41,
+      "strategic_b": 3.65,
+      "strategic_pct": 67.5,
+      "float_b": 1.76,
+      "float_pct": 32.5,
+      "float_mx_b": 0.28,
+      "float_mx_pct": 16.0,
+      "float_ext_b": 1.48,
+      "float_ext_pct": 84.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.184,
+        "pct": 65.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.085,
+        "pct": 30.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.013,
+        "pct": 4.6
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 1.478,
+        "permanente_pct": 69.9,
+        "activo_pct": 20.5,
+        "oportunista_pct": 1.8,
+        "sin_clasificar_pct": 7.7
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.197,
+        "permanente_pct": 6.1,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.9
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.085,
+        "permanente_pct": 8.9,
+        "activo_pct": 84.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 6.8
+      }
+    ],
+    "n_inst": 278,
+    "n_strat": 3,
+    "name": "Grupo Aeroportuario del Sureste"
+  },
+  "169_Grupo Bafar SAB de CV": {
+    "global": {
+      "total_b": 0.28,
+      "strategic_b": 0.23,
+      "strategic_pct": 79.5,
+      "float_b": 0.06,
+      "float_pct": 20.5,
+      "float_mx_b": 0.06,
+      "float_mx_pct": 100.0,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 0.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.058,
+        "pct": 100.1
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.058,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.0,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 3,
+    "n_strat": 8,
+    "name": "Grupo Bafar"
+  },
+  "170_Grupo Bimbo": {
+    "global": {
+      "total_b": 14.17,
+      "strategic_b": 12.99,
+      "strategic_pct": 91.7,
+      "float_b": 1.18,
+      "float_pct": 8.3,
+      "float_mx_b": 0.25,
+      "float_mx_pct": 20.8,
+      "float_ext_b": 0.93,
+      "float_ext_pct": 79.2
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.186,
+        "pct": 75.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.051,
+        "pct": 20.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.009,
+        "pct": 3.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.934,
+        "permanente_pct": 82.0,
+        "activo_pct": 8.2,
+        "oportunista_pct": 4.3,
+        "sin_clasificar_pct": 5.5
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.195,
+        "permanente_pct": 4.5,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 95.5
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.051,
+        "permanente_pct": 0.4,
+        "activo_pct": 92.5,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 7.1
+      }
+    ],
+    "n_inst": 251,
+    "n_strat": 6,
+    "name": "Grupo Bimbo"
+  },
+  "172_Grupo Carso SAB de CV": {
+    "global": {
+      "total_b": 20.02,
+      "strategic_b": 19.19,
+      "strategic_pct": 95.8,
+      "float_b": 0.84,
+      "float_pct": 4.2,
+      "float_mx_b": 0.43,
+      "float_mx_pct": 50.7,
+      "float_ext_b": 0.41,
+      "float_ext_pct": 49.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.411,
+        "pct": 96.5
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.013,
+        "pct": 3.1
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 0.2
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.414,
+        "permanente_pct": 79.1,
+        "activo_pct": 8.5,
+        "oportunista_pct": 10.3,
+        "sin_clasificar_pct": 2.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.412,
+        "permanente_pct": 83.4,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 16.6
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.013,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 136,
+    "n_strat": 1,
+    "name": "Grupo Carso"
+  },
+  "173_Grupo Comercial Chedraui SAB de CV": {
+    "global": {
+      "total_b": 4.81,
+      "strategic_b": 4.29,
+      "strategic_pct": 89.1,
+      "float_b": 0.52,
+      "float_pct": 10.9,
+      "float_mx_b": 0.22,
+      "float_mx_pct": 42.5,
+      "float_ext_b": 0.3,
+      "float_ext_pct": 57.5
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.162,
+        "pct": 72.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.054,
+        "pct": 24.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.007,
+        "pct": 3.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.301,
+        "permanente_pct": 52.8,
+        "activo_pct": 24.4,
+        "oportunista_pct": 15.4,
+        "sin_clasificar_pct": 7.4
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.169,
+        "permanente_pct": 61.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 38.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.054,
+        "permanente_pct": 1.3,
+        "activo_pct": 98.2,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.5
+      }
+    ],
+    "n_inst": 126,
+    "n_strat": 1,
+    "name": "Grupo Comercial Chedraui"
+  },
+  "178_Grupo Financiero Banorte SAB de CV": {
+    "global": {
+      "total_b": 9.95,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 9.95,
+      "float_pct": 100.0,
+      "float_mx_b": 0.81,
+      "float_mx_pct": 8.1,
+      "float_ext_b": 9.14,
+      "float_ext_pct": 91.9
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.535,
+        "pct": 66.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.246,
+        "pct": 30.5
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.025,
+        "pct": 3.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 9.139,
+        "permanente_pct": 61.9,
+        "activo_pct": 29.2,
+        "oportunista_pct": 2.1,
+        "sin_clasificar_pct": 6.9
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.56,
+        "permanente_pct": 5.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 94.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.246,
+        "permanente_pct": 9.0,
+        "activo_pct": 85.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 6.0
+      }
+    ],
+    "n_inst": 456,
+    "n_strat": 0,
+    "name": "Grupo Financiero Banorte"
+  },
+  "181_Grupo Financiero Inbursa SAB de CV": {
+    "global": {
+      "total_b": 11.72,
+      "strategic_b": 9.24,
+      "strategic_pct": 78.9,
+      "float_b": 2.47,
+      "float_pct": 21.1,
+      "float_mx_b": 0.6,
+      "float_mx_pct": 24.2,
+      "float_ext_b": 1.88,
+      "float_ext_pct": 75.8
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.585,
+        "pct": 97.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.012,
+        "pct": 2.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.002,
+        "pct": 0.3
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 1.876,
+        "permanente_pct": 23.7,
+        "activo_pct": 2.4,
+        "oportunista_pct": 2.4,
+        "sin_clasificar_pct": 71.5
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.586,
+        "permanente_pct": 85.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 14.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.012,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 183,
+    "n_strat": 1,
+    "name": "Grupo Financiero Inbursa"
+  },
+  "182_Grupo Gigante SAB de CV": {
+    "global": {
+      "total_b": 1.41,
+      "strategic_b": 1.29,
+      "strategic_pct": 91.2,
+      "float_b": 0.12,
+      "float_pct": 8.8,
+      "float_mx_b": 0.12,
+      "float_mx_pct": 98.4,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 1.6
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.072,
+        "pct": 58.8
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.051,
+        "pct": 41.6
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.072,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.051,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.002,
+        "permanente_pct": 6.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 94.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 9,
+    "n_strat": 10,
+    "name": "Grupo Gigante"
+  },
+  "183_Grupo Herdez SAB de CV": {
+    "global": {
+      "total_b": 0.68,
+      "strategic_b": 0.62,
+      "strategic_pct": 90.3,
+      "float_b": 0.07,
+      "float_pct": 9.7,
+      "float_mx_b": 0.05,
+      "float_mx_pct": 77.4,
+      "float_ext_b": 0.01,
+      "float_ext_pct": 22.6
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.045,
+        "pct": 88.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.006,
+        "pct": 11.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.045,
+        "permanente_pct": 82.1,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 17.9
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.015,
+        "permanente_pct": 7.0,
+        "activo_pct": 30.7,
+        "oportunista_pct": 62.3,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.006,
+        "permanente_pct": 0.0,
+        "activo_pct": 90.4,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 9.6
+      }
+    ],
+    "n_inst": 33,
+    "n_strat": 1,
+    "name": "Grupo Herdez"
+  },
+  "185_Grupo Lamosa SAB de CV": {
+    "global": {
+      "total_b": 1.49,
+      "strategic_b": 1.41,
+      "strategic_pct": 94.7,
+      "float_b": 0.08,
+      "float_pct": 5.3,
+      "float_mx_b": 0.08,
+      "float_mx_pct": 99.6,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 0.4
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.077,
+        "pct": 97.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.002,
+        "pct": 2.5
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.077,
+        "permanente_pct": 85.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 15.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.002,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.0,
+        "permanente_pct": 0.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 100.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 6,
+    "n_strat": 1,
+    "name": "Grupo Lamosa"
+  },
+  "187_Grupo Mexico SAB de CV": {
+    "global": {
+      "total_b": 35.52,
+      "strategic_b": 27.42,
+      "strategic_pct": 77.2,
+      "float_b": 8.1,
+      "float_pct": 22.8,
+      "float_mx_b": 0.74,
+      "float_mx_pct": 9.1,
+      "float_ext_b": 7.36,
+      "float_ext_pct": 90.9
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.485,
+        "pct": 65.6
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.231,
+        "pct": 31.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.023,
+        "pct": 3.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 7.363,
+        "permanente_pct": 47.8,
+        "activo_pct": 47.5,
+        "oportunista_pct": 2.1,
+        "sin_clasificar_pct": 2.6
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.508,
+        "permanente_pct": 7.6,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 92.4
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.231,
+        "permanente_pct": 8.8,
+        "activo_pct": 85.6,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 5.6
+      }
+    ],
+    "n_inst": 331,
+    "n_strat": 5,
+    "name": "Grupo Mexico"
+  },
+  "188_Grupo Nacional Provincial SAB": {
+    "global": {
+      "total_b": 0.02,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.02,
+      "float_pct": 100.0,
+      "float_mx_b": 0.02,
+      "float_mx_pct": 100.0,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 0.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.024,
+        "pct": 101.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.024,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 1,
+    "n_strat": 0,
+    "name": "Grupo Nacional Provincial"
+  },
+  "190_Grupo Palacio de Hierro SAB de CV": {
+    "global": {
+      "total_b": 0.87,
+      "strategic_b": 0.87,
+      "strategic_pct": 100.0,
+      "float_b": 0.0,
+      "float_pct": 0.0,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 0.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [],
+    "n_inst": 0,
+    "n_strat": 1,
+    "name": "Grupo Palacio de Hierro"
+  },
+  "191_Grupo Profuturo SAB de CV": {
+    "global": {
+      "total_b": 1.15,
+      "strategic_b": 1.13,
+      "strategic_pct": 98.4,
+      "float_b": 0.02,
+      "float_pct": 1.6,
+      "float_mx_b": 0.02,
+      "float_mx_pct": 100.0,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 0.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.019,
+        "pct": 101.9
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.019,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 1,
+    "n_strat": 1,
+    "name": "Grupo Profuturo"
+  },
+  "195_Grupo Simec SAB de CV": {
+    "global": {
+      "total_b": 4.47,
+      "strategic_b": 4.28,
+      "strategic_pct": 95.7,
+      "float_b": 0.19,
+      "float_pct": 4.3,
+      "float_mx_b": 0.16,
+      "float_mx_pct": 84.5,
+      "float_ext_b": 0.03,
+      "float_ext_pct": 15.5
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.118,
+        "pct": 73.2
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.043,
+        "pct": 26.7
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.118,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.043,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.03,
+        "permanente_pct": 3.6,
+        "activo_pct": 0.0,
+        "oportunista_pct": 96.4,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 10,
+    "n_strat": 5,
+    "name": "Grupo Simec"
+  },
+  "197_Grupo Televisa SAB": {
+    "global": {
+      "total_b": 0.25,
+      "strategic_b": 0.11,
+      "strategic_pct": 41.8,
+      "float_b": 0.15,
+      "float_pct": 58.2,
+      "float_mx_b": 0.04,
+      "float_mx_pct": 24.3,
+      "float_ext_b": 0.11,
+      "float_ext_pct": 75.7
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.032,
+        "pct": 89.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.003,
+        "pct": 8.4
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 2.8
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.111,
+        "permanente_pct": 87.8,
+        "activo_pct": 7.3,
+        "oportunista_pct": 4.2,
+        "sin_clasificar_pct": 0.7
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.033,
+        "permanente_pct": 27.1,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 72.9
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.003,
+        "permanente_pct": 0.0,
+        "activo_pct": 90.9,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 9.1
+      }
+    ],
+    "n_inst": 156,
+    "n_strat": 1,
+    "name": "Grupo Televisa"
+  },
+  "198_Grupo Traxion SAB de CV": {
+    "global": {
+      "total_b": 0.4,
+      "strategic_b": 0.16,
+      "strategic_pct": 39.3,
+      "float_b": 0.24,
+      "float_pct": 60.7,
+      "float_mx_b": 0.12,
+      "float_mx_pct": 50.6,
+      "float_ext_b": 0.12,
+      "float_ext_pct": 49.4
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.117,
+        "pct": 94.7
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.006,
+        "pct": 4.9
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 0.8
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.121,
+        "permanente_pct": 62.2,
+        "activo_pct": 2.5,
+        "oportunista_pct": 1.4,
+        "sin_clasificar_pct": 34.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.118,
+        "permanente_pct": 3.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 96.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.006,
+        "permanente_pct": 26.3,
+        "activo_pct": 57.2,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 16.5
+      }
+    ],
+    "n_inst": 84,
+    "n_strat": 1,
+    "name": "Grupo Traxion"
+  },
+  "206_Industrias CH SAB de CV": {
+    "global": {
+      "total_b": 3.73,
+      "strategic_b": 3.29,
+      "strategic_pct": 88.3,
+      "float_b": 0.44,
+      "float_pct": 11.7,
+      "float_mx_b": 0.38,
+      "float_mx_pct": 86.7,
+      "float_ext_b": 0.06,
+      "float_ext_pct": 13.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.244,
+        "pct": 64.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.135,
+        "pct": 35.6
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.244,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.135,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.058,
+        "permanente_pct": 5.5,
+        "activo_pct": 0.0,
+        "oportunista_pct": 94.5,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 14,
+    "n_strat": 1,
+    "name": "Industrias CH"
+  },
+  "207_Industrias Penoles SAB de CV": {
+    "global": {
+      "total_b": 3.81,
+      "strategic_b": 3.07,
+      "strategic_pct": 80.6,
+      "float_b": 0.74,
+      "float_pct": 19.4,
+      "float_mx_b": 0.09,
+      "float_mx_pct": 11.7,
+      "float_ext_b": 0.65,
+      "float_ext_pct": 88.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.072,
+        "pct": 83.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.014,
+        "pct": 16.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 1.2
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.653,
+        "permanente_pct": 84.7,
+        "activo_pct": 8.9,
+        "oportunista_pct": 5.5,
+        "sin_clasificar_pct": 1.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.073,
+        "permanente_pct": 0.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 99.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.014,
+        "permanente_pct": 0.0,
+        "activo_pct": 98.7,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 1.3
+      }
+    ],
+    "n_inst": 178,
+    "n_strat": 2,
+    "name": "Industrias Penoles"
+  },
+  "221_Kimberly-Clark de Mexico SAB de CV": {
+    "global": {
+      "total_b": 0.82,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.82,
+      "float_pct": 100.0,
+      "float_mx_b": 0.13,
+      "float_mx_pct": 16.2,
+      "float_ext_b": 0.69,
+      "float_ext_pct": 83.8
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.081,
+        "pct": 60.8
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.049,
+        "pct": 36.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.003,
+        "pct": 2.3
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.691,
+        "permanente_pct": 73.6,
+        "activo_pct": 16.1,
+        "oportunista_pct": 3.0,
+        "sin_clasificar_pct": 7.2
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.084,
+        "permanente_pct": 5.4,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 94.6
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.049,
+        "permanente_pct": 0.0,
+        "activo_pct": 95.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 4.7
+      }
+    ],
+    "n_inst": 276,
+    "n_strat": 0,
+    "name": "Kimberly-Clark de Mexico"
+  },
+  "223_La Comer SAB de CV": {
+    "global": {
+      "total_b": 0.92,
+      "strategic_b": 0.67,
+      "strategic_pct": 73.0,
+      "float_b": 0.25,
+      "float_pct": 27.0,
+      "float_mx_b": 0.19,
+      "float_mx_pct": 76.4,
+      "float_ext_b": 0.06,
+      "float_ext_pct": 23.6
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.137,
+        "pct": 72.5
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.051,
+        "pct": 27.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.002,
+        "pct": 1.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.138,
+        "permanente_pct": 79.4,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 20.6
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.058,
+        "permanente_pct": 59.3,
+        "activo_pct": 2.4,
+        "oportunista_pct": 37.1,
+        "sin_clasificar_pct": 1.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.051,
+        "permanente_pct": 0.0,
+        "activo_pct": 99.4,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.6
+      }
+    ],
+    "n_inst": 56,
+    "n_strat": 1,
+    "name": "La Comer"
+  },
+  "237_Megacable Holdings SAB de CV": {
+    "global": {
+      "total_b": 0.22,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.22,
+      "float_pct": 100.0,
+      "float_mx_b": 0.04,
+      "float_mx_pct": 15.7,
+      "float_ext_b": 0.19,
+      "float_ext_pct": 84.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.028,
+        "pct": 79.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.006,
+        "pct": 17.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 2.8
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.189,
+        "permanente_pct": 67.6,
+        "activo_pct": 9.6,
+        "oportunista_pct": 21.5,
+        "sin_clasificar_pct": 1.3
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.029,
+        "permanente_pct": 5.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 94.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.006,
+        "permanente_pct": 0.0,
+        "activo_pct": 77.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 22.7
+      }
+    ],
+    "n_inst": 106,
+    "n_strat": 0,
+    "name": "Megacable Holdings"
+  },
+  "253_Nemak SAB de CV": {
+    "global": {
+      "total_b": 0.1,
+      "strategic_b": 0.02,
+      "strategic_pct": 21.4,
+      "float_b": 0.08,
+      "float_pct": 78.6,
+      "float_mx_b": 0.03,
+      "float_mx_pct": 38.2,
+      "float_ext_b": 0.05,
+      "float_ext_pct": 61.8
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.026,
+        "pct": 85.3
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.001,
+        "pct": 3.3
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.003,
+        "pct": 9.8
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.049,
+        "permanente_pct": 66.0,
+        "activo_pct": 7.5,
+        "oportunista_pct": 10.6,
+        "sin_clasificar_pct": 15.9
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.029,
+        "permanente_pct": 47.1,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 52.9
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.001,
+        "permanente_pct": 0.0,
+        "activo_pct": 41.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 58.7
+      }
+    ],
+    "n_inst": 74,
+    "n_strat": 2,
+    "name": "Nemak"
+  },
+  "258_Operadora de Sites Mexicanos SAB De CV": {
+    "global": {
+      "total_b": 0.22,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.22,
+      "float_pct": 100.0,
+      "float_mx_b": 0.14,
+      "float_mx_pct": 63.0,
+      "float_ext_b": 0.08,
+      "float_ext_pct": 37.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.139,
+        "pct": 98.8
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.002,
+        "pct": 1.4
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.139,
+        "permanente_pct": 99.3,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.7
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.083,
+        "permanente_pct": 72.2,
+        "activo_pct": 9.1,
+        "oportunista_pct": 0.7,
+        "sin_clasificar_pct": 18.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.002,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 120,
+    "n_strat": 0,
+    "name": "Operadora de Sites Mexicanos  De CV"
+  },
+  "259_Orbia Advance Corp SAB de CV": {
+    "global": {
+      "total_b": 2.79,
+      "strategic_b": 2.46,
+      "strategic_pct": 88.0,
+      "float_b": 0.34,
+      "float_pct": 12.0,
+      "float_mx_b": 0.08,
+      "float_mx_pct": 24.3,
+      "float_ext_b": 0.25,
+      "float_ext_pct": 75.7
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.05,
+        "pct": 61.2
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.03,
+        "pct": 36.7
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.002,
+        "pct": 2.4
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.255,
+        "permanente_pct": 75.8,
+        "activo_pct": 14.3,
+        "oportunista_pct": 7.9,
+        "sin_clasificar_pct": 2.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.052,
+        "permanente_pct": 38.6,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 61.4
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.03,
+        "permanente_pct": 0.0,
+        "activo_pct": 86.8,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 13.2
+      }
+    ],
+    "n_inst": 221,
+    "n_strat": 2,
+    "name": "Orbia Advance Corp"
+  },
+  "260_Organizacion Soriana SAB de CV": {
+    "global": {
+      "total_b": 3.48,
+      "strategic_b": 3.33,
+      "strategic_pct": 95.6,
+      "float_b": 0.15,
+      "float_pct": 4.4,
+      "float_mx_b": 0.12,
+      "float_mx_pct": 80.9,
+      "float_ext_b": 0.03,
+      "float_ext_pct": 19.1
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.084,
+        "pct": 67.8
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.04,
+        "pct": 32.3
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.084,
+        "permanente_pct": 94.5,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 5.5
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.04,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.029,
+        "permanente_pct": 0.3,
+        "activo_pct": 0.0,
+        "oportunista_pct": 99.7,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 9,
+    "n_strat": 2,
+    "name": "Organizacion Soriana"
+  },
+  "272_Prologis Property Mexico SA de CV": {
+    "global": {
+      "total_b": 2.48,
+      "strategic_b": 1.74,
+      "strategic_pct": 69.9,
+      "float_b": 0.75,
+      "float_pct": 30.1,
+      "float_mx_b": 0.04,
+      "float_mx_pct": 5.7,
+      "float_ext_b": 0.71,
+      "float_ext_pct": 94.3
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.008,
+        "pct": 18.9
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.032,
+        "pct": 75.6
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.003,
+        "pct": 7.1
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.707,
+        "permanente_pct": 61.9,
+        "activo_pct": 19.6,
+        "oportunista_pct": 8.0,
+        "sin_clasificar_pct": 10.5
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.032,
+        "permanente_pct": 12.5,
+        "activo_pct": 56.1,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 31.4
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.011,
+        "permanente_pct": 37.1,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 62.9
+      }
+    ],
+    "n_inst": 202,
+    "n_strat": 1,
+    "name": "Prologis Property Mexico SA"
+  },
+  "274_Promotora y Operadora de Infraestructura SAB de CV": {
+    "global": {
+      "total_b": 0.61,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "float_b": 0.61,
+      "float_pct": 100.0,
+      "float_mx_b": 0.1,
+      "float_mx_pct": 16.3,
+      "float_ext_b": 0.51,
+      "float_ext_pct": 83.7
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.067,
+        "pct": 67.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.03,
+        "pct": 30.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.003,
+        "pct": 3.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.511,
+        "permanente_pct": 80.9,
+        "activo_pct": 6.3,
+        "oportunista_pct": 6.3,
+        "sin_clasificar_pct": 6.4
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.07,
+        "permanente_pct": 7.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.0
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.03,
+        "permanente_pct": 11.6,
+        "activo_pct": 80.3,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 8.1
+      }
+    ],
+    "n_inst": 189,
+    "n_strat": 0,
+    "name": "Promotora y Operadora de Infraestructu"
+  },
+  "275_Qualitas Controladora SAB de CV": {
+    "global": {
+      "total_b": 2.71,
+      "strategic_b": 2.03,
+      "strategic_pct": 74.8,
+      "float_b": 0.68,
+      "float_pct": 25.2,
+      "float_mx_b": 0.07,
+      "float_mx_pct": 9.9,
+      "float_ext_b": 0.62,
+      "float_ext_pct": 90.1
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.056,
+        "pct": 82.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.011,
+        "pct": 16.2
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 1.5
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.616,
+        "permanente_pct": 38.9,
+        "activo_pct": 56.4,
+        "oportunista_pct": 2.9,
+        "sin_clasificar_pct": 1.8
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.057,
+        "permanente_pct": 0.6,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 99.4
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.011,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 142,
+    "n_strat": 1,
+    "name": "Qualitas Controladora"
+  },
+  "281_Regional SAB de CV": {
+    "global": {
+      "total_b": 1.24,
+      "strategic_b": 0.73,
+      "strategic_pct": 58.9,
+      "float_b": 0.51,
+      "float_pct": 41.1,
+      "float_mx_b": 0.04,
+      "float_mx_pct": 7.9,
+      "float_ext_b": 0.47,
+      "float_ext_pct": 92.1
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.029,
+        "pct": 71.6
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.01,
+        "pct": 24.7
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 2.5
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.47,
+        "permanente_pct": 58.5,
+        "activo_pct": 15.1,
+        "oportunista_pct": 5.2,
+        "sin_clasificar_pct": 21.3
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.03,
+        "permanente_pct": 2.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 97.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.01,
+        "permanente_pct": 0.9,
+        "activo_pct": 95.4,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 3.7
+      }
+    ],
+    "n_inst": 164,
+    "n_strat": 4,
+    "name": "Regional"
+  },
+  "299_Southern Copper Corp Peru": {
+    "global": {
+      "total_b": 65.73,
+      "strategic_b": 59.23,
+      "strategic_pct": 90.1,
+      "float_b": 6.5,
+      "float_pct": 9.9,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 6.5,
+      "float_ext_pct": 100.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 6.502,
+        "permanente_pct": 49.5,
+        "activo_pct": 26.2,
+        "oportunista_pct": 1.7,
+        "sin_clasificar_pct": 22.7
+      }
+    ],
+    "n_inst": 1175,
+    "n_strat": 15,
+    "name": "Southern Copper Corp Peru"
+  },
+  "318_Vesta Real Estate Corporation SAB de CV": {
+    "global": {
+      "total_b": 1.08,
+      "strategic_b": 0.14,
+      "strategic_pct": 13.4,
+      "float_b": 0.94,
+      "float_pct": 86.6,
+      "float_mx_b": 0.14,
+      "float_mx_pct": 15.0,
+      "float_ext_b": 0.8,
+      "float_ext_pct": 85.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.095,
+        "pct": 67.5
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.037,
+        "pct": 26.3
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.008,
+        "pct": 5.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.798,
+        "permanente_pct": 57.2,
+        "activo_pct": 24.3,
+        "oportunista_pct": 2.4,
+        "sin_clasificar_pct": 16.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.103,
+        "permanente_pct": 6.9,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.1
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.037,
+        "permanente_pct": 8.4,
+        "activo_pct": 75.1,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 16.5
+      }
+    ],
+    "n_inst": 193,
+    "n_strat": 27,
+    "name": "Vesta Real Estate Corporation"
+  },
+  "321_Vista Energy SAB de CV": {
+    "global": {
+      "total_b": 0.65,
+      "strategic_b": 0.23,
+      "strategic_pct": 35.5,
+      "float_b": 0.42,
+      "float_pct": 64.5,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 0.42,
+      "float_ext_pct": 100.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.421,
+        "permanente_pct": 94.2,
+        "activo_pct": 5.5,
+        "oportunista_pct": 0.2,
+        "sin_clasificar_pct": 0.2
+      }
+    ],
+    "n_inst": 11,
+    "n_strat": 1,
+    "name": "Vista Energy"
+  },
+  "322_Vitro SAB de CV": {
+    "global": {
+      "total_b": 0.22,
+      "strategic_b": 0.22,
+      "strategic_pct": 99.6,
+      "float_b": 0.0,
+      "float_pct": 0.4,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 100.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.001,
+        "permanente_pct": 0.2,
+        "activo_pct": 0.0,
+        "oportunista_pct": 99.8,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 9,
+    "n_strat": 7,
+    "name": "Vitro"
+  },
+  "323_Wal Mart de Mexico SAB de CV": {
+    "global": {
+      "total_b": 58.3,
+      "strategic_b": 52.02,
+      "strategic_pct": 89.2,
+      "float_b": 6.28,
+      "float_pct": 10.8,
+      "float_mx_b": 0.56,
+      "float_mx_pct": 8.9,
+      "float_ext_b": 5.72,
+      "float_ext_pct": 91.1
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.344,
+        "pct": 61.4
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.195,
+        "pct": 34.8
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.021,
+        "pct": 3.7
+      }
+    ],
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 5.718,
+        "permanente_pct": 55.9,
+        "activo_pct": 34.8,
+        "oportunista_pct": 1.6,
+        "sin_clasificar_pct": 7.7
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.365,
+        "permanente_pct": 6.8,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 93.2
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.195,
+        "permanente_pct": 7.3,
+        "activo_pct": 88.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 4.7
+      }
+    ],
+    "n_inst": 438,
+    "n_strat": 1,
+    "name": "Wal Mart de Mexico"
+  }
 };
 
 const INTERNACIONALIZACION_DATA = {

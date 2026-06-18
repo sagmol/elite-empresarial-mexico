@@ -583,6 +583,15 @@ footer a { color: var(--ink2); }
     <div class="chart-wrap" style="min-height:420px;" id="chart-inst-weight"></div>
   </div>
 
+  <div class="fade-in" style="margin:14px 0 2px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <label for="capital-selector" style="font-size:0.82rem;font-weight:600;color:var(--ink);">Estructura de capital de:</label>
+    <select id="capital-selector" style="font-size:0.85rem;padding:7px 12px;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--ink);cursor:pointer;min-width:280px;">
+      <option value="global">Todas las empresas (universo)</option>
+    </select>
+    <span id="capital-sel-note" style="font-size:0.74rem;color:var(--muted);"></span>
+  </div>
+  <div style="font-size:0.72rem;color:var(--muted);margin:0 0 10px;">Aplica a los tres gráficos siguientes.</div>
+
   <div class="card fade-in">
     <div class="card-title">Control vs. float — ¿de quién es realmente el capital?</div>
     <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
@@ -792,7 +801,7 @@ footer a { color: var(--ink2); }
 </footer>
 
 <!-- DATA + SCRIPTS -->
-<script src="data_web.js?v=6"></script>
+<script src="data_web.js?v=7"></script>
 <script>
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const fmt  = n => n == null ? '—' : Number(n).toLocaleString('es-MX');
@@ -1622,94 +1631,108 @@ const TYPE_COLORS = {
     annotations: [{ x:0.01, xref:'paper', y:1.08, text:'1% del portafolio', showarrow:false, font:{size:9,color:'#B85C38'} }],
   }, PLOTLY_CONFIG);
 
-  // ── Control vs. float ──────────────────────────────────────────────────────
-  const CS = CAPITAL_STRUCTURE_DATA;
-  const G = CS.global;
-
-  Plotly.newPlot('chart-capital-control', [
-    {
-      type: 'bar', orientation: 'h', x: [G.strategic_pct], y: ['Capital total'],
-      text: [`Control estratégico — $${G.strategic_b}B (${G.strategic_pct}%)`],
-      textposition: 'inside', insidetextanchor: 'middle',
-      marker: { color: '#8a6d4a' },
-      hovertemplate: '%{text}<extra></extra>',
-    },
-    {
-      type: 'bar', orientation: 'h', x: [G.float_pct], y: ['Capital total'],
-      text: [`Float libre — $${G.float_b}B (${G.float_pct}%)`],
-      textposition: 'inside', insidetextanchor: 'middle',
-      marker: { color: '#c9a876' },
-      hovertemplate: '%{text}<extra></extra>',
-    },
-  ], {
-    ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
-    title: { text: `Capital total declarado: $${G.total_b}B`, font: { size: 12 } },
-    margin: { t:48, r:24, b:24, l:24 },
-    xaxis: { visible: false, range: [0,100] },
-    yaxis: { visible: false },
-  }, PLOTLY_CONFIG);
-
-  Plotly.newPlot('chart-capital-float', [
-    {
-      type: 'bar', orientation: 'h', x: [G.float_mx_pct], y: ['Float'],
-      text: [`Mexicano — $${G.float_mx_b}B (${G.float_mx_pct}%)`],
-      textposition: 'inside', insidetextanchor: 'middle',
-      marker: { color: '#5b7a8c' },
-      hovertemplate: '%{text}<extra></extra>',
-    },
-    {
-      type: 'bar', orientation: 'h', x: [G.float_ext_pct], y: ['Float'],
-      text: [`Extranjero — $${G.float_ext_b}B (${G.float_ext_pct}%)`],
-      textposition: 'inside', insidetextanchor: 'middle',
-      marker: { color: '#B85C38' },
-      hovertemplate: '%{text}<extra></extra>',
-    },
-  ], {
-    ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
-    title: { text: `Composición del float: $${G.float_b}B`, font: { size: 12 } },
-    margin: { t:48, r:24, b:24, l:24 },
-    xaxis: { visible: false, range: [0,100] },
-    yaxis: { visible: false },
-  }, PLOTLY_CONFIG);
-
-  // ── Filiales del capital "mexicano" ────────────────────────────────────────
-  Plotly.newPlot('chart-capital-filiales', [{
-    type: 'bar',
-    x: CS.filiales.map(d => d.valor_b),
-    y: CS.filiales.map(d => d.categoria),
-    orientation: 'h',
-    text: CS.filiales.map(d => `$${d.valor_b}B (${d.pct}%)`),
-    textposition: 'outside',
-    marker: { color: ['#8a6d4a', '#5b7a8c', '#B85C38'] },
-    hovertemplate: '%{y}<br>$%{x}B<extra></extra>',
-  }], {
-    ...LAYOUT_BASE, height: 260,
-    margin: { t:16, r:80, b:40, l:230 },
-    xaxis: { title: 'USD B', gridcolor: '#edecea' },
-    yaxis: { automargin: true },
-  }, PLOTLY_CONFIG);
-
-  // ── Comportamiento del capital por origen ──────────────────────────────────
-  const cb = CS.comportamiento;
+  // ── Control vs. float — interactivo por empresa ────────────────────────────
   const tipos = [
     { key: 'permanente_pct', name: 'Permanente (índice/value/yield)', color: '#5b7a8c' },
     { key: 'activo_pct', name: 'Activo (GARP/growth)', color: '#c9a876' },
     { key: 'oportunista_pct', name: 'Oportunista (deep value)', color: '#B85C38' },
     { key: 'sin_clasificar_pct', name: 'Sin clasificar', color: '#ddd6cc' },
   ];
-  Plotly.newPlot('chart-capital-comportamiento', tipos.map(t => ({
-    type: 'bar', orientation: 'h',
-    name: t.name,
-    x: cb.map(d => d[t.key]),
-    y: cb.map(d => `${d.origen} ($${d.total_b}B)`),
-    marker: { color: t.color },
-    hovertemplate: `${t.name}: %{x}%<extra></extra>`,
-  })), {
-    ...LAYOUT_BASE, height: 260, barmode: 'stack',
-    margin: { t:16, r:24, b:40, l:170 },
-    xaxis: { title: '% del capital', ticksuffix: '%', gridcolor: '#edecea', range: [0,100], autorange: false },
-    legend: { orientation: 'h', y: -0.25 },
-  }, PLOTLY_CONFIG);
+
+  function renderCapital(key) {
+    const CS = key === 'global' ? CAPITAL_STRUCTURE_DATA : CAPITAL_STRUCTURE_BY_COMPANY[key];
+    if (!CS) return;
+    const G = CS.global;
+
+    Plotly.react('chart-capital-control', [
+      {
+        type: 'bar', orientation: 'h', x: [G.strategic_pct], y: ['Capital total'],
+        text: [`Control estratégico — $${G.strategic_b}B (${G.strategic_pct}%)`],
+        textposition: 'inside', insidetextanchor: 'middle',
+        marker: { color: '#8a6d4a' }, hovertemplate: '%{text}<extra></extra>',
+      },
+      {
+        type: 'bar', orientation: 'h', x: [G.float_pct], y: ['Capital total'],
+        text: [`Float libre — $${G.float_b}B (${G.float_pct}%)`],
+        textposition: 'inside', insidetextanchor: 'middle',
+        marker: { color: '#c9a876' }, hovertemplate: '%{text}<extra></extra>',
+      },
+    ], {
+      ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
+      title: { text: `Capital total declarado: $${G.total_b}B`, font: { size: 12 } },
+      margin: { t:48, r:24, b:24, l:24 },
+      xaxis: { visible: false, range: [0,100] }, yaxis: { visible: false },
+    }, PLOTLY_CONFIG);
+
+    Plotly.react('chart-capital-float', [
+      {
+        type: 'bar', orientation: 'h', x: [G.float_mx_pct], y: ['Float'],
+        text: [`Mexicano — $${G.float_mx_b}B (${G.float_mx_pct}%)`],
+        textposition: 'inside', insidetextanchor: 'middle',
+        marker: { color: '#5b7a8c' }, hovertemplate: '%{text}<extra></extra>',
+      },
+      {
+        type: 'bar', orientation: 'h', x: [G.float_ext_pct], y: ['Float'],
+        text: [`Extranjero — $${G.float_ext_b}B (${G.float_ext_pct}%)`],
+        textposition: 'inside', insidetextanchor: 'middle',
+        marker: { color: '#B85C38' }, hovertemplate: '%{text}<extra></extra>',
+      },
+    ], {
+      ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
+      title: { text: `Composición del float: $${G.float_b}B`, font: { size: 12 } },
+      margin: { t:48, r:24, b:24, l:24 },
+      xaxis: { visible: false, range: [0,100] }, yaxis: { visible: false },
+    }, PLOTLY_CONFIG);
+
+    Plotly.react('chart-capital-filiales', [{
+      type: 'bar', orientation: 'h',
+      x: CS.filiales.map(d => d.valor_b),
+      y: CS.filiales.map(d => d.categoria),
+      text: CS.filiales.map(d => `$${d.valor_b}B (${d.pct}%)`),
+      textposition: 'outside',
+      marker: { color: ['#8a6d4a', '#5b7a8c', '#B85C38'] },
+      hovertemplate: '%{y}<br>$%{x}B<extra></extra>',
+    }], {
+      ...LAYOUT_BASE, height: 260,
+      margin: { t:16, r:80, b:40, l:230 },
+      xaxis: { title: 'USD B', gridcolor: '#edecea' },
+      yaxis: { automargin: true },
+    }, PLOTLY_CONFIG);
+
+    const cb = CS.comportamiento;
+    Plotly.react('chart-capital-comportamiento', tipos.map(t => ({
+      type: 'bar', orientation: 'h', name: t.name,
+      x: cb.map(d => d[t.key]),
+      y: cb.map(d => `${d.origen} ($${d.total_b}B)`),
+      marker: { color: t.color },
+      hovertemplate: `${t.name}: %{x}%<extra></extra>`,
+    })), {
+      ...LAYOUT_BASE, height: 260, barmode: 'stack',
+      margin: { t:16, r:24, b:40, l:170 },
+      xaxis: { title: '% del capital', ticksuffix: '%', gridcolor: '#edecea', range: [0,100], autorange: false },
+      legend: { orientation: 'h', y: -0.25 },
+    }, PLOTLY_CONFIG);
+
+    const noteEl = document.getElementById('capital-sel-note');
+    if (key === 'global') {
+      noteEl.textContent = `Universo: 58 empresas con datos de accionistas · capital total $${G.total_b}B`;
+    } else {
+      noteEl.textContent = `${CS.name} — float $${G.float_b}B (${G.float_pct}% del capital) · ${CS.n_inst} gestoras institucionales`;
+    }
+  }
+
+  // Poblar selector (empresas con datos, por capital total desc)
+  const capSel = document.getElementById('capital-selector');
+  Object.entries(CAPITAL_STRUCTURE_BY_COMPANY)
+    .sort((a, b) => b[1].global.total_b - a[1].global.total_b)
+    .forEach(([folder, co]) => {
+      const opt = document.createElement('option');
+      opt.value = folder;
+      opt.textContent = `${co.name} ($${co.global.total_b}B)`;
+      capSel.appendChild(opt);
+    });
+  capSel.addEventListener('change', e => renderCapital(e.target.value));
+  renderCapital('global');
 
   // Insight
   const top1 = D.most_connected[0];

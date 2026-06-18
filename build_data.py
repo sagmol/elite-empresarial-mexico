@@ -718,29 +718,6 @@ institutional_data = {
 institutional_data = to_native(institutional_data)
 
 # ── 12b. CAPITAL STRUCTURE: control vs. float, filiales, comportamiento ──────
-strat_all = sh_raw[sh_raw['investor_type'] == 'Strategic Entities'].copy()
-strat_total_m = float(strat_all['value_usd_m'].sum())
-
-im_total_m = float(inst['value_usd_m'].sum())
-im_mx = inst[inst['country'] == 'Mexico'].copy()
-im_ext = inst[inst['country'] != 'Mexico'].copy()
-im_mx_m = float(im_mx['value_usd_m'].sum())
-im_ext_m = float(im_ext['value_usd_m'].sum())
-
-total_m = strat_total_m + im_total_m
-
-capital_global = {
-    'total_b'        : round(total_m/1000, 1),
-    'strategic_b'    : round(strat_total_m/1000, 1),
-    'strategic_pct'  : round(strat_total_m/total_m*100, 1),
-    'float_b'        : round(im_total_m/1000, 1),
-    'float_pct'      : round(im_total_m/total_m*100, 1),
-    'float_mx_b'     : round(im_mx_m/1000, 1),
-    'float_mx_pct'   : round(im_mx_m/im_total_m*100, 1),
-    'float_ext_b'    : round(im_ext_m/1000, 1),
-    'float_ext_pct'  : round(im_ext_m/im_total_m*100, 1),
-}
-
 # Filiales: clasificación del capital institucional mexicano
 FILIALES_UNIVERSO = {
     'Operadora Inbursa':            'Slim / Inbursa',
@@ -770,17 +747,6 @@ def classify_filial(name):
         if key in n: return 'B. Filial local de banco global'
     return 'C. Capital MX genuino'
 
-im_mx['categoria_filial'] = im_mx['investor_name'].apply(classify_filial)
-filiales_cat = (im_mx.groupby('categoria_filial')['value_usd_m'].sum() / 1000).round(2)
-filiales_data = []
-for cat in ['A. Filial de grupo del universo', 'B. Filial local de banco global', 'C. Capital MX genuino']:
-    val_b = float(filiales_cat.get(cat, 0.0))
-    filiales_data.append({
-        'categoria': cat,
-        'valor_b': round(val_b, 2),
-        'pct': round(val_b/im_mx_m*1000*100, 1) if im_mx_m > 0 else 0,
-    })
-
 # Comportamiento: permanente / activo / oportunista por origen
 PERMANENTE = ['Index', 'Core Value', 'Core Growth', 'Yield']
 ACTIVO     = ['GARP', 'Growth']
@@ -797,30 +763,86 @@ def tipo_capital(style):
     if style == 'Deep Value': return 'Oportunista'
     return 'Sin clasificar'
 
-inst_b = inst.copy()
-inst_b['origen'] = inst_b.apply(origen_capital, axis=1)
-inst_b['tipo_capital'] = inst_b['investment_style'].apply(tipo_capital)
+def compute_capital_structure(sub):
+    """Estructura de capital para un subconjunto de shareholders (todo el universo
+    o una sola empresa). Devuelve None si no hay capital declarado."""
+    strat_all = sub[sub['investor_type'] == 'Strategic Entities']
+    inst_df = sub[(sub['investor_type'] == 'Investment Managers')
+                  & sub['pct_outstanding'].notna()].copy()
+    strat_total_m = float(strat_all['value_usd_m'].sum())
+    im_total_m = float(inst_df['value_usd_m'].sum())
+    total_m = strat_total_m + im_total_m
+    if total_m <= 0:
+        return None
 
-comportamiento_data = []
-for origen, grp in inst_b.groupby('origen'):
-    tot = float(grp['value_usd_m'].sum())
-    if tot <= 0: continue
-    by_tipo = (grp.groupby('tipo_capital')['value_usd_m'].sum() / tot * 100).round(1)
-    comportamiento_data.append({
-        'origen'   : origen,
-        'total_b'  : round(tot/1000, 2),
-        'permanente_pct'  : float(by_tipo.get('Permanente', 0.0)),
-        'activo_pct'      : float(by_tipo.get('Activo', 0.0)),
-        'oportunista_pct' : float(by_tipo.get('Oportunista', 0.0)),
-        'sin_clasificar_pct': float(by_tipo.get('Sin clasificar', 0.0)),
-    })
-comportamiento_data.sort(key=lambda d: -d['total_b'])
+    im_mx = inst_df[inst_df['country'] == 'Mexico'].copy()
+    im_ext = inst_df[inst_df['country'] != 'Mexico']
+    im_mx_m = float(im_mx['value_usd_m'].sum())
+    im_ext_m = float(im_ext['value_usd_m'].sum())
 
-capital_structure_data = to_native({
-    'global'        : capital_global,
-    'filiales'      : filiales_data,
-    'comportamiento': comportamiento_data,
-})
+    capital_global = {
+        'total_b'       : round(total_m/1000, 2),
+        'strategic_b'   : round(strat_total_m/1000, 2),
+        'strategic_pct' : round(strat_total_m/total_m*100, 1),
+        'float_b'       : round(im_total_m/1000, 2),
+        'float_pct'     : round(im_total_m/total_m*100, 1),
+        'float_mx_b'    : round(im_mx_m/1000, 2),
+        'float_mx_pct'  : round(im_mx_m/im_total_m*100, 1) if im_total_m > 0 else 0.0,
+        'float_ext_b'   : round(im_ext_m/1000, 2),
+        'float_ext_pct' : round(im_ext_m/im_total_m*100, 1) if im_total_m > 0 else 0.0,
+    }
+
+    im_mx['categoria_filial'] = im_mx['investor_name'].apply(classify_filial)
+    filiales_cat = (im_mx.groupby('categoria_filial')['value_usd_m'].sum() / 1000).round(3)
+    filiales_data = []
+    for cat in ['A. Filial de grupo del universo', 'B. Filial local de banco global', 'C. Capital MX genuino']:
+        val_b = float(filiales_cat.get(cat, 0.0))
+        filiales_data.append({
+            'categoria': cat,
+            'valor_b': round(val_b, 3),
+            'pct': round(val_b/im_mx_m*1000*100, 1) if im_mx_m > 0 else 0.0,
+        })
+
+    inst_b = inst_df.copy()
+    inst_b['origen'] = inst_b.apply(origen_capital, axis=1)
+    inst_b['tipo_capital'] = inst_b['investment_style'].apply(tipo_capital)
+    comportamiento_data = []
+    for origen, grp in inst_b.groupby('origen'):
+        tot = float(grp['value_usd_m'].sum())
+        if tot <= 0: continue
+        by_tipo = (grp.groupby('tipo_capital')['value_usd_m'].sum() / tot * 100).round(1)
+        comportamiento_data.append({
+            'origen'   : origen,
+            'total_b'  : round(tot/1000, 3),
+            'permanente_pct'  : float(by_tipo.get('Permanente', 0.0)),
+            'activo_pct'      : float(by_tipo.get('Activo', 0.0)),
+            'oportunista_pct' : float(by_tipo.get('Oportunista', 0.0)),
+            'sin_clasificar_pct': float(by_tipo.get('Sin clasificar', 0.0)),
+        })
+    comportamiento_data.sort(key=lambda d: -d['total_b'])
+
+    return {
+        'global'        : capital_global,
+        'filiales'      : filiales_data,
+        'comportamiento': comportamiento_data,
+        'n_inst'        : int(len(inst_df)),
+        'n_strat'       : int(len(strat_all)),
+    }
+
+# Agregado de todo el universo (vista "Todos")
+capital_structure_data = to_native(compute_capital_structure(sh_raw))
+
+# Desglose por empresa (para el selector interactivo)
+capital_by_company = {}
+for folder, sub in sh_raw.groupby('company_folder'):
+    res = compute_capital_structure(sub)
+    if res is None:
+        continue
+    folder = str(folder)
+    raw_name = folder_to_name.get(folder, folder)
+    res['name'] = short_co(raw_name if str(raw_name) != 'nan' else folder)
+    capital_by_company[folder] = res
+capital_structure_by_company = to_native(capital_by_company)
 
 # ── 12c. INTERNACIONALIZACIÓN: % ingresos vs % subsidiarias fuera ────────────
 INTL_PATH = r'C:\pw\proyectos\04_internacionalizacion\outputs\internacionalizacion.csv'
@@ -1009,6 +1031,8 @@ const SUBSIDIARIES_DATA = {json.dumps(subsidiaries_data, ensure_ascii=False, ind
 const INSTITUTIONAL_DATA = {json.dumps(institutional_data, ensure_ascii=False, indent=2)};
 
 const CAPITAL_STRUCTURE_DATA = {json.dumps(capital_structure_data, ensure_ascii=False, indent=2)};
+
+const CAPITAL_STRUCTURE_BY_COMPANY = {json.dumps(capital_structure_by_company, ensure_ascii=False, indent=2)};
 
 const INTERNACIONALIZACION_DATA = {json.dumps(internacionalizacion_data, ensure_ascii=False, indent=2)};
 
