@@ -24,7 +24,7 @@ dsum    = pd.read_csv(f'{BASE}\\directors_summary.csv')
 with open(f'{BASE}\\network_data.json', encoding='utf-8') as f:
     net = json.load(f)
 
-FX = 17.15  # MXN/USD 2023
+FX = 17.15  # MXN/USD usado para convertir a USD. Market caps son de 2024 (capturados ago-2024 a feb-2025); los estados de resultados son FY2023.
 
 # ── Colores de grupo (adaptados para fondo claro) ───────────────────────────
 GROUP_COLORS = {

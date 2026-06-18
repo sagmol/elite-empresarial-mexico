@@ -413,6 +413,24 @@ footer a { color: var(--ink2); }
     <div class="chart-wrap" style="min-height:900px;" id="chart-groups-bar"></div>
   </div>
 
+  <div class="card fade-in" id="bmv-context-card">
+    <style>
+      .bmv-btn{font-family:var(--font-b);font-size:0.8rem;padding:7px 15px;border:1px solid var(--border);border-radius:20px;background:var(--white);color:var(--ink2);cursor:pointer;transition:all .15s;}
+      .bmv-btn:hover{border-color:var(--ink2);}
+      .bmv-btn.is-active{background:var(--ink);color:#fff;border-color:var(--ink);}
+    </style>
+    <div class="card-title">¿Cuánto pesa cada grupo en el mercado? — muestra vs. toda la BMV</div>
+    <div style="font-size:0.78rem;color:var(--muted);margin-bottom:14px;">
+      La misma composición de grupos, medida contra dos denominadores. Cambia la vista para ver qué fracción representa cada grupo del valor de tu muestra (51 empresas) y de <strong>todo el mercado accionario mexicano</strong> (capitalización BMV cierre 2024 = $8.5 billones MXN). Comparación en pesos.
+    </div>
+    <div id="bmv-toggle" style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+      <button class="bmv-btn is-active" data-mode="muestra">% de la muestra</button>
+      <button class="bmv-btn" data-mode="bmv">% de la BMV 2024</button>
+    </div>
+    <div class="chart-wrap" style="min-height:420px;" id="chart-bmv-context"></div>
+    <div id="bmv-context-note" style="font-size:0.72rem;color:var(--muted);margin-top:10px;line-height:1.5;"></div>
+  </div>
+
   <div class="card fade-in">
     <div class="card-title">Empresas — tamaño, red y posición en la industria · FY2023</div>
     <div style="font-size:0.76rem;color:var(--muted);margin-bottom:12px;">
@@ -889,10 +907,23 @@ if (pctLbl) pctLbl.textContent = STATS.pct_interlocked;
   } catch(e) { console.error('Community graph:', e); }
 })();
 
+// ── Contexto BMV: capitalización total del mercado accionario mexicano ───────
+// Fuente: Informe Anual Integrado BMV 2024 — apartado "Capitalización de Mercado":
+//   total emisoras nacionales = 8.5 billones MXN (≈20% del PIB; IPC ≈ 84% del total).
+// Comparamos en PESOS para evitar conversión de divisa. FX debe coincidir con el
+// del pipeline (build_data.py). Los market caps de la muestra se capturaron durante
+// 2024 (ago-2024 a feb-2025), por lo que el "% de la BMV" es aproximado a cierre 2024.
+const BMV_TOTAL_MXN_B = 8500;                          // 8.5 billones de pesos (mil millones)
+const FX_MXN_USD      = 17.15;                         // = FX en build_data.py
+const SAMPLE_MXN_B    = STATS.total_mktcap * FX_MXN_USD; // 409 USD B → ~7014 mil M MXN
+const BMV_COVERAGE    = SAMPLE_MXN_B / BMV_TOTAL_MXN_B;  // ~0.825 (muestra / BMV)
+const slimPctBMV      = STATS.slim_pct * BMV_COVERAGE;
+
 // ── Insight Slim ────────────────────────────────────────────────────────────
 document.getElementById('insight-slim').innerHTML =
-  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil de la muestra</strong> a través de 5 empresas listadas. ` +
-  `Grupo México alcanza el ${STATS.gmexico_pct}% con solo 2 compañías — la mayor concentración de valor por empresa del universo analizado. ` +
+  `<strong>El grupo Slim concentra el ${STATS.slim_pct}% del valor bursátil de la muestra</strong> a través de 5 empresas listadas — lo que equivale a aproximadamente el <strong>${slimPctBMV.toFixed(1)}% de toda la Bolsa Mexicana de Valores</strong> (capitalización de cierre 2024). ` +
+  `Grupo México alcanza el ${STATS.gmexico_pct}% de la muestra con solo 2 compañías — la mayor concentración de valor por empresa del universo analizado. ` +
+  `En conjunto, las ${STATS.n_companies} empresas analizadas cubren cerca del ${(BMV_COVERAGE*100).toFixed(0)}% del mercado accionario mexicano. ` +
   `El análisis de red muestra que la comunidad Slim comparte directores con exfuncionarios de Hacienda, NAFIN y Pemex. ` +
   `BAL (Baillères) es el grupo más cohesionado: sus 5 empresas forman una comunidad perfectamente delimitada, con hasta 8 directores compartidos entre pares.`;
 
@@ -950,6 +981,78 @@ const groups = GROUPS_DATA.filter(g => g.group !== 'Otro').concat(
       gridcolor: '#edecea',
     },
   }, PLOTLY_CONFIG);
+})();
+
+// ── Donut: peso de cada grupo — muestra vs. BMV total (cierre 2024) ──────────
+(function() {
+  const el = document.getElementById('chart-bmv-context');
+  if (!el || typeof GROUPS_DATA === 'undefined') return;
+
+  // Grupos: nombrados por mktcap desc, "Otro" (independientes) al final
+  const gs = GROUPS_DATA.filter(g => g.group !== 'Otro')
+                        .sort((a, b) => b.mktcap_pct - a.mktcap_pct)
+                        .concat(GROUPS_DATA.filter(g => g.group === 'Otro'));
+  const labelOf = g => g.group === 'Otro' ? 'Independientes' : g.group;
+  const GREY = '#e6e9ed';  // "Resto del mercado" — gris claro, distinto del gris medio de Independientes
+
+  function dataFor(mode) {
+    const labels = gs.map(labelOf);
+    const colors = gs.map(g => g.color);
+    let values, denomMxnB;
+    if (mode === 'bmv') {
+      values = gs.map(g => +(g.mktcap_pct * BMV_COVERAGE).toFixed(2));
+      const rest = +(100 - values.reduce((a, b) => a + b, 0)).toFixed(2);
+      labels.push('Resto del mercado BMV');
+      values.push(rest);
+      colors.push(GREY);
+      denomMxnB = BMV_TOTAL_MXN_B;
+    } else {
+      values = gs.map(g => g.mktcap_pct);
+      denomMxnB = SAMPLE_MXN_B;
+    }
+    const mxnBn = values.map(v => v / 100 * denomMxnB / 1000); // billones de pesos
+    return { labels, values, colors, mxnBn, denomMxnB };
+  }
+
+  function render(mode) {
+    const d = dataFor(mode);
+    Plotly.react(el, [{
+      type: 'pie', hole: 0.58,
+      labels: d.labels, values: d.values,
+      marker: { colors: d.colors, line: { color: '#fff', width: 2 } },
+      sort: false, direction: 'clockwise',
+      textposition: 'inside', insidetextorientation: 'horizontal',
+      texttemplate: '%{value:.1f}%',
+      customdata: d.mxnBn,
+      hovertemplate: '<b>%{label}</b><br>%{value:.1f}% · $%{customdata:.2f} billones MXN<extra></extra>',
+      textfont: { size: 11 },
+    }], {
+      ...LAYOUT_BASE, height: 420,
+      margin: { t: 16, r: 150, b: 16, l: 16 },
+      showlegend: true,
+      legend: { orientation: 'v', x: 1, y: 0.5, font: { size: 11 } },
+      annotations: [{
+        text: `<b>$${(d.denomMxnB / 1000).toFixed(1)} bn</b><br><span style="font-size:0.62rem;color:#7a8898">MXN · ${mode === 'bmv' ? 'BMV 2024' : 'muestra'}</span>`,
+        showarrow: false, font: { size: 22, color: '#1B365D' }, x: 0.5, y: 0.5,
+      }],
+    }, PLOTLY_CONFIG);
+  }
+
+  const note = {
+    muestra: 'Denominador: suma del market cap de las 51 empresas analizadas ≈ $7.0 billones MXN. Cada porción es el % del valor de la muestra.',
+    bmv: 'Denominador: capitalización total del mercado accionario mexicano = $8.5 billones MXN (Informe Anual Integrado BMV 2024). «Resto del mercado» = emisoras fuera de la muestra. Los market caps de la muestra se capturaron durante 2024; el % de la BMV es aproximado a cierre 2024.',
+  };
+  const noteEl = document.getElementById('bmv-context-note');
+
+  function setMode(mode) {
+    document.querySelectorAll('#bmv-toggle .bmv-btn').forEach(b =>
+      b.classList.toggle('is-active', b.dataset.mode === mode));
+    noteEl.textContent = note[mode];
+    render(mode);
+  }
+  document.querySelectorAll('#bmv-toggle .bmv-btn').forEach(b =>
+    b.addEventListener('click', () => setMode(b.dataset.mode)));
+  setMode('muestra');
 })();
 
 // Companies table — individual companies with network metrics
