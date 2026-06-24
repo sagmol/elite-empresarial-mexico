@@ -373,6 +373,7 @@ footer a { color: var(--ink2); }
     <li><a href="#permanencia">Permanencia</a></li>
     <li><a href="#huella">Huella</a></li>
     <li><a href="#red">La red</a></li>
+    <li><a href="#argentina">Argentina</a></li>
   </ul>
 </nav>
 
@@ -783,6 +784,54 @@ footer a { color: var(--ink2); }
   <div class="insight fade-in" id="insight-red"></div>
 </section>
 
+
+<!-- SECTION 09: ARGENTINA (comparativo) -->
+<section class="section fade-in" id="argentina">
+  <div class="section-label">09 — Argentina</div>
+  <h2 class="section-title">¿La inestabilidad cambia de quién es el capital?</h2>
+  <p class="section-lead">
+    Aplicamos la misma metodología a 22 empresas argentinas (datos Refinitiv, accionistas en USD).
+    La pregunta de fondo: ¿el régimen de inestabilidad —cepo, devaluación, defaults— hace que la
+    estructura de propiedad se comporte distinto que en México? La respuesta es <strong>sí, y de forma cualitativa</strong>.
+  </p>
+
+  <div class="two-col">
+    <div class="card fade-in">
+      <div class="card-title">¿De quién es el float? — capital que cotiza activamente</div>
+      <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 12px;">
+        México: el float es 84% extranjero. Argentina: 86% <strong>local</strong> — el capital de portafolio extranjero se replegó.
+      </p>
+      <div class="chart-wrap" style="min-height:240px;" id="chart-ar-float"></div>
+    </div>
+    <div class="card fade-in">
+      <div class="card-title">Fondos pasivos globales — BlackRock · Vanguard · State Street</div>
+      <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 12px;">
+        Están en 93% de las empresas mexicanas ($18.6B) y en solo 14% de las argentinas ($0.02B) — una diferencia de ~900×.
+      </p>
+      <div class="chart-wrap" style="min-height:240px;" id="chart-ar-passive"></div>
+    </div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">Los mayores fondos de la bolsa argentina — el Estado a la cabeza</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 12px;">
+      El mayor tenedor institucional no es un fondo global: es <strong>ANSES</strong>, el fondo de pensiones del Estado.
+      Los demás son gestoras locales. Los globales (Helikon, Qatar, Invesco) son marginales.
+    </p>
+    <div class="chart-wrap" style="min-height:380px;" id="chart-ar-funds"></div>
+  </div>
+
+  <div class="card fade-in">
+    <div class="card-title">El mapa de control — Estado, multinacionales y familias</div>
+    <div style="overflow-x:auto;">
+      <table class="groups-table" id="ar-control-table" style="font-size:0.82rem;"></table>
+    </div>
+  </div>
+
+  <div class="insight fade-in" id="insight-argentina"></div>
+</section>
+
+
 <!-- Tooltip (global, fixed) -->
 <div class="net-tooltip" id="net-tooltip"></div>
 
@@ -802,6 +851,7 @@ footer a { color: var(--ink2); }
 
 <!-- DATA + SCRIPTS -->
 <script src="data_web.js?v=7"></script>
+<script src="data_argentina.js?v=1"></script>
 <script>
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const fmt  = n => n == null ? '—' : Number(n).toLocaleString('es-MX');
@@ -2247,6 +2297,85 @@ const TYPE_COLORS = {
     `son empresas separadas bajo el mismo control familiar, no subsidiarias. ` +
     `<strong>Cemex → GCC</strong> tiene el mayor flujo de carrera del universo (17 personas) — ` +
     `dos competidores del cemento con una cantera compartida de talento directivo.`;
+})();
+
+// ── Section 09: Argentina (comparativo MX vs AR) ──────────────────────────────
+(function() {
+  if (typeof ARG_DATA === 'undefined') return;
+  const C = ARG_DATA.comp, mx = C.mx, ar = C.ar;
+  const NAVY = '#1B365D', TERRA = '#B85C38', GOLD = '#c9a227';
+
+  // Float local vs extranjero (barras apiladas horizontales)
+  Plotly.newPlot('chart-ar-float', [
+    { type:'bar', orientation:'h', name:'Local', y:['México','Argentina'],
+      x:[mx.float_loc_pct, ar.float_loc_pct], marker:{color:NAVY},
+      text:[`Local ${mx.float_loc_pct}%`, `Local ${ar.float_loc_pct}%`],
+      textposition:'inside', insidetextanchor:'middle', textfont:{color:'#fff'},
+      hovertemplate:'Local: %{x}%<extra></extra>' },
+    { type:'bar', orientation:'h', name:'Extranjero', y:['México','Argentina'],
+      x:[mx.float_ext_pct, ar.float_ext_pct], marker:{color:TERRA},
+      text:[`Extranjero ${mx.float_ext_pct}%`, `Extranjero ${ar.float_ext_pct}%`],
+      textposition:'inside', insidetextanchor:'middle', textfont:{color:'#fff'},
+      hovertemplate:'Extranjero: %{x}%<extra></extra>' },
+  ], { ...LAYOUT_BASE, height:240, barmode:'stack', showlegend:false,
+    margin:{t:8,r:16,b:16,l:72},
+    xaxis:{visible:false, range:[0,100]},
+    yaxis:{tickfont:{size:13, color:NAVY}} }, PLOTLY_CONFIG);
+
+  // Penetración pasivos globales
+  Plotly.newPlot('chart-ar-passive', [{
+    type:'bar', x:['México','Argentina'], y:[mx.pas_cos_pct, ar.pas_cos_pct],
+    marker:{color:[NAVY, TERRA]}, width:0.5,
+    text:[`${mx.pas_cos_pct}%<br>$${mx.pas_val_b}B`, `${ar.pas_cos_pct}%<br>$${ar.pas_val_b}B`],
+    textposition:'outside', textfont:{size:12, color:NAVY},
+    hovertemplate:'%{x}: %{y}% de las empresas<extra></extra>',
+  }], { ...LAYOUT_BASE, height:240, margin:{t:30,r:16,b:24,l:44},
+    xaxis:{tickfont:{size:13, color:NAVY}},
+    yaxis:{title:'% de empresas', range:[0,108], gridcolor:'#edecea'} }, PLOTLY_CONFIG);
+
+  // Top fondos Argentina (color: Estado / extranjero / local)
+  const fr = [...ARG_DATA.ar_funds].reverse();
+  const fColor = fr.map(f => f.state ? GOLD : (f.foreign ? TERRA : NAVY));
+  Plotly.newPlot('chart-ar-funds', [{
+    type:'bar', orientation:'h',
+    x: fr.map(f => f.val_m), y: fr.map(f => f.name),
+    marker:{color:fColor}, text: fr.map(f => `$${f.val_m}M`), textposition:'outside',
+    customdata: fr.map(f => [f.n, f.state ? 'Estado' : (f.foreign ? 'Extranjero' : 'Local')]),
+    hovertemplate:'<b>%{y}</b><br>$%{x}M en %{customdata[0]} empresas<br>%{customdata[1]}<extra></extra>',
+  }], { ...LAYOUT_BASE, height:380, margin:{t:8,r:60,b:32,l:150},
+    xaxis:{title:'Valor en el universo (USD M)', gridcolor:'#edecea'},
+    yaxis:{automargin:true, tickfont:{size:10}} }, PLOTLY_CONFIG);
+  document.getElementById('chart-ar-funds').insertAdjacentHTML('afterend',
+    '<div style="font-size:0.72rem;color:var(--muted);margin-top:8px;">'
+    + '<span style="color:'+GOLD+';font-weight:700;">●</span> Estado (ANSES) &nbsp; '
+    + '<span style="color:'+NAVY+';font-weight:700;">●</span> Gestora local &nbsp; '
+    + '<span style="color:'+TERRA+';font-weight:700;">●</span> Fondo extranjero</div>');
+
+  // Tabla de control
+  const tbl = document.getElementById('ar-control-table');
+  tbl.innerHTML = '<thead><tr>'
+    + ['Empresa','Controlador','%','Valor (USD M)','Tipo'].map(h =>
+        `<th style="text-align:left;padding:6px 10px;border-bottom:2px solid var(--border);font-size:0.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);">${h}</th>`).join('')
+    + '</tr></thead><tbody>'
+    + ARG_DATA.ar_control.map(r => `<tr style="border-bottom:1px solid var(--border);">`
+        + `<td style="padding:6px 10px;font-weight:600;">${r.company}</td>`
+        + `<td style="padding:6px 10px;">${r.owner}`
+        + (r.foreign ? ' <span style="font-size:0.66rem;background:#B85C38;color:#fff;padding:1px 6px;border-radius:8px;">extranjero</span>' : '')
+        + (r.type==='Government Agency' ? ' <span style="font-size:0.66rem;background:#c9a227;color:#fff;padding:1px 6px;border-radius:8px;">Estado</span>' : '')
+        + `</td>`
+        + `<td style="padding:6px 10px;">${r.pct!=null?r.pct+'%':'—'}</td>`
+        + `<td style="padding:6px 10px;">$${r.val_m}M</td>`
+        + `<td style="padding:6px 10px;color:var(--muted);">${r.type||''}</td></tr>`).join('')
+    + '</tbody>';
+
+  // Insight
+  document.getElementById('insight-argentina').innerHTML =
+    `<strong>La inestabilidad no produce "menos de lo mismo" — produce un régimen de propiedad distinto.</strong> ` +
+    `En México el float es ${mx.float_ext_pct}% extranjero; en Argentina es ${ar.float_loc_pct}% local: el capital de portafolio extranjero se replegó ante el cepo, la devaluación y los defaults. ` +
+    `El puente causal más nítido es la <strong>exclusión de los índices</strong>: tras la degradación de Argentina por MSCI (2021, por los controles de capital), los fondos pasivos globales —que replican el índice— dejan de poder comprarla. ` +
+    `Por eso BlackRock/Vanguard están en ${mx.pas_cos_pct}% de las empresas mexicanas ($${mx.pas_val_b}B) y en apenas ${ar.pas_cos_pct}% de las argentinas ($${ar.pas_val_b}B). ` +
+    `El vacío lo llena el <strong>Estado</strong>: ANSES, el fondo de pensiones nacional, es el mayor tenedor institucional de la bolsa. ` +
+    `El control, en tanto, queda en manos de multinacionales (Banco do Brasil, BBVA, Techint, Camargo Corrêa), familias locales y el propio Estado (YPF).`;
 })();
 
 // ── Fade-in on scroll ─────────────────────────────────────────────────────────
