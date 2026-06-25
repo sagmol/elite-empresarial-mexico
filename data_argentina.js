@@ -173,5 +173,37 @@ const ARG_DATA = {
       "type": "Corporation",
       "foreign": false
     }
-  ]
+  ],
+  "behavior": {
+    "mx": {
+      "style": {
+        "Índice (pasivo)": 24.9,
+        "GARP": 15.4,
+        "Value": 17.1,
+        "Growth": 25.6,
+        "Yield": 2.1,
+        "Otro": 15.0
+      },
+      "turnover": {
+        "Low": 75.9,
+        "Moderate": 8.0,
+        "High": 1.4
+      }
+    },
+    "ar": {
+      "style": {
+        "Índice (pasivo)": 0.6,
+        "GARP": 3.7,
+        "Value": 1.9,
+        "Growth": 24.3,
+        "Yield": 17.9,
+        "Otro": 51.6
+      },
+      "turnover": {
+        "Low": 47.7,
+        "Moderate": 10.5,
+        "High": 31.2
+      }
+    }
+  }
 };

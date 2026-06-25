@@ -822,6 +822,25 @@ footer a { color: var(--ink2); }
   </div>
 
   <div class="card fade-in">
+    <div class="card-title">¿Cómo invierte el capital? — estilo y rotación</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 12px;">
+      No solo cambia <em>quién</em> es el dueño, también <em>cómo</em> invierte. México es capital pasivo de
+      índice que compra y mantiene; Argentina es capital activo —growth y yield— que rota mucho más.
+      (En Argentina ~la mitad del float es de gestoras locales sin estilo declarado por Refinitiv → "Otro / s.d.".)
+    </p>
+    <div class="two-col">
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;">Estilo de inversión (% del float)</div>
+        <div class="chart-wrap" style="min-height:300px;" id="chart-ar-style"></div>
+      </div>
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;">Rotación del capital (% del float)</div>
+        <div class="chart-wrap" style="min-height:300px;" id="chart-ar-turnover"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card fade-in">
     <div class="card-title">El mapa de control — Estado, multinacionales y familias</div>
     <div style="overflow-x:auto;">
       <table class="groups-table" id="ar-control-table" style="font-size:0.82rem;"></table>
@@ -851,7 +870,7 @@ footer a { color: var(--ink2); }
 
 <!-- DATA + SCRIPTS -->
 <script src="data_web.js?v=7"></script>
-<script src="data_argentina.js?v=1"></script>
+<script src="data_argentina.js?v=2"></script>
 <script>
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const fmt  = n => n == null ? '—' : Number(n).toLocaleString('es-MX');
@@ -2350,6 +2369,30 @@ const TYPE_COLORS = {
     + '<span style="color:'+GOLD+';font-weight:700;">●</span> Estado (ANSES) &nbsp; '
     + '<span style="color:'+NAVY+';font-weight:700;">●</span> Gestora local &nbsp; '
     + '<span style="color:'+TERRA+';font-weight:700;">●</span> Fondo extranjero</div>');
+
+  // Cómo invierte: estilo y rotación (MX vs AR)
+  const bmx = ARG_DATA.behavior.mx, baar = ARG_DATA.behavior.ar;
+  const styleKeys = ['Índice (pasivo)','GARP','Value','Growth','Yield','Otro'];
+  const styleLabels = styleKeys.map(k => k === 'Otro' ? 'Otro / s.d.' : k);
+  Plotly.newPlot('chart-ar-style', [
+    { type:'bar', orientation:'h', name:'México', y:styleLabels, x:styleKeys.map(k=>bmx.style[k]||0),
+      marker:{color:NAVY}, hovertemplate:'México · %{y}: %{x}%<extra></extra>' },
+    { type:'bar', orientation:'h', name:'Argentina', y:styleLabels, x:styleKeys.map(k=>baar.style[k]||0),
+      marker:{color:TERRA}, hovertemplate:'Argentina · %{y}: %{x}%<extra></extra>' },
+  ], { ...LAYOUT_BASE, height:300, barmode:'group', margin:{t:8,r:16,b:24,l:92},
+    xaxis:{ticksuffix:'%', gridcolor:'#edecea'},
+    yaxis:{autorange:'reversed', tickfont:{size:10}},
+    legend:{orientation:'h', y:-0.16} }, PLOTLY_CONFIG);
+
+  const tKeys = ['Low','Moderate','High'];
+  Plotly.newPlot('chart-ar-turnover', [
+    { type:'bar', name:'México', x:['Baja','Media','Alta'], y:tKeys.map(k=>bmx.turnover[k]||0),
+      marker:{color:NAVY}, hovertemplate:'México · rotación %{x}: %{y}%<extra></extra>' },
+    { type:'bar', name:'Argentina', x:['Baja','Media','Alta'], y:tKeys.map(k=>baar.turnover[k]||0),
+      marker:{color:TERRA}, hovertemplate:'Argentina · rotación %{x}: %{y}%<extra></extra>' },
+  ], { ...LAYOUT_BASE, height:300, barmode:'group', margin:{t:8,r:16,b:24,l:40},
+    yaxis:{ticksuffix:'%', gridcolor:'#edecea'},
+    legend:{orientation:'h', y:-0.16} }, PLOTLY_CONFIG);
 
   // Tabla de control
   const tbl = document.getElementById('ar-control-table');
