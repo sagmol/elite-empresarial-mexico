@@ -205,5 +205,35 @@ const ARG_DATA = {
         "High": 31.2
       }
     }
+  },
+  "sectors": {
+    "mx": {
+      "Materiales básicos": 26.9,
+      "Comunicaciones": 16.1,
+      "Consumo cíclico": 1.6,
+      "Consumo defensivo": 19.5,
+      "Energía": 1.4,
+      "Servicios financieros": 12.6,
+      "Salud": 0.7,
+      "Industriales": 11.3,
+      "Inmobiliario": 9.9
+    },
+    "ar": {
+      "Materiales básicos": 13.0,
+      "Comunicaciones": 16.9,
+      "Energía": 11.4,
+      "Servicios financieros": 35.0,
+      "Salud": 0.2,
+      "Industriales": 2.2,
+      "Tecnología": 0.4,
+      "Servicios públicos": 21.0
+    },
+    "ar_state": {
+      "Energía": 5110.0,
+      "Servicios financieros": 1093.0,
+      "Servicios públicos": 959.0,
+      "Comunicaciones": 421.0,
+      "Materiales básicos": 54.0
+    }
   }
 };

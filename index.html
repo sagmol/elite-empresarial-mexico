@@ -847,6 +847,23 @@ footer a { color: var(--ink2); }
     </div>
   </div>
 
+  <div class="card fade-in">
+    <div class="card-title">Dos capitalismos por sector — ¿dónde están las grandes empresas y dónde el Estado?</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 14px;">
+      La composición es distinta: México es <strong>consumo + materiales + telecom</strong>; Argentina, <strong>banca + infraestructura regulada</strong> (servicios públicos, energía). Y el Estado argentino participa justo en los sectores estratégicos —energía (YPF), servicios públicos, banca, comunicaciones: las <em>commanding heights</em>—. El Estado mexicano: ~0 en todos. Es la diferencia entre un Estado que <em>moldea</em> (market-shaping) y uno que <em>habilita</em> (derisking).
+    </p>
+    <div class="two-col">
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;">Composición del mercado por sector (% del market cap)</div>
+        <div class="chart-wrap" style="min-height:360px;" id="chart-ar-sectors"></div>
+      </div>
+      <div>
+        <div style="font-size:0.78rem;font-weight:600;color:var(--ink);margin-bottom:6px;">Dónde invierte el Estado argentino (USD M)</div>
+        <div class="chart-wrap" style="min-height:360px;" id="chart-ar-state-sector"></div>
+      </div>
+    </div>
+  </div>
+
   <div class="insight fade-in" id="insight-argentina"></div>
 </section>
 
@@ -870,7 +887,7 @@ footer a { color: var(--ink2); }
 
 <!-- DATA + SCRIPTS -->
 <script src="data_web.js?v=7"></script>
-<script src="data_argentina.js?v=2"></script>
+<script src="data_argentina.js?v=3"></script>
 <script>
 // ── Helpers ─────────────────────────────────────────────────────────────────
 const fmt  = n => n == null ? '—' : Number(n).toLocaleString('es-MX');
@@ -2410,6 +2427,31 @@ const TYPE_COLORS = {
         + `<td style="padding:6px 10px;">$${r.val_m}M</td>`
         + `<td style="padding:6px 10px;color:var(--muted);">${r.type||''}</td></tr>`).join('')
     + '</tbody>';
+
+  // Comparativo sectorial + Estado por sector
+  const SC = ARG_DATA.sectors;
+  const secKeys = [...new Set([...Object.keys(SC.mx), ...Object.keys(SC.ar)])]
+    .sort((a,b) => ((SC.ar[b]||0)+(SC.mx[b]||0)) - ((SC.ar[a]||0)+(SC.mx[a]||0)));
+  const secRev = [...secKeys].reverse();
+  Plotly.newPlot('chart-ar-sectors', [
+    { type:'bar', orientation:'h', name:'México', y:secRev, x:secRev.map(k=>SC.mx[k]||0),
+      marker:{color:NAVY}, hovertemplate:'México · %{y}: %{x}%<extra></extra>' },
+    { type:'bar', orientation:'h', name:'Argentina', y:secRev, x:secRev.map(k=>SC.ar[k]||0),
+      marker:{color:TERRA}, hovertemplate:'Argentina · %{y}: %{x}%<extra></extra>' },
+  ], { ...LAYOUT_BASE, height:360, barmode:'group', margin:{t:8,r:16,b:30,l:132},
+    xaxis:{ticksuffix:'%', gridcolor:'#edecea'}, yaxis:{tickfont:{size:10}},
+    legend:{orientation:'h', y:-0.12} }, PLOTLY_CONFIG);
+
+  const stateSec = Object.entries(SC.ar_state).sort((a,b)=>a[1]-b[1]);
+  Plotly.newPlot('chart-ar-state-sector', [{
+    type:'bar', orientation:'h',
+    y: stateSec.map(d=>d[0]), x: stateSec.map(d=>d[1]),
+    marker:{color:GOLD}, text: stateSec.map(d=> d[1]>=1000?`$${(d[1]/1000).toFixed(1)}B`:`$${d[1].toFixed(0)}M`),
+    textposition:'outside',
+    hovertemplate:'%{y}: $%{x}M<extra></extra>',
+  }], { ...LAYOUT_BASE, height:360, margin:{t:8,r:64,b:30,l:132},
+    xaxis:{title:'USD M en manos del Estado', gridcolor:'#edecea'},
+    yaxis:{tickfont:{size:10}} }, PLOTLY_CONFIG);
 
   // Insight
   document.getElementById('insight-argentina').innerHTML =
