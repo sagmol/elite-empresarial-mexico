@@ -196,10 +196,15 @@ for e in inter_top:
         "color":  GROUP_COLORS.get(src_group, "#aaa"),
     })
 
-# ── 6. PROPIEDAD — SHAREHOLDERS ─────────────────────────────────────────────
-strat = sh_raw[sh_raw.investor_type == 'Strategic Entities'].copy()
-strat = strat[strat.pct_outstanding.notna()].copy()
-strat['pct'] = strat['pct_outstanding'] * 100
+# ── 6. PROPIEDAD — BLOQUE DE CONTROL (escenario C del artículo) ─────────────
+# Fuente: tabla de controladores últimos del paper (06_paper_propiedad_internacional/
+# insumos/controladores_borrador.csv). Reglas: nacionalidad del controlador último
+# (Walmex -> Walmart, EUA), custodios fuera, 14 emisoras completadas con reportes
+# anuales, control en cascada (emisora de la muestra dueña de otra) incluido en el
+# bloque de la filial pero excluido de los agregados de valor (sección 12b).
+CTRL_PATH = r'C:\pw\proyectos\06_paper_propiedad_internacional\insumos\controladores_borrador.csv'
+ctrl_t = pd.read_csv(CTRL_PATH)
+ctrl_t['valor_usd_m'] = ctrl_t['valor_usd_m'].astype(float)
 
 def short_co(name):
     s = re.sub(r'^\d+_', '', str(name))
@@ -207,60 +212,85 @@ def short_co(name):
         s = s.replace(abbr, '').strip()
     return s.strip(' .,').strip()[:38]
 
-strat_pos = strat[strat.pct > 0].copy()
-# Exclude Southern Copper (pure subsidiary listed abroad)
-strat_pos = strat_pos[~strat_pos.company_folder.astype(str).str.startswith('299_')].copy()
+def ctrl_label(name):
+    return re.sub(r'\s*\((emisora de la muestra|subsidiaria)\)', '', str(name)).strip()
 
 folder_to_grp = dict(zip(tree.company_folder, tree.group_short))
+blk_rows = ctrl_t[ctrl_t.regla.isin(['control', 'cascada'])].copy()
+blk_rows['v'] = blk_rows['valor_usd_m'].fillna(0)
+blk_rows['label'] = blk_rows['controlador_ultimo'].apply(ctrl_label)
+
+def tipo_controlante(folder):
+    """Misma regla que insumos/cifras_seccion6.py: controlador principal = tenedor
+    de control con mayor valor; bloque <10% -> sin controlador identificado."""
+    g = blk_rows[blk_rows.company_folder == folder]
+    if g.empty:
+        return 'Sin controlador identificado'
+    top = g.sort_values('v').iloc[-1]
+    if pd.isna(top['pct']) and top['nacionalidad_ultima'] == 'México':
+        return 'Familia mexicana'          # control sin % (Sanborns, Bachoco)
+    if g['pct'].sum() < 0.10:
+        return 'Sin controlador identificado'
+    if top['regla'] == 'cascada':
+        return 'Filial de grupo mexicano'
+    if top['nacionalidad_ultima'] != 'México':
+        return 'Control extranjero'
+    return 'Familia mexicana'
+
+universe_folders = sorted(sh_raw.company_folder.astype(str).unique())
+sh_name = sh_raw.drop_duplicates('company_folder').set_index('company_folder')['company_name']
+tipos = {f: tipo_controlante(f) for f in universe_folders}
 
 concentration_data = []
-for folder, grp in strat_pos.sort_values('pct', ascending=False).groupby('company_folder', sort=False):
-    folder = str(folder)
-    top3 = grp.sort_values('pct', ascending=False).head(3)
-    g = folder_to_grp.get(folder, 'Otro')
-    shareholders = []
-    for _, r in top3.iterrows():
-        shareholders.append({
-            'name'   : str(r['investor_name'])[:50],
-            'pct'    : round(float(r['pct']), 1),
-            'subtype': str(r['investor_subtype']),
-        })
-    pct_top1  = shareholders[0]['pct'] if shareholders else 0
-    pct_total = round(float(top3['pct'].sum()), 1)
-    company_name = grp.iloc[0]['company_name']
+for folder in universe_folders:
+    g = blk_rows[(blk_rows.company_folder == folder) & blk_rows.pct.notna()]
+    # Igual que la figura 2 del artículo: entran las emisoras con algún % (de control
+    # o de cartera); las que no tienen bloque cuentan con 0%. Quedan fuera solo las
+    # que no traen ningún porcentaje (Sanborns, Bachoco).
+    if g.empty and not (sh_raw.loc[sh_raw.company_folder == folder, 'pct_outstanding'].fillna(0) > 0).any():
+        continue
+    holders = (g.groupby(['label', 'nacionalidad_ultima'], as_index=False)['pct'].sum()
+                .sort_values('pct', ascending=False))
+    holders['pct'] = holders['pct'] * 100
+    block = float(holders['pct'].sum())
+    shareholders = [{'name': str(r['label'])[:60], 'pct': round(float(r['pct']), 1),
+                     'nac': str(r['nacionalidad_ultima'])} for _, r in holders.head(2).iterrows()]
+    if not shareholders:
+        shareholders = [{'name': 'Sin bloque de control registrado', 'pct': 0.0, 'nac': ''}]
+    rest = block - sum(x['pct'] for x in shareholders)
+    if rest > 0.05:
+        shareholders.append({'name': f'Resto del bloque ({len(holders) - 2} tenedores)',
+                             'pct': round(rest, 1), 'nac': ''})
+    grp = folder_to_grp.get(folder, 'Otro')
     concentration_data.append({
-        'company'     : short_co(company_name),
+        'company'     : short_co(sh_name.get(folder, folder)),
         'folder'      : folder,
-        'group'       : g,
-        'color'       : GROUP_COLORS.get(g, '#aaa'),
-        'pct_top1'    : pct_top1,
-        'pct_total'   : pct_total,
+        'group'       : grp,
+        'color'       : GROUP_COLORS.get(grp, '#aaa'),
+        'pct_block'   : round(block, 1),
+        'pct_top1'    : shareholders[0]['pct'],
         'investor'    : shareholders[0]['name'],
-        'subtype'     : shareholders[0]['subtype'],
+        'tipo'        : tipos[folder],
         'shareholders': shareholders,
     })
+concentration_data.sort(key=lambda x: -x['pct_block'])
 
-concentration_data.sort(key=lambda x: -x['pct_top1'])
-
-all_sh_folders   = set(sh_raw.company_folder.astype(str).unique())
-strat_folders_set = set(strat_pos.company_folder.astype(str).unique())
-no_strat_list = []
-for f in sorted(all_sh_folders - strat_folders_set):
-    if f.startswith('299_'):
-        continue
-    rows = sh_raw[sh_raw.company_folder.astype(str) == f]
-    if len(rows):
-        no_strat_list.append(short_co(rows.iloc[0]['company_name']))
-
-n_majority  = sum(1 for c in concentration_data if c['pct_top1'] >= 50)
-median_conc = round(float(np.median([c['pct_top1'] for c in concentration_data])), 1)
+no_ctrl = [short_co(sh_name.get(f, f)) for f in universe_folders if tipos[f] == 'Sin controlador identificado']
+tipo_counts = pd.Series(tipos).value_counts().to_dict()
+n_mx_ctrl = tipo_counts.get('Familia mexicana', 0) + tipo_counts.get('Filial de grupo mexicano', 0)
 
 prop_stats = {
-    'n_with_strategic' : len(concentration_data),
-    'n_majority'       : n_majority,
-    'n_no_strategic'   : len(no_strat_list),
-    'median_pct'       : median_conc,
-    'no_strategic'     : no_strat_list,
+    'n_universe'       : len(universe_folders),
+    'n_with_pct'       : len(concentration_data),
+    'n_majority'       : sum(1 for c in concentration_data if c['pct_block'] > 50),
+    'median_pct'       : round(float(np.median([c['pct_block'] for c in concentration_data])), 1),
+    'n_no_controller'  : len(no_ctrl),
+    'no_controller'    : no_ctrl,
+    'n_with_controller': len(universe_folders) - len(no_ctrl),
+    'n_mx_controller'  : n_mx_ctrl,
+    'n_family_mx'      : tipo_counts.get('Familia mexicana', 0),
+    'n_cascade_mx'     : tipo_counts.get('Filial de grupo mexicano', 0),
+    'n_foreign'        : tipo_counts.get('Control extranjero', 0),
 }
 
 # ── 7. PERMANENCIA — BOARD TENURE ────────────────────────────────────────────
@@ -575,12 +605,20 @@ def agg_subs(df):
         'by_haven': by_haven,
         'haven_details': notable[:25],
         'total': len(df),
+        'n_abroad': int((df['country'] != 'Mexico').sum()),
+        'n_countries_abroad': int(df.loc[df['country'] != 'Mexico', 'country'].nunique()),
         'n_haven': int(len(havens)),
         'n_classic': int(havens['country'].isin(CLASSIC_HAVENS).sum()),
     }
 
-# Global
-subs_global = agg_subs(subs_raw)
+# Global: una entidad (PermID) cuenta una vez aunque aparezca en varias
+# carpetas (holdings en cascada: Alfa→Alpek, Grupo México→Southern Copper)
+_subs_u = subs_raw.drop_duplicates('permid')
+subs_global = agg_subs(_subs_u)
+subs_global['n_companies'] = int(subs_raw['company_folder'].nunique())
+subs_global['pct_haven'] = round(float(_subs_u['is_haven'].mean()) * 100, 1)
+subs_global['pct_haven_otros'] = round(float(_subs_u.loc[_subs_u['sector'] == 'Otros', 'is_haven'].mean()) * 100, 1)
+subs_global['pct_otros'] = round(float((_subs_u['sector'] == 'Otros').mean()) * 100, 1)
 
 # Per company
 subs_by_company = {}
@@ -763,35 +801,65 @@ def tipo_capital(style):
     if style == 'Deep Value': return 'Oportunista'
     return 'Sin clasificar'
 
-def compute_capital_structure(sub):
-    """Estructura de capital para un subconjunto de shareholders (todo el universo
-    o una sola empresa). Devuelve None si no hay capital declarado."""
-    strat_all = sub[sub['investor_type'] == 'Strategic Entities']
-    inst_df = sub[(sub['investor_type'] == 'Investment Managers')
-                  & sub['pct_outstanding'].notna()].copy()
-    strat_total_m = float(strat_all['value_usd_m'].sum())
-    im_total_m = float(inst_df['value_usd_m'].sum())
-    total_m = strat_total_m + im_total_m
+# Cartera = todos los tenedores que no son Strategic Entities (gestoras, casas de
+# bolsa, instituciones), menos los reclasificados en la tabla de controladores
+# (Indigo Partners en Volaris -> control; Slim Family en Sites -> duplicado).
+_rec = ctrl_t[ctrl_t.origen == 'Refinitiv (reclasificado de cartera)']
+_rec_keys = set(_rec.company_folder + '|' + _rec.tenedor_registrado)
+cart_all = sh_raw[sh_raw.investor_type != 'Strategic Entities'].copy()
+cart_all = cart_all[~(cart_all.company_folder + '|' + cart_all.investor_name).isin(_rec_keys)]
+# Nacionalidad de la gestora por su matriz (misma regex que figuras/fig_propiedad.py):
+# filiales mexicanas de gestoras extranjeras cuentan como extranjeras.
+FILIALES_EXT_RE = (r'BlackRock|BBVA|Sura|Santander|Scotia|Principal|HSBC|Citi|Franklin|Compass|'
+                   r'Invesco|J\.?P\.? ?Morgan|Goldman|UBS|Credit Suisse|Allianz')
+cart_all['mx_matriz'] = ((cart_all.country == 'Mexico')
+                         & ~cart_all.investor_name.str.contains(FILIALES_EXT_RE, case=False, regex=True, na=False))
+
+def compute_capital_structure(folder=None):
+    """Estructura de capital del universo (folder=None) o de una emisora.
+    Universo: excluye control en cascada (ya esta dentro del valor de la duena).
+    Emisora: la cascada SI es su bloque de control (cuenta como control mexicano)."""
+    reglas = ['control'] if folder is None else ['control', 'cascada']
+    c = ctrl_t[ctrl_t.regla.isin(reglas)]
+    cart = cart_all
+    sub = sh_raw
+    if folder is not None:
+        c = c[c.company_folder == folder]
+        cart = cart[cart.company_folder == folder]
+        sub = sub[sub.company_folder == folder]
+    ctrl_mx_m = float(c.loc[c.nacionalidad_ultima == 'México', 'valor_usd_m'].sum())
+    ctrl_ex_m = float(c.loc[c.nacionalidad_ultima != 'México', 'valor_usd_m'].sum())
+    cart_mx_m = float(cart.loc[cart.mx_matriz, 'value_usd_m'].sum())
+    cart_ex_m = float(cart.loc[~cart.mx_matriz, 'value_usd_m'].sum())
+    ctrl_m, cart_m = ctrl_mx_m + ctrl_ex_m, cart_mx_m + cart_ex_m
+    total_m = ctrl_m + cart_m
     if total_m <= 0:
         return None
-
-    im_mx = inst_df[inst_df['country'] == 'Mexico'].copy()
-    im_ext = inst_df[inst_df['country'] != 'Mexico']
-    im_mx_m = float(im_mx['value_usd_m'].sum())
-    im_ext_m = float(im_ext['value_usd_m'].sum())
+    pct = lambda x, d: round(x / d * 100, 1) if d > 0 else 0.0
 
     capital_global = {
         'total_b'       : round(total_m/1000, 2),
-        'strategic_b'   : round(strat_total_m/1000, 2),
-        'strategic_pct' : round(strat_total_m/total_m*100, 1),
-        'float_b'       : round(im_total_m/1000, 2),
-        'float_pct'     : round(im_total_m/total_m*100, 1),
-        'float_mx_b'    : round(im_mx_m/1000, 2),
-        'float_mx_pct'  : round(im_mx_m/im_total_m*100, 1) if im_total_m > 0 else 0.0,
-        'float_ext_b'   : round(im_ext_m/1000, 2),
-        'float_ext_pct' : round(im_ext_m/im_total_m*100, 1) if im_total_m > 0 else 0.0,
+        'strategic_b'   : round(ctrl_m/1000, 2),
+        'strategic_pct' : pct(ctrl_m, total_m),
+        'ctrl_mx_b'     : round(ctrl_mx_m/1000, 2),
+        'ctrl_mx_pct'   : pct(ctrl_mx_m, total_m),
+        'ctrl_ex_b'     : round(ctrl_ex_m/1000, 2),
+        'ctrl_ex_pct'   : pct(ctrl_ex_m, total_m),
+        'ctrl_mx_share' : pct(ctrl_mx_m, ctrl_m),
+        'float_b'       : round(cart_m/1000, 2),
+        'float_pct'     : pct(cart_m, total_m),
+        'float_mx_b'    : round(cart_mx_m/1000, 2),
+        'float_mx_pct'  : pct(cart_mx_m, cart_m),
+        'float_ext_b'   : round(cart_ex_m/1000, 2),
+        'float_ext_pct' : pct(cart_ex_m, cart_m),
+        'mx_total_pct'  : pct(ctrl_mx_m + cart_mx_m, total_m),
     }
 
+    # Filiales y comportamiento: solo gestoras de inversion (Investment Managers)
+    inst_df = sub[(sub['investor_type'] == 'Investment Managers')
+                  & sub['pct_outstanding'].notna()].copy()
+    im_mx = inst_df[inst_df['country'] == 'Mexico'].copy()
+    im_mx_m = float(im_mx['value_usd_m'].sum())
     im_mx['categoria_filial'] = im_mx['investor_name'].apply(classify_filial)
     filiales_cat = (im_mx.groupby('categoria_filial')['value_usd_m'].sum() / 1000).round(3)
     filiales_data = []
@@ -804,41 +872,51 @@ def compute_capital_structure(sub):
         })
 
     inst_b = inst_df.copy()
-    inst_b['origen'] = inst_b.apply(origen_capital, axis=1)
-    inst_b['tipo_capital'] = inst_b['investment_style'].apply(tipo_capital)
     comportamiento_data = []
-    for origen, grp in inst_b.groupby('origen'):
-        tot = float(grp['value_usd_m'].sum())
-        if tot <= 0: continue
-        by_tipo = (grp.groupby('tipo_capital')['value_usd_m'].sum() / tot * 100).round(1)
-        comportamiento_data.append({
-            'origen'   : origen,
-            'total_b'  : round(tot/1000, 3),
-            'permanente_pct'  : float(by_tipo.get('Permanente', 0.0)),
-            'activo_pct'      : float(by_tipo.get('Activo', 0.0)),
-            'oportunista_pct' : float(by_tipo.get('Oportunista', 0.0)),
-            'sin_clasificar_pct': float(by_tipo.get('Sin clasificar', 0.0)),
-        })
+    if len(inst_b):
+        inst_b['origen'] = inst_b.apply(origen_capital, axis=1)
+        inst_b['tipo_capital'] = inst_b['investment_style'].apply(tipo_capital)
+        for origen, grp in inst_b.groupby('origen'):
+            tot = float(grp['value_usd_m'].sum())
+            if tot <= 0: continue
+            by_tipo = (grp.groupby('tipo_capital')['value_usd_m'].sum() / tot * 100).round(1)
+            comportamiento_data.append({
+                'origen'   : origen,
+                'total_b'  : round(tot/1000, 3),
+                'permanente_pct'  : float(by_tipo.get('Permanente', 0.0)),
+                'activo_pct'      : float(by_tipo.get('Activo', 0.0)),
+                'oportunista_pct' : float(by_tipo.get('Oportunista', 0.0)),
+                'sin_clasificar_pct': float(by_tipo.get('Sin clasificar', 0.0)),
+            })
     comportamiento_data.sort(key=lambda d: -d['total_b'])
 
     return {
         'global'        : capital_global,
         'filiales'      : filiales_data,
+        'im_mx_sede_b'  : round(im_mx_m/1000, 2),
         'comportamiento': comportamiento_data,
         'n_inst'        : int(len(inst_df)),
-        'n_strat'       : int(len(strat_all)),
+        'n_strat'       : int(len(c)),
     }
 
 # Agregado de todo el universo (vista "Todos")
-capital_structure_data = to_native(compute_capital_structure(sh_raw))
+capital_structure_data = compute_capital_structure(None)
+capital_structure_data['n_companies'] = int(sh_raw.company_folder.nunique())
+capital_structure_data['cascade_excluded_b'] = round(float(
+    ctrl_t.loc[ctrl_t.regla == 'cascada', 'valor_usd_m'].sum()) / 1000, 1)
+_b3 = sh_raw[(sh_raw.investor_type == 'Investment Managers')
+             & sh_raw.investor_name.str.contains('BlackRock|Vanguard|State Street|SSGA', case=False, na=False)]
+capital_structure_data['big3_n_companies'] = int(_b3.company_folder.nunique())
+capital_structure_data['big3_median_pct'] = round(float(
+    _b3.groupby('company_folder').pct_outstanding.sum().median()) * 100, 1)
+capital_structure_data = to_native(capital_structure_data)
 
 # Desglose por empresa (para el selector interactivo)
 capital_by_company = {}
-for folder, sub in sh_raw.groupby('company_folder'):
-    res = compute_capital_structure(sub)
+for folder in sh_raw['company_folder'].astype(str).unique():
+    res = compute_capital_structure(folder)
     if res is None:
         continue
-    folder = str(folder)
     raw_name = folder_to_name.get(folder, folder)
     res['name'] = short_co(raw_name if str(raw_name) != 'nan' else folder)
     capital_by_company[folder] = res
@@ -1044,5 +1122,9 @@ with open(OUT, 'w', encoding='utf-8') as f:
 
 print(f"data_web.js escrito ({len(js):,} chars)")
 print(f"Grupos: {len(groups_data)}, Empresas: {len(companies_data)}")
-print(f"Concentración: {len(concentration_data)} empresas, {prop_stats['n_majority']} con mayoría")
+print(f"Bloque de control: {prop_stats['n_majority']} de {prop_stats['n_with_pct']} >50%, mediana {prop_stats['median_pct']}%; "
+      f"control mexicano {prop_stats['n_mx_controller']} de {prop_stats['n_with_controller']}; sin controlador {prop_stats['n_no_controller']}")
+_cg = capital_structure_data['global']
+print(f"Capital: total ${_cg['total_b']}B | ctrl MX {_cg['ctrl_mx_pct']}% | ctrl EXT {_cg['ctrl_ex_pct']}% | "
+      f"cartera {_cg['float_pct']}% ({_cg['float_ext_pct']}% ext. por matriz) | mexicano total {_cg['mx_total_pct']}%")
 print(f"Tenure: {len(tenure_data)} directores top, board_stats={board_stats}")

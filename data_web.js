@@ -1195,619 +1195,51 @@ const INTERLOCK_DATA = [
 
 const CONCENTRATION_DATA = [
   {
-    "company": "Becle",
-    "folder": "057_Becle SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 86.7,
-    "pct_total": 86.7,
-    "investor": "Beckmann Vidal (Juan Domingo & Family)",
-    "subtype": "Other Insider Investor",
-    "shareholders": [
-      {
-        "name": "Beckmann Vidal (Juan Domingo & Family)",
-        "pct": 86.7,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Palacio de Hierro",
-    "folder": "190_Grupo Palacio de Hierro SAB de CV",
-    "group": "BAL",
-    "color": "#5b8db8",
-    "pct_top1": 82.8,
-    "pct_total": 82.8,
-    "investor": "Baillères Family",
-    "subtype": "Other Insider Investor",
-    "shareholders": [
-      {
-        "name": "Baillères Family",
-        "pct": 82.8,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Profuturo",
-    "folder": "191_Grupo Profuturo SAB de CV",
-    "group": "BAL",
-    "color": "#5b8db8",
-    "pct_top1": 76.4,
-    "pct_total": 76.4,
-    "investor": "Bailléres González (Alberto)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Bailléres González (Alberto)",
-        "pct": 76.4,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Carso",
-    "folder": "172_Grupo Carso SAB de CV",
+    "company": "Impulsora del Desarrollo y el Empleo e",
+    "folder": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
     "group": "Slim",
     "color": "#1B365D",
-    "pct_top1": 76.0,
-    "pct_total": 76.0,
-    "investor": "Slim Helú family",
-    "subtype": "Other Insider Investor",
+    "pct_block": 97.5,
+    "pct_top1": 49.5,
+    "investor": "Fondos de pensiones canadienses: CPP Investments + Ontario T",
+    "tipo": "Control extranjero",
     "shareholders": [
       {
-        "name": "Slim Helú family",
-        "pct": 76.0,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Fresnillo PLC",
-    "folder": "153_Fresnillo PLC",
-    "group": "BAL",
-    "color": "#5b8db8",
-    "pct_top1": 75.0,
-    "pct_total": 75.0,
-    "investor": "Industrias Penoles SAB de CV",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Industrias Penoles SAB de CV",
-        "pct": 75.0,
-        "subtype": "Corporation"
+        "name": "Fondos de pensiones canadienses: CPP Investments + Ontario T",
+        "pct": 49.5,
+        "nac": "Canadá"
       },
       {
-        "name": "Ruiz (Fernando)",
-        "pct": 0.0,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Bordes (Juan)",
-        "pct": 0.0,
-        "subtype": "Individual Investor"
+        "name": "Familia Slim",
+        "pct": 48.0,
+        "nac": "México"
       }
     ]
   },
   {
-    "company": "Grupo Comercial Chedraui",
-    "folder": "173_Grupo Comercial Chedraui SAB de CV",
+    "company": "Southern Copper Corp Peru",
+    "folder": "299_Southern Copper Corp Peru",
     "group": "Otro",
     "color": "#a8a8a8",
-    "pct_top1": 73.9,
-    "pct_total": 73.9,
-    "investor": "Chedraui Family",
-    "subtype": "Other Insider Investor",
+    "pct_block": 90.2,
+    "pct_top1": 90.1,
+    "investor": "Grupo México",
+    "tipo": "Filial de grupo mexicano",
     "shareholders": [
       {
-        "name": "Chedraui Family",
-        "pct": 73.9,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Wal Mart de Mexico",
-    "folder": "323_Wal Mart de Mexico SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 70.6,
-    "pct_total": 70.6,
-    "investor": "Intersalt, S. de R.L. de C.V.",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Intersalt, S. de R.L. de C.V.",
-        "pct": 70.6,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "GMexico Transportes",
-    "folder": "159_GMexico Transportes SAB de CV",
-    "group": "Gmexico",
-    "color": "#c44a8a",
-    "pct_top1": 70.3,
-    "pct_total": 70.3,
-    "investor": "Grupo Mexico SAB de CV",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Grupo Mexico SAB de CV",
-        "pct": 70.3,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Herdez",
-    "folder": "183_Grupo Herdez SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 70.0,
-    "pct_total": 70.0,
-    "investor": "Familia (Hernández-Pons Torres)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Familia (Hernández-Pons Torres)",
-        "pct": 70.0,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Industrias CH",
-    "folder": "206_Industrias CH SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 66.0,
-    "pct_total": 66.0,
-    "investor": "Vigil González (Rufino)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Vigil González (Rufino)",
-        "pct": 66.0,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Financiero Inbursa",
-    "folder": "181_Grupo Financiero Inbursa SAB de CV",
-    "group": "Slim",
-    "color": "#1B365D",
-    "pct_top1": 62.4,
-    "pct_total": 62.4,
-    "investor": "Slim Family",
-    "subtype": "Other Insider Investor",
-    "shareholders": [
-      {
-        "name": "Slim Family",
-        "pct": 62.4,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Organizacion Soriana",
-    "folder": "260_Organizacion Soriana SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 57.3,
-    "pct_total": 86.2,
-    "investor": "Martín Bringas Family",
-    "subtype": "Other Insider Investor",
-    "shareholders": [
-      {
-        "name": "Martín Bringas Family",
-        "pct": 57.3,
-        "subtype": "Other Insider Investor"
-      },
-      {
-        "name": "Martín Soberón Family",
-        "pct": 28.9,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Simec",
-    "folder": "195_Grupo Simec SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 55.3,
-    "pct_total": 76.6,
-    "investor": "Industrias CH SAB de CV",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Industrias CH SAB de CV",
-        "pct": 55.3,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Tuberías Procarsa, S.A. de C.V.",
-        "pct": 20.0,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Joist Estructuras, S.A. de C.V.",
-        "pct": 1.2,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Lamosa",
-    "folder": "185_Grupo Lamosa SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 52.4,
-    "pct_total": 52.4,
-    "investor": "Elosua y Valdes Families",
-    "subtype": "Other Insider Investor",
-    "shareholders": [
-      {
-        "name": "Elosua y Valdes Families",
-        "pct": 52.4,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Gruma",
-    "folder": "162_Gruma SAB de CV",
-    "group": "GrumaBanorte",
-    "color": "#8c564b",
-    "pct_top1": 52.3,
-    "pct_total": 52.3,
-    "investor": "Moreno Hernández (Graciela)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Moreno Hernández (Graciela)",
-        "pct": 52.3,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "La Comer",
-    "folder": "223_La Comer SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 51.9,
-    "pct_total": 51.9,
-    "investor": "Scotiabank Inverlat, S.A.",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Scotiabank Inverlat, S.A.",
-        "pct": 51.9,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Alfa",
-    "folder": "005_Alfa SAB de CV",
-    "group": "Alfa",
-    "color": "#2ca02c",
-    "pct_top1": 51.6,
-    "pct_total": 86.6,
-    "investor": "Fideicomiso Nafinsa",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Fideicomiso Nafinsa",
-        "pct": 51.6,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Garza Sada Family",
-        "pct": 35.0,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Corporacion Moctezuma",
-    "folder": "106_Corporacion Moctezuma SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 51.5,
-    "pct_total": 76.9,
-    "investor": "Fresit, B.V.",
-    "subtype": "Holding Company",
-    "shareholders": [
-      {
-        "name": "Fresit, B.V.",
-        "pct": 51.5,
-        "subtype": "Holding Company"
-      },
-      {
-        "name": "Presa Internacional, B.V.",
-        "pct": 15.2,
-        "subtype": "Holding Company"
-      },
-      {
-        "name": "Cosío Ariño (Antonio)",
-        "pct": 10.2,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "GCC",
-    "folder": "154_GCC SAB de CV",
-    "group": "Cemex",
-    "color": "#d62728",
-    "pct_top1": 50.9,
-    "pct_total": 50.9,
-    "investor": "CAMCEM, SA de CV",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "CAMCEM, SA de CV",
-        "pct": 50.9,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "America Movil",
-    "folder": "014_America Móvil",
-    "group": "Slim",
-    "color": "#1B365D",
-    "pct_top1": 50.4,
-    "pct_total": 50.4,
-    "investor": "Slim Domit Helú (Carlos)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Slim Domit Helú (Carlos)",
-        "pct": 50.4,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Qualitas Controladora",
-    "folder": "275_Qualitas Controladora SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 50.0,
-    "pct_total": 50.0,
-    "investor": "Fideicomiso BanRegio 851-01287",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Fideicomiso BanRegio 851-01287",
-        "pct": 50.0,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Orbia Advance Corp",
-    "folder": "259_Orbia Advance Corp SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 46.8,
-    "pct_total": 56.3,
-    "investor": "Grupo Empresarial Kaluz, S.A. de C.V.",
-    "subtype": "Holding Company",
-    "shareholders": [
-      {
-        "name": "Grupo Empresarial Kaluz, S.A. de C.V.",
-        "pct": 46.8,
-        "subtype": "Holding Company"
-      },
-      {
-        "name": "del Valle Family",
-        "pct": 9.5,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Arca Continental",
-    "folder": "019_Arca Continental",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 46.6,
-    "pct_total": 46.6,
-    "investor": "Fideicomiso de Control",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Fideicomiso de Control",
-        "pct": 46.6,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Mexico",
-    "folder": "187_Grupo Mexico SAB de CV",
-    "group": "Gmexico",
-    "color": "#c44a8a",
-    "pct_top1": 40.6,
-    "pct_total": 61.7,
-    "investor": "Empresarios Industriales de Mexico, S.A. de C.V.",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Empresarios Industriales de Mexico, S.A. de C.V.",
-        "pct": 40.6,
-        "subtype": "Corporation"
+        "name": "Grupo México",
+        "pct": 90.1,
+        "nac": "México"
       },
       {
         "name": "Larrea Mota-Velasco (German)",
-        "pct": 19.2,
-        "subtype": "Individual Investor"
+        "pct": 0.0,
+        "nac": "México"
       },
       {
-        "name": "Cuenta Numerada CNP35",
-        "pct": 1.9,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Bimbo",
-    "folder": "170_Grupo Bimbo",
-    "group": "Bimbo",
-    "color": "#7b52ab",
-    "pct_top1": 40.6,
-    "pct_total": 58.6,
-    "investor": "Normaciel, S.A. de C.V.",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Normaciel, S.A. de C.V.",
-        "pct": 40.6,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Promociones Monser, S.A. de C.V.",
-        "pct": 12.7,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Philae, S.A. de C.V.",
-        "pct": 5.4,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Prologis Property Mexico SA",
-    "folder": "272_Prologis Property Mexico SA de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 34.6,
-    "pct_total": 34.6,
-    "investor": "Prologis Inc",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Prologis Inc",
-        "pct": 34.6,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Industrias Penoles",
-    "folder": "207_Industrias Penoles SAB de CV",
-    "group": "BAL",
-    "color": "#5b8db8",
-    "pct_top1": 33.5,
-    "pct_total": 52.8,
-    "investor": "Albacor, S.A. de C.V.",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Albacor, S.A. de C.V.",
-        "pct": 33.5,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Baillères Family",
-        "pct": 19.3,
-        "subtype": "Other Insider Investor"
-      }
-    ]
-  },
-  {
-    "company": "Gentera",
-    "folder": "155_Gentera SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 32.0,
-    "pct_total": 32.0,
-    "investor": "Promotora Social México, A.C",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Promotora Social México, A.C",
-        "pct": 32.0,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Fibra Uno Administracion SA",
-    "folder": "150_Fibra Uno Administracion SA de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 27.4,
-    "pct_total": 27.4,
-    "investor": "Control Trust",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Control Trust",
-        "pct": 27.4,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Aeroportuario del Sureste",
-    "folder": "165_Grupo Aeroportuario del Sureste SAB de CV",
-    "group": "Yucatan",
-    "color": "#5a9e3e",
-    "pct_top1": 23.5,
-    "pct_total": 46.5,
-    "investor": "CHPAF Holdings SAPI de CV",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "CHPAF Holdings SAPI de CV",
-        "pct": 23.5,
-        "subtype": "Corporation"
-      },
-      {
-        "name": "Grupo ADO, S.A. de C.V.",
-        "pct": 14.8,
-        "subtype": "Holding Company"
-      },
-      {
-        "name": "Chico Pardo (Fernando)",
-        "pct": 8.3,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Banco del Bajio SA Institucion de Banc",
-    "folder": "041_Banco del Bajio SA Institucion de Banca Multiple",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 22.1,
-    "pct_total": 28.8,
-    "investor": "Ascencio Salvador (Onate)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Ascencio Salvador (Onate)",
-        "pct": 22.1,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Martinez (Alejandro Martinez)",
-        "pct": 4.2,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Uribe Fernandez (Fabian Federico)",
-        "pct": 2.5,
-        "subtype": "Individual Investor"
+        "name": "Resto del bloque (13 tenedores)",
+        "pct": 0.1,
+        "nac": ""
       }
     ]
   },
@@ -1816,59 +1248,349 @@ const CONCENTRATION_DATA = [
     "folder": "322_Vitro SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
+    "pct_block": 86.8,
     "pct_top1": 21.0,
-    "pct_total": 61.7,
     "investor": "Martínez Guzmán (David M)",
-    "subtype": "Individual Investor",
+    "tipo": "Familia mexicana",
     "shareholders": [
       {
         "name": "Martínez Guzmán (David M)",
         "pct": 21.0,
-        "subtype": "Individual Investor"
+        "nac": "México"
       },
       {
         "name": "Sada González (Adrián G)",
         "pct": 20.7,
-        "subtype": "Individual Investor"
+        "nac": "México"
       },
       {
-        "name": "Sada Cueva (Adrián G)",
-        "pct": 20.0,
-        "subtype": "Individual Investor"
+        "name": "Resto del bloque (5 tenedores)",
+        "pct": 45.1,
+        "nac": ""
       }
     ]
   },
   {
-    "company": "Grupo Aeroportuario del Centro Norte",
-    "folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
+    "company": "Becle",
+    "folder": "057_Becle SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
-    "pct_top1": 19.2,
-    "pct_total": 19.2,
-    "investor": "CONCESSOC 31 SAS",
-    "subtype": "Corporation",
+    "pct_block": 86.7,
+    "pct_top1": 86.7,
+    "investor": "Beckmann Vidal (Juan Domingo & Family)",
+    "tipo": "Familia mexicana",
     "shareholders": [
       {
-        "name": "CONCESSOC 31 SAS",
-        "pct": 19.2,
-        "subtype": "Corporation"
+        "name": "Beckmann Vidal (Juan Domingo & Family)",
+        "pct": 86.7,
+        "nac": "México"
       }
     ]
   },
   {
-    "company": "Grupo Traxion",
-    "folder": "198_Grupo Traxion SAB de CV",
+    "company": "Organizacion Soriana",
+    "folder": "260_Organizacion Soriana SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
-    "pct_top1": 13.7,
-    "pct_total": 13.7,
-    "investor": "Discovery Americas",
-    "subtype": "Corporation",
+    "pct_block": 86.2,
+    "pct_top1": 57.3,
+    "investor": "Martín Bringas Family",
+    "tipo": "Familia mexicana",
     "shareholders": [
       {
-        "name": "Discovery Americas",
-        "pct": 13.7,
-        "subtype": "Corporation"
+        "name": "Martín Bringas Family",
+        "pct": 57.3,
+        "nac": "México"
+      },
+      {
+        "name": "Martín Soberón Family",
+        "pct": 28.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Palacio de Hierro",
+    "folder": "190_Grupo Palacio de Hierro SAB de CV",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_block": 82.8,
+    "pct_top1": 82.8,
+    "investor": "Baillères Family",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Baillères Family",
+        "pct": 82.8,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Alpek",
+    "folder": "009_Alpek",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 82.1,
+    "pct_top1": 82.1,
+    "investor": "Alfa",
+    "tipo": "Filial de grupo mexicano",
+    "shareholders": [
+      {
+        "name": "Alfa",
+        "pct": 82.1,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Simec",
+    "folder": "195_Grupo Simec SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 77.9,
+    "pct_top1": 77.9,
+    "investor": "Industrias CH",
+    "tipo": "Filial de grupo mexicano",
+    "shareholders": [
+      {
+        "name": "Industrias CH",
+        "pct": 77.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Corporacion Moctezuma",
+    "folder": "106_Corporacion Moctezuma SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 76.9,
+    "pct_top1": 51.5,
+    "investor": "Buzzi (Buzzi Unicem)",
+    "tipo": "Control extranjero",
+    "shareholders": [
+      {
+        "name": "Buzzi (Buzzi Unicem)",
+        "pct": 51.5,
+        "nac": "Italia"
+      },
+      {
+        "name": "Cementos Molins",
+        "pct": 15.2,
+        "nac": "España"
+      },
+      {
+        "name": "Resto del bloque (2 tenedores)",
+        "pct": 10.2,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Grupo Profuturo",
+    "folder": "191_Grupo Profuturo SAB de CV",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_block": 76.4,
+    "pct_top1": 76.4,
+    "investor": "Bailléres González (Alberto)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Bailléres González (Alberto)",
+        "pct": 76.4,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Carso",
+    "folder": "172_Grupo Carso SAB de CV",
+    "group": "Slim",
+    "color": "#1B365D",
+    "pct_block": 76.0,
+    "pct_top1": 76.0,
+    "investor": "Slim Helú family",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Slim Helú family",
+        "pct": 76.0,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Coca-Cola Femsa",
+    "folder": "095_Coca-Cola Femsa SAB de CV",
+    "group": "Femsa",
+    "color": "#e07b39",
+    "pct_block": 75.0,
+    "pct_top1": 47.2,
+    "investor": "FEMSA",
+    "tipo": "Filial de grupo mexicano",
+    "shareholders": [
+      {
+        "name": "FEMSA",
+        "pct": 47.2,
+        "nac": "México"
+      },
+      {
+        "name": "The Coca-Cola Company",
+        "pct": 27.8,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Fresnillo PLC",
+    "folder": "153_Fresnillo PLC",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_block": 75.0,
+    "pct_top1": 75.0,
+    "investor": "Peñoles",
+    "tipo": "Filial de grupo mexicano",
+    "shareholders": [
+      {
+        "name": "Peñoles",
+        "pct": 75.0,
+        "nac": "México"
+      },
+      {
+        "name": "Ruiz (Fernando)",
+        "pct": 0.0,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Comercial Chedraui",
+    "folder": "173_Grupo Comercial Chedraui SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 73.9,
+    "pct_top1": 73.9,
+    "investor": "Chedraui Family",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Chedraui Family",
+        "pct": 73.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Corporativo Fragua",
+    "folder": "107_Corporativo Fragua SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 73.6,
+    "pct_top1": 73.6,
+    "investor": "Tres fideicomisos del grupo de control (familia Arroyo)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Tres fideicomisos del grupo de control (familia Arroyo)",
+        "pct": 73.6,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Nacional Provincial",
+    "folder": "188_Grupo Nacional Provincial SAB",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_block": 72.5,
+    "pct_top1": 72.5,
+    "investor": "Fideicomiso BBVA F/32986-2 (Grupo BAL, familia Baillères)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso BBVA F/32986-2 (Grupo BAL, familia Baillères)",
+        "pct": 72.5,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Bimbo",
+    "folder": "170_Grupo Bimbo",
+    "group": "Bimbo",
+    "color": "#7b52ab",
+    "pct_block": 71.3,
+    "pct_top1": 40.6,
+    "investor": "Familia Servitje",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia Servitje",
+        "pct": 40.6,
+        "nac": "México"
+      },
+      {
+        "name": "Promociones Monser, S.A. de C.V.",
+        "pct": 12.7,
+        "nac": "México"
+      },
+      {
+        "name": "Resto del bloque (4 tenedores)",
+        "pct": 18.0,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Wal Mart de Mexico",
+    "folder": "323_Wal Mart de Mexico SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 70.6,
+    "pct_top1": 70.6,
+    "investor": "Walmart Inc.",
+    "tipo": "Control extranjero",
+    "shareholders": [
+      {
+        "name": "Walmart Inc.",
+        "pct": 70.6,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "GMexico Transportes",
+    "folder": "159_GMexico Transportes SAB de CV",
+    "group": "Gmexico",
+    "color": "#c44a8a",
+    "pct_block": 70.3,
+    "pct_top1": 70.3,
+    "investor": "Grupo México",
+    "tipo": "Filial de grupo mexicano",
+    "shareholders": [
+      {
+        "name": "Grupo México",
+        "pct": 70.3,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Herdez",
+    "folder": "183_Grupo Herdez SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 70.0,
+    "pct_top1": 70.0,
+    "investor": "Familia (Hernández-Pons Torres)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia (Hernández-Pons Torres)",
+        "pct": 70.0,
+        "nac": "México"
       }
     ]
   },
@@ -1877,25 +1599,356 @@ const CONCENTRATION_DATA = [
     "folder": "182_Grupo Gigante SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
+    "pct_block": 68.7,
     "pct_top1": 13.3,
-    "pct_total": 38.9,
     "investor": "Fideicomiso Banamex",
-    "subtype": "Corporation",
+    "tipo": "Familia mexicana",
     "shareholders": [
       {
         "name": "Fideicomiso Banamex",
         "pct": 13.3,
-        "subtype": "Corporation"
+        "nac": "México"
       },
       {
         "name": "Fideicomiso Invex",
         "pct": 13.2,
-        "subtype": "Corporation"
+        "nac": "México"
       },
       {
-        "name": "Fideicomiso IXE",
-        "pct": 12.4,
-        "subtype": "Corporation"
+        "name": "Resto del bloque (8 tenedores)",
+        "pct": 42.2,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Industrias CH",
+    "folder": "206_Industrias CH SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 66.0,
+    "pct_top1": 66.0,
+    "investor": "Vigil González (Rufino)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Vigil González (Rufino)",
+        "pct": 66.0,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Operadora de Sites Mexicanos  De CV",
+    "folder": "258_Operadora de Sites Mexicanos SAB De CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 66.0,
+    "pct_top1": 66.0,
+    "investor": "Familia Slim (Fideicomiso de Control, Control Empresarial de",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia Slim (Fideicomiso de Control, Control Empresarial de",
+        "pct": 66.0,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Financiero Inbursa",
+    "folder": "181_Grupo Financiero Inbursa SAB de CV",
+    "group": "Slim",
+    "color": "#1B365D",
+    "pct_block": 62.4,
+    "pct_top1": 62.4,
+    "investor": "Slim Family",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Slim Family",
+        "pct": 62.4,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Mexico",
+    "folder": "187_Grupo Mexico SAB de CV",
+    "group": "Gmexico",
+    "color": "#c44a8a",
+    "pct_block": 61.7,
+    "pct_top1": 59.8,
+    "investor": "Familia Larrea",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia Larrea",
+        "pct": 59.8,
+        "nac": "México"
+      },
+      {
+        "name": "Cuenta Numerada CNP35",
+        "pct": 1.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Orbia Advance Corp",
+    "folder": "259_Orbia Advance Corp SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 56.3,
+    "pct_top1": 46.8,
+    "investor": "Grupo Empresarial Kaluz, S.A. de C.V.",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Grupo Empresarial Kaluz, S.A. de C.V.",
+        "pct": 46.8,
+        "nac": "México"
+      },
+      {
+        "name": "del Valle Family",
+        "pct": 9.5,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Promotora y Operadora de Infraestructu",
+    "folder": "274_Promotora y Operadora de Infraestructura SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 52.9,
+    "pct_top1": 52.9,
+    "investor": "Familia Peñaloza (David Peñaloza Alanís 38.02%, Adriana Peña",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia Peñaloza (David Peñaloza Alanís 38.02%, Adriana Peña",
+        "pct": 52.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Industrias Penoles",
+    "folder": "207_Industrias Penoles SAB de CV",
+    "group": "BAL",
+    "color": "#5b8db8",
+    "pct_block": 52.8,
+    "pct_top1": 33.5,
+    "investor": "Familia Baillères (Grupo BAL)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia Baillères (Grupo BAL)",
+        "pct": 33.5,
+        "nac": "México"
+      },
+      {
+        "name": "Baillères Family",
+        "pct": 19.3,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Lamosa",
+    "folder": "185_Grupo Lamosa SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 52.4,
+    "pct_top1": 52.4,
+    "investor": "Elosua y Valdes Families",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Elosua y Valdes Families",
+        "pct": 52.4,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Gruma",
+    "folder": "162_Gruma SAB de CV",
+    "group": "GrumaBanorte",
+    "color": "#8c564b",
+    "pct_block": 52.3,
+    "pct_top1": 52.3,
+    "investor": "Moreno Hernández (Graciela)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Moreno Hernández (Graciela)",
+        "pct": 52.3,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "La Comer",
+    "folder": "223_La Comer SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 51.9,
+    "pct_top1": 51.9,
+    "investor": "Fideicomiso de control (familia González)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso de control (familia González)",
+        "pct": 51.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "GCC",
+    "folder": "154_GCC SAB de CV",
+    "group": "Cemex",
+    "color": "#d62728",
+    "pct_block": 50.9,
+    "pct_top1": 50.9,
+    "investor": "CAMCEM (familias de Chihuahua)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "CAMCEM (familias de Chihuahua)",
+        "pct": 50.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "America Movil",
+    "folder": "014_America Móvil",
+    "group": "Slim",
+    "color": "#1B365D",
+    "pct_block": 50.4,
+    "pct_top1": 50.4,
+    "investor": "Slim Domit Helú (Carlos)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Slim Domit Helú (Carlos)",
+        "pct": 50.4,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Qualitas Controladora",
+    "folder": "275_Qualitas Controladora SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 50.0,
+    "pct_top1": 50.0,
+    "investor": "Fideicomiso de control (familia Brockmann)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso de control (familia Brockmann)",
+        "pct": 50.0,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Kimberly-Clark de Mexico",
+    "folder": "221_Kimberly-Clark de Mexico SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 47.9,
+    "pct_top1": 47.9,
+    "investor": "Kimberly-Clark Corporation",
+    "tipo": "Control extranjero",
+    "shareholders": [
+      {
+        "name": "Kimberly-Clark Corporation",
+        "pct": 47.9,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Arca Continental",
+    "folder": "019_Arca Continental",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 46.6,
+    "pct_top1": 46.6,
+    "investor": "Fideicomiso de control (familias Barragán, Fernández y otras",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso de control (familias Barragán, Fernández y otras",
+        "pct": 46.6,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Aeroportuario del Sureste",
+    "folder": "165_Grupo Aeroportuario del Sureste SAB de CV",
+    "group": "Yucatan",
+    "color": "#5a9e3e",
+    "pct_block": 46.5,
+    "pct_top1": 23.5,
+    "investor": "CHPAF Holdings SAPI de CV",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "CHPAF Holdings SAPI de CV",
+        "pct": 23.5,
+        "nac": "México"
+      },
+      {
+        "name": "Grupo ADO, S.A. de C.V.",
+        "pct": 14.8,
+        "nac": "México"
+      },
+      {
+        "name": "Resto del bloque (1 tenedores)",
+        "pct": 8.2,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Megacable Holdings",
+    "folder": "237_Megacable Holdings SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 45.6,
+    "pct_top1": 45.6,
+    "investor": "Familias fundadoras (Bours, Coppel, Yamuni y otras; ninguna ",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familias fundadoras (Bours, Coppel, Yamuni y otras; ninguna ",
+        "pct": 45.6,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Fomento Economico Mexicano",
+    "folder": "152_Fomento Economico Mexicano SAB de CV",
+    "group": "Femsa",
+    "color": "#e07b39",
+    "pct_block": 40.6,
+    "pct_top1": 40.6,
+    "investor": "Fideicomiso de voto del Comité Técnico (Garza Lagüera, Garza",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso de voto del Comité Técnico (Garza Lagüera, Garza",
+        "pct": 40.6,
+        "nac": "México"
       }
     ]
   },
@@ -1904,25 +1957,142 @@ const CONCENTRATION_DATA = [
     "folder": "010_Alsea SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
+    "pct_block": 39.0,
     "pct_top1": 12.4,
-    "pct_total": 36.7,
     "investor": "Torrado Martinez (Cosme Alberto)",
-    "subtype": "Individual Investor",
+    "tipo": "Familia mexicana",
     "shareholders": [
       {
         "name": "Torrado Martinez (Cosme Alberto)",
         "pct": 12.4,
-        "subtype": "Individual Investor"
+        "nac": "México"
       },
       {
         "name": "Torrado Martinez (Armando)",
         "pct": 12.3,
-        "subtype": "Individual Investor"
+        "nac": "México"
       },
       {
-        "name": "Torrado Martinez (Alberto)",
-        "pct": 11.9,
-        "subtype": "Individual Investor"
+        "name": "Resto del bloque (4 tenedores)",
+        "pct": 14.3,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "El Puerto de Liverpool",
+    "folder": "118_El puerto de Liverpool SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 37.3,
+    "pct_top1": 20.8,
+    "investor": "Fideicomiso Banamex 15228-3 (familias patrimoniales: David, ",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso Banamex 15228-3 (familias patrimoniales: David, ",
+        "pct": 20.8,
+        "nac": "México"
+      },
+      {
+        "name": "Fideicomiso Invex 0327 (familias patrimoniales)",
+        "pct": 16.5,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Alfa",
+    "folder": "005_Alfa SAB de CV",
+    "group": "Alfa",
+    "color": "#2ca02c",
+    "pct_block": 35.0,
+    "pct_top1": 35.0,
+    "investor": "Familia Garza Sada y familias relacionadas",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Familia Garza Sada y familias relacionadas",
+        "pct": 35.0,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Prologis Property Mexico SA",
+    "folder": "272_Prologis Property Mexico SA de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 34.6,
+    "pct_top1": 34.6,
+    "investor": "Prologis Inc.",
+    "tipo": "Control extranjero",
+    "shareholders": [
+      {
+        "name": "Prologis Inc.",
+        "pct": 34.6,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Banco del Bajio SA Institucion de Banc",
+    "folder": "041_Banco del Bajio SA Institucion de Banca Multiple",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 32.5,
+    "pct_top1": 22.1,
+    "investor": "Ascencio Salvador (Onate)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Ascencio Salvador (Onate)",
+        "pct": 22.1,
+        "nac": "México"
+      },
+      {
+        "name": "Martinez (Alejandro Martinez)",
+        "pct": 4.2,
+        "nac": "México"
+      },
+      {
+        "name": "Resto del bloque (6 tenedores)",
+        "pct": 6.2,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Gentera",
+    "folder": "155_Gentera SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 32.0,
+    "pct_top1": 32.0,
+    "investor": "Promotora Social México, A.C",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Promotora Social México, A.C",
+        "pct": 32.0,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Fibra Uno Administracion SA",
+    "folder": "150_Fibra Uno Administracion SA de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 27.4,
+    "pct_top1": 27.4,
+    "investor": "Fideicomiso de control (familias El-Mann y Attié)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Fideicomiso de control (familias El-Mann y Attié)",
+        "pct": 27.4,
+        "nac": "México"
       }
     ]
   },
@@ -1931,152 +2101,25 @@ const CONCENTRATION_DATA = [
     "folder": "281_Regional SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
+    "pct_block": 23.3,
     "pct_top1": 9.7,
-    "pct_total": 22.3,
     "investor": "Rivero Santos (Jaime Alberto)",
-    "subtype": "Individual Investor",
+    "tipo": "Familia mexicana",
     "shareholders": [
       {
         "name": "Rivero Santos (Jaime Alberto)",
         "pct": 9.7,
-        "subtype": "Individual Investor"
+        "nac": "México"
       },
       {
         "name": "Rivero Santos (Manuel Gerardo)",
         "pct": 9.3,
-        "subtype": "Individual Investor"
+        "nac": "México"
       },
       {
-        "name": "Rivero Zambrano (Manuel Gerardo)",
-        "pct": 3.3,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Bafar",
-    "folder": "169_Grupo Bafar SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 8.4,
-    "pct_total": 10.0,
-    "investor": "Baeza Fares (Jorge Alberto)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Baeza Fares (Jorge Alberto)",
-        "pct": 8.4,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Baeza Montes (Eugenio)",
-        "pct": 1.0,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Oscar Eugenio (Baeza Fares)",
-        "pct": 0.6,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Vista Energy",
-    "folder": "321_Vista Energy SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 8.1,
-    "pct_total": 8.1,
-    "investor": "Galuccio (Miguel Matias)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Galuccio (Miguel Matias)",
-        "pct": 8.1,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Televisa",
-    "folder": "197_Grupo Televisa SAB",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 7.4,
-    "pct_total": 7.4,
-    "investor": "Fintech Holdings Inc",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Fintech Holdings Inc",
-        "pct": 7.4,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Grupo Aeroportuario del Pacifico",
-    "folder": "164_Grupo Aeroportuario del Pacifico SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 5.0,
-    "pct_total": 5.0,
-    "investor": "Aeropuertos Mexicanos del Pacifico, S.A. de C.V.",
-    "subtype": "Corporation",
-    "shareholders": [
-      {
-        "name": "Aeropuertos Mexicanos del Pacifico, S.A. de C.V.",
-        "pct": 5.0,
-        "subtype": "Corporation"
-      }
-    ]
-  },
-  {
-    "company": "Vesta Real Estate Corporation",
-    "folder": "318_Vesta Real Estate Corporation SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 2.4,
-    "pct_total": 2.9,
-    "investor": "Berho Corona (Lorenzo Manuel)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Berho Corona (Lorenzo Manuel)",
-        "pct": 2.4,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Berho Carranza (Lorenzo Dominique)",
-        "pct": 0.3,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Berho Corona (Alejandro)",
-        "pct": 0.2,
-        "subtype": "Individual Investor"
-      }
-    ]
-  },
-  {
-    "company": "Nemak",
-    "folder": "253_Nemak SAB de CV",
-    "group": "Otro",
-    "color": "#a8a8a8",
-    "pct_top1": 2.0,
-    "pct_total": 3.7,
-    "investor": "Armando (Garza Sada)",
-    "subtype": "Individual Investor",
-    "shareholders": [
-      {
-        "name": "Armando (Garza Sada)",
-        "pct": 2.0,
-        "subtype": "Individual Investor"
-      },
-      {
-        "name": "Fernandez Garza (Alvaro)",
-        "pct": 1.8,
-        "subtype": "Individual Investor"
+        "name": "Resto del bloque (2 tenedores)",
+        "pct": 4.3,
+        "nac": ""
       }
     ]
   },
@@ -2085,53 +2128,268 @@ const CONCENTRATION_DATA = [
     "folder": "101_Controladora Vuela Compania de Aviacion SAB de CV",
     "group": "Otro",
     "color": "#a8a8a8",
-    "pct_top1": 1.0,
-    "pct_total": 1.1,
-    "investor": "Beltranena (Enrique)",
-    "subtype": "Individual Investor",
+    "pct_block": 20.3,
+    "pct_top1": 19.2,
+    "investor": "Indigo Partners (Bill Franke)",
+    "tipo": "Control extranjero",
     "shareholders": [
+      {
+        "name": "Indigo Partners (Bill Franke)",
+        "pct": 19.2,
+        "nac": "Estados Unidos"
+      },
       {
         "name": "Beltranena (Enrique)",
         "pct": 1.0,
-        "subtype": "Individual Investor"
+        "nac": "Estados Unidos"
       },
       {
-        "name": "Pous (Jaime)",
+        "name": "Resto del bloque (5 tenedores)",
         "pct": 0.1,
-        "subtype": "Individual Investor"
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Grupo Aeroportuario del Centro Norte",
+    "folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 19.2,
+    "pct_top1": 19.2,
+    "investor": "Vinci Airports",
+    "tipo": "Control extranjero",
+    "shareholders": [
+      {
+        "name": "Vinci Airports",
+        "pct": 19.2,
+        "nac": "Francia"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Traxion",
+    "folder": "198_Grupo Traxion SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 13.7,
+    "pct_top1": 13.7,
+    "investor": "Discovery Americas (fondo de capital privado)",
+    "tipo": "Control extranjero",
+    "shareholders": [
+      {
+        "name": "Discovery Americas (fondo de capital privado)",
+        "pct": 13.7,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Bafar",
+    "folder": "169_Grupo Bafar SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 10.2,
+    "pct_top1": 8.4,
+    "investor": "Baeza Fares (Jorge Alberto)",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Baeza Fares (Jorge Alberto)",
+        "pct": 8.4,
+        "nac": "México"
       },
       {
-        "name": "Jose (Luis Suarez)",
+        "name": "Baeza Montes (Eugenio)",
+        "pct": 1.0,
+        "nac": "México"
+      },
+      {
+        "name": "Resto del bloque (6 tenedores)",
+        "pct": 0.8,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Vista Energy",
+    "folder": "321_Vista Energy SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 8.1,
+    "pct_top1": 8.1,
+    "investor": "Miguel Galuccio",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Miguel Galuccio",
+        "pct": 8.1,
+        "nac": "Argentina"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Televisa",
+    "folder": "197_Grupo Televisa SAB",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 7.4,
+    "pct_top1": 7.4,
+    "investor": "Fintech Advisory (David Martínez)",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Fintech Advisory (David Martínez)",
+        "pct": 7.4,
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Grupo Aeroportuario del Pacifico",
+    "folder": "164_Grupo Aeroportuario del Pacifico SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 5.0,
+    "pct_top1": 5.0,
+    "investor": "AMP (socio estratégico, accionistas mexicanos)",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "AMP (socio estratégico, accionistas mexicanos)",
+        "pct": 5.0,
+        "nac": "México"
+      },
+      {
+        "name": "PGIM Inc",
         "pct": 0.0,
-        "subtype": "Individual Investor"
+        "nac": "Estados Unidos"
+      }
+    ]
+  },
+  {
+    "company": "Vesta Real Estate Corporation",
+    "folder": "318_Vesta Real Estate Corporation SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 4.2,
+    "pct_top1": 2.4,
+    "investor": "Berho Corona (Lorenzo Manuel)",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Berho Corona (Lorenzo Manuel)",
+        "pct": 2.4,
+        "nac": "México"
+      },
+      {
+        "name": "Berho Carranza (Lorenzo Dominique)",
+        "pct": 0.3,
+        "nac": "México"
+      },
+      {
+        "name": "Resto del bloque (25 tenedores)",
+        "pct": 1.5,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Nemak",
+    "folder": "253_Nemak SAB de CV",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 3.7,
+    "pct_top1": 2.0,
+    "investor": "Armando (Garza Sada)",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Armando (Garza Sada)",
+        "pct": 2.0,
+        "nac": "México"
+      },
+      {
+        "name": "Fernandez Garza (Alvaro)",
+        "pct": 1.8,
+        "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "Bbb Foods Inc",
+    "folder": "056_Bbb Foods Inc",
+    "group": "Otro",
+    "color": "#a8a8a8",
+    "pct_block": 0.0,
+    "pct_top1": 0.0,
+    "investor": "Sin bloque de control registrado",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Sin bloque de control registrado",
+        "pct": 0.0,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Cemex",
+    "folder": "070_CEMEX SAB de CV",
+    "group": "Cemex",
+    "color": "#d62728",
+    "pct_block": 0.0,
+    "pct_top1": 0.0,
+    "investor": "Sin bloque de control registrado",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Sin bloque de control registrado",
+        "pct": 0.0,
+        "nac": ""
+      }
+    ]
+  },
+  {
+    "company": "Grupo Financiero Banorte",
+    "folder": "178_Grupo Financiero Banorte SAB de CV",
+    "group": "GrumaBanorte",
+    "color": "#8c564b",
+    "pct_block": 0.0,
+    "pct_top1": 0.0,
+    "investor": "Sin bloque de control registrado",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Sin bloque de control registrado",
+        "pct": 0.0,
+        "nac": ""
       }
     ]
   }
 ];
 
 const PROP_STATS = {
-  "n_with_strategic": 44,
-  "n_majority": 21,
-  "n_no_strategic": 16,
-  "median_pct": 46.7,
-  "no_strategic": [
-    "Alpek",
+  "n_universe": 61,
+  "n_with_pct": 59,
+  "n_majority": 33,
+  "median_pct": 52.3,
+  "n_no_controller": 8,
+  "no_controller": [
     "Bbb Foods Inc",
     "Cemex",
-    "Coca-Cola Femsa",
-    "Corporativo Fragua",
-    "El Puerto de Liverpool",
-    "Fomento Economico Mexicano",
+    "Grupo Aeroportuario del Pacifico",
     "Grupo Financiero Banorte",
-    "Grupo Nacional Provincial",
-    "Grupo Sanborns",
-    "Impulsora del Desarrollo y el Empleo e",
-    "Industrias Bachoco",
-    "Kimberly-Clark de Mexico",
-    "Megacable Holdings",
-    "Operadora de Sites Mexicanos  De CV",
-    "Promotora y Operadora de Infraestructu"
-  ]
+    "Grupo Televisa",
+    "Nemak",
+    "Vesta Real Estate Corporation",
+    "Vista Energy"
+  ],
+  "n_with_controller": 53,
+  "n_mx_controller": 45,
+  "n_family_mx": 39,
+  "n_cascade_mx": 6,
+  "n_foreign": 8
 };
 
 const TENURE_DATA = [
@@ -5780,74 +6038,82 @@ const SUBSIDIARIES_DATA = {
     "by_country": [
       {
         "country": "Mexico",
-        "n": 1335
+        "n": 1296
       },
       {
         "country": "United States",
-        "n": 175
+        "n": 218
       },
       {
         "country": "Spain",
-        "n": 57
+        "n": 55
       },
       {
-        "country": "Austria",
-        "n": 40
+        "country": "Ireland",
+        "n": 47
       },
       {
         "country": "Germany",
+        "n": 46
+      },
+      {
+        "country": "Austria",
+        "n": 44
+      },
+      {
+        "country": "Colombia",
         "n": 36
       },
       {
         "country": "Brazil",
-        "n": 31
-      },
-      {
-        "country": "Costa Rica",
-        "n": 30
-      },
-      {
-        "country": "Colombia",
-        "n": 28
-      },
-      {
-        "country": "Argentina",
-        "n": 27
-      },
-      {
-        "country": "Peru",
-        "n": 26
+        "n": 35
       },
       {
         "country": "United Kingdom",
-        "n": 24
+        "n": 32
+      },
+      {
+        "country": "Argentina",
+        "n": 30
       },
       {
         "country": "Guatemala",
-        "n": 23
+        "n": 24
       },
       {
         "country": "Netherlands",
+        "n": 23
+      },
+      {
+        "country": "Peru",
+        "n": 22
+      },
+      {
+        "country": "Ecuador",
         "n": 21
       },
       {
         "country": "Chile",
-        "n": 19
+        "n": 20
       },
       {
-        "country": "Ecuador",
-        "n": 19
+        "country": "Bulgaria",
+        "n": 17
+      },
+      {
+        "country": "Switzerland",
+        "n": 16
       },
       {
         "country": "China",
         "n": 16
       },
       {
-        "country": "Switzerland",
-        "n": 15
+        "country": "Costa Rica",
+        "n": 14
       },
       {
-        "country": "Canada",
+        "country": "El Salvador",
         "n": 14
       },
       {
@@ -5855,31 +6121,27 @@ const SUBSIDIARIES_DATA = {
         "n": 14
       },
       {
-        "country": "El Salvador",
-        "n": 12
-      },
-      {
-        "country": "France",
-        "n": 11
-      },
-      {
-        "country": "Nicaragua",
-        "n": 11
-      },
-      {
-        "country": "Panama",
-        "n": 10
-      },
-      {
-        "country": "Uruguay",
-        "n": 8
-      },
-      {
-        "country": "Trinidad and Tobago",
-        "n": 8
+        "country": "Canada",
+        "n": 13
       },
       {
         "country": "Croatia",
+        "n": 13
+      },
+      {
+        "country": "France",
+        "n": 13
+      },
+      {
+        "country": "Nicaragua",
+        "n": 12
+      },
+      {
+        "country": "Panama",
+        "n": 12
+      },
+      {
+        "country": "Trinidad and Tobago",
         "n": 8
       },
       {
@@ -5887,27 +6149,27 @@ const SUBSIDIARIES_DATA = {
         "n": 8
       },
       {
-        "country": "Venezuela",
+        "country": "Poland",
         "n": 7
+      },
+      {
+        "country": "Uruguay",
+        "n": 7
+      },
+      {
+        "country": "Barbados",
+        "n": 6
+      },
+      {
+        "country": "Venezuela",
+        "n": 6
+      },
+      {
+        "country": "Philippines",
+        "n": 6
       },
       {
         "country": "Cayman Islands",
-        "n": 7
-      },
-      {
-        "country": "Bulgaria",
-        "n": 6
-      },
-      {
-        "country": "Poland",
-        "n": 6
-      },
-      {
-        "country": "Portugal",
-        "n": 5
-      },
-      {
-        "country": "Russia",
         "n": 5
       },
       {
@@ -5915,19 +6177,35 @@ const SUBSIDIARIES_DATA = {
         "n": 5
       },
       {
-        "country": "Philippines",
-        "n": 4
+        "country": "Czech Republic",
+        "n": 5
       },
       {
         "country": "Israel",
+        "n": 5
+      },
+      {
+        "country": "Luxembourg",
+        "n": 5
+      },
+      {
+        "country": "Russia",
+        "n": 5
+      },
+      {
+        "country": "Portugal",
+        "n": 5
+      },
+      {
+        "country": "Macedonia",
         "n": 4
       },
       {
-        "country": "Czech Republic",
+        "country": "Norway",
         "n": 4
       },
       {
-        "country": "Barbados",
+        "country": "Republic of Serbia",
         "n": 4
       },
       {
@@ -5935,23 +6213,19 @@ const SUBSIDIARIES_DATA = {
         "n": 4
       },
       {
-        "country": "Macedonia",
+        "country": "Slovenia",
         "n": 4
       },
       {
-        "country": "Luxembourg",
+        "country": "Jamaica",
         "n": 4
-      },
-      {
-        "country": "Turkey",
-        "n": 3
-      },
-      {
-        "country": "Norway",
-        "n": 3
       },
       {
         "country": "Hungary",
+        "n": 4
+      },
+      {
+        "country": "Singapore",
         "n": 3
       },
       {
@@ -5959,15 +6233,11 @@ const SUBSIDIARIES_DATA = {
         "n": 3
       },
       {
-        "country": "Republic of Serbia",
+        "country": "Slovak Republic",
         "n": 3
       },
       {
-        "country": "Singapore",
-        "n": 3
-      },
-      {
-        "country": "Dominican Republic",
+        "country": "Turkey",
         "n": 3
       },
       {
@@ -5975,7 +6245,7 @@ const SUBSIDIARIES_DATA = {
         "n": 3
       },
       {
-        "country": "Jamaica",
+        "country": "Dominican Republic",
         "n": 3
       },
       {
@@ -5983,23 +6253,15 @@ const SUBSIDIARIES_DATA = {
         "n": 3
       },
       {
-        "country": "Bermuda",
-        "n": 2
-      },
-      {
-        "country": "Sweden",
-        "n": 2
-      },
-      {
-        "country": "Slovenia",
-        "n": 2
-      },
-      {
         "country": "South Africa",
         "n": 2
       },
       {
-        "country": "Ukraine",
+        "country": "Bermuda",
+        "n": 2
+      },
+      {
+        "country": "South Korea",
         "n": 2
       },
       {
@@ -6007,27 +6269,15 @@ const SUBSIDIARIES_DATA = {
         "n": 2
       },
       {
-        "country": "Curacao",
-        "n": 2
-      },
-      {
         "country": "Guyana",
         "n": 2
       },
       {
-        "country": "Paraguay",
+        "country": "Ukraine",
         "n": 2
       },
       {
-        "country": "Ireland",
-        "n": 2
-      },
-      {
-        "country": "Korea; Republic (S. Korea)",
-        "n": 2
-      },
-      {
-        "country": "Morocco",
+        "country": "Sweden",
         "n": 2
       },
       {
@@ -6035,15 +6285,19 @@ const SUBSIDIARIES_DATA = {
         "n": 2
       },
       {
-        "country": "Slovak Republic",
-        "n": 2
-      },
-      {
         "country": "Romania",
         "n": 2
       },
       {
-        "country": "Bahamas",
+        "country": "Morocco",
+        "n": 2
+      },
+      {
+        "country": "Paraguay",
+        "n": 2
+      },
+      {
+        "country": "Andorra",
         "n": 1
       },
       {
@@ -6051,7 +6305,7 @@ const SUBSIDIARIES_DATA = {
         "n": 1
       },
       {
-        "country": "Andorra",
+        "country": "Bahamas",
         "n": 1
       },
       {
@@ -6059,11 +6313,23 @@ const SUBSIDIARIES_DATA = {
         "n": 1
       },
       {
-        "country": "Cyprus",
+        "country": "Latvia",
         "n": 1
       },
       {
-        "country": "Japan",
+        "country": "Jordan",
+        "n": 1
+      },
+      {
+        "country": "Isle of Man",
+        "n": 1
+      },
+      {
+        "country": "Curacao",
+        "n": 1
+      },
+      {
+        "country": "Gibraltar",
         "n": 1
       },
       {
@@ -6071,11 +6337,19 @@ const SUBSIDIARIES_DATA = {
         "n": 1
       },
       {
+        "country": "Cyprus",
+        "n": 1
+      },
+      {
         "country": "Denmark",
         "n": 1
       },
       {
-        "country": "Gibraltar",
+        "country": "Japan",
+        "n": 1
+      },
+      {
+        "country": "Jersey",
         "n": 1
       },
       {
@@ -6098,39 +6372,39 @@ const SUBSIDIARIES_DATA = {
     "by_sector": [
       {
         "sector": "Alimentos y bebidas",
-        "n": 261
+        "n": 243
       },
       {
         "sector": "Construcción y materiales",
-        "n": 147
-      },
-      {
-        "sector": "Minería y metales",
-        "n": 122
+        "n": 179
       },
       {
         "sector": "Química y petroquímica",
-        "n": 104
-      },
-      {
-        "sector": "Servicios empresariales",
-        "n": 73
+        "n": 105
       },
       {
         "sector": "Telecomunicaciones y medios",
-        "n": 65
+        "n": 94
+      },
+      {
+        "sector": "Minería y metales",
+        "n": 93
+      },
+      {
+        "sector": "Servicios empresariales",
+        "n": 75
       },
       {
         "sector": "Servicios financieros",
-        "n": 64
+        "n": 66
       },
       {
         "sector": "Transporte y logística",
-        "n": 61
+        "n": 58
       },
       {
         "sector": "Holding e inversión",
-        "n": 56
+        "n": 54
       },
       {
         "sector": "Bienes raíces",
@@ -6138,45 +6412,49 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "sector": "Manufactura",
-        "n": 33
+        "n": 32
       },
       {
         "sector": "Retail",
-        "n": 28
+        "n": 23
       },
       {
         "sector": "Energía",
-        "n": 20
+        "n": 21
       },
       {
         "sector": "Tecnología",
-        "n": 10
+        "n": 11
       }
     ],
     "by_haven": [
       {
+        "country": "Ireland",
+        "n": 47
+      },
+      {
         "country": "Netherlands",
-        "n": 21
+        "n": 23
       },
       {
         "country": "Switzerland",
-        "n": 15
+        "n": 16
       },
       {
         "country": "Panama",
-        "n": 10
-      },
-      {
-        "country": "Cayman Islands",
-        "n": 7
+        "n": 12
       },
       {
         "country": "Barbados",
-        "n": 4
+        "n": 6
+      },
+      {
+        "country": "Cayman Islands",
+        "n": 5
       },
       {
         "country": "Luxembourg",
-        "n": 4
+        "n": 5
       },
       {
         "country": "Singapore",
@@ -6184,14 +6462,6 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Bermuda",
-        "n": 2
-      },
-      {
-        "country": "Curacao",
-        "n": 2
-      },
-      {
-        "country": "Ireland",
         "n": 2
       },
       {
@@ -6205,16 +6475,21 @@ const SUBSIDIARIES_DATA = {
       {
         "country": "Gibraltar",
         "n": 1
+      },
+      {
+        "country": "Curacao",
+        "n": 1
+      },
+      {
+        "country": "Jersey",
+        "n": 1
+      },
+      {
+        "country": "Isle of Man",
+        "n": 1
       }
     ],
     "haven_details": [
-      {
-        "name": "Telekom Austria Finance BV",
-        "company": "America Movil",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": ""
-      },
       {
         "name": "Claro Panama SA",
         "company": "America Movil",
@@ -6223,7 +6498,63 @@ const SUBSIDIARIES_DATA = {
         "industry": "Integrated Telecommunications Services"
       },
       {
-        "name": "Torino Re Ltd",
+        "name": "Telekom Austria Finance BV",
+        "company": "America Movil",
+        "country": "Netherlands",
+        "haven_type": "Hub fiscal",
+        "industry": ""
+      },
+      {
+        "name": "Cemento Bayano SA",
+        "company": "Cemex",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": "Specialty Mining & Metals"
+      },
+      {
+        "name": "Arawak Cement Company Ltd",
+        "company": "Cemex",
+        "country": "Barbados",
+        "haven_type": "Paraíso clásico",
+        "industry": "Construction Materials"
+      },
+      {
+        "name": "CEMEX Island Aggregates Ltd",
+        "company": "Cemex",
+        "country": "Isle of Man",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Readymix Management Services Ltd",
+        "company": "Cemex",
+        "country": "Jersey",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Pavimentos Especializados SA",
+        "company": "Cemex",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Tecas Siglo XXI SA",
+        "company": "Cemex",
+        "country": "Panama",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "CxNetworks NV",
+        "company": "Cemex",
+        "country": "Netherlands",
+        "haven_type": "Hub fiscal",
+        "industry": "Investment Holding Companies"
+      },
+      {
+        "name": "Cemex Lan Trading Corp",
         "company": "Cemex",
         "country": "Barbados",
         "haven_type": "Paraíso clásico",
@@ -6251,13 +6582,6 @@ const SUBSIDIARIES_DATA = {
         "industry": ""
       },
       {
-        "name": "Arawak Cement Company Ltd",
-        "company": "Cemex",
-        "country": "Barbados",
-        "haven_type": "Paraíso clásico",
-        "industry": "Construction Materials"
-      },
-      {
         "name": "Mustang RE Ltd",
         "company": "Cemex",
         "country": "Bermuda",
@@ -6265,11 +6589,18 @@ const SUBSIDIARIES_DATA = {
         "industry": "Reinsurance"
       },
       {
-        "name": "CxNetworks NV",
+        "name": "Apollo RE Ltd",
         "company": "Cemex",
-        "country": "Netherlands",
-        "haven_type": "Hub fiscal",
-        "industry": "Investment Holding Companies"
+        "country": "Barbados",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
+      },
+      {
+        "name": "Torino Re Ltd",
+        "company": "Cemex",
+        "country": "Barbados",
+        "haven_type": "Paraíso clásico",
+        "industry": ""
       },
       {
         "name": "Coca-Cola Femsa de Panama SA",
@@ -6279,11 +6610,11 @@ const SUBSIDIARIES_DATA = {
         "industry": "Non-Alcoholic Beverages"
       },
       {
-        "name": "bob Finance AG",
+        "name": "Valora International AG",
         "company": "Fomento Economico Mexicano",
         "country": "Switzerland",
         "haven_type": "Hub fiscal",
-        "industry": "Financial & Commodity Market Operators & Service Providers"
+        "industry": "Investment Holding Companies"
       },
       {
         "name": "Valora Europe Holding SA",
@@ -6293,18 +6624,11 @@ const SUBSIDIARIES_DATA = {
         "industry": "Investment Holding Companies"
       },
       {
-        "name": "Valora International AG",
+        "name": "bob Finance AG",
         "company": "Fomento Economico Mexicano",
         "country": "Switzerland",
         "haven_type": "Hub fiscal",
-        "industry": "Investment Holding Companies"
-      },
-      {
-        "name": "Fargo Holding (Gibraltar)",
-        "company": "Grupo Bimbo",
-        "country": "Gibraltar",
-        "haven_type": "Paraíso clásico",
-        "industry": "Investment Holding Companies"
+        "industry": "Financial & Commodity Market Operators & Service Providers"
       },
       {
         "name": "Bimbo de Panama SA",
@@ -6312,6 +6636,13 @@ const SUBSIDIARIES_DATA = {
         "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Food Processing"
+      },
+      {
+        "name": "Fargo Holding (Gibraltar)",
+        "company": "Grupo Bimbo",
+        "country": "Gibraltar",
+        "haven_type": "Paraíso clásico",
+        "industry": "Investment Holding Companies"
       },
       {
         "name": "Bimbo Donuts Pirineus SLU",
@@ -6328,65 +6659,22 @@ const SUBSIDIARIES_DATA = {
         "industry": ""
       },
       {
-        "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
-        "company": "Grupo Financiero Banorte",
-        "country": "Cayman Islands",
-        "haven_type": "Paraíso clásico",
-        "industry": "Banks"
-      },
-      {
         "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
         "company": "Grupo Financiero Banorte",
         "country": "Cayman Islands",
         "haven_type": "Paraíso clásico",
         "industry": "Banks"
-      },
-      {
-        "name": "Prospector Rig 2 Owning Cayman Co Ltd",
-        "company": "Grupo Mexico",
-        "country": "Cayman Islands",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
-        "name": "Prospector Rig 4 Owning Cayman Co Ltd",
-        "company": "Grupo Mexico",
-        "country": "Cayman Islands",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
-        "name": "Undershaft Investments NV",
-        "company": "Grupo Simec",
-        "country": "Curacao",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
-        "name": "Media Vision de Panama SA",
-        "company": "Grupo Televisa",
-        "country": "Panama",
-        "haven_type": "Paraíso clásico",
-        "industry": ""
-      },
-      {
-        "name": "Ideal Panama SA",
-        "company": "Impulsora del Desarrollo y e",
-        "country": "Panama",
-        "haven_type": "Paraíso clásico",
-        "industry": "Electric Utilities"
-      },
-      {
-        "name": "Cilsa Panama SA",
-        "company": "Impulsora del Desarrollo y e",
-        "country": "Panama",
-        "haven_type": "Paraíso clásico",
-        "industry": "Financial & Commodity Market Operators & Service Providers"
       }
     ],
-    "total": 2168,
-    "n_haven": 73,
-    "n_classic": 28
+    "total": 2275,
+    "n_abroad": 979,
+    "n_countries_abroad": 82,
+    "n_haven": 125,
+    "n_classic": 31,
+    "n_companies": 61,
+    "pct_haven": 5.5,
+    "pct_haven_otros": 6.7,
+    "pct_otros": 52.2
   },
   "by_company": {
     "009_Alpek": {
@@ -6441,6 +6729,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 27,
+      "n_abroad": 16,
+      "n_countries_abroad": 8,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Alpek",
@@ -6512,6 +6802,8 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [],
       "total": 37,
+      "n_abroad": 23,
+      "n_countries_abroad": 7,
       "n_haven": 1,
       "n_classic": 0,
       "name": "Alsea",
@@ -6550,6 +6842,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 9,
+      "n_abroad": 3,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Altos Hornos de Mexico SA",
@@ -6560,42 +6854,46 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Austria",
-          "n": 32
+          "n": 33
         },
         {
           "country": "Mexico",
-          "n": 20
+          "n": 25
         },
         {
           "country": "Bulgaria",
-          "n": 5
+          "n": 16
+        },
+        {
+          "country": "Brazil",
+          "n": 13
+        },
+        {
+          "country": "Croatia",
+          "n": 8
         },
         {
           "country": "Belarus",
           "n": 5
         },
         {
+          "country": "United States",
+          "n": 5
+        },
+        {
+          "country": "Slovenia",
+          "n": 4
+        },
+        {
           "country": "Macedonia",
           "n": 4
-        },
-        {
-          "country": "Brazil",
-          "n": 4
-        },
-        {
-          "country": "Croatia",
-          "n": 3
-        },
-        {
-          "country": "Honduras",
-          "n": 3
         },
         {
           "country": "Guatemala",
           "n": 3
         },
         {
-          "country": "Nicaragua",
+          "country": "Argentina",
           "n": 3
         },
         {
@@ -6604,14 +6902,38 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "El Salvador",
-          "n": 2
+          "n": 3
+        },
+        {
+          "country": "Republic of Serbia",
+          "n": 3
+        },
+        {
+          "country": "Nicaragua",
+          "n": 3
+        },
+        {
+          "country": "Chile",
+          "n": 3
+        },
+        {
+          "country": "Switzerland",
+          "n": 3
+        },
+        {
+          "country": "Honduras",
+          "n": 3
         },
         {
           "country": "Netherlands",
           "n": 2
         },
         {
-          "country": "Switzerland",
+          "country": "Ecuador",
+          "n": 2
+        },
+        {
+          "country": "Colombia",
           "n": 2
         },
         {
@@ -6619,19 +6941,7 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
-          "country": "Republic of Serbia",
-          "n": 2
-        },
-        {
-          "country": "United States",
-          "n": 2
-        },
-        {
-          "country": "Slovenia",
-          "n": 2
-        },
-        {
-          "country": "Ecuador",
+          "country": "Bosnia and Herzegovina",
           "n": 1
         },
         {
@@ -6639,11 +6949,7 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
-          "country": "Bosnia and Herzegovina",
-          "n": 1
-        },
-        {
-          "country": "Argentina",
+          "country": "Dominican Republic",
           "n": 1
         },
         {
@@ -6651,11 +6957,11 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
-          "country": "Dominican Republic",
+          "country": "Italy",
           "n": 1
         },
         {
-          "country": "Italy",
+          "country": "Czech Republic",
           "n": 1
         },
         {
@@ -6663,11 +6969,19 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
+          "country": "Romania",
+          "n": 1
+        },
+        {
+          "country": "Poland",
+          "n": 1
+        },
+        {
           "country": "Panama",
           "n": 1
         },
         {
-          "country": "Romania",
+          "country": "Slovak Republic",
           "n": 1
         },
         {
@@ -6690,27 +7004,27 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Telecomunicaciones y medios",
-          "n": 42
+          "n": 63
         },
         {
           "sector": "Servicios empresariales",
-          "n": 6
+          "n": 10
         },
         {
           "sector": "Holding e inversión",
-          "n": 6
+          "n": 7
         },
         {
           "sector": "Servicios financieros",
-          "n": 6
+          "n": 7
         },
         {
           "sector": "Construcción y materiales",
-          "n": 3
+          "n": 4
         },
         {
           "sector": "Tecnología",
-          "n": 2
+          "n": 3
         },
         {
           "sector": "Transporte y logística",
@@ -6719,11 +7033,11 @@ const SUBSIDIARIES_DATA = {
       ],
       "by_haven": [
         {
-          "country": "Netherlands",
-          "n": 2
+          "country": "Switzerland",
+          "n": 3
         },
         {
-          "country": "Switzerland",
+          "country": "Netherlands",
           "n": 2
         },
         {
@@ -6733,22 +7047,24 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
-          "name": "Telekom Austria Finance BV",
-          "company": "America Movil",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": ""
-        },
-        {
           "name": "Claro Panama SA",
           "company": "America Movil",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Integrated Telecommunications Services"
+        },
+        {
+          "name": "Telekom Austria Finance BV",
+          "company": "America Movil",
+          "country": "Netherlands",
+          "haven_type": "Hub fiscal",
+          "industry": ""
         }
       ],
-      "total": 113,
-      "n_haven": 5,
+      "total": 163,
+      "n_abroad": 138,
+      "n_countries_abroad": 36,
+      "n_haven": 6,
       "n_classic": 1,
       "name": "America Movil",
       "group": "Slim",
@@ -6758,7 +7074,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 46
+          "n": 47
         },
         {
           "country": "Ecuador",
@@ -6788,7 +7104,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Alimentos y bebidas",
-          "n": 30
+          "n": 31
         },
         {
           "sector": "Química y petroquímica",
@@ -6814,7 +7130,9 @@ const SUBSIDIARIES_DATA = {
         }
       ],
       "haven_details": [],
-      "total": 76,
+      "total": 77,
+      "n_abroad": 30,
+      "n_countries_abroad": 6,
       "n_haven": 1,
       "n_classic": 0,
       "name": "Arca Continental",
@@ -6837,6 +7155,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 3,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Banco del Bajio SA Institucion de Banc",
@@ -6859,6 +7179,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 1,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Becle",
@@ -6868,7 +7190,19 @@ const SUBSIDIARIES_DATA = {
     "070_CEMEX SAB de CV": {
       "by_country": [
         {
+          "country": "Ireland",
+          "n": 45
+        },
+        {
+          "country": "United Kingdom",
+          "n": 14
+        },
+        {
           "country": "United States",
+          "n": 13
+        },
+        {
+          "country": "Netherlands",
           "n": 12
         },
         {
@@ -6876,7 +7210,7 @@ const SUBSIDIARIES_DATA = {
           "n": 10
         },
         {
-          "country": "Netherlands",
+          "country": "Germany",
           "n": 9
         },
         {
@@ -6884,28 +7218,48 @@ const SUBSIDIARIES_DATA = {
           "n": 8
         },
         {
-          "country": "France",
-          "n": 5
+          "country": "Colombia",
+          "n": 8
         },
         {
-          "country": "United Kingdom",
-          "n": 5
+          "country": "France",
+          "n": 7
         },
         {
           "country": "Philippines",
-          "n": 4
+          "n": 6
+        },
+        {
+          "country": "Barbados",
+          "n": 6
         },
         {
           "country": "Croatia",
           "n": 4
         },
         {
-          "country": "Barbados",
-          "n": 4
-        },
-        {
           "country": "Mexico",
           "n": 3
+        },
+        {
+          "country": "Costa Rica",
+          "n": 3
+        },
+        {
+          "country": "Jamaica",
+          "n": 3
+        },
+        {
+          "country": "Panama",
+          "n": 3
+        },
+        {
+          "country": "Austria",
+          "n": 2
+        },
+        {
+          "country": "Bosnia and Herzegovina",
+          "n": 2
         },
         {
           "country": "Switzerland",
@@ -6916,19 +7270,15 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
-          "country": "Bosnia and Herzegovina",
+          "country": "Israel",
           "n": 2
         },
         {
-          "country": "Jamaica",
+          "country": "Nicaragua",
           "n": 2
         },
         {
-          "country": "Guyana",
-          "n": 2
-        },
-        {
-          "country": "Germany",
+          "country": "Guatemala",
           "n": 2
         },
         {
@@ -6936,23 +7286,15 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
-          "country": "Anguilla",
+          "country": "Guyana",
+          "n": 2
+        },
+        {
+          "country": "El Salvador",
           "n": 1
         },
         {
-          "country": "Luxembourg",
-          "n": 1
-        },
-        {
-          "country": "Israel",
-          "n": 1
-        },
-        {
-          "country": "Haiti",
-          "n": 1
-        },
-        {
-          "country": "Bermuda",
+          "country": "Denmark",
           "n": 1
         },
         {
@@ -6960,7 +7302,15 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
-          "country": "Denmark",
+          "country": "Anguilla",
+          "n": 1
+        },
+        {
+          "country": "Argentina",
+          "n": 1
+        },
+        {
+          "country": "Bermuda",
           "n": 1
         },
         {
@@ -6969,6 +7319,38 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "Malaysia",
+          "n": 1
+        },
+        {
+          "country": "Jordan",
+          "n": 1
+        },
+        {
+          "country": "Latvia",
+          "n": 1
+        },
+        {
+          "country": "Luxembourg",
+          "n": 1
+        },
+        {
+          "country": "Jersey",
+          "n": 1
+        },
+        {
+          "country": "Haiti",
+          "n": 1
+        },
+        {
+          "country": "Hungary",
+          "n": 1
+        },
+        {
+          "country": "Isle of Man",
+          "n": 1
+        },
+        {
+          "country": "Russia",
           "n": 1
         },
         {
@@ -6984,7 +7366,7 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
-          "country": "Russia",
+          "country": "Norway",
           "n": 1
         },
         {
@@ -7003,37 +7385,53 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Construcción y materiales",
-          "n": 48
+          "n": 80
         },
         {
           "sector": "Holding e inversión",
-          "n": 7
+          "n": 8
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 6
         },
         {
           "sector": "Servicios financieros",
-          "n": 4
+          "n": 5
         },
         {
           "sector": "Química y petroquímica",
           "n": 2
         },
         {
-          "sector": "Servicios empresariales",
+          "sector": "Manufactura",
           "n": 2
         },
         {
-          "sector": "Manufactura",
+          "sector": "Energía",
+          "n": 1
+        },
+        {
+          "sector": "Minería y metales",
           "n": 1
         }
       ],
       "by_haven": [
         {
+          "country": "Ireland",
+          "n": 45
+        },
+        {
           "country": "Netherlands",
-          "n": 9
+          "n": 12
         },
         {
           "country": "Barbados",
-          "n": 4
+          "n": 6
+        },
+        {
+          "country": "Panama",
+          "n": 3
         },
         {
           "country": "Switzerland",
@@ -7048,13 +7446,70 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
+          "country": "Jersey",
+          "n": 1
+        },
+        {
+          "country": "Isle of Man",
+          "n": 1
+        },
+        {
           "country": "Singapore",
           "n": 1
         }
       ],
       "haven_details": [
         {
-          "name": "Torino Re Ltd",
+          "name": "Cemento Bayano SA",
+          "company": "Cemex",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": "Specialty Mining & Metals"
+        },
+        {
+          "name": "Arawak Cement Company Ltd",
+          "company": "Cemex",
+          "country": "Barbados",
+          "haven_type": "Paraíso clásico",
+          "industry": "Construction Materials"
+        },
+        {
+          "name": "CEMEX Island Aggregates Ltd",
+          "company": "Cemex",
+          "country": "Isle of Man",
+          "haven_type": "Paraíso clásico",
+          "industry": ""
+        },
+        {
+          "name": "Readymix Management Services Ltd",
+          "company": "Cemex",
+          "country": "Jersey",
+          "haven_type": "Paraíso clásico",
+          "industry": ""
+        },
+        {
+          "name": "Pavimentos Especializados SA",
+          "company": "Cemex",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": ""
+        },
+        {
+          "name": "Tecas Siglo XXI SA",
+          "company": "Cemex",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": ""
+        },
+        {
+          "name": "CxNetworks NV",
+          "company": "Cemex",
+          "country": "Netherlands",
+          "haven_type": "Hub fiscal",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Cemex Lan Trading Corp",
           "company": "Cemex",
           "country": "Barbados",
           "haven_type": "Paraíso clásico",
@@ -7082,13 +7537,6 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         },
         {
-          "name": "Arawak Cement Company Ltd",
-          "company": "Cemex",
-          "country": "Barbados",
-          "haven_type": "Paraíso clásico",
-          "industry": "Construction Materials"
-        },
-        {
           "name": "Mustang RE Ltd",
           "company": "Cemex",
           "country": "Bermuda",
@@ -7096,16 +7544,25 @@ const SUBSIDIARIES_DATA = {
           "industry": "Reinsurance"
         },
         {
-          "name": "CxNetworks NV",
+          "name": "Apollo RE Ltd",
           "company": "Cemex",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
+          "country": "Barbados",
+          "haven_type": "Paraíso clásico",
+          "industry": ""
+        },
+        {
+          "name": "Torino Re Ltd",
+          "company": "Cemex",
+          "country": "Barbados",
+          "haven_type": "Paraíso clásico",
+          "industry": ""
         }
       ],
-      "total": 94,
-      "n_haven": 18,
-      "n_classic": 5,
+      "total": 195,
+      "n_abroad": 192,
+      "n_countries_abroad": 47,
+      "n_haven": 73,
+      "n_classic": 12,
       "name": "Cemex",
       "group": "Cemex",
       "color": "#d62728"
@@ -7146,6 +7603,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 21,
+      "n_abroad": 1,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "CFE",
@@ -7225,6 +7684,8 @@ const SUBSIDIARIES_DATA = {
         }
       ],
       "total": 25,
+      "n_abroad": 13,
+      "n_countries_abroad": 8,
       "n_haven": 1,
       "n_classic": 1,
       "name": "Coca-Cola Femsa",
@@ -7263,6 +7724,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 28,
+      "n_abroad": 5,
+      "n_countries_abroad": 3,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Controladora Vuela Compania de Aviacio",
@@ -7285,6 +7748,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 17,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Corporacion Moctezuma",
@@ -7307,6 +7772,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 7,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Corporativo Fragua",
@@ -7345,6 +7812,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 32,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "El Puerto de Liverpool",
@@ -7367,6 +7836,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 2,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Fibra Uno Administracion SA",
@@ -7381,19 +7852,19 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "country": "Germany",
-          "n": 17
+          "n": 19
         },
         {
           "country": "Switzerland",
           "n": 8
         },
         {
-          "country": "Brazil",
+          "country": "Austria",
           "n": 6
         },
         {
-          "country": "Austria",
-          "n": 5
+          "country": "Brazil",
+          "n": 6
         },
         {
           "country": "Chile",
@@ -7455,7 +7926,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Alimentos y bebidas",
-          "n": 42
+          "n": 44
         },
         {
           "sector": "Servicios empresariales",
@@ -7498,6 +7969,20 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
+          "name": "Valora International AG",
+          "company": "Fomento Economico Mexicano",
+          "country": "Switzerland",
+          "haven_type": "Hub fiscal",
+          "industry": "Investment Holding Companies"
+        },
+        {
+          "name": "Valora Europe Holding SA",
+          "company": "Fomento Economico Mexicano",
+          "country": "Luxembourg",
+          "haven_type": "Hub fiscal",
+          "industry": "Investment Holding Companies"
+        },
+        {
           "name": "Coca-Cola Femsa de Panama SA",
           "company": "Fomento Economico Mexicano",
           "country": "Panama",
@@ -7510,23 +7995,11 @@ const SUBSIDIARIES_DATA = {
           "country": "Switzerland",
           "haven_type": "Hub fiscal",
           "industry": "Financial & Commodity Market Operators & Service Providers"
-        },
-        {
-          "name": "Valora Europe Holding SA",
-          "company": "Fomento Economico Mexicano",
-          "country": "Luxembourg",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
-        },
-        {
-          "name": "Valora International AG",
-          "company": "Fomento Economico Mexicano",
-          "country": "Switzerland",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Holding Companies"
         }
       ],
-      "total": 95,
+      "total": 98,
+      "n_abroad": 66,
+      "n_countries_abroad": 18,
       "n_haven": 12,
       "n_classic": 1,
       "name": "Fomento Economico Mexicano",
@@ -7577,6 +8050,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 27,
+      "n_abroad": 6,
+      "n_countries_abroad": 4,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Fresnillo PLC",
@@ -7615,6 +8090,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 17,
+      "n_abroad": 8,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "GCC",
@@ -7649,6 +8126,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 6,
+      "n_abroad": 2,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Gentera",
@@ -7675,6 +8154,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 5,
+      "n_abroad": 1,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "GMexico Transportes",
@@ -7765,6 +8246,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 47,
+      "n_abroad": 23,
+      "n_countries_abroad": 14,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Gruma",
@@ -7787,6 +8270,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 24,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Aeroportuario del Centro Norte",
@@ -7825,6 +8310,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 18,
+      "n_abroad": 2,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Aeroportuario del Pacifico",
@@ -7863,6 +8350,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 17,
+      "n_abroad": 2,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Aeroportuario del Sureste",
@@ -7897,6 +8386,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 40,
+      "n_abroad": 7,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Bafar",
@@ -7907,7 +8398,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 63
+          "n": 65
         },
         {
           "country": "United States",
@@ -7978,11 +8469,11 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
-          "country": "Morocco",
+          "country": "Peru",
           "n": 2
         },
         {
-          "country": "Korea; Republic (S. Korea)",
+          "country": "Morocco",
           "n": 2
         },
         {
@@ -7994,7 +8485,7 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
-          "country": "Russia",
+          "country": "South Africa",
           "n": 2
         },
         {
@@ -8002,15 +8493,15 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
-          "country": "South Africa",
-          "n": 2
-        },
-        {
-          "country": "Peru",
+          "country": "South Korea",
           "n": 2
         },
         {
           "country": "Portugal",
+          "n": 2
+        },
+        {
+          "country": "Russia",
           "n": 2
         },
         {
@@ -8038,7 +8529,7 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
-          "country": "Nicaragua",
+          "country": "Panama",
           "n": 1
         },
         {
@@ -8046,7 +8537,7 @@ const SUBSIDIARIES_DATA = {
           "n": 1
         },
         {
-          "country": "Panama",
+          "country": "Nicaragua",
           "n": 1
         },
         {
@@ -8061,7 +8552,7 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Alimentos y bebidas",
-          "n": 76
+          "n": 78
         },
         {
           "sector": "Bienes raíces",
@@ -8108,18 +8599,18 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
-          "name": "Fargo Holding (Gibraltar)",
-          "company": "Grupo Bimbo",
-          "country": "Gibraltar",
-          "haven_type": "Paraíso clásico",
-          "industry": "Investment Holding Companies"
-        },
-        {
           "name": "Bimbo de Panama SA",
           "company": "Grupo Bimbo",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Food Processing"
+        },
+        {
+          "name": "Fargo Holding (Gibraltar)",
+          "company": "Grupo Bimbo",
+          "country": "Gibraltar",
+          "haven_type": "Paraíso clásico",
+          "industry": "Investment Holding Companies"
         },
         {
           "name": "Bimbo Donuts Pirineus SLU",
@@ -8129,7 +8620,9 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 196,
+      "total": 198,
+      "n_abroad": 133,
+      "n_countries_abroad": 37,
       "n_haven": 3,
       "n_classic": 3,
       "name": "Grupo Bimbo",
@@ -8257,6 +8750,8 @@ const SUBSIDIARIES_DATA = {
         }
       ],
       "total": 88,
+      "n_abroad": 32,
+      "n_countries_abroad": 16,
       "n_haven": 1,
       "n_classic": 1,
       "name": "Grupo Carso",
@@ -8287,6 +8782,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 17,
+      "n_abroad": 1,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Comercial Chedraui",
@@ -8346,14 +8843,14 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
-          "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
+          "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
           "company": "Grupo Financiero Banorte",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": "Banks"
         },
         {
-          "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
+          "name": "Grupo Financiero Banorte SAB de CV (Cayman Islands Bran",
           "company": "Grupo Financiero Banorte",
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
@@ -8361,6 +8858,8 @@ const SUBSIDIARIES_DATA = {
         }
       ],
       "total": 104,
+      "n_abroad": 7,
+      "n_countries_abroad": 2,
       "n_haven": 2,
       "n_classic": 2,
       "name": "Grupo Financiero Banorte",
@@ -8391,6 +8890,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 22,
+      "n_abroad": 1,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Financiero Inbursa",
@@ -8433,6 +8934,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 21,
+      "n_abroad": 2,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Gigante",
@@ -8471,6 +8974,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 27,
+      "n_abroad": 2,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Herdez",
@@ -8505,6 +9010,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 5,
+      "n_abroad": 2,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Lamosa",
@@ -8515,11 +9022,11 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 63
+          "n": 64
         },
         {
           "country": "United States",
-          "n": 24
+          "n": 25
         },
         {
           "country": "Peru",
@@ -8532,6 +9039,10 @@ const SUBSIDIARIES_DATA = {
         {
           "country": "Spain",
           "n": 2
+        },
+        {
+          "country": "Luxembourg",
+          "n": 1
         }
       ],
       "by_sector": [
@@ -8544,11 +9055,11 @@ const SUBSIDIARIES_DATA = {
           "n": 12
         },
         {
-          "sector": "Construcción y materiales",
-          "n": 6
+          "sector": "Química y petroquímica",
+          "n": 7
         },
         {
-          "sector": "Química y petroquímica",
+          "sector": "Construcción y materiales",
           "n": 6
         },
         {
@@ -8572,6 +9083,10 @@ const SUBSIDIARIES_DATA = {
         {
           "country": "Cayman Islands",
           "n": 2
+        },
+        {
+          "country": "Luxembourg",
+          "n": 1
         }
       ],
       "haven_details": [
@@ -8588,10 +9103,19 @@ const SUBSIDIARIES_DATA = {
           "country": "Cayman Islands",
           "haven_type": "Paraíso clásico",
           "industry": ""
+        },
+        {
+          "name": "Prospector Rig 4 Owning Company SARL",
+          "company": "Grupo Mexico",
+          "country": "Luxembourg",
+          "haven_type": "Hub fiscal",
+          "industry": "Oil & Gas Exploration and Production"
         }
       ],
-      "total": 94,
-      "n_haven": 2,
+      "total": 97,
+      "n_abroad": 33,
+      "n_countries_abroad": 5,
+      "n_haven": 3,
       "n_classic": 2,
       "name": "Grupo Mexico",
       "group": "Gmexico",
@@ -8613,6 +9137,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 11,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Nacional Provincial",
@@ -8639,6 +9165,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 26,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Palacio de Hierro",
@@ -8669,6 +9197,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 26,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Profuturo",
@@ -8695,6 +9225,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 14,
+      "n_abroad": 1,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "nan",
@@ -8705,11 +9237,11 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 37
+          "n": 38
         },
         {
           "country": "United States",
-          "n": 11
+          "n": 15
         },
         {
           "country": "Brazil",
@@ -8734,11 +9266,15 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
+          "sector": "Construcción y materiales",
+          "n": 1
+        },
+        {
           "sector": "Holding e inversión",
           "n": 1
         },
         {
-          "sector": "Construcción y materiales",
+          "sector": "Transporte y logística",
           "n": 1
         }
       ],
@@ -8761,7 +9297,9 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 52,
+      "total": 57,
+      "n_abroad": 19,
+      "n_countries_abroad": 4,
       "n_haven": 2,
       "n_classic": 1,
       "name": "Grupo Simec",
@@ -8772,23 +9310,19 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 116
+          "n": 139
         },
         {
           "country": "United States",
-          "n": 6
+          "n": 54
+        },
+        {
+          "country": "Argentina",
+          "n": 3
         },
         {
           "country": "Colombia",
           "n": 3
-        },
-        {
-          "country": "Chile",
-          "n": 2
-        },
-        {
-          "country": "Argentina",
-          "n": 2
         },
         {
           "country": "Spain",
@@ -8799,8 +9333,28 @@ const SUBSIDIARIES_DATA = {
           "n": 2
         },
         {
+          "country": "Chile",
+          "n": 2
+        },
+        {
           "country": "Switzerland",
           "n": 2
+        },
+        {
+          "country": "El Salvador",
+          "n": 1
+        },
+        {
+          "country": "Ecuador",
+          "n": 1
+        },
+        {
+          "country": "Brazil",
+          "n": 1
+        },
+        {
+          "country": "Guatemala",
+          "n": 1
         },
         {
           "country": "Nicaragua",
@@ -8818,11 +9372,11 @@ const SUBSIDIARIES_DATA = {
       "by_sector": [
         {
           "sector": "Telecomunicaciones y medios",
-          "n": 15
+          "n": 23
         },
         {
           "sector": "Servicios empresariales",
-          "n": 5
+          "n": 7
         },
         {
           "sector": "Holding e inversión",
@@ -8830,7 +9384,7 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "sector": "Tecnología",
-          "n": 2
+          "n": 3
         },
         {
           "sector": "Alimentos y bebidas",
@@ -8864,7 +9418,9 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 138,
+      "total": 214,
+      "n_abroad": 75,
+      "n_countries_abroad": 14,
       "n_haven": 3,
       "n_classic": 1,
       "name": "Grupo Televisa",
@@ -8887,6 +9443,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 2,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Grupo Traxion",
@@ -8934,21 +9492,23 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
-          "name": "Ideal Panama SA",
-          "company": "Impulsora del Desarrollo y e",
-          "country": "Panama",
-          "haven_type": "Paraíso clásico",
-          "industry": "Electric Utilities"
-        },
-        {
           "name": "Cilsa Panama SA",
           "company": "Impulsora del Desarrollo y e",
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Financial & Commodity Market Operators & Service Providers"
+        },
+        {
+          "name": "Ideal Panama SA",
+          "company": "Impulsora del Desarrollo y e",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": "Electric Utilities"
         }
       ],
       "total": 39,
+      "n_abroad": 2,
+      "n_countries_abroad": 1,
       "n_haven": 2,
       "n_classic": 2,
       "name": "Impulsora del Desarrollo y el Empleo e",
@@ -8996,6 +9556,8 @@ const SUBSIDIARIES_DATA = {
         }
       ],
       "total": 15,
+      "n_abroad": 4,
+      "n_countries_abroad": 2,
       "n_haven": 1,
       "n_classic": 1,
       "name": "nan",
@@ -9006,11 +9568,11 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 70
+          "n": 72
         },
         {
           "country": "United States",
-          "n": 10
+          "n": 14
         },
         {
           "country": "Brazil",
@@ -9035,12 +9597,16 @@ const SUBSIDIARIES_DATA = {
           "n": 3
         },
         {
+          "sector": "Construcción y materiales",
+          "n": 2
+        },
+        {
           "sector": "Holding e inversión",
           "n": 2
         },
         {
-          "sector": "Construcción y materiales",
-          "n": 2
+          "sector": "Transporte y logística",
+          "n": 1
         }
       ],
       "by_haven": [
@@ -9062,7 +9628,9 @@ const SUBSIDIARIES_DATA = {
           "industry": ""
         }
       ],
-      "total": 84,
+      "total": 90,
+      "n_abroad": 18,
+      "n_countries_abroad": 4,
       "n_haven": 2,
       "n_classic": 1,
       "name": "Industrias CH",
@@ -9129,6 +9697,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 57,
+      "n_abroad": 10,
+      "n_countries_abroad": 5,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Industrias Penoles",
@@ -9159,6 +9729,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 4,
+      "n_abroad": 1,
+      "n_countries_abroad": 1,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Kimberly-Clark de Mexico",
@@ -9181,6 +9753,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 1,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "La Comer",
@@ -9207,6 +9781,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 22,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Megacable Holdings",
@@ -9217,7 +9793,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Germany",
-          "n": 6
+          "n": 7
         },
         {
           "country": "Mexico",
@@ -9275,7 +9851,7 @@ const SUBSIDIARIES_DATA = {
         },
         {
           "sector": "Minería y metales",
-          "n": 7
+          "n": 8
         },
         {
           "sector": "Servicios empresariales",
@@ -9288,7 +9864,9 @@ const SUBSIDIARIES_DATA = {
       ],
       "by_haven": [],
       "haven_details": [],
-      "total": 25,
+      "total": 26,
+      "n_abroad": 20,
+      "n_countries_abroad": 12,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Nemak",
@@ -9306,6 +9884,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 1,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Operadora de Sites Mexicanos  De CV",
@@ -9501,6 +10081,13 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
+          "name": "Hortifim BV",
+          "company": "Orbia Advance Corp",
+          "country": "Netherlands",
+          "haven_type": "Hub fiscal",
+          "industry": "Investment Management & Fund Operators"
+        },
+        {
           "name": "Mexichem Panama SA",
           "company": "Orbia Advance Corp",
           "country": "Panama",
@@ -9513,16 +10100,11 @@ const SUBSIDIARIES_DATA = {
           "country": "Panama",
           "haven_type": "Paraíso clásico",
           "industry": "Water & Related Utilities"
-        },
-        {
-          "name": "Hortifim BV",
-          "company": "Orbia Advance Corp",
-          "country": "Netherlands",
-          "haven_type": "Hub fiscal",
-          "industry": "Investment Management & Fund Operators"
         }
       ],
       "total": 81,
+      "n_abroad": 69,
+      "n_countries_abroad": 34,
       "n_haven": 7,
       "n_classic": 2,
       "name": "Orbia Advance Corp",
@@ -9549,6 +10131,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 12,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Organizacion Soriana",
@@ -9559,11 +10143,11 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 38
+          "n": 49
         },
         {
           "country": "United States",
-          "n": 6
+          "n": 7
         },
         {
           "country": "Spain",
@@ -9608,11 +10192,11 @@ const SUBSIDIARIES_DATA = {
           "n": 3
         },
         {
-          "sector": "Construcción y materiales",
-          "n": 2
+          "sector": "Servicios empresariales",
+          "n": 3
         },
         {
-          "sector": "Servicios empresariales",
+          "sector": "Construcción y materiales",
           "n": 2
         },
         {
@@ -9652,6 +10236,13 @@ const SUBSIDIARIES_DATA = {
       ],
       "haven_details": [
         {
+          "name": "Pemex Finance Ltd",
+          "company": "Pemex",
+          "country": "Cayman Islands",
+          "haven_type": "Paraíso clásico",
+          "industry": "Oil & Gas Refining and Marketing"
+        },
+        {
           "name": "PMI Holdings BV",
           "company": "Pemex",
           "country": "Netherlands",
@@ -9678,16 +10269,11 @@ const SUBSIDIARIES_DATA = {
           "country": "Singapore",
           "haven_type": "Hub fiscal",
           "industry": ""
-        },
-        {
-          "name": "Pemex Finance Ltd",
-          "company": "Pemex",
-          "country": "Cayman Islands",
-          "haven_type": "Paraíso clásico",
-          "industry": "Oil & Gas Refining and Marketing"
         }
       ],
-      "total": 60,
+      "total": 72,
+      "n_abroad": 23,
+      "n_countries_abroad": 9,
       "n_haven": 8,
       "n_classic": 2,
       "name": "Pemex",
@@ -9726,6 +10312,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 27,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Promotora y Operadora de Infraestructu",
@@ -9768,6 +10356,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 12,
+      "n_abroad": 7,
+      "n_countries_abroad": 4,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Qualitas Controladora",
@@ -9778,7 +10368,7 @@ const SUBSIDIARIES_DATA = {
       "by_country": [
         {
           "country": "Mexico",
-          "n": 10
+          "n": 12
         }
       ],
       "by_sector": [
@@ -9789,7 +10379,9 @@ const SUBSIDIARIES_DATA = {
       ],
       "by_haven": [],
       "haven_details": [],
-      "total": 10,
+      "total": 12,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Regional",
@@ -9820,6 +10412,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 3,
+      "n_abroad": 3,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Southern Copper Corp Peru",
@@ -9842,6 +10436,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 12,
+      "n_abroad": 0,
+      "n_countries_abroad": 0,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Vesta Real Estate Corporation",
@@ -9876,6 +10472,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 5,
+      "n_abroad": 4,
+      "n_countries_abroad": 2,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Vista Energy",
@@ -9942,6 +10540,8 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 35,
+      "n_abroad": 9,
+      "n_countries_abroad": 6,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Vitro",
@@ -9984,56 +10584,11 @@ const SUBSIDIARIES_DATA = {
       "by_haven": [],
       "haven_details": [],
       "total": 6,
+      "n_abroad": 5,
+      "n_countries_abroad": 4,
       "n_haven": 0,
       "n_classic": 0,
       "name": "Wal Mart de Mexico",
-      "group": "Otro",
-      "color": "#a8a8a8"
-    },
-    "Directors": {
-      "by_country": [
-        {
-          "country": "Costa Rica",
-          "n": 19
-        },
-        {
-          "country": "United States",
-          "n": 3
-        },
-        {
-          "country": "Cayman Islands",
-          "n": 2
-        },
-        {
-          "country": "Guatemala",
-          "n": 2
-        }
-      ],
-      "by_sector": [
-        {
-          "sector": "Alimentos y bebidas",
-          "n": 5
-        },
-        {
-          "sector": "Holding e inversión",
-          "n": 2
-        },
-        {
-          "sector": "Servicios empresariales",
-          "n": 2
-        }
-      ],
-      "by_haven": [
-        {
-          "country": "Cayman Islands",
-          "n": 2
-        }
-      ],
-      "haven_details": [],
-      "total": 26,
-      "n_haven": 2,
-      "n_classic": 2,
-      "name": "Directors",
       "group": "Otro",
       "color": "#a8a8a8"
     }
@@ -22501,15 +23056,21 @@ const INSTITUTIONAL_DATA = {
 
 const CAPITAL_STRUCTURE_DATA = {
   "global": {
-    "total_b": 363.76,
-    "strategic_b": 289.7,
-    "strategic_pct": 79.6,
-    "float_b": 74.05,
-    "float_pct": 20.4,
-    "float_mx_b": 11.55,
-    "float_mx_pct": 15.6,
-    "float_ext_b": 62.51,
-    "float_ext_pct": 84.4
+    "total_b": 327.62,
+    "strategic_b": 253.4,
+    "strategic_pct": 77.3,
+    "ctrl_mx_b": 184.28,
+    "ctrl_mx_pct": 56.2,
+    "ctrl_ex_b": 69.11,
+    "ctrl_ex_pct": 21.1,
+    "ctrl_mx_share": 72.7,
+    "float_b": 74.22,
+    "float_pct": 22.7,
+    "float_mx_b": 8.73,
+    "float_mx_pct": 11.8,
+    "float_ext_b": 65.5,
+    "float_ext_pct": 88.2,
+    "mx_total_pct": 58.9
   },
   "filiales": [
     {
@@ -22528,6 +23089,7 @@ const CAPITAL_STRUCTURE_DATA = {
       "pct": 2.4
     }
   ],
+  "im_mx_sede_b": 11.55,
   "comportamiento": [
     {
       "origen": "Extranjero",
@@ -22555,21 +23117,31 @@ const CAPITAL_STRUCTURE_DATA = {
     }
   ],
   "n_inst": 9722,
-  "n_strat": 157
+  "n_strat": 160,
+  "n_companies": 61,
+  "cascade_excluded_b": 85.3,
+  "big3_n_companies": 54,
+  "big3_median_pct": 3.4
 };
 
 const CAPITAL_STRUCTURE_BY_COMPANY = {
   "005_Alfa SAB de CV": {
     "global": {
-      "total_b": 3.7,
-      "strategic_b": 3.12,
-      "strategic_pct": 84.4,
+      "total_b": 1.84,
+      "strategic_b": 1.26,
+      "strategic_pct": 68.6,
+      "ctrl_mx_b": 1.26,
+      "ctrl_mx_pct": 68.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.58,
-      "float_pct": 15.6,
-      "float_mx_b": 0.17,
-      "float_mx_pct": 30.1,
-      "float_ext_b": 0.4,
-      "float_ext_pct": 69.9
+      "float_pct": 31.4,
+      "float_mx_b": 0.13,
+      "float_mx_pct": 22.7,
+      "float_ext_b": 0.45,
+      "float_ext_pct": 77.3,
+      "mx_total_pct": 75.8
     },
     "filiales": [
       {
@@ -22588,6 +23160,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.3
       }
     ],
+    "im_mx_sede_b": 0.17,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -22615,20 +23188,26 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 192,
-    "n_strat": 2,
+    "n_strat": 1,
     "name": "Alfa"
   },
   "009_Alpek": {
     "global": {
-      "total_b": 0.08,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 1.38,
+      "strategic_b": 1.3,
+      "strategic_pct": 94.1,
+      "ctrl_mx_b": 1.3,
+      "ctrl_mx_pct": 94.1,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.08,
-      "float_pct": 100.0,
-      "float_mx_b": 0.05,
-      "float_mx_pct": 59.2,
-      "float_ext_b": 0.03,
-      "float_ext_pct": 40.8
+      "float_pct": 5.9,
+      "float_mx_b": 0.04,
+      "float_mx_pct": 53.5,
+      "float_ext_b": 0.04,
+      "float_ext_pct": 46.5,
+      "mx_total_pct": 97.3
     },
     "filiales": [
       {
@@ -22647,6 +23226,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.1
       }
     ],
+    "im_mx_sede_b": 0.05,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -22674,7 +23254,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 87,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Alpek"
   },
   "010_Alsea SAB de CV": {
@@ -22682,12 +23262,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.86,
       "strategic_b": 1.2,
       "strategic_pct": 64.3,
+      "ctrl_mx_b": 1.2,
+      "ctrl_mx_pct": 64.3,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.67,
       "float_pct": 35.7,
-      "float_mx_b": 0.23,
-      "float_mx_pct": 34.1,
-      "float_ext_b": 0.44,
-      "float_ext_pct": 65.9
+      "float_mx_b": 0.21,
+      "float_mx_pct": 31.0,
+      "float_ext_b": 0.46,
+      "float_ext_pct": 69.0,
+      "mx_total_pct": 75.3
     },
     "filiales": [
       {
@@ -22706,6 +23292,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.1
       }
     ],
+    "im_mx_sede_b": 0.23,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -22741,12 +23328,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 32.93,
       "strategic_b": 29.5,
       "strategic_pct": 89.6,
+      "ctrl_mx_b": 29.5,
+      "ctrl_mx_pct": 89.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 3.43,
       "float_pct": 10.4,
-      "float_mx_b": 1.08,
-      "float_mx_pct": 31.5,
-      "float_ext_b": 2.35,
-      "float_ext_pct": 68.5
+      "float_mx_b": 0.88,
+      "float_mx_pct": 25.5,
+      "float_ext_b": 2.56,
+      "float_ext_pct": 74.5,
+      "mx_total_pct": 92.2
     },
     "filiales": [
       {
@@ -22765,6 +23358,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.2
       }
     ],
+    "im_mx_sede_b": 1.08,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -22800,12 +23394,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 11.36,
       "strategic_b": 8.99,
       "strategic_pct": 79.1,
+      "ctrl_mx_b": 8.99,
+      "ctrl_mx_pct": 79.1,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 2.38,
       "float_pct": 20.9,
-      "float_mx_b": 0.28,
-      "float_mx_pct": 11.7,
-      "float_ext_b": 2.1,
-      "float_ext_pct": 88.3
+      "float_mx_b": 0.18,
+      "float_mx_pct": 7.6,
+      "float_ext_b": 2.2,
+      "float_ext_pct": 92.4,
+      "mx_total_pct": 80.7
     },
     "filiales": [
       {
@@ -22824,6 +23424,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.6
       }
     ],
+    "im_mx_sede_b": 0.28,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -22859,12 +23460,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.93,
       "strategic_b": 1.29,
       "strategic_pct": 67.0,
+      "ctrl_mx_b": 1.29,
+      "ctrl_mx_pct": 67.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.64,
       "float_pct": 33.0,
-      "float_mx_b": 0.08,
-      "float_mx_pct": 12.8,
-      "float_ext_b": 0.56,
-      "float_ext_pct": 87.2
+      "float_mx_b": 0.06,
+      "float_mx_pct": 9.0,
+      "float_ext_b": 0.58,
+      "float_ext_pct": 91.0,
+      "mx_total_pct": 69.9
     },
     "filiales": [
       {
@@ -22883,6 +23490,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.4
       }
     ],
+    "im_mx_sede_b": 0.08,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -22915,15 +23523,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "056_Bbb Foods Inc": {
     "global": {
-      "total_b": 1.22,
+      "total_b": 1.3,
       "strategic_b": 0.0,
       "strategic_pct": 0.0,
-      "float_b": 1.22,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 0.0,
+      "float_b": 1.3,
       "float_pct": 100.0,
       "float_mx_b": 0.0,
       "float_mx_pct": 0.0,
-      "float_ext_b": 1.22,
-      "float_ext_pct": 100.0
+      "float_ext_b": 1.3,
+      "float_ext_pct": 100.0,
+      "mx_total_pct": 0.0
     },
     "filiales": [
       {
@@ -22942,6 +23556,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.0,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -22961,12 +23576,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 6.48,
       "strategic_b": 6.11,
       "strategic_pct": 94.3,
+      "ctrl_mx_b": 6.11,
+      "ctrl_mx_pct": 94.3,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.37,
       "float_pct": 5.7,
-      "float_mx_b": 0.04,
-      "float_mx_pct": 11.6,
-      "float_ext_b": 0.33,
-      "float_ext_pct": 88.4
+      "float_mx_b": 0.03,
+      "float_mx_pct": 8.3,
+      "float_ext_b": 0.34,
+      "float_ext_pct": 91.7,
+      "mx_total_pct": 94.8
     },
     "filiales": [
       {
@@ -22985,6 +23606,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 4.7
       }
     ],
+    "im_mx_sede_b": 0.04,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23020,12 +23642,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 3.09,
       "strategic_b": 0.0,
       "strategic_pct": 0.0,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 0.0,
       "float_b": 3.09,
       "float_pct": 100.0,
-      "float_mx_b": 0.69,
-      "float_mx_pct": 22.4,
-      "float_ext_b": 2.4,
-      "float_ext_pct": 77.6
+      "float_mx_b": 0.56,
+      "float_mx_pct": 18.0,
+      "float_ext_b": 2.53,
+      "float_ext_pct": 82.0,
+      "mx_total_pct": 18.0
     },
     "filiales": [
       {
@@ -23044,6 +23672,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.2
       }
     ],
+    "im_mx_sede_b": 0.69,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23076,15 +23705,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "095_Coca-Cola Femsa SAB de CV": {
     "global": {
-      "total_b": 0.8,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 15.79,
+      "strategic_b": 15.0,
+      "strategic_pct": 95.0,
+      "ctrl_mx_b": 9.44,
+      "ctrl_mx_pct": 59.8,
+      "ctrl_ex_b": 5.56,
+      "ctrl_ex_pct": 35.2,
+      "ctrl_mx_share": 62.9,
       "float_b": 0.8,
-      "float_pct": 100.0,
-      "float_mx_b": 0.17,
-      "float_mx_pct": 20.8,
-      "float_ext_b": 0.63,
-      "float_ext_pct": 79.2
+      "float_pct": 5.0,
+      "float_mx_b": 0.09,
+      "float_mx_pct": 11.3,
+      "float_ext_b": 0.71,
+      "float_ext_pct": 88.7,
+      "mx_total_pct": 60.3
     },
     "filiales": [
       {
@@ -23103,6 +23738,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.6
       }
     ],
+    "im_mx_sede_b": 0.17,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23130,20 +23766,26 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 223,
-    "n_strat": 0,
+    "n_strat": 2,
     "name": "Coca-Cola Femsa"
   },
   "101_Controladora Vuela Compania de Aviacion SAB de CV": {
     "global": {
       "total_b": 0.3,
-      "strategic_b": 0.01,
-      "strategic_pct": 3.9,
-      "float_b": 0.28,
-      "float_pct": 96.1,
-      "float_mx_b": 0.02,
-      "float_mx_pct": 7.3,
-      "float_ext_b": 0.26,
-      "float_ext_pct": 92.7
+      "strategic_b": 0.21,
+      "strategic_pct": 71.6,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.2,
+      "ctrl_ex_b": 0.21,
+      "ctrl_ex_pct": 71.4,
+      "ctrl_mx_share": 0.3,
+      "float_b": 0.08,
+      "float_pct": 28.4,
+      "float_mx_b": 0.01,
+      "float_mx_pct": 11.8,
+      "float_ext_b": 0.07,
+      "float_ext_pct": 88.2,
+      "mx_total_pct": 3.6
     },
     "filiales": [
       {
@@ -23162,6 +23804,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 9.7
       }
     ],
+    "im_mx_sede_b": 0.02,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23189,7 +23832,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 68,
-    "n_strat": 6,
+    "n_strat": 7,
     "name": "Controladora Vuela Compania de Aviacio"
   },
   "106_Corporacion Moctezuma SAB de CV": {
@@ -23197,12 +23840,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 3.04,
       "strategic_b": 2.95,
       "strategic_pct": 97.1,
+      "ctrl_mx_b": 0.39,
+      "ctrl_mx_pct": 12.9,
+      "ctrl_ex_b": 2.56,
+      "ctrl_ex_pct": 84.2,
+      "ctrl_mx_share": 13.3,
       "float_b": 0.09,
       "float_pct": 2.9,
       "float_mx_b": 0.01,
       "float_mx_pct": 15.7,
       "float_ext_b": 0.07,
-      "float_ext_pct": 84.3
+      "float_ext_pct": 84.3,
+      "mx_total_pct": 13.4
     },
     "filiales": [
       {
@@ -23221,6 +23870,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.01,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23245,15 +23895,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "107_Corporativo Fragua SAB de CV": {
     "global": {
-      "total_b": 0.35,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 3.15,
+      "strategic_b": 2.79,
+      "strategic_pct": 88.7,
+      "ctrl_mx_b": 2.79,
+      "ctrl_mx_pct": 88.7,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.35,
-      "float_pct": 100.0,
-      "float_mx_b": 0.14,
-      "float_mx_pct": 38.7,
+      "float_pct": 11.3,
+      "float_mx_b": 0.13,
+      "float_mx_pct": 37.3,
       "float_ext_b": 0.22,
-      "float_ext_pct": 61.3
+      "float_ext_pct": 62.7,
+      "mx_total_pct": 92.9
     },
     "filiales": [
       {
@@ -23272,6 +23928,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.14,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23299,20 +23956,26 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 30,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Corporativo Fragua"
   },
   "118_El puerto de Liverpool SAB de CV": {
     "global": {
-      "total_b": 0.43,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 3.84,
+      "strategic_b": 3.41,
+      "strategic_pct": 88.9,
+      "ctrl_mx_b": 3.41,
+      "ctrl_mx_pct": 88.9,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.43,
-      "float_pct": 100.0,
-      "float_mx_b": 0.28,
-      "float_mx_pct": 66.8,
-      "float_ext_b": 0.14,
-      "float_ext_pct": 33.2
+      "float_pct": 11.1,
+      "float_mx_b": 0.17,
+      "float_mx_pct": 39.5,
+      "float_ext_b": 0.26,
+      "float_ext_pct": 60.5,
+      "mx_total_pct": 93.3
     },
     "filiales": [
       {
@@ -23331,6 +23994,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.1
       }
     ],
+    "im_mx_sede_b": 0.28,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -23358,7 +24022,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 109,
-    "n_strat": 0,
+    "n_strat": 2,
     "name": "El Puerto de Liverpool"
   },
   "150_Fibra Uno Administracion SA de CV": {
@@ -23366,12 +24030,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 2.89,
       "strategic_b": 1.88,
       "strategic_pct": 64.9,
+      "ctrl_mx_b": 1.88,
+      "ctrl_mx_pct": 64.9,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 1.01,
       "float_pct": 35.1,
-      "float_mx_b": 0.19,
-      "float_mx_pct": 18.5,
-      "float_ext_b": 0.83,
-      "float_ext_pct": 81.5
+      "float_mx_b": 0.16,
+      "float_mx_pct": 15.7,
+      "float_ext_b": 0.86,
+      "float_ext_pct": 84.3,
+      "mx_total_pct": 70.4
     },
     "filiales": [
       {
@@ -23390,6 +24060,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.19,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23422,15 +24093,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "152_Fomento Economico Mexicano SAB de CV": {
     "global": {
-      "total_b": 5.2,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 20.41,
+      "strategic_b": 15.21,
+      "strategic_pct": 74.5,
+      "ctrl_mx_b": 15.21,
+      "ctrl_mx_pct": 74.5,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 5.2,
-      "float_pct": 100.0,
-      "float_mx_b": 0.99,
-      "float_mx_pct": 19.0,
-      "float_ext_b": 4.21,
-      "float_ext_pct": 81.0
+      "float_pct": 25.5,
+      "float_mx_b": 0.72,
+      "float_mx_pct": 13.8,
+      "float_ext_b": 4.48,
+      "float_ext_pct": 86.2,
+      "mx_total_pct": 78.1
     },
     "filiales": [
       {
@@ -23449,6 +24126,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.7
       }
     ],
+    "im_mx_sede_b": 0.99,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23476,7 +24154,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 286,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Fomento Economico Mexicano"
   },
   "153_Fresnillo PLC": {
@@ -23484,12 +24162,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 5.46,
       "strategic_b": 4.18,
       "strategic_pct": 76.6,
+      "ctrl_mx_b": 4.18,
+      "ctrl_mx_pct": 76.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 1.28,
       "float_pct": 23.4,
       "float_mx_b": 0.0,
       "float_mx_pct": 0.0,
       "float_ext_b": 1.28,
-      "float_ext_pct": 100.0
+      "float_ext_pct": 100.0,
+      "mx_total_pct": 76.6
     },
     "filiales": [
       {
@@ -23508,6 +24192,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.0,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23527,12 +24212,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 2.53,
       "strategic_b": 1.95,
       "strategic_pct": 77.1,
+      "ctrl_mx_b": 1.95,
+      "ctrl_mx_pct": 77.1,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.58,
       "float_pct": 22.9,
-      "float_mx_b": 0.12,
-      "float_mx_pct": 21.0,
-      "float_ext_b": 0.46,
-      "float_ext_pct": 79.0
+      "float_mx_b": 0.09,
+      "float_mx_pct": 15.0,
+      "float_ext_b": 0.49,
+      "float_ext_pct": 85.0,
+      "mx_total_pct": 80.6
     },
     "filiales": [
       {
@@ -23551,6 +24242,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 6.6
       }
     ],
+    "im_mx_sede_b": 0.12,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23586,12 +24278,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.17,
       "strategic_b": 0.71,
       "strategic_pct": 60.5,
+      "ctrl_mx_b": 0.71,
+      "ctrl_mx_pct": 60.5,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.46,
       "float_pct": 39.5,
-      "float_mx_b": 0.08,
-      "float_mx_pct": 17.8,
-      "float_ext_b": 0.38,
-      "float_ext_pct": 82.2
+      "float_mx_b": 0.06,
+      "float_mx_pct": 13.0,
+      "float_ext_b": 0.4,
+      "float_ext_pct": 87.0,
+      "mx_total_pct": 65.6
     },
     "filiales": [
       {
@@ -23610,6 +24308,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 6.1
       }
     ],
+    "im_mx_sede_b": 0.08,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23645,12 +24344,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 7.05,
       "strategic_b": 6.92,
       "strategic_pct": 98.1,
+      "ctrl_mx_b": 6.92,
+      "ctrl_mx_pct": 98.1,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.13,
       "float_pct": 1.9,
       "float_mx_b": 0.02,
-      "float_mx_pct": 17.4,
+      "float_mx_pct": 15.3,
       "float_ext_b": 0.11,
-      "float_ext_pct": 82.6
+      "float_ext_pct": 84.7,
+      "mx_total_pct": 98.4
     },
     "filiales": [
       {
@@ -23669,6 +24374,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.02,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23704,12 +24410,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 5.4,
       "strategic_b": 3.74,
       "strategic_pct": 69.3,
+      "ctrl_mx_b": 3.74,
+      "ctrl_mx_pct": 69.3,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 1.66,
       "float_pct": 30.7,
-      "float_mx_b": 0.21,
-      "float_mx_pct": 12.4,
-      "float_ext_b": 1.45,
-      "float_ext_pct": 87.6
+      "float_mx_b": 0.16,
+      "float_mx_pct": 9.5,
+      "float_ext_b": 1.5,
+      "float_ext_pct": 90.5,
+      "mx_total_pct": 72.2
     },
     "filiales": [
       {
@@ -23728,6 +24440,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.4
       }
     ],
+    "im_mx_sede_b": 0.21,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23763,12 +24476,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.64,
       "strategic_b": 0.73,
       "strategic_pct": 44.6,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.73,
+      "ctrl_ex_pct": 44.6,
+      "ctrl_mx_share": 0.0,
       "float_b": 0.91,
       "float_pct": 55.4,
-      "float_mx_b": 0.14,
-      "float_mx_pct": 15.0,
-      "float_ext_b": 0.77,
-      "float_ext_pct": 85.0
+      "float_mx_b": 0.09,
+      "float_mx_pct": 9.5,
+      "float_ext_b": 0.82,
+      "float_ext_pct": 90.5,
+      "mx_total_pct": 5.2
     },
     "filiales": [
       {
@@ -23787,6 +24506,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.2
       }
     ],
+    "im_mx_sede_b": 0.14,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23822,12 +24542,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 3.08,
       "strategic_b": 0.39,
       "strategic_pct": 12.8,
+      "ctrl_mx_b": 0.39,
+      "ctrl_mx_pct": 12.8,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 2.69,
       "float_pct": 87.2,
-      "float_mx_b": 0.42,
-      "float_mx_pct": 15.5,
-      "float_ext_b": 2.27,
-      "float_ext_pct": 84.5
+      "float_mx_b": 0.26,
+      "float_mx_pct": 9.7,
+      "float_ext_b": 2.43,
+      "float_ext_pct": 90.3,
+      "mx_total_pct": 21.2
     },
     "filiales": [
       {
@@ -23846,6 +24572,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 1.7
       }
     ],
+    "im_mx_sede_b": 0.42,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23881,12 +24608,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 5.41,
       "strategic_b": 3.65,
       "strategic_pct": 67.5,
+      "ctrl_mx_b": 3.65,
+      "ctrl_mx_pct": 67.5,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 1.76,
       "float_pct": 32.5,
-      "float_mx_b": 0.28,
-      "float_mx_pct": 16.0,
-      "float_ext_b": 1.48,
-      "float_ext_pct": 84.0
+      "float_mx_b": 0.2,
+      "float_mx_pct": 11.1,
+      "float_ext_b": 1.56,
+      "float_ext_pct": 88.9,
+      "mx_total_pct": 71.1
     },
     "filiales": [
       {
@@ -23905,6 +24638,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 4.6
       }
     ],
+    "im_mx_sede_b": 0.28,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -23940,12 +24674,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.28,
       "strategic_b": 0.23,
       "strategic_pct": 79.5,
+      "ctrl_mx_b": 0.23,
+      "ctrl_mx_pct": 79.5,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.06,
       "float_pct": 20.5,
       "float_mx_b": 0.06,
       "float_mx_pct": 100.0,
       "float_ext_b": 0.0,
-      "float_ext_pct": 0.0
+      "float_ext_pct": 0.0,
+      "mx_total_pct": 100.0
     },
     "filiales": [
       {
@@ -23964,6 +24704,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.06,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -23991,12 +24732,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 14.17,
       "strategic_b": 12.99,
       "strategic_pct": 91.7,
+      "ctrl_mx_b": 12.99,
+      "ctrl_mx_pct": 91.7,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 1.18,
       "float_pct": 8.3,
-      "float_mx_b": 0.25,
-      "float_mx_pct": 20.8,
-      "float_ext_b": 0.93,
-      "float_ext_pct": 79.2
+      "float_mx_b": 0.19,
+      "float_mx_pct": 16.4,
+      "float_ext_b": 0.99,
+      "float_ext_pct": 83.6,
+      "mx_total_pct": 93.0
     },
     "filiales": [
       {
@@ -24015,6 +24762,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.7
       }
     ],
+    "im_mx_sede_b": 0.25,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24050,12 +24798,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 20.02,
       "strategic_b": 19.19,
       "strategic_pct": 95.8,
+      "ctrl_mx_b": 19.19,
+      "ctrl_mx_pct": 95.8,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.84,
       "float_pct": 4.2,
-      "float_mx_b": 0.43,
-      "float_mx_pct": 50.7,
-      "float_ext_b": 0.41,
-      "float_ext_pct": 49.3
+      "float_mx_b": 0.41,
+      "float_mx_pct": 49.1,
+      "float_ext_b": 0.43,
+      "float_ext_pct": 50.9,
+      "mx_total_pct": 97.9
     },
     "filiales": [
       {
@@ -24074,6 +24828,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.2
       }
     ],
+    "im_mx_sede_b": 0.43,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24109,12 +24864,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 4.81,
       "strategic_b": 4.29,
       "strategic_pct": 89.1,
+      "ctrl_mx_b": 4.29,
+      "ctrl_mx_pct": 89.1,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.52,
       "float_pct": 10.9,
-      "float_mx_b": 0.22,
-      "float_mx_pct": 42.5,
-      "float_ext_b": 0.3,
-      "float_ext_pct": 57.5
+      "float_mx_b": 0.17,
+      "float_mx_pct": 32.1,
+      "float_ext_b": 0.36,
+      "float_ext_pct": 67.9,
+      "mx_total_pct": 92.6
     },
     "filiales": [
       {
@@ -24133,6 +24894,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.1
       }
     ],
+    "im_mx_sede_b": 0.22,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24168,12 +24930,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 9.95,
       "strategic_b": 0.0,
       "strategic_pct": 0.0,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 0.0,
       "float_b": 9.95,
       "float_pct": 100.0,
-      "float_mx_b": 0.81,
-      "float_mx_pct": 8.1,
-      "float_ext_b": 9.14,
-      "float_ext_pct": 91.9
+      "float_mx_b": 0.56,
+      "float_mx_pct": 5.6,
+      "float_ext_b": 9.39,
+      "float_ext_pct": 94.4,
+      "mx_total_pct": 5.6
     },
     "filiales": [
       {
@@ -24192,6 +24960,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.1
       }
     ],
+    "im_mx_sede_b": 0.81,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24227,12 +24996,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 11.72,
       "strategic_b": 9.24,
       "strategic_pct": 78.9,
+      "ctrl_mx_b": 9.24,
+      "ctrl_mx_pct": 78.9,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 2.47,
       "float_pct": 21.1,
-      "float_mx_b": 0.6,
-      "float_mx_pct": 24.2,
-      "float_ext_b": 1.88,
-      "float_ext_pct": 75.8
+      "float_mx_b": 0.59,
+      "float_mx_pct": 23.7,
+      "float_ext_b": 1.89,
+      "float_ext_pct": 76.3,
+      "mx_total_pct": 83.9
     },
     "filiales": [
       {
@@ -24251,6 +25026,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.3
       }
     ],
+    "im_mx_sede_b": 0.6,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24286,12 +25062,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.41,
       "strategic_b": 1.29,
       "strategic_pct": 91.2,
+      "ctrl_mx_b": 1.29,
+      "ctrl_mx_pct": 91.2,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.12,
       "float_pct": 8.8,
-      "float_mx_b": 0.12,
-      "float_mx_pct": 98.4,
-      "float_ext_b": 0.0,
-      "float_ext_pct": 1.6
+      "float_mx_b": 0.07,
+      "float_mx_pct": 57.8,
+      "float_ext_b": 0.05,
+      "float_ext_pct": 42.2,
+      "mx_total_pct": 96.3
     },
     "filiales": [
       {
@@ -24310,6 +25092,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.12,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24345,12 +25128,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.68,
       "strategic_b": 0.62,
       "strategic_pct": 90.3,
+      "ctrl_mx_b": 0.62,
+      "ctrl_mx_pct": 90.3,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.07,
       "float_pct": 9.7,
-      "float_mx_b": 0.05,
-      "float_mx_pct": 77.4,
-      "float_ext_b": 0.01,
-      "float_ext_pct": 22.6
+      "float_mx_b": 0.04,
+      "float_mx_pct": 68.1,
+      "float_ext_b": 0.02,
+      "float_ext_pct": 31.9,
+      "mx_total_pct": 96.9
     },
     "filiales": [
       {
@@ -24369,6 +25158,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.05,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24404,12 +25194,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.49,
       "strategic_b": 1.41,
       "strategic_pct": 94.7,
+      "ctrl_mx_b": 1.41,
+      "ctrl_mx_pct": 94.7,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.08,
       "float_pct": 5.3,
       "float_mx_b": 0.08,
-      "float_mx_pct": 99.6,
+      "float_mx_pct": 97.4,
       "float_ext_b": 0.0,
-      "float_ext_pct": 0.4
+      "float_ext_pct": 2.6,
+      "mx_total_pct": 99.9
     },
     "filiales": [
       {
@@ -24428,6 +25224,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.08,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24460,15 +25257,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "187_Grupo Mexico SAB de CV": {
     "global": {
-      "total_b": 35.52,
-      "strategic_b": 27.42,
-      "strategic_pct": 77.2,
+      "total_b": 34.79,
+      "strategic_b": 26.68,
+      "strategic_pct": 76.7,
+      "ctrl_mx_b": 26.68,
+      "ctrl_mx_pct": 76.7,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 8.1,
-      "float_pct": 22.8,
-      "float_mx_b": 0.74,
-      "float_mx_pct": 9.1,
-      "float_ext_b": 7.36,
-      "float_ext_pct": 90.9
+      "float_pct": 23.3,
+      "float_mx_b": 0.51,
+      "float_mx_pct": 6.2,
+      "float_ext_b": 7.6,
+      "float_ext_pct": 93.8,
+      "mx_total_pct": 78.2
     },
     "filiales": [
       {
@@ -24487,6 +25290,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.1
       }
     ],
+    "im_mx_sede_b": 0.74,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24514,20 +25318,26 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 331,
-    "n_strat": 5,
+    "n_strat": 3,
     "name": "Grupo Mexico"
   },
   "188_Grupo Nacional Provincial SAB": {
     "global": {
-      "total_b": 0.02,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 1.14,
+      "strategic_b": 1.11,
+      "strategic_pct": 97.9,
+      "ctrl_mx_b": 1.11,
+      "ctrl_mx_pct": 97.9,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.02,
-      "float_pct": 100.0,
+      "float_pct": 2.1,
       "float_mx_b": 0.02,
       "float_mx_pct": 100.0,
       "float_ext_b": 0.0,
-      "float_ext_pct": 0.0
+      "float_ext_pct": 0.0,
+      "mx_total_pct": 100.0
     },
     "filiales": [
       {
@@ -24546,6 +25356,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.02,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24557,7 +25368,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 1,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Grupo Nacional Provincial"
   },
   "190_Grupo Palacio de Hierro SAB de CV": {
@@ -24565,12 +25376,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.87,
       "strategic_b": 0.87,
       "strategic_pct": 100.0,
+      "ctrl_mx_b": 0.87,
+      "ctrl_mx_pct": 100.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.0,
       "float_pct": 0.0,
       "float_mx_b": 0.0,
       "float_mx_pct": 0.0,
       "float_ext_b": 0.0,
-      "float_ext_pct": 0.0
+      "float_ext_pct": 0.0,
+      "mx_total_pct": 100.0
     },
     "filiales": [
       {
@@ -24589,6 +25406,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.0,
     "comportamiento": [],
     "n_inst": 0,
     "n_strat": 1,
@@ -24599,12 +25417,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.15,
       "strategic_b": 1.13,
       "strategic_pct": 98.4,
+      "ctrl_mx_b": 1.13,
+      "ctrl_mx_pct": 98.4,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.02,
       "float_pct": 1.6,
       "float_mx_b": 0.02,
       "float_mx_pct": 100.0,
       "float_ext_b": 0.0,
-      "float_ext_pct": 0.0
+      "float_ext_pct": 0.0,
+      "mx_total_pct": 100.0
     },
     "filiales": [
       {
@@ -24623,6 +25447,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.02,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24642,12 +25467,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 4.47,
       "strategic_b": 4.28,
       "strategic_pct": 95.7,
+      "ctrl_mx_b": 4.28,
+      "ctrl_mx_pct": 95.7,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.19,
       "float_pct": 4.3,
-      "float_mx_b": 0.16,
-      "float_mx_pct": 84.5,
-      "float_ext_b": 0.03,
-      "float_ext_pct": 15.5
+      "float_mx_b": 0.12,
+      "float_mx_pct": 61.7,
+      "float_ext_b": 0.07,
+      "float_ext_pct": 38.3,
+      "mx_total_pct": 98.4
     },
     "filiales": [
       {
@@ -24666,6 +25497,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.16,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24701,12 +25533,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.25,
       "strategic_b": 0.11,
       "strategic_pct": 41.8,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.11,
+      "ctrl_ex_pct": 41.8,
+      "ctrl_mx_share": 0.0,
       "float_b": 0.15,
       "float_pct": 58.2,
-      "float_mx_b": 0.04,
-      "float_mx_pct": 24.3,
+      "float_mx_b": 0.03,
+      "float_mx_pct": 22.4,
       "float_ext_b": 0.11,
-      "float_ext_pct": 75.7
+      "float_ext_pct": 77.6,
+      "mx_total_pct": 13.0
     },
     "filiales": [
       {
@@ -24725,6 +25563,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.8
       }
     ],
+    "im_mx_sede_b": 0.04,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24760,12 +25599,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.4,
       "strategic_b": 0.16,
       "strategic_pct": 39.3,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.16,
+      "ctrl_ex_pct": 39.3,
+      "ctrl_mx_share": 0.0,
       "float_b": 0.24,
       "float_pct": 60.7,
       "float_mx_b": 0.12,
-      "float_mx_pct": 50.6,
-      "float_ext_b": 0.12,
-      "float_ext_pct": 49.4
+      "float_mx_pct": 48.1,
+      "float_ext_b": 0.13,
+      "float_ext_pct": 51.9,
+      "mx_total_pct": 29.2
     },
     "filiales": [
       {
@@ -24784,6 +25629,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.8
       }
     ],
+    "im_mx_sede_b": 0.12,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24814,17 +25660,64 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
     "n_strat": 1,
     "name": "Grupo Traxion"
   },
+  "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV": {
+    "global": {
+      "total_b": 6.39,
+      "strategic_b": 6.39,
+      "strategic_pct": 100.0,
+      "ctrl_mx_b": 3.14,
+      "ctrl_mx_pct": 49.2,
+      "ctrl_ex_b": 3.24,
+      "ctrl_ex_pct": 50.8,
+      "ctrl_mx_share": 49.2,
+      "float_b": 0.0,
+      "float_pct": 0.0,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 0.0,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 0.0,
+      "mx_total_pct": 49.2
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "im_mx_sede_b": 0.0,
+    "comportamiento": [],
+    "n_inst": 1,
+    "n_strat": 2,
+    "name": "Impulsora del Desarrollo y el Empleo e"
+  },
   "206_Industrias CH SAB de CV": {
     "global": {
       "total_b": 3.73,
       "strategic_b": 3.29,
       "strategic_pct": 88.3,
+      "ctrl_mx_b": 3.29,
+      "ctrl_mx_pct": 88.3,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.44,
       "float_pct": 11.7,
-      "float_mx_b": 0.38,
-      "float_mx_pct": 86.7,
-      "float_ext_b": 0.06,
-      "float_ext_pct": 13.3
+      "float_mx_b": 0.24,
+      "float_mx_pct": 55.8,
+      "float_ext_b": 0.19,
+      "float_ext_pct": 44.2,
+      "mx_total_pct": 94.8
     },
     "filiales": [
       {
@@ -24843,6 +25736,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.38,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -24878,12 +25772,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 3.81,
       "strategic_b": 3.07,
       "strategic_pct": 80.6,
+      "ctrl_mx_b": 3.07,
+      "ctrl_mx_pct": 80.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.74,
       "float_pct": 19.4,
-      "float_mx_b": 0.09,
-      "float_mx_pct": 11.7,
-      "float_ext_b": 0.65,
-      "float_ext_pct": 88.3
+      "float_mx_b": 0.07,
+      "float_mx_pct": 9.8,
+      "float_ext_b": 0.67,
+      "float_ext_pct": 90.2,
+      "mx_total_pct": 82.5
     },
     "filiales": [
       {
@@ -24902,6 +25802,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 1.2
       }
     ],
+    "im_mx_sede_b": 0.09,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24934,15 +25835,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "221_Kimberly-Clark de Mexico SAB de CV": {
     "global": {
-      "total_b": 0.82,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 3.35,
+      "strategic_b": 2.53,
+      "strategic_pct": 75.4,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 2.53,
+      "ctrl_ex_pct": 75.4,
+      "ctrl_mx_share": 0.0,
       "float_b": 0.82,
-      "float_pct": 100.0,
-      "float_mx_b": 0.13,
-      "float_mx_pct": 16.2,
-      "float_ext_b": 0.69,
-      "float_ext_pct": 83.8
+      "float_pct": 24.6,
+      "float_mx_b": 0.08,
+      "float_mx_pct": 10.1,
+      "float_ext_b": 0.74,
+      "float_ext_pct": 89.9,
+      "mx_total_pct": 2.5
     },
     "filiales": [
       {
@@ -24961,6 +25868,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.3
       }
     ],
+    "im_mx_sede_b": 0.13,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -24988,7 +25896,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 276,
-    "n_strat": 0,
+    "n_strat": 2,
     "name": "Kimberly-Clark de Mexico"
   },
   "223_La Comer SAB de CV": {
@@ -24996,12 +25904,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.92,
       "strategic_b": 0.67,
       "strategic_pct": 73.0,
+      "ctrl_mx_b": 0.67,
+      "ctrl_mx_pct": 73.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.25,
       "float_pct": 27.0,
-      "float_mx_b": 0.19,
-      "float_mx_pct": 76.4,
-      "float_ext_b": 0.06,
-      "float_ext_pct": 23.6
+      "float_mx_b": 0.14,
+      "float_mx_pct": 55.8,
+      "float_ext_b": 0.11,
+      "float_ext_pct": 44.2,
+      "mx_total_pct": 88.1
     },
     "filiales": [
       {
@@ -25020,6 +25934,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 1.1
       }
     ],
+    "im_mx_sede_b": 0.19,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -25052,15 +25967,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "237_Megacable Holdings SAB de CV": {
     "global": {
-      "total_b": 0.22,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 0.86,
+      "strategic_b": 0.64,
+      "strategic_pct": 74.0,
+      "ctrl_mx_b": 0.64,
+      "ctrl_mx_pct": 74.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.22,
-      "float_pct": 100.0,
-      "float_mx_b": 0.04,
-      "float_mx_pct": 15.7,
-      "float_ext_b": 0.19,
-      "float_ext_pct": 84.3
+      "float_pct": 26.0,
+      "float_mx_b": 0.03,
+      "float_mx_pct": 12.8,
+      "float_ext_b": 0.2,
+      "float_ext_pct": 87.2,
+      "mx_total_pct": 77.4
     },
     "filiales": [
       {
@@ -25079,6 +26000,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.8
       }
     ],
+    "im_mx_sede_b": 0.04,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25106,7 +26028,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 106,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Megacable Holdings"
   },
   "253_Nemak SAB de CV": {
@@ -25114,12 +26036,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.1,
       "strategic_b": 0.02,
       "strategic_pct": 21.4,
+      "ctrl_mx_b": 0.02,
+      "ctrl_mx_pct": 21.4,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.08,
       "float_pct": 78.6,
       "float_mx_b": 0.03,
-      "float_mx_pct": 38.2,
+      "float_mx_pct": 36.6,
       "float_ext_b": 0.05,
-      "float_ext_pct": 61.8
+      "float_ext_pct": 63.4,
+      "mx_total_pct": 50.1
     },
     "filiales": [
       {
@@ -25138,6 +26066,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 9.8
       }
     ],
+    "im_mx_sede_b": 0.03,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25170,15 +26099,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "258_Operadora de Sites Mexicanos SAB De CV": {
     "global": {
-      "total_b": 0.22,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 1.46,
+      "strategic_b": 1.23,
+      "strategic_pct": 84.7,
+      "ctrl_mx_b": 1.23,
+      "ctrl_mx_pct": 84.7,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.22,
-      "float_pct": 100.0,
+      "float_pct": 15.3,
       "float_mx_b": 0.14,
-      "float_mx_pct": 63.0,
+      "float_mx_pct": 62.2,
       "float_ext_b": 0.08,
-      "float_ext_pct": 37.0
+      "float_ext_pct": 37.8,
+      "mx_total_pct": 94.2
     },
     "filiales": [
       {
@@ -25197,6 +26132,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.14,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -25224,7 +26160,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 120,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Operadora de Sites Mexicanos  De CV"
   },
   "259_Orbia Advance Corp SAB de CV": {
@@ -25232,12 +26168,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 2.79,
       "strategic_b": 2.46,
       "strategic_pct": 88.0,
+      "ctrl_mx_b": 2.46,
+      "ctrl_mx_pct": 88.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.34,
       "float_pct": 12.0,
-      "float_mx_b": 0.08,
-      "float_mx_pct": 24.3,
-      "float_ext_b": 0.25,
-      "float_ext_pct": 75.7
+      "float_mx_b": 0.05,
+      "float_mx_pct": 15.4,
+      "float_ext_b": 0.28,
+      "float_ext_pct": 84.6,
+      "mx_total_pct": 89.8
     },
     "filiales": [
       {
@@ -25256,6 +26198,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.4
       }
     ],
+    "im_mx_sede_b": 0.08,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25291,12 +26234,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 3.48,
       "strategic_b": 3.33,
       "strategic_pct": 95.6,
+      "ctrl_mx_b": 3.33,
+      "ctrl_mx_pct": 95.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.15,
       "float_pct": 4.4,
-      "float_mx_b": 0.12,
-      "float_mx_pct": 80.9,
-      "float_ext_b": 0.03,
-      "float_ext_pct": 19.1
+      "float_mx_b": 0.08,
+      "float_mx_pct": 54.7,
+      "float_ext_b": 0.07,
+      "float_ext_pct": 45.3,
+      "mx_total_pct": 98.0
     },
     "filiales": [
       {
@@ -25315,6 +26264,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.12,
     "comportamiento": [
       {
         "origen": "Gestor MX (universo/local)",
@@ -25350,12 +26300,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 2.48,
       "strategic_b": 1.74,
       "strategic_pct": 69.9,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 1.74,
+      "ctrl_ex_pct": 69.9,
+      "ctrl_mx_share": 0.0,
       "float_b": 0.75,
       "float_pct": 30.1,
-      "float_mx_b": 0.04,
-      "float_mx_pct": 5.7,
-      "float_ext_b": 0.71,
-      "float_ext_pct": 94.3
+      "float_mx_b": 0.01,
+      "float_mx_pct": 1.4,
+      "float_ext_b": 0.74,
+      "float_ext_pct": 98.6,
+      "mx_total_pct": 0.4
     },
     "filiales": [
       {
@@ -25374,6 +26330,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 7.1
       }
     ],
+    "im_mx_sede_b": 0.04,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25406,15 +26363,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "274_Promotora y Operadora de Infraestructura SAB de CV": {
     "global": {
-      "total_b": 0.61,
-      "strategic_b": 0.0,
-      "strategic_pct": 0.0,
+      "total_b": 2.36,
+      "strategic_b": 1.75,
+      "strategic_pct": 74.1,
+      "ctrl_mx_b": 1.75,
+      "ctrl_mx_pct": 74.1,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.61,
-      "float_pct": 100.0,
-      "float_mx_b": 0.1,
-      "float_mx_pct": 16.3,
-      "float_ext_b": 0.51,
-      "float_ext_pct": 83.7
+      "float_pct": 25.9,
+      "float_mx_b": 0.07,
+      "float_mx_pct": 11.3,
+      "float_ext_b": 0.54,
+      "float_ext_pct": 88.7,
+      "mx_total_pct": 77.0
     },
     "filiales": [
       {
@@ -25433,6 +26396,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.0
       }
     ],
+    "im_mx_sede_b": 0.1,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25460,7 +26424,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       }
     ],
     "n_inst": 189,
-    "n_strat": 0,
+    "n_strat": 1,
     "name": "Promotora y Operadora de Infraestructu"
   },
   "275_Qualitas Controladora SAB de CV": {
@@ -25468,12 +26432,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 2.71,
       "strategic_b": 2.03,
       "strategic_pct": 74.8,
+      "ctrl_mx_b": 2.03,
+      "ctrl_mx_pct": 74.8,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.68,
       "float_pct": 25.2,
-      "float_mx_b": 0.07,
-      "float_mx_pct": 9.9,
-      "float_ext_b": 0.62,
-      "float_ext_pct": 90.1
+      "float_mx_b": 0.06,
+      "float_mx_pct": 8.3,
+      "float_ext_b": 0.63,
+      "float_ext_pct": 91.7,
+      "mx_total_pct": 76.9
     },
     "filiales": [
       {
@@ -25492,6 +26462,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 1.5
       }
     ],
+    "im_mx_sede_b": 0.07,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25527,12 +26498,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.24,
       "strategic_b": 0.73,
       "strategic_pct": 58.9,
+      "ctrl_mx_b": 0.73,
+      "ctrl_mx_pct": 58.9,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.51,
       "float_pct": 41.1,
-      "float_mx_b": 0.04,
-      "float_mx_pct": 7.9,
-      "float_ext_b": 0.47,
-      "float_ext_pct": 92.1
+      "float_mx_b": 0.03,
+      "float_mx_pct": 5.8,
+      "float_ext_b": 0.48,
+      "float_ext_pct": 94.2,
+      "mx_total_pct": 61.3
     },
     "filiales": [
       {
@@ -25551,6 +26528,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 2.5
       }
     ],
+    "im_mx_sede_b": 0.04,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25583,15 +26561,21 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
   },
   "299_Southern Copper Corp Peru": {
     "global": {
-      "total_b": 65.73,
+      "total_b": 66.02,
       "strategic_b": 59.23,
-      "strategic_pct": 90.1,
-      "float_b": 6.5,
-      "float_pct": 9.9,
+      "strategic_pct": 89.7,
+      "ctrl_mx_b": 59.2,
+      "ctrl_mx_pct": 89.7,
+      "ctrl_ex_b": 0.03,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
+      "float_b": 6.79,
+      "float_pct": 10.3,
       "float_mx_b": 0.0,
       "float_mx_pct": 0.0,
-      "float_ext_b": 6.5,
-      "float_ext_pct": 100.0
+      "float_ext_b": 6.79,
+      "float_ext_pct": 100.0,
+      "mx_total_pct": 89.7
     },
     "filiales": [
       {
@@ -25610,6 +26594,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.0,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25629,12 +26614,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 1.08,
       "strategic_b": 0.14,
       "strategic_pct": 13.4,
+      "ctrl_mx_b": 0.14,
+      "ctrl_mx_pct": 12.8,
+      "ctrl_ex_b": 0.01,
+      "ctrl_ex_pct": 0.6,
+      "ctrl_mx_share": 95.7,
       "float_b": 0.94,
       "float_pct": 86.6,
-      "float_mx_b": 0.14,
-      "float_mx_pct": 15.0,
-      "float_ext_b": 0.8,
-      "float_ext_pct": 85.0
+      "float_mx_b": 0.1,
+      "float_mx_pct": 10.9,
+      "float_ext_b": 0.84,
+      "float_ext_pct": 89.1,
+      "mx_total_pct": 22.2
     },
     "filiales": [
       {
@@ -25653,6 +26644,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 5.7
       }
     ],
+    "im_mx_sede_b": 0.14,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25688,12 +26680,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.65,
       "strategic_b": 0.23,
       "strategic_pct": 35.5,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.23,
+      "ctrl_ex_pct": 35.5,
+      "ctrl_mx_share": 0.0,
       "float_b": 0.42,
       "float_pct": 64.5,
       "float_mx_b": 0.0,
       "float_mx_pct": 0.0,
       "float_ext_b": 0.42,
-      "float_ext_pct": 100.0
+      "float_ext_pct": 100.0,
+      "mx_total_pct": 0.0
     },
     "filiales": [
       {
@@ -25712,6 +26710,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.0,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25731,12 +26730,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 0.22,
       "strategic_b": 0.22,
       "strategic_pct": 99.6,
+      "ctrl_mx_b": 0.22,
+      "ctrl_mx_pct": 99.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
       "float_b": 0.0,
       "float_pct": 0.4,
       "float_mx_b": 0.0,
       "float_mx_pct": 0.0,
       "float_ext_b": 0.0,
-      "float_ext_pct": 100.0
+      "float_ext_pct": 100.0,
+      "mx_total_pct": 99.6
     },
     "filiales": [
       {
@@ -25755,6 +26760,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 0.0
       }
     ],
+    "im_mx_sede_b": 0.0,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25774,12 +26780,18 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
       "total_b": 58.3,
       "strategic_b": 52.02,
       "strategic_pct": 89.2,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 52.02,
+      "ctrl_ex_pct": 89.2,
+      "ctrl_mx_share": 0.0,
       "float_b": 6.28,
       "float_pct": 10.8,
-      "float_mx_b": 0.56,
-      "float_mx_pct": 8.9,
-      "float_ext_b": 5.72,
-      "float_ext_pct": 91.1
+      "float_mx_b": 0.36,
+      "float_mx_pct": 5.8,
+      "float_ext_b": 5.92,
+      "float_ext_pct": 94.2,
+      "mx_total_pct": 0.6
     },
     "filiales": [
       {
@@ -25798,6 +26810,7 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
         "pct": 3.7
       }
     ],
+    "im_mx_sede_b": 0.56,
     "comportamiento": [
       {
         "origen": "Extranjero",
@@ -25846,9 +26859,9 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "154_GCC SAB de CV",
       "empresa": "GCC",
       "group": "Cemex",
-      "pct_fuera_subs": 43.8,
+      "pct_fuera_subs": 47.1,
       "rev_intl_pct": 69.0,
-      "divergencia": -25.2,
+      "divergencia": -21.9,
       "n_paises": 1,
       "modelo": null
     },
@@ -25856,9 +26869,9 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "170_Grupo Bimbo",
       "empresa": "Grupo Bimbo",
       "group": "Bimbo",
-      "pct_fuera_subs": 67.7,
+      "pct_fuera_subs": 67.2,
       "rev_intl_pct": 67.1,
-      "divergencia": 0.6,
+      "divergencia": 0.1,
       "n_paises": 37,
       "modelo": "construccion"
     },
@@ -25866,10 +26879,10 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "187_Grupo Mexico SAB de CV",
       "empresa": "Grupo Mexico",
       "group": "Gmexico",
-      "pct_fuera_subs": 33.0,
+      "pct_fuera_subs": 34.0,
       "rev_intl_pct": 63.6,
-      "divergencia": -30.6,
-      "n_paises": 4,
+      "divergencia": -29.6,
+      "n_paises": 5,
       "modelo": "adquisicion"
     },
     {
@@ -25886,20 +26899,20 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "070_CEMEX SAB de CV",
       "empresa": "Cemex",
       "group": "Cemex",
-      "pct_fuera_subs": 96.8,
+      "pct_fuera_subs": 98.5,
       "rev_intl_pct": 60.3,
-      "divergencia": 36.5,
-      "n_paises": 32,
+      "divergencia": 38.2,
+      "n_paises": 47,
       "modelo": "adquisicion"
     },
     {
       "company_folder": "014_America Móvil",
       "empresa": "America Movil",
       "group": "Slim",
-      "pct_fuera_subs": 82.3,
+      "pct_fuera_subs": 84.7,
       "rev_intl_pct": 59.1,
-      "divergencia": 23.2,
-      "n_paises": 31,
+      "divergencia": 25.6,
+      "n_paises": 36,
       "modelo": "adquisicion"
     },
     {
@@ -25946,9 +26959,9 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "195_Grupo Simec SAB de CV",
       "empresa": "Grupo Simec",
       "group": "Otro",
-      "pct_fuera_subs": 29.4,
+      "pct_fuera_subs": 33.3,
       "rev_intl_pct": 39.9,
-      "divergencia": -10.5,
+      "divergencia": -6.6,
       "n_paises": 4,
       "modelo": null
     },
@@ -25966,9 +26979,9 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "206_Industrias CH SAB de CV",
       "empresa": "Industrias CH",
       "group": "Otro",
-      "pct_fuera_subs": 16.9,
+      "pct_fuera_subs": 20.0,
       "rev_intl_pct": 35.2,
-      "divergencia": -18.3,
+      "divergencia": -15.2,
       "n_paises": 4,
       "modelo": null
     },
@@ -25993,22 +27006,22 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": "ficcion"
     },
     {
-      "company_folder": "164_Grupo Aeroportuario del Pacifico SAB de CV",
-      "empresa": "Grupo Aeroportuario del Pacifico",
-      "group": "Otro",
-      "pct_fuera_subs": 11.1,
-      "rev_intl_pct": 13.0,
-      "divergencia": -1.9,
-      "n_paises": 2,
-      "modelo": null
-    },
-    {
       "company_folder": "182_Grupo Gigante SAB de CV",
       "empresa": "Grupo Gigante",
       "group": "Otro",
       "pct_fuera_subs": 9.5,
       "rev_intl_pct": 13.0,
       "divergencia": -3.5,
+      "n_paises": 2,
+      "modelo": null
+    },
+    {
+      "company_folder": "164_Grupo Aeroportuario del Pacifico SAB de CV",
+      "empresa": "Grupo Aeroportuario del Pacifico",
+      "group": "Otro",
+      "pct_fuera_subs": 11.1,
+      "rev_intl_pct": 13.0,
+      "divergencia": -1.9,
       "n_paises": 2,
       "modelo": null
     },
@@ -26046,10 +27059,10 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "197_Grupo Televisa SAB",
       "empresa": "Grupo Televisa",
       "group": "Otro",
-      "pct_fuera_subs": 15.3,
+      "pct_fuera_subs": 35.0,
       "rev_intl_pct": 1.5,
-      "divergencia": 13.8,
-      "n_paises": 10,
+      "divergencia": 33.5,
+      "n_paises": 14,
       "modelo": "ficcion"
     },
     {
@@ -26076,17 +27089,27 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "259_Orbia Advance Corp SAB de CV",
       "empresa": "Orbia Advance Corp",
       "group": "Otro",
-      "pct_fuera_subs": 84.8,
+      "pct_fuera_subs": 85.2,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 34,
       "modelo": null
     },
     {
+      "company_folder": "152_Fomento Economico Mexicano SAB de CV",
+      "empresa": "Fomento Economico Mexicano",
+      "group": "Femsa",
+      "pct_fuera_subs": 67.3,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 18,
+      "modelo": null
+    },
+    {
       "company_folder": "019_Arca Continental",
       "empresa": "Arca Continental",
       "group": "Otro",
-      "pct_fuera_subs": 39.5,
+      "pct_fuera_subs": 39.0,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 6,
@@ -26096,7 +27119,7 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "264_Pemex",
       "empresa": "Pemex",
       "group": "Otro",
-      "pct_fuera_subs": 36.7,
+      "pct_fuera_subs": 31.9,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 9,
@@ -26106,7 +27129,7 @@ const INTERNACIONALIZACION_DATA = {
       "company_folder": "253_Nemak SAB de CV",
       "empresa": "Nemak",
       "group": "Otro",
-      "pct_fuera_subs": 76.0,
+      "pct_fuera_subs": 76.9,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 12,
@@ -26133,16 +27156,6 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "178_Grupo Financiero Banorte SAB de CV",
-      "empresa": "Grupo Financiero Banorte",
-      "group": "GrumaBanorte",
-      "pct_fuera_subs": 6.7,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 2,
-      "modelo": null
-    },
-    {
       "company_folder": "169_Grupo Bafar SAB de CV",
       "empresa": "Grupo Bafar",
       "group": "Otro",
@@ -26150,6 +27163,16 @@ const INTERNACIONALIZACION_DATA = {
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 1,
+      "modelo": null
+    },
+    {
+      "company_folder": "178_Grupo Financiero Banorte SAB de CV",
+      "empresa": "Grupo Financiero Banorte",
+      "group": "GrumaBanorte",
+      "pct_fuera_subs": 6.7,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 2,
       "modelo": null
     },
     {
@@ -26203,13 +27226,13 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "185_Grupo Lamosa SAB de CV",
-      "empresa": "Grupo Lamosa",
-      "group": "Otro",
-      "pct_fuera_subs": 40.0,
+      "company_folder": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
+      "empresa": "Impulsora del Desarrollo y el Empleo e",
+      "group": "Slim",
+      "pct_fuera_subs": 5.1,
       "rev_intl_pct": null,
       "divergencia": null,
-      "n_paises": 2,
+      "n_paises": 1,
       "modelo": null
     },
     {
@@ -26233,13 +27256,13 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "204_Impulsora del Desarrollo y el Empleo en America Latina SAB de CV",
-      "empresa": "Impulsora del Desarrollo y el Empleo e",
-      "group": "Slim",
-      "pct_fuera_subs": 5.1,
+      "company_folder": "185_Grupo Lamosa SAB de CV",
+      "empresa": "Grupo Lamosa",
+      "group": "Otro",
+      "pct_fuera_subs": 40.0,
       "rev_intl_pct": null,
       "divergencia": null,
-      "n_paises": 1,
+      "n_paises": 2,
       "modelo": null
     },
     {
@@ -26247,16 +27270,6 @@ const INTERNACIONALIZACION_DATA = {
       "empresa": "GMexico Transportes",
       "group": "Gmexico",
       "pct_fuera_subs": 20.0,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 1,
-      "modelo": null
-    },
-    {
-      "company_folder": "173_Grupo Comercial Chedraui SAB de CV",
-      "empresa": "Grupo Comercial Chedraui",
-      "group": "Otro",
-      "pct_fuera_subs": 5.9,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 1,
@@ -26283,8 +27296,18 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "118_El puerto de Liverpool SAB de CV",
-      "empresa": "El Puerto de Liverpool",
+      "company_folder": "173_Grupo Comercial Chedraui SAB de CV",
+      "empresa": "Grupo Comercial Chedraui",
+      "group": "Otro",
+      "pct_fuera_subs": 5.9,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 1,
+      "modelo": null
+    },
+    {
+      "company_folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
+      "empresa": "Grupo Aeroportuario del Centro Norte",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -26303,8 +27326,8 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
-      "empresa": "Grupo Aeroportuario del Centro Norte",
+      "company_folder": "118_El puerto de Liverpool SAB de CV",
+      "empresa": "El Puerto de Liverpool",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -26363,26 +27386,6 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "274_Promotora y Operadora de Infraestructura SAB de CV",
-      "empresa": "Promotora y Operadora de Infraestructu",
-      "group": "Otro",
-      "pct_fuera_subs": 0.0,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 0,
-      "modelo": null
-    },
-    {
-      "company_folder": "237_Megacable Holdings SAB de CV",
-      "empresa": "Megacable Holdings",
-      "group": "Otro",
-      "pct_fuera_subs": 0.0,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 0,
-      "modelo": null
-    },
-    {
       "company_folder": "258_Operadora de Sites Mexicanos SAB De CV",
       "empresa": "Operadora de Sites Mexicanos  De CV",
       "group": "Otro",
@@ -26403,6 +27406,16 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
+      "company_folder": "237_Megacable Holdings SAB de CV",
+      "empresa": "Megacable Holdings",
+      "group": "Otro",
+      "pct_fuera_subs": 0.0,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 0,
+      "modelo": null
+    },
+    {
       "company_folder": "260_Organizacion Soriana SAB de CV",
       "empresa": "Organizacion Soriana",
       "group": "Otro",
@@ -26413,8 +27426,8 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "318_Vesta Real Estate Corporation SAB de CV",
-      "empresa": "Vesta Real Estate Corporation",
+      "company_folder": "274_Promotora y Operadora de Infraestructura SAB de CV",
+      "empresa": "Promotora y Operadora de Infraestructu",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -26425,6 +27438,16 @@ const INTERNACIONALIZACION_DATA = {
     {
       "company_folder": "281_Regional SAB de CV",
       "empresa": "Regional",
+      "group": "Otro",
+      "pct_fuera_subs": 0.0,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 0,
+      "modelo": null
+    },
+    {
+      "company_folder": "318_Vesta Real Estate Corporation SAB de CV",
+      "empresa": "Vesta Real Estate Corporation",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -26443,47 +27466,69 @@ const INTERNACIONALIZACION_DATA = {
 const SEGMENTACION_DATA = {
   "companies": [
     {
-      "empresa": "Grupo Bimbo",
-      "group": "Bimbo",
+      "empresa": "Cemex",
+      "group": "Cemex",
       "segmento": "1. Multilatina global",
-      "fuera_mexico": 132,
-      "pct_fuera": 67.7,
-      "n_paises": 37,
-      "n_continentes": 6,
-      "continentes": "América Central, América del Norte, América del Sur, Asia, Europa, África",
-      "rev_intl_pct": 67.1
+      "fuera_mexico": 192,
+      "pct_fuera": 98.5,
+      "n_paises": 47,
+      "n_continentes": 8,
+      "continentes": "América Central, América del Norte, América del Sur, Asia, Cayman/Offshore, Europa, Otro, África",
+      "rev_intl_pct": 60.3
     },
     {
       "empresa": "America Movil",
       "group": "Slim",
       "segmento": "1. Multilatina global",
-      "fuera_mexico": 93,
-      "pct_fuera": 82.3,
-      "n_paises": 31,
+      "fuera_mexico": 138,
+      "pct_fuera": 84.7,
+      "n_paises": 36,
       "n_continentes": 4,
       "continentes": "América Central, América del Norte, América del Sur, Europa",
       "rev_intl_pct": 59.1
     },
     {
-      "empresa": "Cemex",
-      "group": "Cemex",
+      "empresa": "Grupo Bimbo",
+      "group": "Bimbo",
       "segmento": "1. Multilatina global",
-      "fuera_mexico": 90,
-      "pct_fuera": 96.8,
-      "n_paises": 32,
+      "fuera_mexico": 133,
+      "pct_fuera": 67.2,
+      "n_paises": 37,
       "n_continentes": 7,
-      "continentes": "América Central, América del Norte, América del Sur, Asia, Cayman/Offshore, Europa, África",
-      "rev_intl_pct": 60.3
+      "continentes": "América Central, América del Norte, América del Sur, Asia, Europa, Otro, África",
+      "rev_intl_pct": 67.1
+    },
+    {
+      "empresa": "Grupo Televisa",
+      "group": "Otro",
+      "segmento": "1. Multilatina global",
+      "fuera_mexico": 75,
+      "pct_fuera": 35.0,
+      "n_paises": 14,
+      "n_continentes": 4,
+      "continentes": "América Central, América del Norte, América del Sur, Europa",
+      "rev_intl_pct": 1.5
     },
     {
       "empresa": "Orbia Advance Corp",
       "group": "Otro",
       "segmento": "1. Multilatina global",
-      "fuera_mexico": 67,
-      "pct_fuera": 84.8,
+      "fuera_mexico": 69,
+      "pct_fuera": 85.2,
       "n_paises": 34,
       "n_continentes": 6,
       "continentes": "América Central, América del Norte, América del Sur, Asia, Europa, Oceanía",
+      "rev_intl_pct": null
+    },
+    {
+      "empresa": "Fomento Economico Mexicano",
+      "group": "Femsa",
+      "segmento": "1. Multilatina global",
+      "fuera_mexico": 66,
+      "pct_fuera": 67.3,
+      "n_paises": 18,
+      "n_continentes": 4,
+      "continentes": "América Central, América del Norte, América del Sur, Europa",
       "rev_intl_pct": null
     },
     {
@@ -26509,22 +27554,11 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": 60.5
     },
     {
-      "empresa": "Grupo Televisa",
-      "group": "Otro",
-      "segmento": "1. Multilatina global",
-      "fuera_mexico": 21,
-      "pct_fuera": 15.3,
-      "n_paises": 10,
-      "n_continentes": 4,
-      "continentes": "América Central, América del Norte, América del Sur, Europa",
-      "rev_intl_pct": 1.5
-    },
-    {
       "empresa": "Nemak",
       "group": "Otro",
       "segmento": "1. Multilatina global",
-      "fuera_mexico": 19,
-      "pct_fuera": 76.0,
+      "fuera_mexico": 20,
+      "pct_fuera": 76.9,
       "n_paises": 12,
       "n_continentes": 3,
       "continentes": "América del Norte, América del Sur, Europa",
@@ -26534,9 +27568,9 @@ const SEGMENTACION_DATA = {
       "empresa": "Grupo Mexico",
       "group": "Gmexico",
       "segmento": "2. Multinacional regional",
-      "fuera_mexico": 31,
-      "pct_fuera": 33.0,
-      "n_paises": 4,
+      "fuera_mexico": 33,
+      "pct_fuera": 34.0,
+      "n_paises": 5,
       "n_continentes": 4,
       "continentes": "América del Norte, América del Sur, Cayman/Offshore, Europa",
       "rev_intl_pct": 63.6
@@ -26546,7 +27580,7 @@ const SEGMENTACION_DATA = {
       "group": "Otro",
       "segmento": "2. Multinacional regional",
       "fuera_mexico": 30,
-      "pct_fuera": 39.5,
+      "pct_fuera": 39.0,
       "n_paises": 6,
       "n_continentes": 3,
       "continentes": "América del Norte, América del Sur, Europa",
@@ -26567,12 +27601,34 @@ const SEGMENTACION_DATA = {
       "empresa": "Pemex",
       "group": "Otro",
       "segmento": "2. Multinacional regional",
-      "fuera_mexico": 22,
-      "pct_fuera": 36.7,
+      "fuera_mexico": 23,
+      "pct_fuera": 31.9,
       "n_paises": 9,
       "n_continentes": 4,
       "continentes": "América del Norte, Asia, Cayman/Offshore, Europa",
       "rev_intl_pct": null
+    },
+    {
+      "empresa": "Grupo Simec",
+      "group": "Otro",
+      "segmento": "2. Multinacional regional",
+      "fuera_mexico": 19,
+      "pct_fuera": 33.3,
+      "n_paises": 4,
+      "n_continentes": 4,
+      "continentes": "América del Norte, América del Sur, Cayman/Offshore, Europa",
+      "rev_intl_pct": 39.9
+    },
+    {
+      "empresa": "Industrias CH",
+      "group": "Otro",
+      "segmento": "2. Multinacional regional",
+      "fuera_mexico": 18,
+      "pct_fuera": 20.0,
+      "n_paises": 4,
+      "n_continentes": 4,
+      "continentes": "América del Norte, América del Sur, Cayman/Offshore, Europa",
+      "rev_intl_pct": 35.2
     },
     {
       "empresa": "Alpek",
@@ -26584,28 +27640,6 @@ const SEGMENTACION_DATA = {
       "n_continentes": 4,
       "continentes": "América del Norte, América del Sur, Asia, Europa",
       "rev_intl_pct": 51.6
-    },
-    {
-      "empresa": "Grupo Simec",
-      "group": "Otro",
-      "segmento": "2. Multinacional regional",
-      "fuera_mexico": 15,
-      "pct_fuera": 29.4,
-      "n_paises": 4,
-      "n_continentes": 4,
-      "continentes": "América del Norte, América del Sur, Cayman/Offshore, Europa",
-      "rev_intl_pct": 39.9
-    },
-    {
-      "empresa": "Industrias CH",
-      "group": "Otro",
-      "segmento": "2. Multinacional regional",
-      "fuera_mexico": 14,
-      "pct_fuera": 16.9,
-      "n_paises": 4,
-      "n_continentes": 4,
-      "continentes": "América del Norte, América del Sur, Cayman/Offshore, Europa",
-      "rev_intl_pct": 35.2
     },
     {
       "empresa": "Coca-Cola Femsa",
@@ -26666,23 +27700,12 @@ const SEGMENTACION_DATA = {
       "empresa": "GCC",
       "group": "Cemex",
       "segmento": "3. Presencia puntual",
-      "fuera_mexico": 7,
-      "pct_fuera": 43.8,
+      "fuera_mexico": 8,
+      "pct_fuera": 47.1,
       "n_paises": 1,
       "n_continentes": 1,
       "continentes": "América del Norte",
       "rev_intl_pct": 69.0
-    },
-    {
-      "empresa": "Grupo Financiero Banorte",
-      "group": "GrumaBanorte",
-      "segmento": "3. Presencia puntual",
-      "fuera_mexico": 7,
-      "pct_fuera": 6.7,
-      "n_paises": 2,
-      "n_continentes": 2,
-      "continentes": "América del Norte, Cayman/Offshore",
-      "rev_intl_pct": null
     },
     {
       "empresa": "Grupo Bafar",
@@ -26693,6 +27716,17 @@ const SEGMENTACION_DATA = {
       "n_paises": 1,
       "n_continentes": 1,
       "continentes": "América del Norte",
+      "rev_intl_pct": null
+    },
+    {
+      "empresa": "Grupo Financiero Banorte",
+      "group": "GrumaBanorte",
+      "segmento": "3. Presencia puntual",
+      "fuera_mexico": 7,
+      "pct_fuera": 6.7,
+      "n_paises": 2,
+      "n_continentes": 2,
+      "continentes": "América del Norte, Cayman/Offshore",
       "rev_intl_pct": null
     },
     {
@@ -26762,17 +27796,6 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Aeroportuario del Pacifico",
-      "group": "Otro",
-      "segmento": "3. Presencia puntual",
-      "fuera_mexico": 2,
-      "pct_fuera": 11.1,
-      "n_paises": 2,
-      "n_continentes": 2,
-      "continentes": "América del Sur, Europa",
-      "rev_intl_pct": 13.0
-    },
-    {
       "empresa": "Grupo Gigante",
       "group": "Otro",
       "segmento": "3. Presencia puntual",
@@ -26781,6 +27804,17 @@ const SEGMENTACION_DATA = {
       "n_paises": 2,
       "n_continentes": 2,
       "continentes": "América del Norte, América del Sur",
+      "rev_intl_pct": 13.0
+    },
+    {
+      "empresa": "Grupo Aeroportuario del Pacifico",
+      "group": "Otro",
+      "segmento": "3. Presencia puntual",
+      "fuera_mexico": 2,
+      "pct_fuera": 11.1,
+      "n_paises": 2,
+      "n_continentes": 2,
+      "continentes": "América del Sur, Europa",
       "rev_intl_pct": 13.0
     },
     {
@@ -26795,14 +27829,14 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": 7.5
     },
     {
-      "empresa": "Grupo Lamosa",
-      "group": "Otro",
+      "empresa": "Impulsora del Desarrollo y el Empleo e",
+      "group": "Slim",
       "segmento": "3. Presencia puntual",
       "fuera_mexico": 2,
-      "pct_fuera": 40.0,
-      "n_paises": 2,
-      "n_continentes": 2,
-      "continentes": "América del Sur, Europa",
+      "pct_fuera": 5.1,
+      "n_paises": 1,
+      "n_continentes": 1,
+      "continentes": "América Central",
       "rev_intl_pct": null
     },
     {
@@ -26828,14 +27862,14 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Impulsora del Desarrollo y el Empleo e",
-      "group": "Slim",
+      "empresa": "Grupo Lamosa",
+      "group": "Otro",
       "segmento": "3. Presencia puntual",
       "fuera_mexico": 2,
-      "pct_fuera": 5.1,
-      "n_paises": 1,
-      "n_continentes": 1,
-      "continentes": "América Central",
+      "pct_fuera": 40.0,
+      "n_paises": 2,
+      "n_continentes": 2,
+      "continentes": "América del Sur, Europa",
       "rev_intl_pct": null
     },
     {
@@ -26872,17 +27906,6 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Comercial Chedraui",
-      "group": "Otro",
-      "segmento": "3. Presencia puntual",
-      "fuera_mexico": 1,
-      "pct_fuera": 5.9,
-      "n_paises": 1,
-      "n_continentes": 1,
-      "continentes": "América del Norte",
-      "rev_intl_pct": null
-    },
-    {
       "empresa": "CFE",
       "group": "Otro",
       "segmento": "3. Presencia puntual",
@@ -26902,6 +27925,17 @@ const SEGMENTACION_DATA = {
       "n_paises": 1,
       "n_continentes": 1,
       "continentes": "América del Sur",
+      "rev_intl_pct": null
+    },
+    {
+      "empresa": "Grupo Comercial Chedraui",
+      "group": "Otro",
+      "segmento": "3. Presencia puntual",
+      "fuera_mexico": 1,
+      "pct_fuera": 5.9,
+      "n_paises": 1,
+      "n_continentes": 1,
+      "continentes": "América del Norte",
       "rev_intl_pct": null
     },
     {
@@ -26938,7 +27972,7 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": 0.2
     },
     {
-      "empresa": "El Puerto de Liverpool",
+      "empresa": "Grupo Aeroportuario del Centro Norte",
       "group": "Otro",
       "segmento": "4. Doméstica",
       "fuera_mexico": 0,
@@ -26960,7 +27994,7 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Aeroportuario del Centro Norte",
+      "empresa": "El Puerto de Liverpool",
       "group": "Otro",
       "segmento": "4. Doméstica",
       "fuera_mexico": 0,
@@ -27026,28 +28060,6 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Promotora y Operadora de Infraestructu",
-      "group": "Otro",
-      "segmento": "4. Doméstica",
-      "fuera_mexico": 0,
-      "pct_fuera": 0.0,
-      "n_paises": 0,
-      "n_continentes": 0,
-      "continentes": null,
-      "rev_intl_pct": null
-    },
-    {
-      "empresa": "Megacable Holdings",
-      "group": "Otro",
-      "segmento": "4. Doméstica",
-      "fuera_mexico": 0,
-      "pct_fuera": 0.0,
-      "n_paises": 0,
-      "n_continentes": 0,
-      "continentes": null,
-      "rev_intl_pct": null
-    },
-    {
       "empresa": "Operadora de Sites Mexicanos  De CV",
       "group": "Otro",
       "segmento": "4. Doméstica",
@@ -27070,6 +28082,17 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
+      "empresa": "Megacable Holdings",
+      "group": "Otro",
+      "segmento": "4. Doméstica",
+      "fuera_mexico": 0,
+      "pct_fuera": 0.0,
+      "n_paises": 0,
+      "n_continentes": 0,
+      "continentes": null,
+      "rev_intl_pct": null
+    },
+    {
       "empresa": "Organizacion Soriana",
       "group": "Otro",
       "segmento": "4. Doméstica",
@@ -27081,7 +28104,7 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Vesta Real Estate Corporation",
+      "empresa": "Promotora y Operadora de Infraestructu",
       "group": "Otro",
       "segmento": "4. Doméstica",
       "fuera_mexico": 0,
@@ -27101,6 +28124,17 @@ const SEGMENTACION_DATA = {
       "n_continentes": 0,
       "continentes": null,
       "rev_intl_pct": null
+    },
+    {
+      "empresa": "Vesta Real Estate Corporation",
+      "group": "Otro",
+      "segmento": "4. Doméstica",
+      "fuera_mexico": 0,
+      "pct_fuera": 0.0,
+      "n_paises": 0,
+      "n_continentes": 0,
+      "continentes": null,
+      "rev_intl_pct": null
     }
   ],
   "labels": {
@@ -27110,7 +28144,7 @@ const SEGMENTACION_DATA = {
     "4. Doméstica": "Doméstica — sin subsidiarias fuera de México"
   },
   "summary": {
-    "1. Multilatina global": 8,
+    "1. Multilatina global": 9,
     "2. Multinacional regional": 12,
     "3. Presencia puntual": 22,
     "4. Doméstica": 18

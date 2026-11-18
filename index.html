@@ -510,16 +510,21 @@ footer a { color: var(--ink2); }
   <div class="section-label">04 — Propiedad</div>
   <h2 class="section-title">La bolsa mexicana tiene dueño — casi siempre es una familia</h2>
   <p class="section-lead">
-    En <strong id="prop-n-maj">—</strong> de las <strong id="prop-n-total">—</strong> empresas con datos de accionistas,
-    un solo accionista estratégico — una familia, un holding o una corporación — controla más del 50% de las acciones.
-    En el extremo opuesto, <strong id="prop-n-none">—</strong> empresas cotizan sin un accionista dominante identificado:
-    su consejo lo elige el mercado institucional.
+    En <strong id="prop-n-maj">—</strong> de las <strong id="prop-n-total">—</strong> emisoras con porcentajes de tenencia,
+    el bloque de control (familias, fideicomisos de control y empresas matrices) reúne más del 50% del capital.
+    En <strong id="prop-n-mx">—</strong> de las <strong id="prop-n-ctrl">—</strong> con controlador identificado, el controlador último es mexicano.
+    En el extremo opuesto, <strong id="prop-n-none">—</strong> emisoras no tienen un controlador identificado.
   </p>
 
   <div class="stat-mini-grid fade-in" id="prop-stats-cards"></div>
 
   <div class="card fade-in">
-    <div class="card-title">Principales accionistas estratégicos por empresa — hover para ver nombres</div>
+    <div class="card-title">Bloque de control por emisora (% del capital): pasa el cursor para ver los controladores</div>
+    <p style="font-size:0.78rem;color:var(--muted);margin:0 0 12px;">
+      Controlador último: la nacionalidad es la de quien finalmente posee el bloque, no la del vehículo registrado
+      (Walmex cuenta como control de Walmart). Si la dueña es otra emisora de la muestra (Grupo México en Southern Copper),
+      la tenencia forma el bloque de la filial. Las 14 emisoras sin accionistas de control en Refinitiv se completaron con reportes anuales.
+    </p>
     <div class="chart-wrap" style="min-height:840px;" id="chart-concentration"></div>
   </div>
 
@@ -594,11 +599,13 @@ footer a { color: var(--ink2); }
   <div style="font-size:0.72rem;color:var(--muted);margin:0 0 10px;">Aplica a los tres gráficos siguientes.</div>
 
   <div class="card fade-in">
-    <div class="card-title">Control vs. float — ¿de quién es realmente el capital?</div>
+    <div class="card-title">Control vs. cartera — ¿de quién es realmente el capital?</div>
     <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
-      Del capital total declarado por accionistas (estratégicos + institucionales), la gran mayoría sigue
-      en manos de los accionistas de control. El "float" libre — el que cotiza activamente — es una porción
-      menor, y de ese float, la mayor parte es capital extranjero.
+      Del valor de las tenencias identificadas, la gran mayoría está en el bloque de control, y ese bloque es
+      mayoritariamente mexicano. La cartera (gestoras, casas de bolsa e instituciones que compran para obtener
+      rendimiento) es una porción menor, y casi toda está en gestoras de matriz extranjera.
+      En el universo se excluye el control en cascada (una emisora de la muestra dueña de otra), que ya está
+      dentro del valor de la dueña, y los bancos custodios.
     </p>
     <div class="two-col">
       <div class="chart-wrap" style="min-height:280px;" id="chart-capital-control"></div>
@@ -607,11 +614,12 @@ footer a { color: var(--ink2); }
   </div>
 
   <div class="card fade-in">
-    <div class="card-title">El capital "mexicano" del float — ¿quién lo administra realmente?</div>
-    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;">
-      De los $10.6B del float administrados por gestoras mexicanas, casi nada es capital independiente:
-      la mayoría son filiales de los mismos grupos del universo (Slim, GBM, Banorte) o sucursales
-      locales de bancos globales (BlackRock, BBVA, Santander…).
+    <div class="card-title">Las gestoras con sede en México — ¿quién las controla realmente?</div>
+    <p style="font-size:0.82rem;color:var(--muted);margin:4px 0 16px;" id="capital-filiales-note">
+      De las gestoras de inversión registradas en México, casi nada es capital independiente:
+      la mayoría son filiales de los mismos grupos del universo (Slim, GBM, Banorte) o filiales
+      locales de gestoras globales (BlackRock, BBVA, Santander…). Por eso, en la composición de la cartera,
+      las filiales de gestoras globales cuentan como extranjeras.
     </p>
     <div class="chart-wrap" style="min-height:260px;" id="chart-capital-filiales"></div>
   </div>
@@ -660,8 +668,8 @@ footer a { color: var(--ink2); }
   <div class="section-label">07 — Huella global</div>
   <h2 class="section-title">Dónde operan — presencia internacional de los grupos</h2>
   <p class="section-lead">
-    Las 61 empresas con datos de estructura corporativa suman <strong>3,226 subsidiarias</strong>
-    en más de 60 países. Selecciona una empresa para ver su huella específica,
+    Las <span id="subs-n-companies">61</span> empresas con datos de estructura corporativa suman <strong><span id="subs-total">2,275</span> subsidiarias</strong>
+    distintas, de las cuales <span id="subs-abroad">979</span> están fuera de México, en <span id="subs-countries">82</span> países. Selecciona una empresa para ver su huella específica,
     o el universo completo para ver el patrón agregado.
   </p>
 
@@ -727,10 +735,10 @@ footer a { color: var(--ink2); }
   </div>
 
   <div class="card fade-in">
-    <div class="card-title">¿Qué tan global es realmente el universo? — segmentación completa (60 empresas)</div>
+    <div class="card-title">¿Qué tan global es realmente el universo? — segmentación completa</div>
     <p style="font-size:0.82rem;color:var(--muted);margin:0 0 16px;">
       El corte de "multilatinas reales" usaba un umbral de ≥10 países. Aquí se segmentan
-      las <strong>60 empresas del universo</strong> (no solo las más internacionales) según
+      las <strong>61 empresas del universo</strong> (no solo las más internacionales) según
       número de países <em>y</em> de continentes alcanzados por sus subsidiarias:
       <strong>multilatina global</strong> (≥10 países en ≥3 continentes),
       <strong>multinacional regional</strong> (≥3 países en ≥2 continentes),
@@ -886,7 +894,7 @@ footer a { color: var(--ink2); }
 </footer>
 
 <!-- DATA + SCRIPTS -->
-<script src="data_web.js?v=7"></script>
+<script src="data_web.js?v=9"></script>
 <script src="data_argentina.js?v=3"></script>
 <script>
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -1388,29 +1396,31 @@ const TYPE_COLORS = {
 // ── Section 05: Propiedad ─────────────────────────────────────────────────────
 (function() {
   document.getElementById('prop-n-maj').textContent   = PROP_STATS.n_majority;
-  document.getElementById('prop-n-total').textContent = PROP_STATS.n_with_strategic;
-  document.getElementById('prop-n-none').textContent  = PROP_STATS.n_no_strategic;
+  document.getElementById('prop-n-total').textContent = PROP_STATS.n_with_pct;
+  document.getElementById('prop-n-mx').textContent    = PROP_STATS.n_mx_controller;
+  document.getElementById('prop-n-ctrl').textContent  = PROP_STATS.n_with_controller;
+  document.getElementById('prop-n-none').textContent  = PROP_STATS.n_no_controller;
 
   document.getElementById('prop-stats-cards').innerHTML = `
     <div class="stat-mini">
-      <div class="stat-mini-n">${PROP_STATS.n_majority}</div>
-      <div class="stat-mini-l">Con mayoría absoluta</div>
-      <div class="stat-mini-sub">Un solo accionista &gt;50%</div>
+      <div class="stat-mini-n">${PROP_STATS.n_majority}<span> de ${PROP_STATS.n_with_pct}</span></div>
+      <div class="stat-mini-l">Bloque de control &gt;50%</div>
+      <div class="stat-mini-sub">Mediana del bloque: ${PROP_STATS.median_pct}% del capital</div>
     </div>
     <div class="stat-mini">
-      <div class="stat-mini-n">${PROP_STATS.median_pct}<span>%</span></div>
-      <div class="stat-mini-l">Concentración mediana</div>
-      <div class="stat-mini-sub">Entre empresas con accionista estratégico</div>
+      <div class="stat-mini-n">${PROP_STATS.n_mx_controller}<span> de ${PROP_STATS.n_with_controller}</span></div>
+      <div class="stat-mini-l">Controlador último mexicano</div>
+      <div class="stat-mini-sub">${PROP_STATS.n_family_mx} familias + ${PROP_STATS.n_cascade_mx} filiales de grupos mexicanos · ${PROP_STATS.n_foreign} de control extranjero</div>
     </div>
     <div class="stat-mini">
-      <div class="stat-mini-n">${PROP_STATS.n_no_strategic}</div>
-      <div class="stat-mini-l">Sin accionista dominante</div>
-      <div class="stat-mini-sub">${PROP_STATS.no_strategic.slice(0,3).join(', ')}…</div>
+      <div class="stat-mini-n">${PROP_STATS.n_no_controller}</div>
+      <div class="stat-mini-l">Sin controlador identificado</div>
+      <div class="stat-mini-sub">${PROP_STATS.no_controller.slice(0,3).join(', ')}…</div>
     </div>
   `;
 
-  // Stacked bar — top 3 accionistas estratégicos por empresa
-  const d = [...CONCENTRATION_DATA].sort((a, b) => a.pct_top1 - b.pct_top1);
+  // Barras apiladas: bloque de control por emisora (2 principales + resto del bloque)
+  const d = [...CONCENTRATION_DATA].sort((a, b) => a.pct_block - b.pct_block);
   const chartH = Math.max(540, d.length * 19 + 80);
 
   // Shades for 2nd and 3rd shareholders
@@ -1421,7 +1431,7 @@ const TYPE_COLORS = {
 
   const traces = [0, 1, 2].map(i => ({
     type: 'bar', orientation: 'h',
-    name: i === 0 ? 'Principal' : i === 1 ? '2°' : '3°',
+    name: i === 0 ? 'Principal' : i === 1 ? '2°' : 'Resto del bloque',
     y: d.map(c => c.company),
     x: d.map(c => (c.shareholders[i] || {pct: 0}).pct),
     marker: {
@@ -1429,9 +1439,10 @@ const TYPE_COLORS = {
     },
     customdata: d.map(c => {
       const sh = c.shareholders[i];
-      return sh ? [sh.name, sh.pct, c.group] : ['—', 0, c.group];
+      const nac = sh && sh.nac ? ` (${sh.nac})` : '';
+      return sh ? [sh.name + nac, sh.pct, c.tipo, c.pct_block] : ['—', 0, c.tipo, c.pct_block];
     }),
-    hovertemplate: '<b>%{y}</b><br>%{customdata[0]}<br><b>%{customdata[1]:.1f}%</b><extra></extra>',
+    hovertemplate: '<b>%{y}</b> · bloque %{customdata[3]:.1f}% · %{customdata[2]}<br>%{customdata[0]}<br><b>%{customdata[1]:.1f}%</b><extra></extra>',
     text: d.map(c => {
       const sh = c.shareholders[i];
       return (sh && sh.pct >= 12) ? sh.pct.toFixed(1) + '%' : '';
@@ -1563,8 +1574,9 @@ const TYPE_COLORS = {
     `<strong>el capital y el poder ejecutivo son la misma familia.</strong> ` +
     `El caso más extremo es Industrias CH: Rufino Vigil González controla el 66% del capital y tiene cinco familiares Vigil en el consejo, ` +
     `incluyendo los CEOs de todas las divisiones. En Chedraui, cinco miembros de la familia ocupan asientos en el consejo con el 74% del capital. ` +
-    `En el extremo opuesto, <strong>${PROP_STATS.n_no_strategic} empresas</strong> — entre ellas Cemex, Banorte y Liverpool — ` +
-    `no tienen un accionista estratégico registrado: su gobierno corporativo lo determinan los inversionistas institucionales.`;
+    `En el extremo opuesto, <strong>${PROP_STATS.n_no_controller} emisoras</strong> (${PROP_STATS.no_controller.join(', ')}) ` +
+    `no tienen un controlador identificado con al menos 10% del capital. Cemex y Banorte son de propiedad dispersa; ` +
+    `en Nemak, GAP y Televisa probablemente falta el dato (Alfa, AMP y el fideicomiso Azcárraga, respectivamente).`;
 })();
 
 // ── Section 05: Capital global ────────────────────────────────────────────────
@@ -1730,22 +1742,20 @@ const TYPE_COLORS = {
     if (!CS) return;
     const G = CS.global;
 
+    const seg = (x, label, b, color) => ({
+      type: 'bar', orientation: 'h', x: [x], y: ['Capital total'],
+      text: [x >= 12 ? `${label} — $${b}B (${x}%)` : ''],
+      customdata: [`${label} — $${b}B (${x}%)`],
+      textposition: 'inside', insidetextanchor: 'middle',
+      marker: { color }, hovertemplate: '%{customdata}<extra></extra>',
+    });
     Plotly.react('chart-capital-control', [
-      {
-        type: 'bar', orientation: 'h', x: [G.strategic_pct], y: ['Capital total'],
-        text: [`Control estratégico — $${G.strategic_b}B (${G.strategic_pct}%)`],
-        textposition: 'inside', insidetextanchor: 'middle',
-        marker: { color: '#8a6d4a' }, hovertemplate: '%{text}<extra></extra>',
-      },
-      {
-        type: 'bar', orientation: 'h', x: [G.float_pct], y: ['Capital total'],
-        text: [`Float libre — $${G.float_b}B (${G.float_pct}%)`],
-        textposition: 'inside', insidetextanchor: 'middle',
-        marker: { color: '#c9a876' }, hovertemplate: '%{text}<extra></extra>',
-      },
+      seg(G.ctrl_mx_pct, 'Control mexicano', G.ctrl_mx_b, '#8a6d4a'),
+      seg(G.ctrl_ex_pct, 'Control extranjero', G.ctrl_ex_b, '#B85C38'),
+      seg(G.float_pct, 'Cartera', G.float_b, '#c9a876'),
     ], {
       ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
-      title: { text: `Capital total declarado: $${G.total_b}B`, font: { size: 12 } },
+      title: { text: `Valor de las tenencias identificadas: $${G.total_b}B`, font: { size: 12 } },
       margin: { t:48, r:24, b:24, l:24 },
       xaxis: { visible: false, range: [0,100] }, yaxis: { visible: false },
     }, PLOTLY_CONFIG);
@@ -1753,7 +1763,7 @@ const TYPE_COLORS = {
     Plotly.react('chart-capital-float', [
       {
         type: 'bar', orientation: 'h', x: [G.float_mx_pct], y: ['Float'],
-        text: [`Mexicano — $${G.float_mx_b}B (${G.float_mx_pct}%)`],
+        text: [G.float_mx_pct >= 12 ? `Mexicano — $${G.float_mx_b}B (${G.float_mx_pct}%)` : ''],
         textposition: 'inside', insidetextanchor: 'middle',
         marker: { color: '#5b7a8c' }, hovertemplate: '%{text}<extra></extra>',
       },
@@ -1765,7 +1775,7 @@ const TYPE_COLORS = {
       },
     ], {
       ...LAYOUT_BASE, height: 280, barmode: 'stack', showlegend: false,
-      title: { text: `Composición del float: $${G.float_b}B`, font: { size: 12 } },
+      title: { text: `Cartera por nacionalidad de la matriz de la gestora: $${G.float_b}B`, font: { size: 12 } },
       margin: { t:48, r:24, b:24, l:24 },
       xaxis: { visible: false, range: [0,100] }, yaxis: { visible: false },
     }, PLOTLY_CONFIG);
@@ -1801,10 +1811,15 @@ const TYPE_COLORS = {
 
     const noteEl = document.getElementById('capital-sel-note');
     if (key === 'global') {
-      noteEl.textContent = `Universo: 58 empresas con datos de accionistas · capital total $${G.total_b}B`;
+      noteEl.textContent = `Universo: ${CS.n_companies} emisoras · valor identificado $${G.total_b}B · ` +
+        `${G.ctrl_mx_share}% del bloque de control es mexicano · se excluyen $${CS.cascade_excluded_b}B de control en cascada`;
     } else {
-      noteEl.textContent = `${CS.name} — float $${G.float_b}B (${G.float_pct}% del capital) · ${CS.n_inst} gestoras institucionales`;
+      noteEl.textContent = `${CS.name} — cartera $${G.float_b}B (${G.float_pct}% del valor identificado) · ${CS.n_inst} gestoras institucionales`;
     }
+    document.getElementById('capital-filiales-note').innerHTML =
+      `De los $${CS.im_mx_sede_b}B en gestoras de inversión registradas en México, casi nada es capital independiente: ` +
+      `la mayoría son filiales de los mismos grupos del universo (Slim, GBM, Banorte) o filiales locales de gestoras globales ` +
+      `(BlackRock, BBVA, Santander…). Por eso, en la composición de la cartera de arriba, las filiales de gestoras globales cuentan como extranjeras.`;
   }
 
   // Poblar selector (empresas con datos, por capital total desc)
@@ -1825,14 +1840,14 @@ const TYPE_COLORS = {
   const vanguard = wd.find(d => d.investor_name && d.investor_name.includes('Vanguard Group')) || wd[1];
   const inbursa  = wd.find(d => d.investor_name && d.investor_name.includes('Inbursa'));
   document.getElementById('insight-capital').innerHTML =
-    `<strong>${top1.short_name} tiene posición en ${top1.n_companies} de las 60 empresas del universo</strong> — prácticamente omnipresente. ` +
-    `Junto con BlackRock, State Street y Vanguard forman el núcleo del "capitalismo indexado": ` +
-    `su voto se replica simultáneamente en casi todo el universo sin que ningún analista haya estudiado cada empresa. ` +
+    `<strong>${top1.short_name} tiene posición en ${top1.n_companies} de las ${CAPITAL_STRUCTURE_DATA.n_companies} emisoras del universo</strong> — prácticamente omnipresente. ` +
+    `BlackRock, Vanguard y State Street están en <strong>${CAPITAL_STRUCTURE_DATA.big3_n_companies} de ${CAPITAL_STRUCTURE_DATA.n_companies}</strong>, ` +
+    `pero en una emisora típica suman apenas ${CAPITAL_STRUCTURE_DATA.big3_median_pct}% del capital: presencia sin control, frente a bloques de control que en la mediana superan la mitad. ` +
     (vanguard ? `Vanguard maneja $${vanguard.equity_assets_b.toFixed(0)}B en activos globales — ` +
     `su posición en México representa el <strong>${vanguard.pct_of_assets.toFixed(3)}% de su portafolio</strong>. ` : '') +
     (inbursa ? `Inbursa, en cambio, tiene el <strong>${inbursa.pct_of_assets.toFixed(1)}% de sus activos en este universo</strong>. ` : '') +
-    `La asimetría es brutal: si los grandes fondos globales deciden salir de mercados emergentes, ` +
-    `el mercado mexicano colapsa — y ellos apenas lo notarían.`;
+    `La asimetría es grande: México es una nota al pie en sus portafolios, y como replican índices, ` +
+    `no salen por una noticia de la empresa ni pueden disciplinar a la familia con la amenaza de vender.`;
 })();
 
 // ── Section 06: Permanencia ───────────────────────────────────────────────────
@@ -1907,6 +1922,12 @@ const TYPE_COLORS = {
   // Populate selector
   const sel = document.getElementById('subs-selector');
   const byCompany = SUBSIDIARIES_DATA.by_company;
+  const fmtN = n => n.toLocaleString('en-US');
+  const sg = SUBSIDIARIES_DATA.global;
+  document.getElementById('subs-n-companies').textContent = sg.n_companies;
+  document.getElementById('subs-total').textContent = fmtN(sg.total);
+  document.getElementById('subs-abroad').textContent = fmtN(sg.n_abroad);
+  document.getElementById('subs-countries').textContent = sg.n_countries_abroad;
   const folders = Object.keys(byCompany).sort((a, b) =>
     byCompany[b].total - byCompany[a].total
   );
@@ -2124,10 +2145,10 @@ const TYPE_COLORS = {
     const globalHaven = SUBSIDIARIES_DATA.global.n_haven;
     const topHaven = havenByCompany[0];
     document.getElementById('insight-huella').innerHTML =
-      `De las 3,226 subsidiarias registradas, <strong>${SUBSIDIARIES_DATA.global.n_classic} están en paraísos clásicos</strong> — ` +
+      `De las ${SUBSIDIARIES_DATA.global.total.toLocaleString('en-US')} subsidiarias registradas, <strong>${SUBSIDIARIES_DATA.global.n_classic} están en paraísos clásicos</strong> — ` +
       `jurisdicciones sin economía real como Islas Caimán, BVI, Bermuda o Panamá. ` +
-      `Las subsidiarias sin clasificación de industria (casi la mitad del universo) no son señal de opacidad: solo el 3% está en paraísos, igual que el promedio general. ` +
-      `Los vehículos más llamativos son los de propósito específico: reaseguradoras cautivas como "Torino Re" y "Wiikit Re" (Bermuda), ` +
+      `Las subsidiarias sin clasificación de industria (${SUBSIDIARIES_DATA.global.pct_otros}% del universo) no son señal de opacidad: ${SUBSIDIARIES_DATA.global.pct_haven_otros}% está en paraísos o hubs, cerca del promedio general (${SUBSIDIARIES_DATA.global.pct_haven}%). ` +
+      `Los vehículos más llamativos son los de propósito específico: reaseguradoras cautivas como "Torino Re" (Barbados) y "Wiikit Re" (Bermuda), ` +
       `vehículos de propiedad de plataformas de perforación "Prospector Rig Owning" (Caimán), ` +
       `y "Pemex Finance Ltd" en Caimán — la operadora de deuda offshore de la empresa del Estado. ` +
       `<strong>CEMEX tiene la arquitectura más compleja</strong>: vehículos como "Machu Pichu Investments BV" y "Cemex Caracas Investments BV" en Países Bajos. ` +
