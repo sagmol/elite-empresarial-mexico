@@ -144,11 +144,17 @@ def parse_tree(f):
     return df
 
 BASE = r"C:\pw\Envio2German\2\Empresas Mexico 66"
-files = glob.glob(BASE + r"\**\TreeStructure_*.xlsx", recursive=True)
+# 'TreeStructure*' (no 'TreeStructure_*'): Grupo Elektra y Grupo KUO vienen como
+# 'TreeStructureGrupoElektra.xlsx', sin guion bajo, y antes quedaban fuera (fix 2026-11-18).
+files = glob.glob(BASE + r"\**\TreeStructure*.xlsx", recursive=True)
 
 # Also Pack German
-pack_files = glob.glob(r"C:\pw\Pack German\**\TreeStructure_*.xlsx", recursive=True)
+pack_files = glob.glob(r"C:\pw\Pack German\**\TreeStructure*.xlsx", recursive=True)
 files += pack_files
+
+# Pack Salinas: solo el árbol de TV Azteca (Elektra ya está como 176_; Banco Azteca
+# es subsidiaria de Elektra y no es emisora). Carpeta 'TV Azteca' = clave de directors_raw.
+files.append(r"C:\pw\10 Salinas\10. Grupo Salinas (Banco Azteca y TV Azteca)\TV Azteca\TreeStructureTVAzteca.xlsx")
 
 LEVELS = [f'Level {i}' for i in range(1, 9)]
 KEEP_REL = 'Subsidiary'
@@ -168,7 +174,8 @@ for f in files:
             skipped.append(os.path.relpath(f, os.path.dirname(os.path.dirname(parent_dir))))
             continue
         folder = os.path.basename(parent_dir)
-        source = 'Pack German' if f.startswith(r"C:\pw\Pack German") else 'Empresas Mexico 66'
+        source = ('Pack German' if f.startswith(r"C:\pw\Pack German")
+                  else 'Pack Salinas' if f.startswith(r"C:\pw\10 Salinas") else 'Empresas Mexico 66')
         df = parse_tree(f)
         if df is None or len(df) == 0:
             continue

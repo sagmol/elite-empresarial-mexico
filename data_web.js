@@ -1483,6 +1483,23 @@ const CONCENTRATION_DATA = [
     ]
   },
   {
+    "company": "Grupo Elektra",
+    "folder": "176_Grupo Elektra SAB DE CV",
+    "group": "Salinas",
+    "color": "#17a0b0",
+    "pct_block": 73.9,
+    "pct_top1": 73.9,
+    "investor": "Salinas Family",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Salinas Family",
+        "pct": 73.9,
+        "nac": "México"
+      }
+    ]
+  },
+  {
     "company": "Corporativo Fragua",
     "folder": "107_Corporativo Fragua SAB de CV",
     "group": "Otro",
@@ -1652,6 +1669,33 @@ const CONCENTRATION_DATA = [
         "name": "Familia Slim (Fideicomiso de Control, Control Empresarial de",
         "pct": 66.0,
         "nac": "México"
+      }
+    ]
+  },
+  {
+    "company": "TV Azteca",
+    "folder": "TV Azteca",
+    "group": "Salinas",
+    "color": "#17a0b0",
+    "pct_block": 64.5,
+    "pct_top1": 53.3,
+    "investor": "Comunicaciones Avanzadas SA de CV",
+    "tipo": "Familia mexicana",
+    "shareholders": [
+      {
+        "name": "Comunicaciones Avanzadas SA de CV",
+        "pct": 53.3,
+        "nac": "México"
+      },
+      {
+        "name": "Salinas Pliego (Ricardo Benjamin)",
+        "pct": 8.4,
+        "nac": "México"
+      },
+      {
+        "name": "Resto del bloque (1 tenedores)",
+        "pct": 2.8,
+        "nac": ""
       }
     ]
   },
@@ -2366,28 +2410,46 @@ const CONCENTRATION_DATA = [
         "nac": ""
       }
     ]
+  },
+  {
+    "company": "Grupo KUO  De CV",
+    "folder": "184_Grupo KUO SAB De CV",
+    "group": "Yucatan",
+    "color": "#5a9e3e",
+    "pct_block": 0.0,
+    "pct_top1": 0.0,
+    "investor": "Sin bloque de control registrado",
+    "tipo": "Sin controlador identificado",
+    "shareholders": [
+      {
+        "name": "Sin bloque de control registrado",
+        "pct": 0.0,
+        "nac": ""
+      }
+    ]
   }
 ];
 
 const PROP_STATS = {
-  "n_universe": 61,
-  "n_with_pct": 59,
-  "n_majority": 33,
+  "n_universe": 64,
+  "n_with_pct": 62,
+  "n_majority": 35,
   "median_pct": 52.3,
-  "n_no_controller": 8,
+  "n_no_controller": 9,
   "no_controller": [
     "Bbb Foods Inc",
     "Cemex",
     "Grupo Aeroportuario del Pacifico",
     "Grupo Financiero Banorte",
+    "Grupo KUO  De CV",
     "Grupo Televisa",
     "Nemak",
     "Vesta Real Estate Corporation",
     "Vista Energy"
   ],
-  "n_with_controller": 53,
-  "n_mx_controller": 45,
-  "n_family_mx": 39,
+  "n_with_controller": 55,
+  "n_mx_controller": 47,
+  "n_family_mx": 41,
   "n_cascade_mx": 6,
   "n_foreign": 8
 };
@@ -6038,15 +6100,15 @@ const SUBSIDIARIES_DATA = {
     "by_country": [
       {
         "country": "Mexico",
-        "n": 1296
+        "n": 1404
       },
       {
         "country": "United States",
-        "n": 218
+        "n": 230
       },
       {
         "country": "Spain",
-        "n": 55
+        "n": 58
       },
       {
         "country": "Ireland",
@@ -6062,15 +6124,15 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Colombia",
-        "n": 36
+        "n": 37
       },
       {
         "country": "Brazil",
-        "n": 35
+        "n": 36
       },
       {
         "country": "United Kingdom",
-        "n": 32
+        "n": 33
       },
       {
         "country": "Argentina",
@@ -6078,15 +6140,15 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Guatemala",
-        "n": 24
+        "n": 27
       },
       {
         "country": "Netherlands",
-        "n": 23
+        "n": 25
       },
       {
         "country": "Peru",
-        "n": 22
+        "n": 23
       },
       {
         "country": "Ecuador",
@@ -6094,11 +6156,15 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Chile",
-        "n": 20
+        "n": 21
       },
       {
         "country": "Bulgaria",
         "n": 17
+      },
+      {
+        "country": "Honduras",
+        "n": 16
       },
       {
         "country": "Switzerland",
@@ -6110,6 +6176,10 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Costa Rica",
+        "n": 15
+      },
+      {
+        "country": "Panama",
         "n": 14
       },
       {
@@ -6117,15 +6187,7 @@ const SUBSIDIARIES_DATA = {
         "n": 14
       },
       {
-        "country": "Honduras",
-        "n": 14
-      },
-      {
         "country": "Canada",
-        "n": 13
-      },
-      {
-        "country": "Croatia",
         "n": 13
       },
       {
@@ -6133,11 +6195,11 @@ const SUBSIDIARIES_DATA = {
         "n": 13
       },
       {
-        "country": "Nicaragua",
-        "n": 12
+        "country": "Croatia",
+        "n": 13
       },
       {
-        "country": "Panama",
+        "country": "Nicaragua",
         "n": 12
       },
       {
@@ -6372,19 +6434,19 @@ const SUBSIDIARIES_DATA = {
     "by_sector": [
       {
         "sector": "Alimentos y bebidas",
-        "n": 243
+        "n": 250
       },
       {
         "sector": "Construcción y materiales",
-        "n": 179
+        "n": 180
       },
       {
         "sector": "Química y petroquímica",
-        "n": 105
+        "n": 107
       },
       {
         "sector": "Telecomunicaciones y medios",
-        "n": 94
+        "n": 102
       },
       {
         "sector": "Minería y metales",
@@ -6392,31 +6454,31 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "sector": "Servicios empresariales",
-        "n": 75
+        "n": 85
       },
       {
         "sector": "Servicios financieros",
-        "n": 66
+        "n": 80
       },
       {
         "sector": "Transporte y logística",
-        "n": 58
+        "n": 61
       },
       {
         "sector": "Holding e inversión",
-        "n": 54
-      },
-      {
-        "sector": "Bienes raíces",
-        "n": 33
+        "n": 56
       },
       {
         "sector": "Manufactura",
-        "n": 32
+        "n": 39
+      },
+      {
+        "sector": "Bienes raíces",
+        "n": 35
       },
       {
         "sector": "Retail",
-        "n": 23
+        "n": 24
       },
       {
         "sector": "Energía",
@@ -6424,7 +6486,7 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "sector": "Tecnología",
-        "n": 11
+        "n": 12
       }
     ],
     "by_haven": [
@@ -6434,7 +6496,7 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Netherlands",
-        "n": 23
+        "n": 25
       },
       {
         "country": "Switzerland",
@@ -6442,7 +6504,7 @@ const SUBSIDIARIES_DATA = {
       },
       {
         "country": "Panama",
-        "n": 12
+        "n": 14
       },
       {
         "country": "Barbados",
@@ -6659,22 +6721,22 @@ const SUBSIDIARIES_DATA = {
         "industry": ""
       },
       {
-        "name": "Banco Mercantil Del Norte SA (Cayman Islands Branch)",
-        "company": "Grupo Financiero Banorte",
-        "country": "Cayman Islands",
+        "name": "Banco Azteca Panama Sa",
+        "company": "Grupo Elektra",
+        "country": "Panama",
         "haven_type": "Paraíso clásico",
         "industry": "Banks"
       }
     ],
-    "total": 2275,
-    "n_abroad": 979,
+    "total": 2413,
+    "n_abroad": 1009,
     "n_countries_abroad": 82,
-    "n_haven": 125,
-    "n_classic": 31,
-    "n_companies": 61,
-    "pct_haven": 5.5,
-    "pct_haven_otros": 6.7,
-    "pct_otros": 52.2
+    "n_haven": 129,
+    "n_classic": 33,
+    "n_companies": 64,
+    "pct_haven": 5.3,
+    "pct_haven_otros": 6.5,
+    "pct_otros": 52.5
   },
   "by_company": {
     "009_Alpek": {
@@ -8790,6 +8852,86 @@ const SUBSIDIARIES_DATA = {
       "group": "Otro",
       "color": "#a8a8a8"
     },
+    "176_Grupo Elektra SAB DE CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 26
+        },
+        {
+          "country": "United States",
+          "n": 3
+        },
+        {
+          "country": "Panama",
+          "n": 2
+        },
+        {
+          "country": "Honduras",
+          "n": 1
+        },
+        {
+          "country": "Guatemala",
+          "n": 1
+        },
+        {
+          "country": "Brazil",
+          "n": 1
+        },
+        {
+          "country": "Spain",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Servicios financieros",
+          "n": 13
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 5
+        },
+        {
+          "sector": "Retail",
+          "n": 1
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 1
+        }
+      ],
+      "by_haven": [
+        {
+          "country": "Panama",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Banco Azteca Panama Sa",
+          "company": "Grupo Elektra",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": "Banks"
+        },
+        {
+          "name": "BANCO AZTECA (PANAMA) SA",
+          "company": "Grupo Elektra",
+          "country": "Panama",
+          "haven_type": "Paraíso clásico",
+          "industry": "Banks"
+        }
+      ],
+      "total": 35,
+      "n_abroad": 9,
+      "n_countries_abroad": 6,
+      "n_haven": 2,
+      "n_classic": 2,
+      "name": "Grupo Elektra",
+      "group": "Salinas",
+      "color": "#17a0b0"
+    },
     "178_Grupo Financiero Banorte SAB de CV": {
       "by_country": [
         {
@@ -8981,6 +9123,66 @@ const SUBSIDIARIES_DATA = {
       "name": "Grupo Herdez",
       "group": "Otro",
       "color": "#a8a8a8"
+    },
+    "184_Grupo KUO SAB De CV": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 34
+        },
+        {
+          "country": "United States",
+          "n": 2
+        },
+        {
+          "country": "Spain",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Alimentos y bebidas",
+          "n": 7
+        },
+        {
+          "sector": "Manufactura",
+          "n": 7
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 3
+        },
+        {
+          "sector": "Bienes raíces",
+          "n": 2
+        },
+        {
+          "sector": "Transporte y logística",
+          "n": 2
+        },
+        {
+          "sector": "Química y petroquímica",
+          "n": 2
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 1
+        },
+        {
+          "sector": "Servicios financieros",
+          "n": 1
+        }
+      ],
+      "by_haven": [],
+      "haven_details": [],
+      "total": 37,
+      "n_abroad": 3,
+      "n_countries_abroad": 2,
+      "n_haven": 0,
+      "n_classic": 0,
+      "name": "Grupo KUO  De CV",
+      "group": "Yucatan",
+      "color": "#5a9e3e"
     },
     "185_Grupo Lamosa SAB de CV": {
       "by_country": [
@@ -10591,6 +10793,99 @@ const SUBSIDIARIES_DATA = {
       "name": "Wal Mart de Mexico",
       "group": "Otro",
       "color": "#a8a8a8"
+    },
+    "TV Azteca": {
+      "by_country": [
+        {
+          "country": "Mexico",
+          "n": 48
+        },
+        {
+          "country": "United States",
+          "n": 7
+        },
+        {
+          "country": "Netherlands",
+          "n": 2
+        },
+        {
+          "country": "Guatemala",
+          "n": 2
+        },
+        {
+          "country": "Costa Rica",
+          "n": 1
+        },
+        {
+          "country": "Chile",
+          "n": 1
+        },
+        {
+          "country": "Colombia",
+          "n": 1
+        },
+        {
+          "country": "Honduras",
+          "n": 1
+        },
+        {
+          "country": "Peru",
+          "n": 1
+        },
+        {
+          "country": "Spain",
+          "n": 1
+        },
+        {
+          "country": "United Kingdom",
+          "n": 1
+        }
+      ],
+      "by_sector": [
+        {
+          "sector": "Telecomunicaciones y medios",
+          "n": 8
+        },
+        {
+          "sector": "Servicios empresariales",
+          "n": 2
+        },
+        {
+          "sector": "Construcción y materiales",
+          "n": 1
+        },
+        {
+          "sector": "Holding e inversión",
+          "n": 1
+        },
+        {
+          "sector": "Tecnología",
+          "n": 1
+        }
+      ],
+      "by_haven": [
+        {
+          "country": "Netherlands",
+          "n": 2
+        }
+      ],
+      "haven_details": [
+        {
+          "name": "Alta Empresa Holdings BV",
+          "company": "TV Azteca",
+          "country": "Netherlands",
+          "haven_type": "Hub fiscal",
+          "industry": ""
+        }
+      ],
+      "total": 66,
+      "n_abroad": 18,
+      "n_countries_abroad": 10,
+      "n_haven": 2,
+      "n_classic": 0,
+      "name": "TV Azteca",
+      "group": "Salinas",
+      "color": "#17a0b0"
     }
   }
 };
@@ -10599,17 +10894,17 @@ const INSTITUTIONAL_DATA = {
   "by_country": [
     {
       "country": "United States",
-      "total_value_b": 36.276,
+      "total_value_b": 36.421,
       "n_investors": 988
     },
     {
       "country": "Mexico",
-      "total_value_b": 11.548,
+      "total_value_b": 11.683,
       "n_investors": 33
     },
     {
       "country": "United Kingdom",
-      "total_value_b": 8.777,
+      "total_value_b": 8.787,
       "n_investors": 156
     },
     {
@@ -10619,12 +10914,12 @@ const INSTITUTIONAL_DATA = {
     },
     {
       "country": "Canada",
-      "total_value_b": 1.855,
+      "total_value_b": 1.861,
       "n_investors": 68
     },
     {
       "country": "Netherlands",
-      "total_value_b": 1.799,
+      "total_value_b": 1.8,
       "n_investors": 12
     },
     {
@@ -10644,7 +10939,7 @@ const INSTITUTIONAL_DATA = {
     },
     {
       "country": "Hong Kong",
-      "total_value_b": 0.789,
+      "total_value_b": 0.79,
       "n_investors": 23
     },
     {
@@ -10654,7 +10949,7 @@ const INSTITUTIONAL_DATA = {
     },
     {
       "country": "France",
-      "total_value_b": 0.738,
+      "total_value_b": 0.74,
       "n_investors": 33
     },
     {
@@ -10674,7 +10969,7 @@ const INSTITUTIONAL_DATA = {
     },
     {
       "country": "Sweden",
-      "total_value_b": 0.452,
+      "total_value_b": 0.454,
       "n_investors": 16
     },
     {
@@ -10694,7 +10989,7 @@ const INSTITUTIONAL_DATA = {
     },
     {
       "country": "Australia",
-      "total_value_b": 0.273,
+      "total_value_b": 0.274,
       "n_investors": 28
     },
     {
@@ -10845,9 +11140,9 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "Core Value",
       "turnover": "Low",
-      "n_companies": 45,
-      "equity_assets_b": 4.2,
-      "total_value_b": 1.958,
+      "n_companies": 48,
+      "equity_assets_b": 4.3,
+      "total_value_b": 1.967,
       "short_name": "Operadora Inbursa de Sociedades de "
     },
     {
@@ -10856,9 +11151,9 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Core Growth",
       "turnover": "Low",
-      "n_companies": 43,
-      "equity_assets_b": 622.3,
-      "total_value_b": 0.6,
+      "n_companies": 44,
+      "equity_assets_b": 621.8,
+      "total_value_b": 0.603,
       "short_name": "BlackRock  (UK"
     },
     {
@@ -10867,9 +11162,9 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Deep Value",
       "turnover": "Low",
-      "n_companies": 43,
-      "equity_assets_b": 581.0,
-      "total_value_b": 1.04,
+      "n_companies": 44,
+      "equity_assets_b": 580.6,
+      "total_value_b": 1.053,
       "short_name": "Dimensional Fund"
     },
     {
@@ -10878,21 +11173,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 42,
-      "equity_assets_b": 80.4,
+      "n_companies": 43,
+      "equity_assets_b": 80.3,
       "total_value_b": 0.054,
       "short_name": "Vanguard Investments Australia"
-    },
-    {
-      "investor_name": "Norges Bank Investment Management (NBIM)",
-      "country": "Norway",
-      "investor_subtype": "Sovereign Wealth Fund",
-      "investment_style": "Core Value",
-      "turnover": "Low",
-      "n_companies": 39,
-      "equity_assets_b": 1182.0,
-      "total_value_b": 3.015,
-      "short_name": "Norges Bank  (NBIM"
     },
     {
       "investor_name": "Operadora de Fondos GBM S.A.B. de C.V.",
@@ -10906,6 +11190,50 @@ const INSTITUTIONAL_DATA = {
       "short_name": "Operadora de Fondos GBM"
     },
     {
+      "investor_name": "Norges Bank Investment Management (NBIM)",
+      "country": "Norway",
+      "investor_subtype": "Sovereign Wealth Fund",
+      "investment_style": "Core Value",
+      "turnover": "Low",
+      "n_companies": 39,
+      "equity_assets_b": 1182.0,
+      "total_value_b": 3.015,
+      "short_name": "Norges Bank  (NBIM"
+    },
+    {
+      "investor_name": "State Street Global Advisors (US)",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 39,
+      "equity_assets_b": 2471.4,
+      "total_value_b": 0.571,
+      "short_name": "State Street  (US"
+    },
+    {
+      "investor_name": "Franklin Templeton Institutional, LLC",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 38,
+      "equity_assets_b": 1.4,
+      "total_value_b": 0.083,
+      "short_name": "Franklin Templeton Institutional"
+    },
+    {
+      "investor_name": "Boston Partners",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Deep Value",
+      "turnover": "Low",
+      "n_companies": 38,
+      "equity_assets_b": 92.8,
+      "total_value_b": 0.013,
+      "short_name": "Boston Partners"
+    },
+    {
       "investor_name": "California State Teachers Retirement System",
       "country": "United States",
       "investor_subtype": "Pension Fund",
@@ -10917,37 +11245,15 @@ const INSTITUTIONAL_DATA = {
       "short_name": "California State Teachers Retiremen"
     },
     {
-      "investor_name": "State Street Global Advisors (US)",
+      "investor_name": "Northern Trust Investments, Inc.",
       "country": "United States",
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Index",
       "turnover": "Low",
       "n_companies": 37,
-      "equity_assets_b": 2477.9,
-      "total_value_b": 0.568,
-      "short_name": "State Street  (US"
-    },
-    {
-      "investor_name": "Franklin Templeton Institutional, LLC",
-      "country": "United States",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Core Growth",
-      "turnover": "Low",
-      "n_companies": 37,
-      "equity_assets_b": 1.4,
-      "total_value_b": 0.082,
-      "short_name": "Franklin Templeton Institutional"
-    },
-    {
-      "investor_name": "Boston Partners",
-      "country": "United States",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Deep Value",
-      "turnover": "Low",
-      "n_companies": 37,
-      "equity_assets_b": 92.9,
-      "total_value_b": 0.013,
-      "short_name": "Boston Partners"
+      "equity_assets_b": 389.7,
+      "total_value_b": 0.528,
+      "short_name": "Northern Trust Investments"
     },
     {
       "investor_name": "State Street Global Advisors Ireland Limited",
@@ -10955,21 +11261,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 36,
-      "equity_assets_b": 63.1,
+      "n_companies": 37,
+      "equity_assets_b": 62.9,
       "total_value_b": 0.026,
       "short_name": "State Street  Ireland Limited"
-    },
-    {
-      "investor_name": "Northern Trust Investments, Inc.",
-      "country": "United States",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Index",
-      "turnover": "Low",
-      "n_companies": 36,
-      "equity_assets_b": 390.3,
-      "total_value_b": 0.528,
-      "short_name": "Northern Trust Investments"
     },
     {
       "investor_name": "The Vanguard Group, Inc.",
@@ -10977,9 +11272,9 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 35,
-      "equity_assets_b": 7600.4,
-      "total_value_b": 5.199,
+      "n_companies": 36,
+      "equity_assets_b": 7590.5,
+      "total_value_b": 5.306,
       "short_name": "The Vanguard Group"
     },
     {
@@ -10988,9 +11283,9 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "Growth",
       "turnover": "Moderate",
-      "n_companies": 35,
+      "n_companies": 36,
       "equity_assets_b": 1.1,
-      "total_value_b": 0.091,
+      "total_value_b": 0.092,
       "short_name": "HSBC Global  (México), S. A. de C. "
     },
     {
@@ -10999,10 +11294,54 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 35,
-      "equity_assets_b": 551.5,
-      "total_value_b": 0.184,
+      "n_companies": 36,
+      "equity_assets_b": 550.6,
+      "total_value_b": 0.185,
       "short_name": "Legal & General"
+    },
+    {
+      "investor_name": "Charles Schwab Investment Management, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 36,
+      "equity_assets_b": 582.8,
+      "total_value_b": 0.421,
+      "short_name": "Charles Schwab"
+    },
+    {
+      "investor_name": "HSBC Global Asset Management (UK) Limited",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Core Growth",
+      "turnover": "Low",
+      "n_companies": 35,
+      "equity_assets_b": 190.7,
+      "total_value_b": 0.089,
+      "short_name": "HSBC Global  (UK) Limited"
+    },
+    {
+      "investor_name": "Geode Capital Management, L.L.C.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 35,
+      "equity_assets_b": 1347.7,
+      "total_value_b": 0.794,
+      "short_name": "Geode Capital Management, L.L.C."
+    },
+    {
+      "investor_name": "State Street Global Advisors (UK) Ltd.",
+      "country": "United Kingdom",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 35,
+      "equity_assets_b": 99.9,
+      "total_value_b": 0.256,
+      "short_name": "State Street  (UK"
     },
     {
       "investor_name": "BlackRock Institutional Trust Company, N.A.",
@@ -11016,48 +11355,15 @@ const INSTITUTIONAL_DATA = {
       "short_name": "BlackRock"
     },
     {
-      "investor_name": "Charles Schwab Investment Management, Inc.",
+      "investor_name": "Franklin Advisory Services, LLC",
       "country": "United States",
       "investor_subtype": "Investment Advisor",
-      "investment_style": "Index",
-      "turnover": "Low",
-      "n_companies": 35,
-      "equity_assets_b": 584.3,
-      "total_value_b": 0.417,
-      "short_name": "Charles Schwab"
-    },
-    {
-      "investor_name": "State Street Global Advisors (UK) Ltd.",
-      "country": "United Kingdom",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Index",
+      "investment_style": "Core Value",
       "turnover": "Low",
       "n_companies": 34,
-      "equity_assets_b": 100.1,
-      "total_value_b": 0.251,
-      "short_name": "State Street  (UK"
-    },
-    {
-      "investor_name": "HSBC Global Asset Management (UK) Limited",
-      "country": "United Kingdom",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Core Growth",
-      "turnover": "Low",
-      "n_companies": 34,
-      "equity_assets_b": 191.1,
-      "total_value_b": 0.088,
-      "short_name": "HSBC Global  (UK) Limited"
-    },
-    {
-      "investor_name": "Geode Capital Management, L.L.C.",
-      "country": "United States",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Index",
-      "turnover": "Low",
-      "n_companies": 34,
-      "equity_assets_b": 1350.5,
-      "total_value_b": 0.794,
-      "short_name": "Geode Capital Management, L.L.C."
+      "equity_assets_b": 6.0,
+      "total_value_b": 0.015,
+      "short_name": "Franklin Advisory Services"
     },
     {
       "investor_name": "Franklin Templeton Portfolio Advisors, Inc",
@@ -11065,43 +11371,21 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "Yield",
       "turnover": "Low",
-      "n_companies": 33,
+      "n_companies": 34,
       "equity_assets_b": 10.7,
       "total_value_b": 0.005,
       "short_name": "Franklin Templeton Portfolio Adviso"
     },
     {
-      "investor_name": "Invesco Capital Management LLC",
+      "investor_name": "JP Morgan Asset Management",
       "country": "United States",
       "investor_subtype": "Investment Advisor",
-      "investment_style": "Index",
+      "investment_style": "GARP",
       "turnover": "Low",
-      "n_companies": 33,
-      "equity_assets_b": 249.8,
-      "total_value_b": 0.06,
-      "short_name": "Invesco Capital Management"
-    },
-    {
-      "investor_name": "Franklin Advisory Services, LLC",
-      "country": "United States",
-      "investor_subtype": "Investment Advisor",
-      "investment_style": "Core Value",
-      "turnover": "Low",
-      "n_companies": 33,
-      "equity_assets_b": 6.0,
-      "total_value_b": 0.015,
-      "short_name": "Franklin Advisory Services"
-    },
-    {
-      "investor_name": "Actinver S.A. de C.V.",
-      "country": "Mexico",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Core Growth",
-      "turnover": "Low",
-      "n_companies": 33,
-      "equity_assets_b": 1.3,
-      "total_value_b": 0.085,
-      "short_name": "Actinver"
+      "n_companies": 34,
+      "equity_assets_b": 767.9,
+      "total_value_b": 0.596,
+      "short_name": "JP Morgan"
     },
     {
       "investor_name": "Scottish Equity Partners LLP",
@@ -11109,13 +11393,36 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Venture Capital",
       "investment_style": "VC/Private Equity",
       "turnover": "Low",
-      "n_companies": 33,
+      "n_companies": 34,
       "equity_assets_b": 0.5,
       "total_value_b": 0.007,
       "short_name": "Scottish Equity Partners LLP"
+    },
+    {
+      "investor_name": "Mellon Investments Corporation",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "GARP",
+      "turnover": "Low",
+      "n_companies": 34,
+      "equity_assets_b": 280.5,
+      "total_value_b": 0.178,
+      "short_name": "Mellon Investments Corporation"
     }
   ],
   "weight_data": [
+    {
+      "investor_name": "The Vanguard Group, Inc.",
+      "country": "United States",
+      "investor_subtype": "Investment Advisor/Hedge Fund",
+      "investment_style": "Index",
+      "turnover": "Low",
+      "n_companies": 36,
+      "equity_assets_b": 7590.5,
+      "total_value_b": 5.306,
+      "pct_of_assets": 0.07,
+      "short_name": "The Vanguard Group"
+    },
     {
       "investor_name": "BlackRock Institutional Trust Company, N.A.",
       "country": "United States",
@@ -11127,18 +11434,6 @@ const INSTITUTIONAL_DATA = {
       "total_value_b": 5.25,
       "pct_of_assets": 0.132,
       "short_name": "BlackRock"
-    },
-    {
-      "investor_name": "The Vanguard Group, Inc.",
-      "country": "United States",
-      "investor_subtype": "Investment Advisor/Hedge Fund",
-      "investment_style": "Index",
-      "turnover": "Low",
-      "n_companies": 35,
-      "equity_assets_b": 7600.4,
-      "total_value_b": 5.199,
-      "pct_of_assets": 0.068,
-      "short_name": "The Vanguard Group"
     },
     {
       "investor_name": "Norges Bank Investment Management (NBIM)",
@@ -11158,10 +11453,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "Core Value",
       "turnover": "Low",
-      "n_companies": 45,
-      "equity_assets_b": 4.2,
-      "total_value_b": 1.958,
-      "pct_of_assets": 46.224,
+      "n_companies": 48,
+      "equity_assets_b": 4.3,
+      "total_value_b": 1.967,
+      "pct_of_assets": 46.183,
       "short_name": "Operadora Inbursa de Sociedades de "
     },
     {
@@ -11182,7 +11477,7 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "GARP",
       "turnover": "Low",
-      "n_companies": 11,
+      "n_companies": 12,
       "equity_assets_b": 297.4,
       "total_value_b": 1.684,
       "pct_of_assets": 0.566,
@@ -11242,10 +11537,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Deep Value",
       "turnover": "Low",
-      "n_companies": 43,
-      "equity_assets_b": 581.0,
-      "total_value_b": 1.04,
-      "pct_of_assets": 0.179,
+      "n_companies": 44,
+      "equity_assets_b": 580.6,
+      "total_value_b": 1.053,
+      "pct_of_assets": 0.181,
       "short_name": "Dimensional Fund"
     },
     {
@@ -11266,8 +11561,8 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 34,
-      "equity_assets_b": 1350.5,
+      "n_companies": 35,
+      "equity_assets_b": 1347.7,
       "total_value_b": 0.794,
       "pct_of_assets": 0.059,
       "short_name": "Geode Capital Management, L.L.C."
@@ -11290,10 +11585,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Core Growth",
       "turnover": "Low",
-      "n_companies": 43,
-      "equity_assets_b": 622.3,
-      "total_value_b": 0.6,
-      "pct_of_assets": 0.096,
+      "n_companies": 44,
+      "equity_assets_b": 621.8,
+      "total_value_b": 0.603,
+      "pct_of_assets": 0.097,
       "short_name": "BlackRock  (UK"
     },
     {
@@ -11302,10 +11597,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor",
       "investment_style": "GARP",
       "turnover": "Low",
-      "n_companies": 33,
-      "equity_assets_b": 769.2,
+      "n_companies": 34,
+      "equity_assets_b": 767.9,
       "total_value_b": 0.596,
-      "pct_of_assets": 0.077,
+      "pct_of_assets": 0.078,
       "short_name": "JP Morgan"
     },
     {
@@ -11314,9 +11609,9 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 37,
-      "equity_assets_b": 2477.9,
-      "total_value_b": 0.568,
+      "n_companies": 39,
+      "equity_assets_b": 2471.4,
+      "total_value_b": 0.571,
       "pct_of_assets": 0.023,
       "short_name": "State Street  (US"
     },
@@ -11326,10 +11621,10 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "Index",
       "turnover": "Low",
-      "n_companies": 36,
-      "equity_assets_b": 390.3,
+      "n_companies": 37,
+      "equity_assets_b": 389.7,
       "total_value_b": 0.528,
-      "pct_of_assets": 0.135,
+      "pct_of_assets": 0.136,
       "short_name": "Northern Trust Investments"
     },
     {
@@ -11338,23 +11633,23 @@ const INSTITUTIONAL_DATA = {
       "investor_subtype": "Investment Advisor/Hedge Fund",
       "investment_style": "GARP",
       "turnover": "Low",
-      "n_companies": 26,
-      "equity_assets_b": 169.7,
+      "n_companies": 27,
+      "equity_assets_b": 169.6,
       "total_value_b": 0.509,
       "pct_of_assets": 0.3,
       "short_name": "DWS Investment GmbH"
     },
     {
-      "investor_name": "Charles Schwab Investment Management, Inc.",
-      "country": "United States",
+      "investor_name": "BlackRock Mexico Operadora SA de CV SOFI",
+      "country": "Mexico",
       "investor_subtype": "Investment Advisor",
-      "investment_style": "Index",
-      "turnover": "Low",
-      "n_companies": 35,
-      "equity_assets_b": 584.3,
-      "total_value_b": 0.417,
-      "pct_of_assets": 0.071,
-      "short_name": "Charles Schwab"
+      "investment_style": "GARP",
+      "turnover": "Moderate",
+      "n_companies": 21,
+      "equity_assets_b": 4.2,
+      "total_value_b": 0.43,
+      "pct_of_assets": 10.272,
+      "short_name": "BlackRock Mexico Operadora SA de CV"
     }
   ],
   "by_company": {
@@ -17585,6 +17880,182 @@ const INSTITUTIONAL_DATA = {
         }
       ]
     },
+    "176_Grupo Elektra SAB DE CV": {
+      "name": "Grupo Elektra",
+      "group": "Salinas",
+      "color": "#17a0b0",
+      "total_value_b": 0.26,
+      "n_investors": 68,
+      "by_country": [
+        {
+          "country": "United States",
+          "total_value_b": 0.145,
+          "n_investors": 23
+        },
+        {
+          "country": "Mexico",
+          "total_value_b": 0.093,
+          "n_investors": 17
+        },
+        {
+          "country": "United Kingdom",
+          "total_value_b": 0.01,
+          "n_investors": 10
+        },
+        {
+          "country": "Canada",
+          "total_value_b": 0.006,
+          "n_investors": 5
+        },
+        {
+          "country": "France",
+          "total_value_b": 0.002,
+          "n_investors": 2
+        },
+        {
+          "country": "Sweden",
+          "total_value_b": 0.002,
+          "n_investors": 1
+        },
+        {
+          "country": "Netherlands",
+          "total_value_b": 0.001,
+          "n_investors": 1
+        },
+        {
+          "country": "Australia",
+          "total_value_b": 0.001,
+          "n_investors": 3
+        },
+        {
+          "country": "Germany",
+          "total_value_b": 0.0,
+          "n_investors": 1
+        },
+        {
+          "country": "Ireland",
+          "total_value_b": 0.0,
+          "n_investors": 2
+        },
+        {
+          "country": "Hong Kong",
+          "total_value_b": 0.0,
+          "n_investors": 2
+        },
+        {
+          "country": "Iceland",
+          "total_value_b": 0.0,
+          "n_investors": 1
+        }
+      ],
+      "top_investors": [
+        {
+          "short_name": "The Vanguard Group",
+          "investor_name": "The Vanguard Group, Inc.",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Index",
+          "total_value_b": 0.107
+        },
+        {
+          "short_name": "Dimensional Fund",
+          "investor_name": "Dimensional Fund Advisors, L.P.",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Deep Value",
+          "total_value_b": 0.014
+        },
+        {
+          "short_name": "California Public Employees' Retire",
+          "investor_name": "California Public Employees' Retirement System",
+          "investor_subtype": "Pension Fund",
+          "investment_style": "Index",
+          "total_value_b": 0.008
+        },
+        {
+          "short_name": "CPP Investment Board",
+          "investor_name": "CPP Investment Board",
+          "investor_subtype": "Pension Fund",
+          "investment_style": "Core Value",
+          "total_value_b": 0.006
+        },
+        {
+          "short_name": "State Street  (UK",
+          "investor_name": "State Street Global Advisors (UK) Ltd.",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Index",
+          "total_value_b": 0.005
+        },
+        {
+          "short_name": "Charles Schwab",
+          "investor_name": "Charles Schwab Investment Management, Inc.",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Index",
+          "total_value_b": 0.004
+        },
+        {
+          "short_name": "BlackRock  (UK",
+          "investor_name": "BlackRock Investment Management (UK) Ltd.",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Core Growth",
+          "total_value_b": 0.003
+        },
+        {
+          "short_name": "Invesco Capital Management",
+          "investor_name": "Invesco Capital Management LLC",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Index",
+          "total_value_b": 0.003
+        },
+        {
+          "short_name": "State Street  (US",
+          "investor_name": "State Street Global Advisors (US)",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Index",
+          "total_value_b": 0.003
+        },
+        {
+          "short_name": "Sura  México",
+          "investor_name": "Sura Investment Management México, S.A. de C.V.",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "GARP",
+          "total_value_b": 0.003
+        },
+        {
+          "short_name": "Handelsbanken Kapitalförvaltning AB",
+          "investor_name": "Handelsbanken Kapitalförvaltning AB",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Core Growth",
+          "total_value_b": 0.002
+        },
+        {
+          "short_name": "Franklin Templeton Institutional",
+          "investor_name": "Franklin Templeton Institutional, LLC",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Core Growth",
+          "total_value_b": 0.002
+        },
+        {
+          "short_name": "TOBAM",
+          "investor_name": "TOBAM",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Index",
+          "total_value_b": 0.001
+        },
+        {
+          "short_name": "Legal & General",
+          "investor_name": "Legal & General Investment Management Ltd.",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Index",
+          "total_value_b": 0.001
+        },
+        {
+          "short_name": "Thomas J. Herzfeld Advisors",
+          "investor_name": "Thomas J. Herzfeld Advisors, Inc.",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Core Value",
+          "total_value_b": 0.001
+        }
+      ]
+    },
     "178_Grupo Financiero Banorte SAB de CV": {
       "name": "Grupo Financiero Banorte",
       "group": "GrumaBanorte",
@@ -18374,6 +18845,43 @@ const INSTITUTIONAL_DATA = {
           "investor_subtype": "Investment Advisor",
           "investment_style": "Core Value",
           "total_value_b": 0.0
+        }
+      ]
+    },
+    "184_Grupo KUO SAB De CV": {
+      "name": "Grupo KUO  De CV",
+      "group": "Yucatan",
+      "color": "#5a9e3e",
+      "total_value_b": 0.04,
+      "n_investors": 3,
+      "by_country": [
+        {
+          "country": "Mexico",
+          "total_value_b": 0.04,
+          "n_investors": 3
+        }
+      ],
+      "top_investors": [
+        {
+          "short_name": "BlackRock Mexico Operadora SA de CV",
+          "investor_name": "BlackRock Mexico Operadora SA de CV SOFI",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "GARP",
+          "total_value_b": 0.023
+        },
+        {
+          "short_name": "Operadora de Fondos GBM",
+          "investor_name": "Operadora de Fondos GBM S.A.B. de C.V.",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Yield",
+          "total_value_b": 0.009
+        },
+        {
+          "short_name": "Operadora Inbursa de Sociedades de ",
+          "investor_name": "Operadora Inbursa de Sociedades de Inversión, S.A. de C.V.",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Core Value",
+          "total_value_b": 0.008
         }
       ]
     },
@@ -23045,10 +23553,59 @@ const INSTITUTIONAL_DATA = {
           "total_value_b": 0.075
         }
       ]
+    },
+    "TV Azteca": {
+      "name": "TV Azteca",
+      "group": "Salinas",
+      "color": "#17a0b0",
+      "total_value_b": 0.0,
+      "n_investors": 4,
+      "by_country": [
+        {
+          "country": "Mexico",
+          "total_value_b": 0.001,
+          "n_investors": 2
+        },
+        {
+          "country": "United States",
+          "total_value_b": 0.0,
+          "n_investors": 2
+        }
+      ],
+      "top_investors": [
+        {
+          "short_name": "Operadora Inbursa de Sociedades de ",
+          "investor_name": "Operadora Inbursa de Sociedades de Inversión, S.A. de C.V.",
+          "investor_subtype": "Investment Advisor",
+          "investment_style": "Core Value",
+          "total_value_b": 0.001
+        },
+        {
+          "short_name": "Actinver",
+          "investor_name": "Actinver S.A. de C.V.",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Core Growth",
+          "total_value_b": 0.0
+        },
+        {
+          "short_name": "State Street  (US",
+          "investor_name": "State Street Global Advisors (US)",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Index",
+          "total_value_b": 0.0
+        },
+        {
+          "short_name": "Gabelli Funds",
+          "investor_name": "Gabelli Funds, LLC",
+          "investor_subtype": "Investment Advisor/Hedge Fund",
+          "investment_style": "Core Value",
+          "total_value_b": 0.0
+        }
+      ]
     }
   },
   "stats": {
-    "total_value_b": 74.1,
+    "total_value_b": 74.4,
     "n_countries": 48,
     "n_investors": 1766
   }
@@ -23056,71 +23613,71 @@ const INSTITUTIONAL_DATA = {
 
 const CAPITAL_STRUCTURE_DATA = {
   "global": {
-    "total_b": 327.62,
-    "strategic_b": 253.4,
-    "strategic_pct": 77.3,
-    "ctrl_mx_b": 184.28,
-    "ctrl_mx_pct": 56.2,
+    "total_b": 338.57,
+    "strategic_b": 264.04,
+    "strategic_pct": 78.0,
+    "ctrl_mx_b": 194.93,
+    "ctrl_mx_pct": 57.6,
     "ctrl_ex_b": 69.11,
-    "ctrl_ex_pct": 21.1,
-    "ctrl_mx_share": 72.7,
-    "float_b": 74.22,
-    "float_pct": 22.7,
-    "float_mx_b": 8.73,
-    "float_mx_pct": 11.8,
-    "float_ext_b": 65.5,
-    "float_ext_pct": 88.2,
-    "mx_total_pct": 58.9
+    "ctrl_ex_pct": 20.4,
+    "ctrl_mx_share": 73.8,
+    "float_b": 74.53,
+    "float_pct": 22.0,
+    "float_mx_b": 8.83,
+    "float_mx_pct": 11.9,
+    "float_ext_b": 65.69,
+    "float_ext_pct": 88.1,
+    "mx_total_pct": 60.2
   },
   "filiales": [
     {
       "categoria": "A. Filial de grupo del universo",
-      "valor_b": 8.488,
-      "pct": 73.5
+      "valor_b": 8.595,
+      "pct": 73.6
     },
     {
       "categoria": "B. Filial local de banco global",
-      "valor_b": 2.787,
+      "valor_b": 2.814,
       "pct": 24.1
     },
     {
       "categoria": "C. Capital MX genuino",
-      "valor_b": 0.272,
-      "pct": 2.4
+      "valor_b": 0.274,
+      "pct": 2.3
     }
   ],
-  "im_mx_sede_b": 11.55,
+  "im_mx_sede_b": 11.68,
   "comportamiento": [
     {
       "origen": "Extranjero",
-      "total_b": 62.507,
-      "permanente_pct": 58.1,
-      "activo_pct": 27.5,
+      "total_b": 62.674,
+      "permanente_pct": 58.2,
+      "activo_pct": 27.4,
       "oportunista_pct": 3.2,
-      "sin_clasificar_pct": 11.3
+      "sin_clasificar_pct": 11.2
     },
     {
       "origen": "Gestor MX (universo/local)",
-      "total_b": 8.761,
-      "permanente_pct": 41.0,
+      "total_b": 8.868,
+      "permanente_pct": 40.7,
       "activo_pct": 0.0,
       "oportunista_pct": 0.0,
-      "sin_clasificar_pct": 59.0
+      "sin_clasificar_pct": 59.3
     },
     {
       "origen": "Filial banco global",
-      "total_b": 2.787,
-      "permanente_pct": 6.6,
-      "activo_pct": 87.9,
+      "total_b": 2.814,
+      "permanente_pct": 6.5,
+      "activo_pct": 88.0,
       "oportunista_pct": 0.0,
-      "sin_clasificar_pct": 5.6
+      "sin_clasificar_pct": 5.5
     }
   ],
-  "n_inst": 9722,
-  "n_strat": 160,
-  "n_companies": 61,
+  "n_inst": 9797,
+  "n_strat": 164,
+  "n_companies": 64,
   "cascade_excluded_b": 85.3,
-  "big3_n_companies": 54,
+  "big3_n_companies": 57,
   "big3_median_pct": 3.4
 };
 
@@ -24925,6 +25482,72 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
     "n_strat": 1,
     "name": "Grupo Comercial Chedraui"
   },
+  "176_Grupo Elektra SAB DE CV": {
+    "global": {
+      "total_b": 10.83,
+      "strategic_b": 10.57,
+      "strategic_pct": 97.6,
+      "ctrl_mx_b": 10.57,
+      "ctrl_mx_pct": 97.6,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
+      "float_b": 0.26,
+      "float_pct": 2.4,
+      "float_mx_b": 0.09,
+      "float_mx_pct": 34.1,
+      "float_ext_b": 0.17,
+      "float_ext_pct": 65.9,
+      "mx_total_pct": 98.4
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.088,
+        "pct": 94.2
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.004,
+        "pct": 4.3
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.001,
+        "pct": 1.1
+      }
+    ],
+    "im_mx_sede_b": 0.09,
+    "comportamiento": [
+      {
+        "origen": "Extranjero",
+        "total_b": 0.167,
+        "permanente_pct": 89.5,
+        "activo_pct": 1.0,
+        "oportunista_pct": 8.5,
+        "sin_clasificar_pct": 0.9
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.09,
+        "permanente_pct": 1.1,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 98.9
+      },
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.004,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 68,
+    "n_strat": 1,
+    "name": "Grupo Elektra"
+  },
   "178_Grupo Financiero Banorte SAB de CV": {
     "global": {
       "total_b": 9.95,
@@ -25188,6 +25811,64 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
     "n_inst": 33,
     "n_strat": 1,
     "name": "Grupo Herdez"
+  },
+  "184_Grupo KUO SAB De CV": {
+    "global": {
+      "total_b": 0.04,
+      "strategic_b": 0.0,
+      "strategic_pct": 0.0,
+      "ctrl_mx_b": 0.0,
+      "ctrl_mx_pct": 0.0,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 0.0,
+      "float_b": 0.04,
+      "float_pct": 100.0,
+      "float_mx_b": 0.02,
+      "float_mx_pct": 42.0,
+      "float_ext_b": 0.02,
+      "float_ext_pct": 58.0,
+      "mx_total_pct": 42.0
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.017,
+        "pct": 42.0
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.023,
+        "pct": 56.9
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "im_mx_sede_b": 0.04,
+    "comportamiento": [
+      {
+        "origen": "Filial banco global",
+        "total_b": 0.023,
+        "permanente_pct": 0.0,
+        "activo_pct": 100.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.017,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 3,
+    "n_strat": 0,
+    "name": "Grupo KUO  De CV"
   },
   "185_Grupo Lamosa SAB de CV": {
     "global": {
@@ -26840,6 +27521,64 @@ const CAPITAL_STRUCTURE_BY_COMPANY = {
     "n_inst": 438,
     "n_strat": 1,
     "name": "Wal Mart de Mexico"
+  },
+  "TV Azteca": {
+    "global": {
+      "total_b": 0.07,
+      "strategic_b": 0.07,
+      "strategic_pct": 97.8,
+      "ctrl_mx_b": 0.07,
+      "ctrl_mx_pct": 97.8,
+      "ctrl_ex_b": 0.0,
+      "ctrl_ex_pct": 0.0,
+      "ctrl_mx_share": 100.0,
+      "float_b": 0.0,
+      "float_pct": 2.2,
+      "float_mx_b": 0.0,
+      "float_mx_pct": 85.5,
+      "float_ext_b": 0.0,
+      "float_ext_pct": 14.5,
+      "mx_total_pct": 99.7
+    },
+    "filiales": [
+      {
+        "categoria": "A. Filial de grupo del universo",
+        "valor_b": 0.001,
+        "pct": 75.5
+      },
+      {
+        "categoria": "B. Filial local de banco global",
+        "valor_b": 0.0,
+        "pct": 0.0
+      },
+      {
+        "categoria": "C. Capital MX genuino",
+        "valor_b": 0.0,
+        "pct": 0.0
+      }
+    ],
+    "im_mx_sede_b": 0.0,
+    "comportamiento": [
+      {
+        "origen": "Gestor MX (universo/local)",
+        "total_b": 0.001,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      },
+      {
+        "origen": "Extranjero",
+        "total_b": 0.0,
+        "permanente_pct": 100.0,
+        "activo_pct": 0.0,
+        "oportunista_pct": 0.0,
+        "sin_clasificar_pct": 0.0
+      }
+    ],
+    "n_inst": 4,
+    "n_strat": 3,
+    "name": "TV Azteca"
   }
 };
 
@@ -27006,22 +27745,22 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": "ficcion"
     },
     {
-      "company_folder": "182_Grupo Gigante SAB de CV",
-      "empresa": "Grupo Gigante",
-      "group": "Otro",
-      "pct_fuera_subs": 9.5,
-      "rev_intl_pct": 13.0,
-      "divergencia": -3.5,
-      "n_paises": 2,
-      "modelo": null
-    },
-    {
       "company_folder": "164_Grupo Aeroportuario del Pacifico SAB de CV",
       "empresa": "Grupo Aeroportuario del Pacifico",
       "group": "Otro",
       "pct_fuera_subs": 11.1,
       "rev_intl_pct": 13.0,
       "divergencia": -1.9,
+      "n_paises": 2,
+      "modelo": null
+    },
+    {
+      "company_folder": "182_Grupo Gigante SAB de CV",
+      "empresa": "Grupo Gigante",
+      "group": "Otro",
+      "pct_fuera_subs": 9.5,
+      "rev_intl_pct": 13.0,
+      "divergencia": -3.5,
       "n_paises": 2,
       "modelo": null
     },
@@ -27136,6 +27875,26 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
+      "company_folder": "TV Azteca",
+      "empresa": "TV Azteca",
+      "group": "Salinas",
+      "pct_fuera_subs": 27.3,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 10,
+      "modelo": null
+    },
+    {
+      "company_folder": "176_Grupo Elektra SAB DE CV",
+      "empresa": "Grupo Elektra",
+      "group": "Salinas",
+      "pct_fuera_subs": 25.7,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 6,
+      "modelo": null
+    },
+    {
       "company_folder": "322_Vitro SAB de CV",
       "empresa": "Vitro",
       "group": "Otro",
@@ -27146,16 +27905,6 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "275_Qualitas Controladora SAB de CV",
-      "empresa": "Qualitas Controladora",
-      "group": "Otro",
-      "pct_fuera_subs": 58.3,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 4,
-      "modelo": null
-    },
-    {
       "company_folder": "169_Grupo Bafar SAB de CV",
       "empresa": "Grupo Bafar",
       "group": "Otro",
@@ -27163,6 +27912,16 @@ const INTERNACIONALIZACION_DATA = {
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 1,
+      "modelo": null
+    },
+    {
+      "company_folder": "275_Qualitas Controladora SAB de CV",
+      "empresa": "Qualitas Controladora",
+      "group": "Otro",
+      "pct_fuera_subs": 58.3,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 4,
       "modelo": null
     },
     {
@@ -27216,6 +27975,16 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
+      "company_folder": "184_Grupo KUO SAB De CV",
+      "empresa": "Grupo KUO  De CV",
+      "group": "Yucatan",
+      "pct_fuera_subs": 8.1,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 2,
+      "modelo": null
+    },
+    {
       "company_folder": "299_Southern Copper Corp Peru",
       "empresa": "Southern Copper Corp Peru",
       "group": "Otro",
@@ -27236,10 +28005,10 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "165_Grupo Aeroportuario del Sureste SAB de CV",
-      "empresa": "Grupo Aeroportuario del Sureste",
-      "group": "Yucatan",
-      "pct_fuera_subs": 11.8,
+      "company_folder": "185_Grupo Lamosa SAB de CV",
+      "empresa": "Grupo Lamosa",
+      "group": "Otro",
+      "pct_fuera_subs": 40.0,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 2,
@@ -27256,10 +28025,10 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "185_Grupo Lamosa SAB de CV",
-      "empresa": "Grupo Lamosa",
-      "group": "Otro",
-      "pct_fuera_subs": 40.0,
+      "company_folder": "165_Grupo Aeroportuario del Sureste SAB de CV",
+      "empresa": "Grupo Aeroportuario del Sureste",
+      "group": "Yucatan",
+      "pct_fuera_subs": 11.8,
       "rev_intl_pct": null,
       "divergencia": null,
       "n_paises": 2,
@@ -27286,16 +28055,6 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "181_Grupo Financiero Inbursa SAB de CV",
-      "empresa": "Grupo Financiero Inbursa",
-      "group": "Slim",
-      "pct_fuera_subs": 4.5,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 1,
-      "modelo": null
-    },
-    {
       "company_folder": "173_Grupo Comercial Chedraui SAB de CV",
       "empresa": "Grupo Comercial Chedraui",
       "group": "Otro",
@@ -27306,8 +28065,18 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
-      "empresa": "Grupo Aeroportuario del Centro Norte",
+      "company_folder": "181_Grupo Financiero Inbursa SAB de CV",
+      "empresa": "Grupo Financiero Inbursa",
+      "group": "Slim",
+      "pct_fuera_subs": 4.5,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 1,
+      "modelo": null
+    },
+    {
+      "company_folder": "118_El puerto de Liverpool SAB de CV",
+      "empresa": "El Puerto de Liverpool",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -27326,8 +28095,8 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "118_El puerto de Liverpool SAB de CV",
-      "empresa": "El Puerto de Liverpool",
+      "company_folder": "163_Grupo Aeroportuario del Centro Norte SAB de CV",
+      "empresa": "Grupo Aeroportuario del Centro Norte",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -27386,6 +28155,26 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
+      "company_folder": "274_Promotora y Operadora de Infraestructura SAB de CV",
+      "empresa": "Promotora y Operadora de Infraestructu",
+      "group": "Otro",
+      "pct_fuera_subs": 0.0,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 0,
+      "modelo": null
+    },
+    {
+      "company_folder": "237_Megacable Holdings SAB de CV",
+      "empresa": "Megacable Holdings",
+      "group": "Otro",
+      "pct_fuera_subs": 0.0,
+      "rev_intl_pct": null,
+      "divergencia": null,
+      "n_paises": 0,
+      "modelo": null
+    },
+    {
       "company_folder": "258_Operadora de Sites Mexicanos SAB De CV",
       "empresa": "Operadora de Sites Mexicanos  De CV",
       "group": "Otro",
@@ -27406,16 +28195,6 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "237_Megacable Holdings SAB de CV",
-      "empresa": "Megacable Holdings",
-      "group": "Otro",
-      "pct_fuera_subs": 0.0,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 0,
-      "modelo": null
-    },
-    {
       "company_folder": "260_Organizacion Soriana SAB de CV",
       "empresa": "Organizacion Soriana",
       "group": "Otro",
@@ -27426,8 +28205,8 @@ const INTERNACIONALIZACION_DATA = {
       "modelo": null
     },
     {
-      "company_folder": "274_Promotora y Operadora de Infraestructura SAB de CV",
-      "empresa": "Promotora y Operadora de Infraestructu",
+      "company_folder": "318_Vesta Real Estate Corporation SAB de CV",
+      "empresa": "Vesta Real Estate Corporation",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -27438,16 +28217,6 @@ const INTERNACIONALIZACION_DATA = {
     {
       "company_folder": "281_Regional SAB de CV",
       "empresa": "Regional",
-      "group": "Otro",
-      "pct_fuera_subs": 0.0,
-      "rev_intl_pct": null,
-      "divergencia": null,
-      "n_paises": 0,
-      "modelo": null
-    },
-    {
-      "company_folder": "318_Vesta Real Estate Corporation SAB de CV",
-      "empresa": "Vesta Real Estate Corporation",
       "group": "Otro",
       "pct_fuera_subs": 0.0,
       "rev_intl_pct": null,
@@ -27565,6 +28334,17 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
+      "empresa": "TV Azteca",
+      "group": "Salinas",
+      "segmento": "1. Multilatina global",
+      "fuera_mexico": 18,
+      "pct_fuera": 27.3,
+      "n_paises": 10,
+      "n_continentes": 4,
+      "continentes": "América Central, América del Norte, América del Sur, Europa",
+      "rev_intl_pct": null
+    },
+    {
       "empresa": "Grupo Mexico",
       "group": "Gmexico",
       "segmento": "2. Multinacional regional",
@@ -27662,6 +28442,17 @@ const SEGMENTACION_DATA = {
       "n_continentes": 3,
       "continentes": "América del Norte, América del Sur, Europa",
       "rev_intl_pct": 79.4
+    },
+    {
+      "empresa": "Grupo Elektra",
+      "group": "Salinas",
+      "segmento": "2. Multinacional regional",
+      "fuera_mexico": 9,
+      "pct_fuera": 25.7,
+      "n_paises": 6,
+      "n_continentes": 4,
+      "continentes": "América Central, América del Norte, América del Sur, Europa",
+      "rev_intl_pct": null
     },
     {
       "empresa": "Vitro",
@@ -27785,6 +28576,17 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
+      "empresa": "Grupo KUO  De CV",
+      "group": "Yucatan",
+      "segmento": "3. Presencia puntual",
+      "fuera_mexico": 3,
+      "pct_fuera": 8.1,
+      "n_paises": 2,
+      "n_continentes": 2,
+      "continentes": "América del Norte, Europa",
+      "rev_intl_pct": null
+    },
+    {
       "empresa": "Southern Copper Corp Peru",
       "group": "Otro",
       "segmento": "3. Presencia puntual",
@@ -27796,17 +28598,6 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Gigante",
-      "group": "Otro",
-      "segmento": "3. Presencia puntual",
-      "fuera_mexico": 2,
-      "pct_fuera": 9.5,
-      "n_paises": 2,
-      "n_continentes": 2,
-      "continentes": "América del Norte, América del Sur",
-      "rev_intl_pct": 13.0
-    },
-    {
       "empresa": "Grupo Aeroportuario del Pacifico",
       "group": "Otro",
       "segmento": "3. Presencia puntual",
@@ -27815,6 +28606,17 @@ const SEGMENTACION_DATA = {
       "n_paises": 2,
       "n_continentes": 2,
       "continentes": "América del Sur, Europa",
+      "rev_intl_pct": 13.0
+    },
+    {
+      "empresa": "Grupo Gigante",
+      "group": "Otro",
+      "segmento": "3. Presencia puntual",
+      "fuera_mexico": 2,
+      "pct_fuera": 9.5,
+      "n_paises": 2,
+      "n_continentes": 2,
+      "continentes": "América del Norte, América del Sur",
       "rev_intl_pct": 13.0
     },
     {
@@ -27840,14 +28642,14 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Aeroportuario del Sureste",
-      "group": "Yucatan",
+      "empresa": "Grupo Lamosa",
+      "group": "Otro",
       "segmento": "3. Presencia puntual",
       "fuera_mexico": 2,
-      "pct_fuera": 11.8,
+      "pct_fuera": 40.0,
       "n_paises": 2,
-      "n_continentes": 1,
-      "continentes": "América del Norte",
+      "n_continentes": 2,
+      "continentes": "América del Sur, Europa",
       "rev_intl_pct": null
     },
     {
@@ -27862,14 +28664,14 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Lamosa",
-      "group": "Otro",
+      "empresa": "Grupo Aeroportuario del Sureste",
+      "group": "Yucatan",
       "segmento": "3. Presencia puntual",
       "fuera_mexico": 2,
-      "pct_fuera": 40.0,
+      "pct_fuera": 11.8,
       "n_paises": 2,
-      "n_continentes": 2,
-      "continentes": "América del Sur, Europa",
+      "n_continentes": 1,
+      "continentes": "América del Norte",
       "rev_intl_pct": null
     },
     {
@@ -27917,17 +28719,6 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Grupo Financiero Inbursa",
-      "group": "Slim",
-      "segmento": "3. Presencia puntual",
-      "fuera_mexico": 1,
-      "pct_fuera": 4.5,
-      "n_paises": 1,
-      "n_continentes": 1,
-      "continentes": "América del Sur",
-      "rev_intl_pct": null
-    },
-    {
       "empresa": "Grupo Comercial Chedraui",
       "group": "Otro",
       "segmento": "3. Presencia puntual",
@@ -27936,6 +28727,17 @@ const SEGMENTACION_DATA = {
       "n_paises": 1,
       "n_continentes": 1,
       "continentes": "América del Norte",
+      "rev_intl_pct": null
+    },
+    {
+      "empresa": "Grupo Financiero Inbursa",
+      "group": "Slim",
+      "segmento": "3. Presencia puntual",
+      "fuera_mexico": 1,
+      "pct_fuera": 4.5,
+      "n_paises": 1,
+      "n_continentes": 1,
+      "continentes": "América del Sur",
       "rev_intl_pct": null
     },
     {
@@ -27972,7 +28774,7 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": 0.2
     },
     {
-      "empresa": "Grupo Aeroportuario del Centro Norte",
+      "empresa": "El Puerto de Liverpool",
       "group": "Otro",
       "segmento": "4. Doméstica",
       "fuera_mexico": 0,
@@ -27994,7 +28796,7 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "El Puerto de Liverpool",
+      "empresa": "Grupo Aeroportuario del Centro Norte",
       "group": "Otro",
       "segmento": "4. Doméstica",
       "fuera_mexico": 0,
@@ -28060,6 +28862,28 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
+      "empresa": "Promotora y Operadora de Infraestructu",
+      "group": "Otro",
+      "segmento": "4. Doméstica",
+      "fuera_mexico": 0,
+      "pct_fuera": 0.0,
+      "n_paises": 0,
+      "n_continentes": 0,
+      "continentes": null,
+      "rev_intl_pct": null
+    },
+    {
+      "empresa": "Megacable Holdings",
+      "group": "Otro",
+      "segmento": "4. Doméstica",
+      "fuera_mexico": 0,
+      "pct_fuera": 0.0,
+      "n_paises": 0,
+      "n_continentes": 0,
+      "continentes": null,
+      "rev_intl_pct": null
+    },
+    {
       "empresa": "Operadora de Sites Mexicanos  De CV",
       "group": "Otro",
       "segmento": "4. Doméstica",
@@ -28082,40 +28906,7 @@ const SEGMENTACION_DATA = {
       "rev_intl_pct": null
     },
     {
-      "empresa": "Megacable Holdings",
-      "group": "Otro",
-      "segmento": "4. Doméstica",
-      "fuera_mexico": 0,
-      "pct_fuera": 0.0,
-      "n_paises": 0,
-      "n_continentes": 0,
-      "continentes": null,
-      "rev_intl_pct": null
-    },
-    {
       "empresa": "Organizacion Soriana",
-      "group": "Otro",
-      "segmento": "4. Doméstica",
-      "fuera_mexico": 0,
-      "pct_fuera": 0.0,
-      "n_paises": 0,
-      "n_continentes": 0,
-      "continentes": null,
-      "rev_intl_pct": null
-    },
-    {
-      "empresa": "Promotora y Operadora de Infraestructu",
-      "group": "Otro",
-      "segmento": "4. Doméstica",
-      "fuera_mexico": 0,
-      "pct_fuera": 0.0,
-      "n_paises": 0,
-      "n_continentes": 0,
-      "continentes": null,
-      "rev_intl_pct": null
-    },
-    {
-      "empresa": "Regional",
       "group": "Otro",
       "segmento": "4. Doméstica",
       "fuera_mexico": 0,
@@ -28135,6 +28926,17 @@ const SEGMENTACION_DATA = {
       "n_continentes": 0,
       "continentes": null,
       "rev_intl_pct": null
+    },
+    {
+      "empresa": "Regional",
+      "group": "Otro",
+      "segmento": "4. Doméstica",
+      "fuera_mexico": 0,
+      "pct_fuera": 0.0,
+      "n_paises": 0,
+      "n_continentes": 0,
+      "continentes": null,
+      "rev_intl_pct": null
     }
   ],
   "labels": {
@@ -28144,9 +28946,9 @@ const SEGMENTACION_DATA = {
     "4. Doméstica": "Doméstica — sin subsidiarias fuera de México"
   },
   "summary": {
-    "1. Multilatina global": 9,
-    "2. Multinacional regional": 12,
-    "3. Presencia puntual": 22,
+    "1. Multilatina global": 10,
+    "2. Multinacional regional": 13,
+    "3. Presencia puntual": 23,
     "4. Doméstica": 18
   }
 };
